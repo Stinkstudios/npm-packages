@@ -13,7 +13,7 @@
   "main": "src/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Stinkdigital/detector.js"
+    "url": "https://github.com/Stinkdigital/detector-js"
   },
   "author": "Stinkdigital",
   "license": "ISC",
