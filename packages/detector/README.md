@@ -1,1 +1,1 @@
-# detector.js
+# detector-js
