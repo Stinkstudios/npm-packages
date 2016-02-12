@@ -1,5 +1,5 @@
-import UA from './ua';
+var UA = require('./ua');
 
-const IS_IPHONE = !!UA.match(/iPhone/i);
+var IS_IPHONE = !!UA.match(/iPhone/i);
 
-export default IS_IPHONE;
+module.exports = IS_IPHONE;

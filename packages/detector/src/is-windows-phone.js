@@ -1,5 +1,5 @@
-import UA from './ua';
+var UA = require('./ua');
 
-const IS_WINDOWS_PHONE = /Windows Phone/i.test(UA);
+var IS_WINDOWS_PHONE = /Windows Phone/i.test(UA);
 
-export default IS_WINDOWS_PHONE;
+module.exports = IS_WINDOWS_PHONE;

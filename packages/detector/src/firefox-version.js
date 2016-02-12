@@ -1,9 +1,9 @@
-import UA from './ua';
-import IS_FIREFOX from './is-firefox';
+var UA = require('./ua');
+var IS_FIREFOX = require('./is-firefox');
 
-const FIREFOX_VERSION = (() => {
+var FIREFOX_VERSION = (function () {
 	if (!IS_FIREFOX) return -1;
 	return parseFloat(UA.slice(UA.indexOf('Firefox') + 8));
 })();
 
-export default FIREFOX_VERSION;
+module.exports = FIREFOX_VERSION;

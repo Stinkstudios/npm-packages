@@ -1,5 +1,5 @@
-import IE_VERSION from './ie-version';
+var IE_VERSION = require('./ie-version');
 
-const IS_IE = IE_VERSION > -1;
+var IS_IE = IE_VERSION > -1;
 
-export default IS_IE;
+module.exports = IS_IE;

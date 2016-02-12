@@ -1,5 +1,5 @@
-import UA from './ua';
+var UA = require('./ua');
 
-const IS_FIREFOX = /Firefox/.test(UA);
+var IS_FIREFOX = /Firefox/.test(UA);
 
-export default IS_FIREFOX;
+module.exports = IS_FIREFOX;

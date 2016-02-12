@@ -8,20 +8,12 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, './dist'),
-    filename: 'detector.js',
-  },
-  module: {
-    loaders: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loaders: [
-          'babel-loader'
-        ]
-      },
-    ],
+    filename: 'detector.min.js',
   },
   resolve: {
     extensions: ['', '.js']
-  }
+  },
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin({minimize: true})
+  ]
 }

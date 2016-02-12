@@ -1,6 +1,6 @@
-import UA from './ua';
-import IS_ANDROID from './is-android';
+var UA = require('./ua');
+var IS_ANDROID = require('./is-android');
 
-const ANDROID_VERSION = !IS_ANDROID ? -1 : parseFloat(UA.slice(UA.indexOf('Android') + 8));
+var ANDROID_VERSION = !IS_ANDROID ? -1 : parseFloat(UA.slice(UA.indexOf('Android') + 8));
 
-export default ANDROID_VERSION;
+module.exports = ANDROID_VERSION;

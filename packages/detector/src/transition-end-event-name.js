@@ -1,13 +1,13 @@
-const TRANSITION_END_EVENT_NAME = (() => {
-	const el = document.createElement('fakeelement');
-	const transitions = {
+var TRANSITION_END_EVENT_NAME = (function () {
+	var el = document.createElement('fakeelement');
+	var transitions = {
 		transition: 'transitionend',
 		OTransition: 'oTransitionEnd',
 		MozTransition: 'transitionend',
 		WebkitTransition: 'webkitTransitionEnd',
 	};
-	let transitionend;
-	for (const t in transitions) {
+	var transitionend;
+	for (var t in transitions) {
 		if (el.style[t] !== undefined) {
 			transitionend = transitions[t];
 			break;
@@ -16,4 +16,4 @@ const TRANSITION_END_EVENT_NAME = (() => {
 	return transitionend;
 })();
 
-export default TRANSITION_END_EVENT_NAME;
+module.exports = TRANSITION_END_EVENT_NAME;

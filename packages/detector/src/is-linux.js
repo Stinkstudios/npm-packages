@@ -1,5 +1,5 @@
-import UA from './ua';
+var UA = require('./ua');
 
-const IS_LINUX = /Linux/.test(UA);
+var IS_LINUX = /Linux/.test(UA);
 
-export default IS_LINUX;
+module.exports = IS_LINUX;

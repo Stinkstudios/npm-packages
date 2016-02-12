@@ -1,12 +1,12 @@
-const HIDDEN_PROPERTY_NAME = (() => {
-	let value = undefined;
-	const props = {
+var HIDDEN_PROPERTY_NAME = (function () {
+	var value = undefined;
+	var props = {
 		hidden: 'hidden',
 		mozHidden: 'mozHidden',
 		msHidden: 'msHidden',
 		webkitHidden: 'webkitHidden',
 	};
-	for (const p in props) {
+	for (var p in props) {
 		if (typeof document[p] !== 'undefined') {
 			value = props[p];
 			break;
@@ -15,4 +15,4 @@ const HIDDEN_PROPERTY_NAME = (() => {
 	return value;
 })();
 
-export default HIDDEN_PROPERTY_NAME;
+module.exports = HIDDEN_PROPERTY_NAME;

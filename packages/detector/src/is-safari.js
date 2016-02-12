@@ -1,7 +1,7 @@
-import UA from './ua';
-import IS_ANDROID_BROWSER from './is-android-browser';
-import IS_CHROME from './is-chrome';
+var UA = require('./ua');
+var IS_ANDROID_BROWSER = require('./is-android-browser');
+var IS_CHROME = require('./is-chrome');
 
-const IS_SAFARI = !IS_ANDROID_BROWSER && !IS_CHROME && /Safari/.test(UA);
+var IS_SAFARI = !IS_ANDROID_BROWSER && !IS_CHROME && /Safari/.test(UA);
 
-export default IS_SAFARI;
+module.exports = IS_SAFARI;

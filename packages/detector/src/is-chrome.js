@@ -1,5 +1,5 @@
-import UA from './ua';
+var UA = require('./ua');
 
-const IS_CHROME = /Chrome/.test(UA);
+var IS_CHROME = /Chrome/.test(UA);
 
-export default IS_CHROME;
+module.exports = IS_CHROME;

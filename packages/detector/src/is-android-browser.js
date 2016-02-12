@@ -1,8 +1,8 @@
-import UA from './ua';
+var UA = require('./ua');
 
-const IS_ANDROID_BROWSER = (() => {
-	const matches = UA.match(/Android.*AppleWebKit\/([\d.]+)/);
+var IS_ANDROID_BROWSER = (function () {
+	var matches = UA.match(/Android.*AppleWebKit\/([\d.]+)/);
 	return !!matches && matches[1] < 537;
 })();
 
-export default IS_ANDROID_BROWSER;
+module.exports = IS_ANDROID_BROWSER;

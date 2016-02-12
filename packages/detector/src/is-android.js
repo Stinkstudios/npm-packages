@@ -1,5 +1,5 @@
-import UA from './ua';
+var UA = require('./ua');
 
-const IS_ANDROID = !!UA.match(/Android/i);
+var IS_ANDROID = !!UA.match(/Android/i);
 
-export default IS_ANDROID;
+module.exports = IS_ANDROID;

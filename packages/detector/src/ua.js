@@ -1,3 +1,3 @@
-const UA = (navigator.userAgent || navigator.vendor || window.opera);
+var UA = (navigator.userAgent || navigator.vendor || window.opera);
 
-export default UA;
+module.exports = UA;

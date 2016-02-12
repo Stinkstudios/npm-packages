@@ -1,5 +1,5 @@
-import IS_DESKTOP from './is-desktop';
+var IS_DESKTOP = require('./is-desktop');
 
-const HAS_MOUSE_MOVE = IS_DESKTOP;
+var HAS_MOUSE_MOVE = IS_DESKTOP;
 
-export default HAS_MOUSE_MOVE;
+module.exports = HAS_MOUSE_MOVE;

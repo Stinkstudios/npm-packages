@@ -1,5 +1,5 @@
-const HAS_FULLSCREEN = (() => {
-	const element = document.body;
+var HAS_FULLSCREEN = (function () {
+	var element = document.body;
 	return !!(
 		element.requestFullScreen ||
 		element.webkitRequestFullScreen ||
@@ -8,4 +8,4 @@ const HAS_FULLSCREEN = (() => {
 	);
 })();
 
-export default HAS_FULLSCREEN;
+module.exports = HAS_FULLSCREEN;
