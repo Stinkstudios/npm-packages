@@ -1,6 +1,6 @@
-import UA from './ua';
-import IS_IOS from './is-ios';
+var UA = require('./ua');
+var IS_IOS = require('./is-ios');
 
-const IS_SAFARI_IOS = IS_IOS && /AppleWebKit/.test(UA);
+var IS_SAFARI_IOS = IS_IOS && /AppleWebKit/.test(UA);
 
-export default IS_SAFARI_IOS;
+module.exports = IS_SAFARI_IOS;

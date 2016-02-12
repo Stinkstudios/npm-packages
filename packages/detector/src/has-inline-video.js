@@ -1,10 +1,10 @@
-import IS_IPOD from './is-ipod';
-import IS_IPHONE from './is-iphone';
+var IS_IPOD = require('./is-ipod');
+var IS_IPHONE = require('./is-iphone');
 
-const HAS_INLINE_VIDEO = (() => {
-	const videoEl = document.createElement('video');
-	const hasVideo = !!videoEl.canPlayType;
+var HAS_INLINE_VIDEO = (function () {
+	var videoEl = document.createElement('video');
+	var hasVideo = !!videoEl.canPlayType;
 	return hasVideo && !(IS_IPOD || IS_IPHONE);
 })();
 
-export default HAS_INLINE_VIDEO;
+module.exports = HAS_INLINE_VIDEO;

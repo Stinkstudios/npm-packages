@@ -1,12 +1,12 @@
-const VISIBILITY_CHANGE_EVENT_NAME = (() => {
-	let value = undefined;
-	const props = {
+var VISIBILITY_CHANGE_EVENT_NAME = (function () {
+	var value = undefined;
+	var props = {
 		hidden: 'visibilitychange',
 		mozHidden: 'mozvisibilitychange',
 		msHidden: 'msvisibilitychange',
 		webkitHidden: 'webkitvisibilitychange',
 	};
-	for (const p in props) {
+	for (var p in props) {
 		if (typeof document[p] !== 'undefined') {
 			value = props[p];
 			break;
@@ -15,4 +15,4 @@ const VISIBILITY_CHANGE_EVENT_NAME = (() => {
 	return value;
 })();
 
-export default VISIBILITY_CHANGE_EVENT_NAME;
+module.exports = VISIBILITY_CHANGE_EVENT_NAME;

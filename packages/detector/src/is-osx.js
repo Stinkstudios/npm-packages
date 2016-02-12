@@ -1,6 +1,6 @@
-import UA from './ua';
-import IS_IOS from './is-ios';
+var UA = require('./ua');
+var IS_IOS = require('./is-ios');
 
-const IS_OSX = !IS_IOS && /Mac OS/.test(UA);
+var IS_OSX = !IS_IOS && /Mac OS/.test(UA);
 
-export default IS_OSX;
+module.exports = IS_OSX;

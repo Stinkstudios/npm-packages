@@ -1,5 +1,5 @@
-import UA from './ua';
+var UA = require('./ua');
 
-const IS_IPOD = !!UA.match(/iPod/i);
+var IS_IPOD = !!UA.match(/iPod/i);
 
-export default IS_IPOD;
+module.exports = IS_IPOD;

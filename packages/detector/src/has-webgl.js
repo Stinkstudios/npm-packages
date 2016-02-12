@@ -1,7 +1,7 @@
-import IS_IOS from './is-ios';
-import IOS_VERSION from './ios-version';
+var IS_IOS = require('./is-ios');
+var IOS_VERSION = require('./ios-version');
 
-const HAS_WEBGL = (() => {
+var HAS_WEBGL = (function () {
 	if (IS_IOS && IOS_VERSION < 8) {
 		return false;
 	}
@@ -10,8 +10,8 @@ const HAS_WEBGL = (() => {
 		if (!window.WebGLRenderingContext) {
 			return false;
 		}
-		const canvas = document.createElement('canvas');
-		const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+		var canvas = document.createElement('canvas');
+		var gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
 		gl.getParameter(gl.MAX_CUBE_MAP_TEXTURE_SIZE);
 	} catch (e) {
 		return false;
@@ -20,4 +20,4 @@ const HAS_WEBGL = (() => {
 	return true;
 })();
 
-export default HAS_WEBGL;
+module.exports = HAS_WEBGL;

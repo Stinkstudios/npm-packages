@@ -1,5 +1,5 @@
-import PIXEL_RATIO from './pixel-ratio';
+var PIXEL_RATIO = require('./pixel-ratio');
 
-const IS_RETINA = (PIXEL_RATIO > 1);
+var IS_RETINA = (PIXEL_RATIO > 1);
 
-export default IS_RETINA;
+module.exports = IS_RETINA;

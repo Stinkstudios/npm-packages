@@ -1,6 +1,6 @@
-import UA from './ua';
-import IS_WINDOWS_PHONE from './is-windows-phone';
+var UA = require('./ua');
+var IS_WINDOWS_PHONE = require('./is-windows-phone');
 
-const IS_WINDOWS = !IS_WINDOWS_PHONE && /Windows/.test(UA);
+var IS_WINDOWS = !IS_WINDOWS_PHONE && /Windows/.test(UA);
 
-export default IS_WINDOWS;
+module.exports = IS_WINDOWS;

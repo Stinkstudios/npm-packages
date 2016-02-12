@@ -1,5 +1,5 @@
-import UA from './ua';
+var UA = require('./ua');
 
-const IS_OPERA = /Opera/.test(UA);
+var IS_OPERA = /Opera/.test(UA);
 
-export default IS_OPERA;
+module.exports = IS_OPERA;

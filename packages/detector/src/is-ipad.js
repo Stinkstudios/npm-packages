@@ -1,5 +1,5 @@
-import UA from './ua';
+var UA = require('./ua');
 
-const IS_IPAD = !!UA.match(/iPad/i);
+var IS_IPAD = !!UA.match(/iPad/i);
 
-export default IS_IPAD;
+module.exports = IS_IPAD;

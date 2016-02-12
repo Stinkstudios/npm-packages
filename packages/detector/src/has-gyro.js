@@ -1,5 +1,5 @@
-import IS_MOBILE from './is-mobile';
+var IS_MOBILE = require('./is-mobile');
 
-const HAS_GYRO = IS_MOBILE;
+var HAS_GYRO = IS_MOBILE;
 
-export default HAS_GYRO;
+module.exports = HAS_GYRO;

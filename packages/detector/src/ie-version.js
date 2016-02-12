@@ -1,7 +1,7 @@
-import UA from './ua';
+var UA = require('./ua');
 
-const IE_VERSION = (() => {
-	let v = -1;
+var IE_VERSION = (function () {
+	var v = -1;
 	if (/MSIE (\d+\.\d+);/.test(UA)) {
 		v = parseInt(RegExp.$1, 10);
 	} else if (/Trident\/(\d+\.\d+)(.*)rv:(\d+\.\d+)/.test(UA)) {
@@ -10,4 +10,4 @@ const IE_VERSION = (() => {
 	return v;
 })();
 
-export default IE_VERSION;
+module.exports = IE_VERSION;

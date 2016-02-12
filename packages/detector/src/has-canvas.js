@@ -1,3 +1,3 @@
-const HAS_CANVAS = !!window.CanvasRenderingContext2D;
+var HAS_CANVAS = !!window.CanvasRenderingContext2D;
 
-export default HAS_CANVAS;
+module.exports = HAS_CANVAS;

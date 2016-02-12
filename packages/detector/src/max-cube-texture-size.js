@@ -1,17 +1,17 @@
-import HAS_WEBGL from './has-webgl';
+var HAS_WEBGL = require('./has-webgl');
 
-const MAX_CUBE_MAP_TEXTURE_SIZE = (() => {
+var MAX_CUBE_MAP_TEXTURE_SIZE = (function () {
 	if (!HAS_WEBGL) {
 		return undefined;
 	}
 
 	try {
-		const canvas = document.createElement('canvas');
-		const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+		var canvas = document.createElement('canvas');
+		var gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
 		return gl.getParameter(gl.MAX_CUBE_MAP_TEXTURE_SIZE);
 	} catch (e) {
 		return undefined;
 	}
 })();
 
-export default MAX_CUBE_MAP_TEXTURE_SIZE;
+module.exports = MAX_CUBE_MAP_TEXTURE_SIZE;
