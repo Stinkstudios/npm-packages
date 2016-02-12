@@ -1,6 +1,6 @@
 {
   "name": "@sdldn/detector",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Collection of JS constants containing device, OS, browser and capability detection.",
   "keywords": [
     "detector",
