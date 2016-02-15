@@ -1,5 +1,5 @@
 {
-  "name": "@sdldn/detector",
+  "name": "@stinkdigital/detector",
   "version": "0.0.4",
   "description": "Collection of JS constants containing device, OS, browser and capability detection.",
   "keywords": [
