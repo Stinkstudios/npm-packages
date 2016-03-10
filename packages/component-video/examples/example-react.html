@@ -1,0 +1,69 @@
+<!-- example-react.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Example - with React</title>
+	<style style="text/css">
+		html, body {
+			width:100%;
+			height: 100%;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+		}
+
+		#root,
+		.video_container {
+			width:100%;
+			height:100%;
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<script src="https://fb.me/react-0.14.7.js"></script>
+	<script src="https://fb.me/react-dom-0.14.7.js"></script>	
+	<script src="../dist/video-component.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+	<div id="root"></div>
+	<script type="text/babel">
+		var ReactVideoPlayer = React.createClass({
+			componentDidMount() {
+				this._videoPlayer = new VideoPlayer(this.props);
+				this.refs.video_container.appendChild(this._videoPlayer.el);
+				this._videoPlayer.el.style.width = '100%';
+				this._videoPlayer.el.style.height = '100%';
+			},
+			componentWillUnMount(){
+				
+			},
+			render(){
+				return (
+					<div>
+						<div ref="video_container" className="video_container"/>
+					</div>
+				)
+			}
+		});
+
+		ReactDOM.render(
+			<ReactVideoPlayer
+				
+				src="assets/test.mp4"
+				onPlay={ (e) => {
+				 	console.log('Play')
+				}}
+				onProgress={ (e)=>{
+					console.log('Progressing')
+				}}
+				onEnd={ (e) => {
+				 	console.log('End')
+				}}/>,
+			document.getElementById('root')
+		)
+	</script>
+
+</body>
+</html>
