@@ -6,17 +6,11 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _AbstractPlayer2 = require('./AbstractPlayer');
+var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 
-var _AbstractPlayer3 = _interopRequireDefault(_AbstractPlayer2);
+var _BasicPlayer2 = require('./BasicPlayer');
 
-var _BasicPlayer = require('./BasicPlayer');
-
-var _BasicPlayer2 = _interopRequireDefault(_BasicPlayer);
-
-var _sono = require('@stinkdigital/sono');
-
-var _sono2 = _interopRequireDefault(_sono);
+var _BasicPlayer3 = _interopRequireDefault(_BasicPlayer2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -26,153 +20,155 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // InlinePlayer.js
 
-var InlinePlayer = function (_AbstractPlayer) {
-	_inherits(InlinePlayer, _AbstractPlayer);
+var InlinePlayer = function (_BasicPlayer) {
+	_inherits(InlinePlayer, _BasicPlayer);
 
-	function InlinePlayer(mSrc, mContainer) {
-		var mOptions = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
+	function InlinePlayer() {
+		var mOptions = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
 
 		_classCallCheck(this, InlinePlayer);
 
 		var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(InlinePlayer).call(this, mOptions));
 
-		_this._basicPlayer = new _BasicPlayer2.default(mSrc, null, mOptions);
+		_this._onAudioReady = function () {
+			_this.audioReady = true;
+			if (_this.autoplay) _this.play();
+		};
 
-		_this._canvas = document.createElement('canvas');
-		_this._ctx = _this._canvas.getContext('2d');
-		_this._time = 0;
+		_this._onAudioPlay = function () {
+			_this.playing = true;
+			_this.paused = false;
+			_this.autoPaused = false;
+			if (!_this._animateFrame) _this._render();
+		};
 
-		_this._container = mContainer;
-		_this._container.appendChild(_this._canvas);
-		_this._hasSetSize = false;
-		_this._loop();
-		_this._isPlaying = false;
+		_this._onAudioPause = function () {
+			_this.playing = false;
+			_this.paused = true;
+			_this._cancelAnimateFrame();
+		};
 
-		if (mOptions.audioSrc) {
-			_this._sound = _sono2.default.createSound({
-				src: mOptions.audioSrc,
-				loop: false,
-				volume: 1
-			});
-		}
+		_this._onAudioEnded = function () {
+			_this._cancelAnimateFrame();
+		};
+
+		_this._render = function () {
+			var videoFrame = 0 | _this.framerate * _this._sound.currentTime;
+			if (videoFrame !== _this.currentFrame || videoFrame === 0) {
+				_this.currentFrame = videoFrame;
+				_this.currentTime = (videoFrame / _this.framerate).toFixed(6);
+			}
+			_this._animateFrame = requestAnimationFrame(_this._render);
+		};
+
+		var _this$_options = _this._options;
+		var audioSrc = _this$_options.audioSrc;
+		var _this$_options$loop = _this$_options.loop;
+		var loop = _this$_options$loop === undefined ? false : _this$_options$loop;
+		var _this$_options$volume = _this$_options.volume;
+		var volume = _this$_options$volume === undefined ? 1 : _this$_options$volume;
+
+
+		_this.framerate = 24;
+		_this.loadHAudio(audioSrc, loop, volume);
+		_this._player.load();
 		return _this;
 	}
 
 	_createClass(InlinePlayer, [{
+		key: 'loadHAudio',
+		value: function loadHAudio(src, loop, volume) {
+			this._sound = document.createElement('audio');
+			document.body.appendChild(this._sound);
+			window._sound = this._sound;
+			this._sound.src = src;
+			this._sound.loop = loop;
+			this._sound.volume = volume;
+			this._addAudioListeners();
+			this._sound.load();
+		}
+	}, {
+		key: '_addAudioListeners',
+		value: function _addAudioListeners() {
+			this._sound.addEventListener('canplaythrough', this._onAudioReady);
+			this._sound.addEventListener('play', this._onAudioPlay);
+			this._sound.addEventListener('pause', this._onAudioPause);
+			this._sound.addEventListener('ended', this._onAudioEnded);
+		}
+	}, {
+		key: '_removeAudioListeners',
+		value: function _removeAudioListeners() {
+			this._sound.removeEventListener('canplaythrough', this._onAudioReady);
+			this._sound.removeEventListener('play', this._onAudioPlay);
+			this._sound.removeEventListener('pause', this._onAudioPause);
+			this._sound.removeEventListener('ended', this._onAudioEnded);
+		}
+	}, {
 		key: 'play',
 		value: function play() {
-			if (!this._basicPlayer) {
-				return;
-			}
-			this._basicPlayer.getPlayer().load();
-			this._isPlaying = true;
-			if (this._sound) {
-				this._sound.play();
-			}
+			if (!this._player) return;
+			if (this._player.playing) return;
+			this._sound.play();
 		}
 	}, {
 		key: 'pause',
-		value: function pause() {
-			if (!this._basicPlayer) {
-				return;
-			}
-			this._isPlaying = false;
-
-			if (this._sound) {
-				this._sound.pause();
+		value: function pause(autoPaused) {
+			if (!this._player) return;
+			if (this._player.paused) return;
+			this.autoPaused = autoPaused;
+			this._sound.pause();
+		}
+	}, {
+		key: '_cancelAnimateFrame',
+		value: function _cancelAnimateFrame() {
+			if (this._animateFrame) {
+				cancelAnimationFrame(this._animateFrame);
+				this._animateFrame = null;
 			}
 		}
 	}, {
-		key: 'seek',
-		value: function seek(time) {
-			if (!this._basicPlayer) {
-				return;
+		key: 'destroy',
+		value: function destroy() {
+			_get(Object.getPrototypeOf(InlinePlayer.prototype), 'destroy', this).call(this);
+			this._cancelAnimateFrame();
+			if (!this._sound) return;
+			this._removeAudioListeners();
+			this.sound.pause();
+			try {
+				this._sound.parentNode.removeChild(this._sound);
+			} catch (e) {
+				throw new Error('Error remove inline player audio elment ', e);
 			}
-			this._time = time;
+			this._sound = null;
 		}
 	}, {
-		key: 'getCurrentTime',
-		value: function getCurrentTime() {
-			if (!this._basicPlayer) {
-				return null;
-			}
-			return this._basicPlayer.getCurrentTime();
+		key: 'audioReady',
+		set: function set(value) {
+			this._audioReady = value;
+		},
+		get: function get() {
+			return this._audioReady;
 		}
 	}, {
-		key: 'getDuration',
-		value: function getDuration() {
-			if (!this._basicPlayer) {
-				return null;
-			}
-			return this._basicPlayer.getDuration();
+		key: 'framerate',
+		set: function set(value) {
+			this._framerate = value;
+		},
+		get: function get() {
+			return this._framerate;
 		}
 	}, {
-		key: 'getVolume',
-		value: function getVolume() {
-			if (!this._basicPlayer || !this._sound) {
-				return null;
-			}
-			if (this._sound) {
-				return this._sound.volume;
-			}
-
-			return null;
-		}
-	}, {
-		key: 'setVolume',
-		value: function setVolume(volume) {
-			if (!this._basicPlayer || !this._sound) {
-				return;
-			}
-			this._sound.volume = volume;
-		}
-	}, {
-		key: '_loop',
-		value: function _loop() {
-			var _this2 = this;
-
-			var player = this._basicPlayer.getPlayer();
-
-			if (this._isPlaying) {
-				this._time += 1 / 60;
-			}
-
-			if (this._time > this.getDuration()) {
-				this._time = this.getDuration();
-
-				this._isPlaying = false;
-				this._onVideoEnd();
-
-				if (this._looping) {
-					this.play();
-				}
-			}
-
-			player.currentTime = this._time;
-			this._ctx.clearRect(0, 0, this._canvas.width, this._canvas.height);
-			this._ctx.drawImage(this._basicPlayer.getPlayer(), 0, 0);
-
-			if (!this._hasSetSize && this._basicPlayer && this._basicPlayer.getPlayer().videoWidth > 0) {
-				this._setCanvasSize();
-			}
-			window.requestAnimationFrame(function () {
-				return _this2._loop();
-			});
-		}
-	}, {
-		key: '_setCanvasSize',
-		value: function _setCanvasSize() {
-			this._canvas.width = this._basicPlayer.getPlayer().videoWidth;
-			this._canvas.height = this._basicPlayer.getPlayer().videoHeight;
-			var strPx = 'px';
-			this._canvas.style.width = this._canvas.width + strPx;
-			this._canvas.style.height = this._canvas.height + strPx;
-
-			this._hasSetSize = true;
+		key: 'currentFrame',
+		set: function set(value) {
+			this._currentFrame = value;
+		},
+		get: function get() {
+			return this._currentFrame;
 		}
 	}]);
 
 	return InlinePlayer;
-}(_AbstractPlayer3.default);
+}(_BasicPlayer3.default);
 
 exports.default = InlinePlayer;
+module.exports = exports['default'];

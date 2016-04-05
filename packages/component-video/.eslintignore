@@ -1,5 +1,6 @@
-dist/**
-examples/**
-lab/**
+build/**
+example/index.html
+example/assets/**
+lib/**
 node_modules/**
 test/**

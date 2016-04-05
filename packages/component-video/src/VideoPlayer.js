@@ -1,110 +1,78 @@
-// VideoPlayer.js
-
+import {
+	IS_IOS,
+	IOS_VERSION,
+	VISIBILITY_CHANGE_EVENT_NAME,
+	HIDDEN_PROPERTY_NAME,
+} from '@stinkdigital/detector';
 import YoutubePlayer from './players/YoutubePlayer';
 import BasicPlayer from './players/BasicPlayer';
 import InlinePlayer from './players/InlinePlayer';
-import Detector from '@stinkdigital/detector';
 
-class VideoPlayer {
+export default class VideoPlayer {
 
-	constructor(mOptions = {}) {
-		this.isMobile = Detector.IS_MOBILE;
+	constructor(options = {}) {
+		const forceInline = (IS_IOS && IOS_VERSION >= 8);
 
-		if (mOptions.domElement) {
-			this._container = mOptions.domElement;
+		if (options.youtubeId) {
+			this._player = new YoutubePlayer(options);
+			this._player._addToDom();
 		} else {
-			this._container = document.createElement('div');
-		}
-
-
-		if (mOptions.youtubeId) {
-			this._player = new YoutubePlayer(mOptions.youtubeId, this._container, mOptions);
-		} else {
-			const forceNativePlayer = !!mOptions.forceNativePlayer;
-
-			if (this.isMobile) {
-				if (forceNativePlayer) {
-					this._player = new BasicPlayer(mOptions.src, this._container, mOptions);
+			if (forceInline) {
+				if (options.forceNativePlayer) {
+					this._player = new BasicPlayer(options);
 				} else {
-					this._player = new InlinePlayer(mOptions.src, this._container, mOptions);
+					this._player = new InlinePlayer(options);
 				}
 			} else {
-				this._player = new BasicPlayer(mOptions.src, this._container, mOptions);
+				this._player = new BasicPlayer(options);
 			}
+		}
+
+		this._handlePageVisiblity();
+		if (this.resize) this._handlePageResize();
+		return this._player;
+	}
+
+	_handlePageVisiblity(remove = false) {
+		this._hidden = HIDDEN_PROPERTY_NAME;
+		this._pageVisiblity = VISIBILITY_CHANGE_EVENT_NAME;
+		if (this._hidden === undefined && this._pageVisiblity === undefined) return;
+
+		if (remove) {
+			document.removeEventListener(this._pageVisiblity, this._onPageVisiblityChange, false);
+			return;
+		}
+		document.addEventListener(this._pageVisiblity, this._onPageVisiblityChange, false);
+	}
+
+	_onPageVisiblityChange = () => {
+		if (document[this._hidden]) {
+			/*
+				to catch if the user has already paused video via any controls
+				passing through the paused state to set autoPaused
+			 */
+			if (!this._player.paused) this._player.pause(!this._player.paused);
+		} else {
+			/*
+				if video auto paused by visibilitychange then auto play video
+			 */
+			if (this._player.autoPaused) this._player.play();
 		}
 	}
 
-
-	//	PUBLIC METHODS
-
-	load(mSrc) {
-		if (!this._player) { return;	}
-		this._player.load(mSrc);
+	_handlePageResize(remove = false) {
+		if (!window) return;
+		if (remove) {
+			window.removeEventListener('resize', this._player._onVideoResize);
+			return;
+		}
+		window.addEventListener('resize', this._player._onVideoResize);
 	}
 
-	play() {
-		if (!this._player) { return;	}
-		this._player.play();
+	destroy() {
+		this._handlePageVisiblity(true);
+		if (this._options.resize) this._handlePageResize(true);
+		this._player.destroy();
 	}
 
-
-	pause() {
-		if (!this._player) { return;	}
-		this._player.pause();
-	}
-
-
-	seek(time) {
-		if (!this._player) { return;	}
-		this._player.seek(time);
-	}
-
-
-	getCurrentTime() {
-		if (!this._player) { return null;	}
-		return this._player.getCurrentTime();
-	}
-
-
-	getDuration() {
-		if (!this._player) { return null;	}
-		return this._player.getDuration();
-	}
-
-
-	getVolume() {
-		if (!this._player) { return null;	}
-		return this._player.getVolume();
-	}
-
-
-	setVolume(volume) {
-		if (!this._player) { return;	}
-
-		this._player.setVolume(volume);
-	}
-
-
-	isPlaying() {
-
-	}
-
-
-	setLoop(value) {
-		if (!this._player) { return; }
-		this._player.setLoop(value);
-	}
-
-
-	//	GET DOM ELEMENT
-
-	get domElement() {
-		return this._container;
-	}
-
-	get el() {
-		return this._container;
-	}
 }
-
-export default VideoPlayer;

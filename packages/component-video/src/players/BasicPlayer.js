@@ -1,136 +1,132 @@
-// BasicPlayer.js
 import AbstractPlayer from './AbstractPlayer';
 
-class BasicPlayer extends AbstractPlayer {
+export default class BasicPlayer extends AbstractPlayer {
 
-	constructor(mSrc, mContainer, mOptions = {}) {
+	constructor(mOptions = {}) {
 		super(mOptions);
-
+		if (!document || !window) {
+			throw new Error('BasicPlayer no document or window to createElement video');
+		}
 		this._player = document.createElement('video');
 
-		if (mContainer) {
-			this._container = mContainer;
-			this._container.appendChild(this._player);
-		}
+		const {
+			src,
+			loop = false,
+			controls = true,
+			volume = 1,
+			preload = 'auto',
+			crossOrigin = null,
+		} = this._options;
 
+		this.loop = loop;
+		this.controls = controls;
+		this.volume = volume;
+		this.preload = preload;
+		if (crossOrigin) this.crossOrigin = crossOrigin;
+		this._player.autoplay = this.autoplay;
+		this.src = src;
+	}
 
-		this._player.src = mSrc;
+	set src(value) {
+		this._replace(value);
+		this._player.src = value;
 		this._addListeners();
-		this.play();
-
-
-		if (mOptions.muted) {
-			this.setVolume(0);
-		}
-
-		if (mOptions.loop) {
-			this.setLoop(true);
-		}
-
-		if (mOptions.controls) {
-			this._player.setAttribute('controls', true);
-		}
 	}
 
-	load(mSrc) {
-		this._player.src = mSrc;
-		this.play();
+	set volume(value) {
+		this._player.volume = value;
 	}
-
-
-	play() {
-		if (!this._player) { return;	}
-		this._player.play();
+	set loop(value) {
+		this.looping = value;
+		this._player.loop = value;
 	}
-
-
-	pause() {
-		if (!this._player) { return;	}
-		this._player.pause();
+	set controls(value) {
+		this._player.controls = value;
 	}
-
-
-	seek(time) {
-		if (!this._player) { return;	}
+	set preload(value) {
+		this._player.preload = value;
+	}
+	set crossOrigin(value) {
+		this._player.crossOrigin = value;
+	}
+	set currentTime(time) {
+		/* TODO add check for time format */
 		this._player.currentTime = time;
 	}
 
-
-	getCurrentTime() {
-		if (!this._player) { return null;	}
+	get src() {
+		return this._player.src;
+	}
+	get currentTime() {
 		return this._player.currentTime;
 	}
-
-
-	getDuration() {
-		if (!this._player) { return null;	}
+	get duration() {
 		return this._player.duration;
 	}
-
-
-	getVolume() {
-		if (!this._player) { return null;	}
+	get volume() {
 		return this._player.volume;
 	}
 
-
-	setVolume(volume) {
-		if (!this._player) { return;	}
-
-		this._player.volume = volume;
+	play() {
+		super.play();
+		this._player.play();
 	}
 
-
-	setLoop(value) {
-		if (!this._player) { return; }
-		this._player.loop = value;
-		super.setLoop(value);
+	pause(autoPaused) {
+		super.pause(autoPaused);
+		this._player.pause();
 	}
 
-
-	getPlayer() {
-		return this._player;
+	seek(time) {
+		if (!this.videoReady) return;
+		this.currentTime = time;
 	}
-
-
-	//	EVENT LISTENERS
 
 	_addListeners() {
 		this._removeListeners();
 
-		this._player.addEventListener('ended', this._endedBind);
-		this._player.addEventListener('error', this._errorBind);
-		this._player.addEventListener('play', this._playBind);
-		this._player.addEventListener('pause', this._pauseBind);
-		this._player.addEventListener('progress', this._progressBind);
+		this._player.addEventListener('loadedmetadata', this._onVideoMetadata);
+		this._player.addEventListener('canplaythrough', this._onVideoCanPlayThrough);
+		this._player.addEventListener('ended', this._onVideoEnd);
+		this._player.addEventListener('error', this._onVideoError);
+		this._player.addEventListener('play', this._onVideoPlay);
+		this._player.addEventListener('pause', this._onVideoPause);
+		this._player.addEventListener('progress', this._onVideoProgress);
+		this._player.addEventListener('timeupdate', this._onTimeUpdate);
 	}
-
 
 	_removeListeners() {
-		this._player.removeEventListener('ended', this._endedBind);
-		this._player.removeEventListener('error', this._errorBind);
-		this._player.removeEventListener('play', this._playBind);
-		this._player.removeEventListener('pause', this._pauseBind);
-		this._player.removeEventListener('progress', this._progressBind);
+		this._player.removeEventListener('loadedmetadata', this._onVideoMetadata);
+		this._player.removeEventListener('canplaythrough', this._onVideoCanPlayThrough);
+		this._player.removeEventListener('ended', this._onVideoEnd);
+		this._player.removeEventListener('error', this._onVideoError);
+		this._player.removeEventListener('play', this._onVideoPlay);
+		this._player.removeEventListener('pause', this._onVideoPause);
+		this._player.removeEventListener('progress', this._onVideoProgress);
+		this._player.removeEventListener('timeupdate', this._onTimeUpdate);
 	}
 
+	_replace(newsrc) {
+		if (!this._player) return;
+		if (this.src && this.src !== newsrc) {
+			this._removeListeners();
+			this._player.pause();
+		}
+	}
 	//	Destroy
 
 	destroy() {
 		if (!this._player) {
 			return;
 		}
-
-		super.destroy();
+		this._removeListeners();
 
 		this._player.pause();
 		try {
 			this._player.parentNode.removeChild(this._player);
 		} catch (e) {
-			// console.log('Error remove player element : ', this._player, this._player.parentNode);
+			throw new Error('Error remove player element : ', e);
 		}
 		this._player = null;
 	}
 }
-
-export default BasicPlayer;

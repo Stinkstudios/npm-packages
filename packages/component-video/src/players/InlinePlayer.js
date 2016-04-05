@@ -1,135 +1,129 @@
 // InlinePlayer.js
 
-import AbstractPlayer from './AbstractPlayer';
 import BasicPlayer from './BasicPlayer';
-import sono from '@stinkdigital/sono';
 
-class InlinePlayer extends AbstractPlayer {
+export default class InlinePlayer extends BasicPlayer {
 
-	constructor(mSrc, mContainer, mOptions = {}) {
+	constructor(mOptions = {}) {
 		super(mOptions);
-		this._basicPlayer = new BasicPlayer(mSrc, null, mOptions);
 
-		this._canvas = document.createElement('canvas');
-		this._ctx = this._canvas.getContext('2d');
-		this._time = 0;
+		const {
+			audioSrc,
+			loop = false,
+			volume = 1,
+		} = this._options;
 
-		this._container = mContainer;
-		this._container.appendChild(this._canvas);
-		this._hasSetSize = false;
-		this._loop();
-		this._isPlaying = false;
+		this.framerate = 24;
+		this.loadHAudio(audioSrc, loop, volume);
+		this._player.load();
+	}
 
+	loadHAudio(src, loop, volume) {
+		this._sound = document.createElement('audio');
+		document.body.appendChild(this._sound);
+		window._sound = this._sound;
+		this._sound.src = src;
+		this._sound.loop = loop;
+		this._sound.volume = volume;
+		this._addAudioListeners();
+		this._sound.load();
+	}
 
-		if (mOptions.audioSrc) {
-			this._sound = sono.createSound({
-				src: mOptions.audioSrc,
-				loop: false,
-				volume: 1,
-			});
+	_onAudioReady = () => {
+		this.audioReady = true;
+		if (this.autoplay) this.play();
+	}
+	_onAudioPlay = () => {
+		this.playing = true;
+		this.paused = false;
+		this.autoPaused = false;
+		if (!this._animateFrame) this._render();
+	}
+	_onAudioPause = () => {
+		this.playing = false;
+		this.paused = true;
+		this._cancelAnimateFrame();
+	}
+	_onAudioEnded = () => {
+		this._cancelAnimateFrame();
+	}
+
+	set audioReady(value) {
+		this._audioReady = value;
+	}
+	get audioReady() {
+		return this._audioReady;
+	}
+
+	set framerate(value) {
+		this._framerate = value;
+	}
+	get framerate() {
+		return this._framerate;
+	}
+
+	set currentFrame(value) {
+		this._currentFrame = value;
+	}
+	get currentFrame() {
+		return this._currentFrame;
+	}
+
+	_addAudioListeners() {
+		this._sound.addEventListener('canplaythrough', this._onAudioReady);
+		this._sound.addEventListener('play', this._onAudioPlay);
+		this._sound.addEventListener('pause', this._onAudioPause);
+		this._sound.addEventListener('ended', this._onAudioEnded);
+	}
+
+	_removeAudioListeners() {
+		this._sound.removeEventListener('canplaythrough', this._onAudioReady);
+		this._sound.removeEventListener('play', this._onAudioPlay);
+		this._sound.removeEventListener('pause', this._onAudioPause);
+		this._sound.removeEventListener('ended', this._onAudioEnded);
+	}
+
+	_render = () => {
+		const videoFrame = 0 | this.framerate * (this._sound.currentTime);
+		if ((videoFrame !== this.currentFrame) || videoFrame === 0) {
+			this.currentFrame = videoFrame;
+			this.currentTime = (videoFrame / this.framerate).toFixed(6);
 		}
+		this._animateFrame = requestAnimationFrame(this._render);
 	}
-
-
-	load(mSrc) {
-		this._basicPlayer.load(mSrc);
-		this.play();
-	}
-
 
 	play() {
-		if (!this._basicPlayer) { return;	}
-		this._basicPlayer.getPlayer().load();
-		this._isPlaying = true;
-		if (this._sound) {
-			this._sound.play();
+		if (!this._player) return;
+		if (this._player.playing) return;
+		this._sound.play();
+	}
+
+	pause(autoPaused) {
+		if (!this._player) return;
+		if (this._player.paused) return;
+		this.autoPaused = autoPaused;
+		this._sound.pause();
+	}
+
+	_cancelAnimateFrame() {
+		if (this._animateFrame) {
+			cancelAnimationFrame(this._animateFrame);
+			this._animateFrame = null;
 		}
 	}
 
-
-	pause() {
-		if (!this._basicPlayer) { return;	}
-		this._isPlaying = false;
-
-		if (this._sound) {
-			this._sound.pause();
+	destroy() {
+		super.destroy();
+		this._cancelAnimateFrame();
+		if (!this._sound) return;
+		this._removeAudioListeners();
+		this.sound.pause();
+		try {
+			this._sound.parentNode.removeChild(this._sound);
+		} catch (e) {
+			throw new Error('Error remove inline player audio elment ', e);
 		}
+		this._sound = null;
 	}
 
-
-	seek(time) {
-		if (!this._basicPlayer) { return;	}
-		this._time = time;
-	}
-
-
-	getCurrentTime() {
-		if (!this._basicPlayer) { return null;	}
-		return this._basicPlayer.getCurrentTime();
-	}
-
-
-	getDuration() {
-		if (!this._basicPlayer) { return null;	}
-		return this._basicPlayer.getDuration();
-	}
-
-
-	getVolume() {
-		if (!this._basicPlayer || !this._sound) { return null;	}
-		if (this._sound) {
-			return this._sound.volume;
-		}
-
-		return null;
-	}
-
-
-	setVolume(volume) {
-		if (!this._basicPlayer || !this._sound) { return;	}
-		this._sound.volume = volume;
-	}
-
-
-	_loop() {
-		const player = this._basicPlayer.getPlayer();
-
-		if (this._isPlaying) {
-			this._time += 1 / 60;
-		}
-
-		if (this._time > this.getDuration()) {
-			this._time = this.getDuration();
-
-			this._isPlaying = false;
-			this._onVideoEnd();
-
-			if (this._looping) {
-				this.play();
-			}
-		}
-
-		player.currentTime = this._time;
-		this._ctx.clearRect(0, 0, this._canvas.width, this._canvas.height);
-		this._ctx.drawImage(this._basicPlayer.getPlayer(), 0, 0);
-
-		if (!this._hasSetSize && this._basicPlayer && this._basicPlayer.getPlayer().videoWidth > 0) {
-			this._setCanvasSize();
-		}
-		window.requestAnimationFrame(() => this._loop());
-	}
-
-
-	_setCanvasSize() {
-		this._canvas.width = this._basicPlayer.getPlayer().videoWidth;
-		this._canvas.height = this._basicPlayer.getPlayer().videoHeight;
-		const strPx = 'px';
-		this._canvas.style.width = this._canvas.width + strPx;
-		this._canvas.style.height = this._canvas.height + strPx;
-
-		this._hasSetSize = true;
-	}
 }
-
-
-export default InlinePlayer;
