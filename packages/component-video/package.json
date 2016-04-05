@@ -25,7 +25,6 @@
   "homepage": "https://github.com/Stinkdigital/component-video#readme",
   "dependencies": {
     "@stinkdigital/detector": "^0.0.4",
-    "@stinkdigital/sono": "^0.1.2",
     "load-script": "^1.0.0"
   },
   "devDependencies": {
