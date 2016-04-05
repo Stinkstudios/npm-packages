@@ -18,129 +18,100 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // BasicPlayer.js
-
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var BasicPlayer = function (_AbstractPlayer) {
 	_inherits(BasicPlayer, _AbstractPlayer);
 
-	function BasicPlayer(mSrc, mContainer) {
-		var mOptions = arguments.length <= 2 || arguments[2] === undefined ? {} : arguments[2];
+	function BasicPlayer() {
+		var mOptions = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
 
 		_classCallCheck(this, BasicPlayer);
 
 		var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(BasicPlayer).call(this, mOptions));
 
-		_this._player = document.createElement('video');
-		_this._player.style.width = '100%';
-		_this._player.style.height = '100%';
-
-		if (mContainer) {
-			_this._container = mContainer;
-			_this._container.appendChild(_this._player);
+		if (!document || !window) {
+			throw new Error('BasicPlayer no document or window to createElement video');
 		}
+		_this._player = document.createElement('video');
 
-		_this._player.src = mSrc;
-		_this._addListeners();
-		_this.play();
+		var _this$_options = _this._options;
+		var src = _this$_options.src;
+		var _this$_options$loop = _this$_options.loop;
+		var loop = _this$_options$loop === undefined ? false : _this$_options$loop;
+		var _this$_options$contro = _this$_options.controls;
+		var controls = _this$_options$contro === undefined ? true : _this$_options$contro;
+		var _this$_options$volume = _this$_options.volume;
+		var volume = _this$_options$volume === undefined ? 1 : _this$_options$volume;
+		var _this$_options$preloa = _this$_options.preload;
+		var preload = _this$_options$preloa === undefined ? 'auto' : _this$_options$preloa;
+		var _this$_options$crossO = _this$_options.crossOrigin;
+		var crossOrigin = _this$_options$crossO === undefined ? null : _this$_options$crossO;
+
+
+		_this.loop = loop;
+		_this.controls = controls;
+		_this.volume = volume;
+		_this.preload = preload;
+		if (crossOrigin) _this.crossOrigin = crossOrigin;
+		_this._player.autoplay = _this.autoplay;
+		_this.src = src;
 		return _this;
 	}
 
 	_createClass(BasicPlayer, [{
 		key: 'play',
 		value: function play() {
-			if (!this._player) {
-				return;
-			}
+			_get(Object.getPrototypeOf(BasicPlayer.prototype), 'play', this).call(this);
 			this._player.play();
 		}
 	}, {
 		key: 'pause',
-		value: function pause() {
-			if (!this._player) {
-				return;
-			}
+		value: function pause(autoPaused) {
+			_get(Object.getPrototypeOf(BasicPlayer.prototype), 'pause', this).call(this, autoPaused);
 			this._player.pause();
 		}
 	}, {
 		key: 'seek',
 		value: function seek(time) {
-			if (!this._player) {
-				return;
-			}
-			this._player.currentTime = time;
+			if (!this.videoReady) return;
+			this.currentTime = time;
 		}
-	}, {
-		key: 'getCurrentTime',
-		value: function getCurrentTime() {
-			if (!this._player) {
-				return null;
-			}
-			return this._player.currentTime;
-		}
-	}, {
-		key: 'getDuration',
-		value: function getDuration() {
-			if (!this._player) {
-				return null;
-			}
-			return this._player.duration;
-		}
-	}, {
-		key: 'getVolume',
-		value: function getVolume() {
-			if (!this._player) {
-				return null;
-			}
-			return this._player.volume;
-		}
-	}, {
-		key: 'setVolume',
-		value: function setVolume(volume) {
-			if (!this._player) {
-				return;
-			}
-
-			this._player.volume = volume;
-		}
-	}, {
-		key: 'setLoop',
-		value: function setLoop(value) {
-			if (!this._player) {
-				return;
-			}
-			this._player.loop = value;
-			_get(Object.getPrototypeOf(BasicPlayer.prototype), 'setLoop', this).call(this, value);
-		}
-	}, {
-		key: 'getPlayer',
-		value: function getPlayer() {
-			return this._player;
-		}
-
-		//	EVENT LISTENERS
-
 	}, {
 		key: '_addListeners',
 		value: function _addListeners() {
 			this._removeListeners();
 
-			this._player.addEventListener('ended', this._endedBind);
-			this._player.addEventListener('error', this._errorBind);
-			this._player.addEventListener('play', this._playBind);
-			this._player.addEventListener('pause', this._pauseBind);
-			this._player.addEventListener('progress', this._progressBind);
+			this._player.addEventListener('loadedmetadata', this._onVideoMetadata);
+			this._player.addEventListener('canplaythrough', this._onVideoCanPlayThrough);
+			this._player.addEventListener('ended', this._onVideoEnd);
+			this._player.addEventListener('error', this._onVideoError);
+			this._player.addEventListener('play', this._onVideoPlay);
+			this._player.addEventListener('pause', this._onVideoPause);
+			this._player.addEventListener('progress', this._onVideoProgress);
+			this._player.addEventListener('timeupdate', this._onTimeUpdate);
 		}
 	}, {
 		key: '_removeListeners',
 		value: function _removeListeners() {
-			this._player.removeEventListener('ended', this._endedBind);
-			this._player.removeEventListener('error', this._errorBind);
-			this._player.removeEventListener('play', this._playBind);
-			this._player.removeEventListener('pause', this._pauseBind);
-			this._player.removeEventListener('progress', this._progressBind);
+			this._player.removeEventListener('loadedmetadata', this._onVideoMetadata);
+			this._player.removeEventListener('canplaythrough', this._onVideoCanPlayThrough);
+			this._player.removeEventListener('ended', this._onVideoEnd);
+			this._player.removeEventListener('error', this._onVideoError);
+			this._player.removeEventListener('play', this._onVideoPlay);
+			this._player.removeEventListener('pause', this._onVideoPause);
+			this._player.removeEventListener('progress', this._onVideoProgress);
+			this._player.removeEventListener('timeupdate', this._onTimeUpdate);
 		}
-
+	}, {
+		key: '_replace',
+		value: function _replace(newsrc) {
+			if (!this._player) return;
+			if (this.src && this.src !== newsrc) {
+				this._removeListeners();
+				this._player.pause();
+			}
+		}
 		//	Destroy
 
 	}, {
@@ -149,16 +120,68 @@ var BasicPlayer = function (_AbstractPlayer) {
 			if (!this._player) {
 				return;
 			}
-
-			_get(Object.getPrototypeOf(BasicPlayer.prototype), 'destroy', this).call(this);
+			this._removeListeners();
 
 			this._player.pause();
 			try {
 				this._player.parentNode.removeChild(this._player);
 			} catch (e) {
-				// console.log('Error remove player element : ', this._player, this._player.parentNode);
+				throw new Error('Error remove player element : ', e);
 			}
 			this._player = null;
+		}
+	}, {
+		key: 'src',
+		set: function set(value) {
+			this._replace(value);
+			this._player.src = value;
+			this._addListeners();
+		},
+		get: function get() {
+			return this._player.src;
+		}
+	}, {
+		key: 'volume',
+		set: function set(value) {
+			this._player.volume = value;
+		},
+		get: function get() {
+			return this._player.volume;
+		}
+	}, {
+		key: 'loop',
+		set: function set(value) {
+			this.looping = value;
+			this._player.loop = value;
+		}
+	}, {
+		key: 'controls',
+		set: function set(value) {
+			this._player.controls = value;
+		}
+	}, {
+		key: 'preload',
+		set: function set(value) {
+			this._player.preload = value;
+		}
+	}, {
+		key: 'crossOrigin',
+		set: function set(value) {
+			this._player.crossOrigin = value;
+		}
+	}, {
+		key: 'currentTime',
+		set: function set(time) {
+			/* TODO add check for time format */
+			this._player.currentTime = time;
+		},
+		get: function get() {
+			return this._player.currentTime;
+		}
+	}, {
+		key: 'duration',
+		get: function get() {
+			return this._player.duration;
 		}
 	}]);
 
@@ -166,3 +189,4 @@ var BasicPlayer = function (_AbstractPlayer) {
 }(_AbstractPlayer3.default);
 
 exports.default = BasicPlayer;
+module.exports = exports['default'];
