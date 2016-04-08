@@ -24,6 +24,7 @@ export default class YoutubePlayer extends AbstractPlayer {
 	get width() {
 		return this.el.getBoundingClientRect().width;
 	}
+
 	get height() {
 		return this.el.getBoundingClientRect().height;
 	}
@@ -49,6 +50,10 @@ export default class YoutubePlayer extends AbstractPlayer {
 
 	get duration() {
 		return this._player.getDuration();
+	}
+
+	setSize(width, height) {
+		this._player.setSize(width, height);
 	}
 
 	play() {
@@ -92,8 +97,8 @@ export default class YoutubePlayer extends AbstractPlayer {
 		this._getSDK()
 			.then((YT) => {
 				this._player = new YT.Player(this._el, {
-					width: '100%',
-					height: '100%',
+					width: this._options.width,
+					height: this._options.height,
 					videoId: this._options.youtubeId,
 					playerVars: {
 						...DEFAULT_PLAYER_VARS,

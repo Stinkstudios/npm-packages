@@ -32,6 +32,8 @@ document.body.appendChild(videoPlayer.el);
  - `volume : int` (1)
  - `controls : boolean` (true)
  - `resize : boolean` (false) (disabled if youtubeId is present)
+ - `width : string` ('100%')
+ - `height : string` ('100%')
 
 
  ### Event Callbacks
@@ -59,6 +61,7 @@ document.body.appendChild(videoPlayer.el);
  - `duration` (returns video total duration)
  - `volume : int` (0 - 1) (can set or get the video volume)
  - `videoReady : boolean` (returns if video is in ready state boolean)
+ - `setSize(width:string, height:string)`
 
 
 
