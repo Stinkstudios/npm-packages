@@ -9,7 +9,12 @@ export default class AbstractPlayer {
 			autoplay = false,
 			loop = false,
 			resize = false,
+			width = '100%',
+			height = '100%',
 		} = this._options;
+
+		this._options.width = width;
+		this._options.height = height;
 
 		this.autoplay = autoplay;
 		this.looping = loop;
@@ -103,11 +108,25 @@ export default class AbstractPlayer {
 		return this._player;
 	}
 
+	set width(value) {
+		this.el.style.width = value;
+	}
+
 	get width() {
 		return this.el.videoWidth;
 	}
+
+	set height(value) {
+		this.el.style.height = value;
+	}
+
 	get height() {
 		return this.el.videoHeight;
+	}
+
+	setSize(width, height) {
+		this.width = width;
+		this.height = height;
 	}
 
 	_addToDom() {
@@ -116,6 +135,9 @@ export default class AbstractPlayer {
 	}
 
 	_onVideoMetadata = (e = {}) => {
+		if (!this.resize) {
+			this.setSize(this._options.width, this._options.height);
+		}
 		this._addToDom();
 		if (this._options.resize) this._onVideoResize();
 		if (this._callbackMetadata) this._callbackMetadata(e);
@@ -169,8 +191,7 @@ export default class AbstractPlayer {
 		const areaHeight = this._options.el ? this._options.el.offsetHeight : window.innerHeight;
 		const scale = Math.max(areaWidth / width, areaHeight / height);
 
-		el.style.width = `${Math.ceil(width * scale)}px`;
-		el.style.height = `${Math.ceil(height * scale)}px`;
+		this.setSize(`${Math.ceil(width * scale)}px`, `${Math.ceil(height * scale)}px`);
 		el.style.top = `${Math.ceil((areaHeight - height * scale) / 2)}px`;
 		el.style.left = `${Math.ceil((areaWidth - width * scale) / 2)}px`;
 	}
