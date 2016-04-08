@@ -79,6 +79,11 @@ var YoutubePlayer = function (_AbstractPlayer) {
 	}
 
 	_createClass(YoutubePlayer, [{
+		key: 'setSize',
+		value: function setSize(width, height) {
+			this._player.setSize(width, height);
+		}
+	}, {
 		key: 'play',
 		value: function play() {
 			_get(Object.getPrototypeOf(YoutubePlayer.prototype), 'play', this).call(this);
@@ -129,8 +134,8 @@ var YoutubePlayer = function (_AbstractPlayer) {
 
 			this._getSDK().then(function (YT) {
 				_this2._player = new YT.Player(_this2._el, {
-					width: '100%',
-					height: '100%',
+					width: _this2._options.width,
+					height: _this2._options.height,
 					videoId: _this2._options.youtubeId,
 					playerVars: _extends({}, DEFAULT_PLAYER_VARS, {
 						controls: controls,
