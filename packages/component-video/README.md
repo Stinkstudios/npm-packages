@@ -21,17 +21,19 @@ document.body.appendChild(videoPlayer.el);
 ```
 
 ### Parameters for VideoPlayer
- - `el: dom element` (dom element to attach player to)
+ - `el: dom element` ( dom element to attach player to )
  - `src: string`
- - `audioSrc: string`  ( Only works on mobile devices where use Inline player)
- - `youtubeId: string`  ( If have this parameter it will ignore the other sources and play the youtube video)
+ - `audioSrc: string`  ( Only works on mobile devices where use Inline player )
+ - `youtubeId: string`  ( If have this parameter it will ignore the other sources and play the youtube video )
  - `loop : boolean` (false)
  - `autoplay : boolean` (false)
  - `preload : string` ('auto')
  - `crossOrigin : null`
  - `volume : int` (1)
  - `controls : boolean` (true)
+ - `forceInline : boolean` (false) ( Enables the iOS hack to play video inline )
  - `resize : boolean` (false) (disabled if youtubeId is present)
+ - `pageVisibility : boolean` (false) ( Will pause and play the video on pageVisibility change )
  - `width : string` ('100%')
  - `height : string` ('100%')
 

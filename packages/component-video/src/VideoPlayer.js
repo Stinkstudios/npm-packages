@@ -1,17 +1,15 @@
-import {
-	IS_IOS,
-	IOS_VERSION,
-	VISIBILITY_CHANGE_EVENT_NAME,
-	HIDDEN_PROPERTY_NAME,
-} from '@stinkdigital/detector';
 import YoutubePlayer from './players/YoutubePlayer';
 import BasicPlayer from './players/BasicPlayer';
 import InlinePlayer from './players/InlinePlayer';
 
+const Detector = process.browser ? require('@stinkdigital/detector') : null;
+
 export default class VideoPlayer {
 
 	constructor(options = {}) {
-		const forceInline = (IS_IOS && IOS_VERSION >= 8);
+		const {
+			forceInline = false,
+		} = options;
 
 		if (options.youtubeId) {
 			this._player = new YoutubePlayer(options);
@@ -28,24 +26,26 @@ export default class VideoPlayer {
 			}
 		}
 
-		this._handlePageVisiblity();
-		if (this.resize) this._handlePageResize();
+		if (this._player._options.pageVisibility) this._handlePageVisibility();
+		if (this._player._options.resize) this._handlePageResize();
 		return this._player;
 	}
 
-	_handlePageVisiblity(remove = false) {
-		this._hidden = HIDDEN_PROPERTY_NAME;
-		this._pageVisiblity = VISIBILITY_CHANGE_EVENT_NAME;
-		if (this._hidden === undefined && this._pageVisiblity === undefined) return;
+	_handlePageVisibility(remove = false) {
+		if (!Detector) return;
+		this._hidden = Detector.HIDDEN_PROPERTY_NAME;
+		const _pageVisibility = Detector.VISIBILITY_CHANGE_EVENT_NAME;
+		if (this._hidden === undefined && _pageVisibility === undefined) return;
 
 		if (remove) {
-			document.removeEventListener(this._pageVisiblity, this._onPageVisiblityChange, false);
+			document.removeEventListener(_pageVisibility, this._onPageVisibilityChange, false);
 			return;
 		}
-		document.addEventListener(this._pageVisiblity, this._onPageVisiblityChange, false);
+		document.addEventListener(_pageVisibility, this._onPageVisibilityChange, false);
 	}
 
-	_onPageVisiblityChange = () => {
+	_onPageVisibilityChange = () => {
+		if (!document) return;
 		if (document[this._hidden]) {
 			/*
 				to catch if the user has already paused video via any controls
@@ -70,8 +70,8 @@ export default class VideoPlayer {
 	}
 
 	destroy() {
-		this._handlePageVisiblity(true);
-		if (this._options.resize) this._handlePageResize(true);
+		if (this._player._options.pageVisibility) this._handlePageVisibility(true);
+		if (this._player._options.resize) this._handlePageResize(true);
 		this._player.destroy();
 	}
 

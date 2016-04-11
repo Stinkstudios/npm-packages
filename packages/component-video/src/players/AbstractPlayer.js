@@ -11,8 +11,11 @@ export default class AbstractPlayer {
 			resize = false,
 			width = '100%',
 			height = '100%',
+			pageVisibility = false,
 		} = this._options;
 
+		this._options.resize = this._options.youtubeId ? false : resize;
+		this._options.pageVisibility = pageVisibility;
 		this._options.width = width;
 		this._options.height = height;
 
@@ -22,7 +25,6 @@ export default class AbstractPlayer {
 		this.paused = true;
 		this.autoPaused = false;
 		this.videoReady = false;
-		this.resize = this._options.youtubeId ? false : resize;
 
 		this._callbackMetadata = this._options.onMetadata;
 		this._callbackCanPlay = this._options.onCanPlay;
@@ -135,7 +137,7 @@ export default class AbstractPlayer {
 	}
 
 	_onVideoMetadata = (e = {}) => {
-		if (!this.resize) {
+		if (!this._options.resize) {
 			this.setSize(this._options.width, this._options.height);
 		}
 		this._addToDom();
@@ -190,10 +192,7 @@ export default class AbstractPlayer {
 		const areaWidth = this._options.el ? this._options.el.offsetWidth : window.innerWidth;
 		const areaHeight = this._options.el ? this._options.el.offsetHeight : window.innerHeight;
 		const scale = Math.max(areaWidth / width, areaHeight / height);
-
-		this.setSize(`${Math.ceil(width * scale)}px`, `${Math.ceil(height * scale)}px`);
-		el.style.top = `${Math.ceil((areaHeight - height * scale) / 2)}px`;
-		el.style.left = `${Math.ceil((areaWidth - width * scale) / 2)}px`;
+		el.style.cssText = `width:${Math.ceil(width * scale)}px; height:${Math.ceil(height * scale)}px; position:absolute; top:${Math.ceil((areaHeight - height * scale) / 2)}px; left:${Math.ceil((areaWidth - width * scale) / 2)}px;`; // eslint-disable-line max-len
 	}
 
 	_onTimeUpdate = (e) => {
