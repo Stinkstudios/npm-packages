@@ -6,8 +6,6 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _detector = require('@stinkdigital/detector');
-
 var _YoutubePlayer = require('./players/YoutubePlayer');
 
 var _YoutubePlayer2 = _interopRequireDefault(_YoutubePlayer);
@@ -24,6 +22,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+var Detector = process.browser ? require('@stinkdigital/detector') : null;
+
 var VideoPlayer = function () {
 	function VideoPlayer() {
 		var _this = this;
@@ -33,6 +33,7 @@ var VideoPlayer = function () {
 		_classCallCheck(this, VideoPlayer);
 
 		this._onPageVisiblityChange = function () {
+			if (!document) return;
 			if (document[_this._hidden]) {
 				/*
     	to catch if the user has already paused video via any controls
@@ -47,7 +48,9 @@ var VideoPlayer = function () {
 			}
 		};
 
-		var forceInline = _detector.IS_IOS && _detector.IOS_VERSION >= 8;
+		var _options$forceInline = options.forceInline;
+		var forceInline = _options$forceInline === undefined ? false : _options$forceInline;
+
 
 		if (options.youtubeId) {
 			this._player = new _YoutubePlayer2.default(options);
@@ -64,8 +67,8 @@ var VideoPlayer = function () {
 			}
 		}
 
-		this._handlePageVisiblity();
-		if (this.resize) this._handlePageResize();
+		if (this._player._options.pageVisibilty) this._handlePageVisiblity();
+		if (this._player._options.resize) this._handlePageResize();
 		return this._player;
 	}
 
@@ -74,8 +77,9 @@ var VideoPlayer = function () {
 		value: function _handlePageVisiblity() {
 			var remove = arguments.length <= 0 || arguments[0] === undefined ? false : arguments[0];
 
-			this._hidden = _detector.HIDDEN_PROPERTY_NAME;
-			this._pageVisiblity = _detector.VISIBILITY_CHANGE_EVENT_NAME;
+			if (!Detector) return;
+			this._hidden = Detector.HIDDEN_PROPERTY_NAME;
+			this._pageVisiblity = Detector.VISIBILITY_CHANGE_EVENT_NAME;
 			if (this._hidden === undefined && this._pageVisiblity === undefined) return;
 
 			if (remove) {
@@ -99,8 +103,8 @@ var VideoPlayer = function () {
 	}, {
 		key: 'destroy',
 		value: function destroy() {
-			this._handlePageVisiblity(true);
-			if (this._options.resize) this._handlePageResize(true);
+			if (this._player._options.pageVisibilty) this._handlePageVisiblity(true);
+			if (this._player._options.resize) this._handlePageResize(true);
 			this._player.destroy();
 		}
 	}]);

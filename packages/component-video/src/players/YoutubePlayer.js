@@ -16,6 +16,9 @@ const DEFAULT_PLAYER_VARS = {
 export default class YoutubePlayer extends AbstractPlayer {
 	constructor(mOptions = {}) {
 		super(mOptions);
+		if (!document || !window) {
+			throw new Error('YoutubePlayer no document or window to createElement video');
+		}
 		this._el = document.createElement('div');
 		this._el.setAttribute('id', 'youtube-player');
 		this._loadPlayer();

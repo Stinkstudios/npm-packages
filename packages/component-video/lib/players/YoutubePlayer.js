@@ -72,6 +72,9 @@ var YoutubePlayer = function (_AbstractPlayer) {
 			}
 		};
 
+		if (!document || !window) {
+			throw new Error('YoutubePlayer no document or window to createElement video');
+		}
 		_this._el = document.createElement('div');
 		_this._el.setAttribute('id', 'youtube-player');
 		_this._loadPlayer();

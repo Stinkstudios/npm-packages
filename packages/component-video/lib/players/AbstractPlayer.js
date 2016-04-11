@@ -31,8 +31,12 @@ var AbstractPlayer = function () {
 		var width = _options$width === undefined ? '100%' : _options$width;
 		var _options$height = _options.height;
 		var height = _options$height === undefined ? '100%' : _options$height;
+		var _options$pageVisibilt = _options.pageVisibilty;
+		var pageVisibilty = _options$pageVisibilt === undefined ? false : _options$pageVisibilt;
 
 
+		this._options.resize = this._options.youtubeId ? false : resize;
+		this._options.pageVisibilty = pageVisibilty;
 		this._options.width = width;
 		this._options.height = height;
 
@@ -42,7 +46,6 @@ var AbstractPlayer = function () {
 		this.paused = true;
 		this.autoPaused = false;
 		this.videoReady = false;
-		this.resize = this._options.youtubeId ? false : resize;
 
 		this._callbackMetadata = this._options.onMetadata;
 		this._callbackCanPlay = this._options.onCanPlay;
@@ -181,7 +184,7 @@ var _initialiseProps = function _initialiseProps() {
 	this._onVideoMetadata = function () {
 		var e = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
 
-		if (!_this.resize) {
+		if (!_this._options.resize) {
 			_this.setSize(_this._options.width, _this._options.height);
 		}
 		_this._addToDom();

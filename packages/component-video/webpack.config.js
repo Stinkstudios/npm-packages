@@ -32,7 +32,7 @@ module.exports = {
 	output: {
 		path: prod ? path.resolve(__dirname, 'build') : path.resolve(__dirname, 'example'),
 		publicPath: 'http://localhost:8080/',
-		filename: prod ? './component-video.js' : 'bundle.js'
+		filename: prod ? 'component-video.js' : 'bundle.js'
 	},
 	module: {
 		loaders: [{
