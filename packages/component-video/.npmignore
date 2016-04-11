@@ -2,6 +2,7 @@
 .editorconfig
 .eslintignore
 .eslintrc
+.nvmrc
 build
 example
 node_modules
