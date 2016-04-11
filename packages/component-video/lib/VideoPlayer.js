@@ -32,7 +32,7 @@ var VideoPlayer = function () {
 
 		_classCallCheck(this, VideoPlayer);
 
-		this._onPageVisiblityChange = function () {
+		this._onPageVisibilityChange = function () {
 			if (!document) return;
 			if (document[_this._hidden]) {
 				/*
@@ -67,26 +67,26 @@ var VideoPlayer = function () {
 			}
 		}
 
-		if (this._player._options.pageVisibilty) this._handlePageVisiblity();
+		if (this._player._options.pageVisibility) this._handlePageVisibility();
 		if (this._player._options.resize) this._handlePageResize();
 		return this._player;
 	}
 
 	_createClass(VideoPlayer, [{
-		key: '_handlePageVisiblity',
-		value: function _handlePageVisiblity() {
+		key: '_handlePageVisibility',
+		value: function _handlePageVisibility() {
 			var remove = arguments.length <= 0 || arguments[0] === undefined ? false : arguments[0];
 
 			if (!Detector) return;
 			this._hidden = Detector.HIDDEN_PROPERTY_NAME;
-			this._pageVisiblity = Detector.VISIBILITY_CHANGE_EVENT_NAME;
-			if (this._hidden === undefined && this._pageVisiblity === undefined) return;
+			var _pageVisibility = Detector.VISIBILITY_CHANGE_EVENT_NAME;
+			if (this._hidden === undefined && _pageVisibility === undefined) return;
 
 			if (remove) {
-				document.removeEventListener(this._pageVisiblity, this._onPageVisiblityChange, false);
+				document.removeEventListener(_pageVisibility, this._onPageVisibilityChange, false);
 				return;
 			}
-			document.addEventListener(this._pageVisiblity, this._onPageVisiblityChange, false);
+			document.addEventListener(_pageVisibility, this._onPageVisibilityChange, false);
 		}
 	}, {
 		key: '_handlePageResize',
@@ -103,7 +103,7 @@ var VideoPlayer = function () {
 	}, {
 		key: 'destroy',
 		value: function destroy() {
-			if (this._player._options.pageVisibilty) this._handlePageVisiblity(true);
+			if (this._player._options.pageVisibility) this._handlePageVisibility(true);
 			if (this._player._options.resize) this._handlePageResize(true);
 			this._player.destroy();
 		}
