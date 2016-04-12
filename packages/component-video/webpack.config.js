@@ -30,7 +30,7 @@ module.exports = {
 		version: false
 	},
 	output: {
-		path: prod ? path.resolve(__dirname, 'build') : path.resolve(__dirname, 'example'),
+		path: prod ? path.resolve(__dirname, 'dist') : path.resolve(__dirname, 'example'),
 		publicPath: 'http://localhost:8080/',
 		filename: prod ? 'component-video.js' : 'bundle.js'
 	},
@@ -38,10 +38,32 @@ module.exports = {
 		loaders: [{
 			test: /\.js$/,
 			loader: 'babel',
-			exclude: /(node_modules|build|lib)/,
+			exclude: /(node_modules|dist|lib|es)/,
 			query: {
-				plugins: ['add-module-exports'],
-				presets: ['es2015', 'stage-0']
+				cacheDirectory: true,
+				plugins: [
+					['transform-class-properties', { loose: true }],
+					['transform-es2015-template-literals', { loose: true }],
+					'transform-es2015-literals',
+					'transform-es2015-function-name',
+					'transform-es2015-arrow-functions',
+					'transform-es2015-block-scoped-functions',
+					['transform-es2015-classes', { loose: true }],
+					'transform-es2015-object-super',
+					'transform-es2015-shorthand-properties',
+					['transform-es2015-computed-properties', { loose: true }],
+					['transform-es2015-for-of', { loose: true }],
+					'transform-es2015-sticky-regex',
+					'transform-es2015-unicode-regex',
+					'check-es2015-constants',
+					['transform-es2015-spread', { loose: true }],
+					'transform-es2015-parameters',
+					['transform-es2015-destructuring', { loose: true }],
+					'transform-es2015-block-scoping',
+					'transform-object-rest-spread',
+					'add-module-exports',
+					['transform-es2015-modules-commonjs', { loose: true }]
+				]
 			}
 		}]
 	},
