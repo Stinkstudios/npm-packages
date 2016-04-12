@@ -1,6 +1,7 @@
-build/**
+dist/**
 example/index.html
 example/assets/**
 lib/**
 node_modules/**
 test/**
+es/**
