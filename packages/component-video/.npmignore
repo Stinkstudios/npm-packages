@@ -3,6 +3,7 @@
 .eslintignore
 .eslintrc
 .nvmrc
+dist
 example
 node_modules
 npm-debug.log
