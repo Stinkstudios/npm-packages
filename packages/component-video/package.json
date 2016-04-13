@@ -28,6 +28,17 @@
     "url": "git+https://github.com/Stinkdigital/component-video.git"
   },
   "author": "Stinkdigital",
+  "contributors": [
+    {
+      "name": "Andy Kenward",
+      "email": "andykenward@gmail.com",
+      "url": "https://github.com/andykenward"
+    },
+    {
+      "name": "Yi-wen LIN",
+      "url": "https://github.com/yiwenl"
+    }
+  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Stinkdigital/component-video/issues"
