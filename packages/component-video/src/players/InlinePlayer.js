@@ -14,7 +14,14 @@ export default class InlinePlayer extends BasicPlayer {
 		} = this._options;
 
 		this.framerate = 24;
-		this.loadHAudio(audioSrc, loop, volume);
+		this.startOffset = 0;
+		this.hasSound = audioSrc !== undefined;
+		if (this.hasSound) {
+			this.loadHAudio(audioSrc, loop, volume);
+		} else {
+			this._onAudioPlay();
+			this._onAudioReady();
+		}
 		this._player.load();
 	}
 
@@ -69,6 +76,17 @@ export default class InlinePlayer extends BasicPlayer {
 		return this._currentFrame;
 	}
 
+	play() {
+		if (!this._player) return;
+		if (this._player.playing) return;
+	}
+
+	pause(autoPaused = false) {
+		if (!this._player) return;
+		this.autoPaused = autoPaused;
+		if (this._player.paused) return;
+	}
+
 	_addAudioListeners() {
 		this._sound.addEventListener('canplaythrough', this._onAudioReady);
 		this._sound.addEventListener('play', this._onAudioPlay);
@@ -84,25 +102,24 @@ export default class InlinePlayer extends BasicPlayer {
 	}
 
 	_render = () => {
-		const videoFrame = 0 | this.framerate * (this._sound.currentTime);
-		if ((videoFrame !== this.currentFrame) || videoFrame === 0) {
-			this.currentFrame = videoFrame;
-			this.currentTime = (videoFrame / this.framerate).toFixed(6);
+		if (this.playing) {
+			let videoFrame = this.framerate * ((performance.now() - this.startOffset) / 1000);
+
+			if (this.hasSound) {
+				videoFrame = 0 | this.framerate * (this._sound.currentTime);
+			}
+
+			if ((videoFrame !== this.currentFrame) || videoFrame === 0) {
+				this.currentFrame = videoFrame;
+				this.currentTime = (videoFrame / this.framerate).toFixed(6);
+			}
+
+			if (this.currentTime >= this._player.duration && !this.hasSound) {
+				this.startOffset = performance.now();
+			}
 		}
+
 		this._animateFrame = requestAnimationFrame(this._render);
-	}
-
-	play() {
-		if (!this._player) return;
-		if (this._player.playing) return;
-		this._sound.play();
-	}
-
-	pause(autoPaused) {
-		if (!this._player) return;
-		if (this._player.paused) return;
-		this.autoPaused = autoPaused;
-		this._sound.pause();
 	}
 
 	_cancelAnimateFrame() {

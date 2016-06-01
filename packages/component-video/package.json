@@ -45,6 +45,7 @@
   },
   "homepage": "https://github.com/Stinkdigital/component-video#readme",
   "dependencies": {
+    "@stinkdigital/detector": "0.0.4",
     "load-script": "^1.0.0"
   },
   "peerDependencies": {
