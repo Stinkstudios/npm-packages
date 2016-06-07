@@ -66,7 +66,7 @@ document.body.appendChild(videoPlayer.el);
  - `setSize(width:string, height:string)`
 
 ### Note
-Compiled into ES5 and ES6.
+Compiled into ES5 and ES6. See `package.json`
 
 	"main": "lib/index.js",
 	"jsnext:main": "es/index.js",
