@@ -65,7 +65,11 @@ document.body.appendChild(videoPlayer.el);
  - `videoReady : boolean` (returns if video is in ready state boolean)
  - `setSize(width:string, height:string)`
 
+### Note
+Compiled into ES5 and ES6.
 
+	"main": "lib/index.js",
+	"jsnext:main": "es/index.js",
 
 ## Development
 ```
