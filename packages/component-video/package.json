@@ -17,7 +17,7 @@
     "build:es": "BABEL_ENV=es babel src --out-dir es",
     "build:webpack": "NODE_ENV=production webpack --progress --colors  --error-details",
     "build": "npm run build:es && npm run build:commonjs && npm run build:webpack",
-    "prepublish": "npm run clean && npm run check:src && npm run build:es && npm run build:commonjs"
+    "prepublish": "npm run clean && npm run check:src && npm run build"
   },
   "engines": {
     "node": "5.7.1",
