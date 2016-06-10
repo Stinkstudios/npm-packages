@@ -84,7 +84,8 @@ export default class BasicPlayer extends AbstractPlayer {
 
 	_addListeners() {
 		this._removeListeners();
-
+		if (this._options.pageVisibility) this._handlePageVisibility();
+		if (this._options.resize) this._handlePageResize();
 		this._player.addEventListener('loadedmetadata', this._onVideoMetadata);
 		this._player.addEventListener('canplaythrough', this._onVideoCanPlayThrough);
 		this._player.addEventListener('ended', this._onVideoEnd);
@@ -96,6 +97,8 @@ export default class BasicPlayer extends AbstractPlayer {
 	}
 
 	_removeListeners() {
+		if (this._options.pageVisibility) this._handlePageVisibility(true);
+		if (this._options.resize) this._handlePageResize(true);
 		this._player.removeEventListener('loadedmetadata', this._onVideoMetadata);
 		this._player.removeEventListener('canplaythrough', this._onVideoCanPlayThrough);
 		this._player.removeEventListener('ended', this._onVideoEnd);
@@ -113,6 +116,45 @@ export default class BasicPlayer extends AbstractPlayer {
 			this._player.pause();
 		}
 	}
+
+	_onPageVisibilityChange = () => {
+		if (!document) return;
+		if (document[this._hidden]) {
+			/*
+				to catch if the user has already paused video via any controls
+				passing through the paused state to set autoPaused
+			 */
+			if (!this.paused) this.pause(!this.paused);
+		} else {
+			/*
+				if video auto paused by visibilitychange then auto play video
+			 */
+			if (this.autoPaused) this.play();
+		}
+	}
+
+	_handlePageVisibility(remove = false) {
+		if (!Detector) return;
+		this._hidden = Detector.HIDDEN_PROPERTY_NAME;
+		const _pageVisibility = Detector.VISIBILITY_CHANGE_EVENT_NAME;
+		if (this._hidden === undefined && _pageVisibility === undefined) return;
+
+		if (remove) {
+			document.removeEventListener(_pageVisibility, this._onPageVisibilityChange, false);
+			return;
+		}
+		document.addEventListener(_pageVisibility, this._onPageVisibilityChange, false);
+	}
+
+	_handlePageResize(remove = false) {
+		if (!window) return;
+		if (remove) {
+			window.removeEventListener('resize', this._onVideoResize);
+			return;
+		}
+		window.addEventListener('resize', this._onVideoResize);
+	}
+
 	//	Destroy
 
 	destroy() {
