@@ -1,4 +1,5 @@
 import AbstractPlayer from './AbstractPlayer';
+const Detector = process.browser ? require('@stinkdigital/detector') : null;
 
 export default class BasicPlayer extends AbstractPlayer {
 
