@@ -54,6 +54,8 @@ var YoutubePlayer = function (_AbstractPlayer) {
 				case 5:
 					/* video cued */
 					break;
+				default:
+					break;
 			}
 		};
 

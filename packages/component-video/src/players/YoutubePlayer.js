@@ -146,6 +146,8 @@ export default class YoutubePlayer extends AbstractPlayer {
 			case 5:
 				/* video cued */
 				break;
+			default:
+				break;
 		}
 	}
 
