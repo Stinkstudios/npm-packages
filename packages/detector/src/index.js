@@ -3,6 +3,7 @@ var Detector = {
 	DEVICE_TYPE : require('./device-type'),
 	FIREFOX_VERSION : require('./firefox-version'),
 	HAS_CANVAS : require('./has-canvas'),
+	HAS_DEVICE_ORIENTATION_EVENT : require('./has-device-orientation-event'),
 	HAS_FULLSCREEN : require('./has-fullscreen'),
 	HAS_GYRO : require('./has-gyro'),
 	HAS_HISTORY : require('./has-history'),
