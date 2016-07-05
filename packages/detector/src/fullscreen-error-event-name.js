@@ -1,5 +1,4 @@
 var FULLSCREEN_ERROR_EVENT_NAME = (function () {
-	var el = document.createElement('fakeelement');
 	var fullscreenerrors = {
 		fullscreenerror: 'fullscreenerror',
 		MozFullscreenerror: 'mozfullscreenerror',
@@ -7,8 +6,10 @@ var FULLSCREEN_ERROR_EVENT_NAME = (function () {
 	};
 	var fullscreenerror;
 	for (var t in fullscreenerrors) {
-		if (el.style[t] !== undefined) {
-			fullscreenerror = fullscreenerrors[t];
+		var name = fullscreenerrors[t];
+		var eventName = 'on' + name;
+		if (eventName in document) {
+			fullscreenerror = name;
 			break;
 		}
 	}
