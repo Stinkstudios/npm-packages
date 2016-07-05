@@ -40,6 +40,8 @@ var Detector = {
 	MAX_CUBE_TEXTURE_SIZE : require('./max-cube-texture-size'),
 	PIXEL_RATIO : require('./pixel-ratio'),
 	TRANSITION_END_EVENT_NAME : require('./transition-end-event-name'),
+	FULLSCREEN_CHANGE_EVENT_NAME : require('./fullscreen-change-event-name'),
+	FULLSCREEN_ERROR_EVENT_NAME : require('./fullscreen-error-event-name'),
 	UA : require('./ua'),
 	VISIBILITY_CHANGE_EVENT_NAME : require('./visibility-change-event-name')
 };
