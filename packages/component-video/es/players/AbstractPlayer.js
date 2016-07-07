@@ -27,6 +27,8 @@ var AbstractPlayer = function () {
 		var height = _options$height === undefined ? '100%' : _options$height;
 		var _options$pageVisibili = _options.pageVisibility;
 		var pageVisibility = _options$pageVisibili === undefined ? false : _options$pageVisibili;
+		var _options$error = _options.error;
+		var error = _options$error === undefined ? true : _options$error;
 
 
 		this._options.resize = this._options.youtubeId ? false : resize;
@@ -40,6 +42,7 @@ var AbstractPlayer = function () {
 		this.paused = true;
 		this.autoPaused = false;
 		this.videoReady = false;
+		this.error = error;
 
 		this._callbackMetadata = this._options.onMetadata;
 		this._callbackCanPlay = this._options.onCanPlay;
@@ -79,8 +82,7 @@ var AbstractPlayer = function () {
 
 	AbstractPlayer.prototype._addToDom = function _addToDom() {
 		if (!this._options.el) document.body.appendChild(this.el);else this._options.el.appendChild(this.el);
-	}; // eslint-disable-line max-len
-
+	};
 
 	_createClass(AbstractPlayer, [{
 		key: 'autoplay',
@@ -142,7 +144,7 @@ var AbstractPlayer = function () {
 		key: 'el',
 		get: function get() {
 			if (!this._player) {
-				throw new Error('Error - no el to get');
+				if (this.error) throw new Error('Error - no el to get');
 			}
 			return this._player;
 		}
@@ -198,7 +200,7 @@ var _initialiseProps = function _initialiseProps() {
 
 	this._onVideoError = function (e) {
 		if (_this._callbackError) _this._callbackError(e);
-		throw new Error('Error - component-video - ', e);
+		if (_this.error) throw new Error('Error - component-video - ', e);
 	};
 
 	this._onVideoPlay = function (e) {
@@ -221,14 +223,14 @@ var _initialiseProps = function _initialiseProps() {
 	this._onVideoResize = function () {
 		var el = _this.el;
 		if (!el || !window) {
-			throw new Error('player isnt in dom. So cant resize');
+			if (_this.error) throw new Error('player isnt in dom. So cant resize');
 		}
 		var width = _this.width;
 		var height = _this.height;
 		var areaWidth = _this._options.el ? _this._options.el.offsetWidth : window.innerWidth;
 		var areaHeight = _this._options.el ? _this._options.el.offsetHeight : window.innerHeight;
 		var scale = Math.max(areaWidth / width, areaHeight / height);
-		el.style.cssText = 'width:' + Math.ceil(width * scale) + 'px; height:' + Math.ceil(height * scale) + 'px; position:absolute; top:' + Math.ceil((areaHeight - height * scale) / 2) + 'px; left:' + Math.ceil((areaWidth - width * scale) / 2) + 'px;';
+		el.style.cssText = 'width:' + Math.ceil(width * scale) + 'px; height:' + Math.ceil(height * scale) + 'px; position:absolute; top:' + Math.ceil((areaHeight - height * scale) / 2) + 'px; left:' + Math.ceil((areaWidth - width * scale) / 2) + 'px;'; // eslint-disable-line max-len
 	};
 
 	this._onTimeUpdate = function (e) {

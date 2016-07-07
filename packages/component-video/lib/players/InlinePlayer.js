@@ -144,7 +144,7 @@ var InlinePlayer = function (_BasicPlayer) {
 		try {
 			this._sound.parentNode.removeChild(this._sound);
 		} catch (e) {
-			throw new Error('Error remove inline player audio elment ', e);
+			if (this.error) throw new Error('Error remove inline player audio elment ', e);
 		}
 		this._sound = null;
 	};

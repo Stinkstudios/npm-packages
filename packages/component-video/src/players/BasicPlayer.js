@@ -168,7 +168,7 @@ export default class BasicPlayer extends AbstractPlayer {
 		try {
 			this._player.parentNode.removeChild(this._player);
 		} catch (e) {
-			throw new Error('Error remove player element : ', e);
+			if (this.error) throw new Error('Error remove player element : ', e);
 		}
 		this._player = null;
 	}

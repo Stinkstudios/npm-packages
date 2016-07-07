@@ -12,6 +12,7 @@ export default class AbstractPlayer {
 			width = '100%',
 			height = '100%',
 			pageVisibility = false,
+			error = true,
 		} = this._options;
 
 		this._options.resize = this._options.youtubeId ? false : resize;
@@ -25,6 +26,7 @@ export default class AbstractPlayer {
 		this.paused = true;
 		this.autoPaused = false;
 		this.videoReady = false;
+		this.error = error;
 
 		this._callbackMetadata = this._options.onMetadata;
 		this._callbackCanPlay = this._options.onCanPlay;
@@ -105,7 +107,7 @@ export default class AbstractPlayer {
 
 	get el() {
 		if (!this._player) {
-			throw new Error('Error - no el to get');
+			if (this.error) throw new Error('Error - no el to get');
 		}
 		return this._player;
 	}
@@ -162,7 +164,7 @@ export default class AbstractPlayer {
 
 	_onVideoError = (e) => {
 		if (this._callbackError) this._callbackError(e);
-		throw new Error('Error - component-video - ', e);
+		if (this.error) throw new Error('Error - component-video - ', e);
 	}
 
 	_onVideoPlay = (e) => {
@@ -185,7 +187,7 @@ export default class AbstractPlayer {
 	_onVideoResize = () => {
 		const el = this.el;
 		if (!el || !window) {
-			throw new Error('player isnt in dom. So cant resize');
+			if (this.error) throw new Error('player isnt in dom. So cant resize');
 		}
 		const width = this.width;
 		const height = this.height;
