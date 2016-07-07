@@ -136,7 +136,7 @@ var YoutubePlayer = function (_AbstractPlayer) {
 				}
 			});
 		}).catch(function (e) {
-			throw new Error('Error - YouTubePlayer - loadPlayer ', e);
+			if (_this2.error) throw new Error('Error - YouTubePlayer - loadPlayer ', e);
 		});
 	};
 

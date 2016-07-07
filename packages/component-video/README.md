@@ -36,6 +36,7 @@ document.body.appendChild(videoPlayer.el);
  - `pageVisibility : boolean` (false) ( Will pause and play the video on pageVisibility change )
  - `width : string` ('100%')
  - `height : string` ('100%')
+ - `error : boolean` (true) ( Will throw a new Error on error. Set to false to stop this)
 
 
  ### Event Callbacks

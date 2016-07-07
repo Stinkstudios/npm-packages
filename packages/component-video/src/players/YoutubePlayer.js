@@ -121,7 +121,7 @@ export default class YoutubePlayer extends AbstractPlayer {
 				});
 			})
 			.catch((e) => {
-				throw new Error('Error - YouTubePlayer - loadPlayer ', e);
+				if (this.error) throw new Error('Error - YouTubePlayer - loadPlayer ', e);
 			});
 	}
 
