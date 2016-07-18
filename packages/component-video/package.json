@@ -1,6 +1,6 @@
 {
   "name": "@stinkdigital/component-video",
-  "version": "0.1.9",
+  "version": "0.2.0",
   "description": "A simple video component for videos and youtube videos.",
   "main": "lib/index.js",
   "jsnext:main": "es/index.js",
@@ -11,8 +11,8 @@
     "lint:fix": "eslint --fix src/**",
     "lint": "eslint src/**",
     "start": "webpack-dev-server",
-    "dev": "webpack-dev-server --hot --inline --colors --error-details  --content-base example/ ",
-    "host": "webpack-dev-server --hot --inline --colors --error-details  --content-base example/  --host '192.168.10.4'",
+    "dev": "webpack-dev-server --hot --inline --colors --error-details  --content-base ./ ",
+    "host": "webpack-dev-server --hot --inline --colors --error-details  --content-base ./  --host '192.168.10.4'",
     "build:commonjs": "BABEL_ENV=commonjs babel src --out-dir lib",
     "build:es": "BABEL_ENV=es babel src --out-dir es",
     "build:webpack": "NODE_ENV=production webpack --progress --colors -p  --error-details",

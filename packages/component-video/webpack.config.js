@@ -31,7 +31,7 @@ module.exports = {
 	},
 	output: {
 		path: prod ? path.resolve(__dirname, 'dist') : path.resolve(__dirname, 'example'),
-		publicPath: 'http://localhost:8080/',
+		publicPath: 'http://localhost:8080/example',
 		filename: prod ? 'component-video.js' : 'bundle.js'
 	},
 	module: {

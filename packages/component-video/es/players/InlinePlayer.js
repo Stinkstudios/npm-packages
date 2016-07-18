@@ -43,23 +43,11 @@ var InlinePlayer = function (_BasicPlayer) {
 		};
 
 		_this._render = function () {
-			if (_this.playing) {
-				var videoFrame = _this.framerate * ((performance.now() - _this.startOffset) / 1000);
-
-				if (_this.hasSound) {
-					videoFrame = 0 | _this.framerate * _this._sound.currentTime;
-				}
-
-				if (videoFrame !== _this.currentFrame || videoFrame === 0) {
-					_this.currentFrame = videoFrame;
-					_this.currentTime = (videoFrame / _this.framerate).toFixed(6);
-				}
-
-				if (_this.currentTime >= _this._player.duration && !_this.hasSound) {
-					_this.startOffset = performance.now();
-				}
+			var videoFrame = 0 | _this.framerate * _this._sound.currentTime;
+			if (videoFrame !== _this.currentFrame || videoFrame === 0) {
+				_this.currentFrame = videoFrame;
+				_this.currentTime = (videoFrame / _this.framerate).toFixed(6);
 			}
-
 			_this._animateFrame = requestAnimationFrame(_this._render);
 		};
 
@@ -72,14 +60,7 @@ var InlinePlayer = function (_BasicPlayer) {
 
 
 		_this.framerate = 24;
-		_this.startOffset = 0;
-		_this.hasSound = audioSrc !== undefined;
-		if (_this.hasSound) {
-			_this.loadHAudio(audioSrc, loop, volume);
-		} else {
-			_this._onAudioPlay();
-			_this._onAudioReady();
-		}
+		_this.loadHAudio(audioSrc, loop, volume);
 		_this._player.load();
 		return _this;
 	}
@@ -98,14 +79,16 @@ var InlinePlayer = function (_BasicPlayer) {
 	InlinePlayer.prototype.play = function play() {
 		if (!this._player) return;
 		if (this._player.playing) return;
+		this._sound.play();
 	};
 
 	InlinePlayer.prototype.pause = function pause() {
 		var autoPaused = arguments.length <= 0 || arguments[0] === undefined ? false : arguments[0];
 
 		if (!this._player) return;
-		this.autoPaused = autoPaused;
 		if (this._player.paused) return;
+		this.autoPaused = autoPaused;
+		this._sound.pause();
 	};
 
 	InlinePlayer.prototype._addAudioListeners = function _addAudioListeners() {
