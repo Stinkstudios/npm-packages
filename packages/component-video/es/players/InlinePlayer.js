@@ -39,6 +39,7 @@ var InlinePlayer = function (_BasicPlayer) {
 		};
 
 		_this._onAudioEnded = function () {
+			_this._onVideoEnd(null);
 			_this._cancelAnimateFrame();
 		};
 
@@ -68,7 +69,6 @@ var InlinePlayer = function (_BasicPlayer) {
 	InlinePlayer.prototype.loadHAudio = function loadHAudio(src, loop, volume) {
 		this._sound = document.createElement('audio');
 		document.body.appendChild(this._sound);
-		window._sound = this._sound;
 		this._sound.src = src;
 		this._sound.loop = loop;
 		this._sound.volume = volume;
@@ -105,6 +105,15 @@ var InlinePlayer = function (_BasicPlayer) {
 		this._sound.removeEventListener('ended', this._onAudioEnded);
 	};
 
+	InlinePlayer.prototype._replace = function _replace(newsrc) {
+		if (!this._player) return;
+		if (this.src && this.src !== newsrc) {
+			this._removeListeners();
+			this._player.pause();
+			this._sound.pause();
+		}
+	};
+
 	InlinePlayer.prototype._cancelAnimateFrame = function _cancelAnimateFrame() {
 		if (this._animateFrame) {
 			cancelAnimationFrame(this._animateFrame);
@@ -117,7 +126,7 @@ var InlinePlayer = function (_BasicPlayer) {
 		this._cancelAnimateFrame();
 		if (!this._sound) return;
 		this._removeAudioListeners();
-		this.sound.pause();
+		this._sound.pause();
 		try {
 			this._sound.parentNode.removeChild(this._sound);
 		} catch (e) {
@@ -127,6 +136,11 @@ var InlinePlayer = function (_BasicPlayer) {
 	};
 
 	_createClass(InlinePlayer, [{
+		key: 'audioSrc',
+		set: function set(value) {
+			this._sound.src = value;
+		}
+	}, {
 		key: 'audioReady',
 		set: function set(value) {
 			this._audioReady = value;

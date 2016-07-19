@@ -18,10 +18,13 @@ export default class InlinePlayer extends BasicPlayer {
 		this._player.load();
 	}
 
+	set audioSrc(value) {
+		this._sound.src = value;
+	}
+
 	loadHAudio(src, loop, volume) {
 		this._sound = document.createElement('audio');
 		document.body.appendChild(this._sound);
-		window._sound = this._sound;
 		this._sound.src = src;
 		this._sound.loop = loop;
 		this._sound.volume = volume;
@@ -44,7 +47,9 @@ export default class InlinePlayer extends BasicPlayer {
 		this.paused = true;
 		this._cancelAnimateFrame();
 	}
+
 	_onAudioEnded = () => {
+		this._onVideoEnd(null);
 		this._cancelAnimateFrame();
 	}
 
@@ -96,6 +101,15 @@ export default class InlinePlayer extends BasicPlayer {
 		this._sound.removeEventListener('ended', this._onAudioEnded);
 	}
 
+	_replace(newsrc) {
+		if (!this._player) return;
+		if (this.src && this.src !== newsrc) {
+			this._removeListeners();
+			this._player.pause();
+			this._sound.pause();
+		}
+	}
+
 	_render = () => {
 		const videoFrame = 0 | this.framerate * (this._sound.currentTime);
 		if ((videoFrame !== this.currentFrame) || videoFrame === 0) {
@@ -117,7 +131,7 @@ export default class InlinePlayer extends BasicPlayer {
 		this._cancelAnimateFrame();
 		if (!this._sound) return;
 		this._removeAudioListeners();
-		this.sound.pause();
+		this._sound.pause();
 		try {
 			this._sound.parentNode.removeChild(this._sound);
 		} catch (e) {
