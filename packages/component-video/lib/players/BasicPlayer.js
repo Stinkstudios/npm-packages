@@ -10,7 +10,11 @@ var _AbstractPlayer3 = _interopRequireDefault(_AbstractPlayer2);
 
 var _visibilityChangeEvent = require('../utils/visibility-change-event');
 
+var _visibilityChangeEvent2 = _interopRequireDefault(_visibilityChangeEvent);
+
 var _hiddenPropertyName = require('../utils/hidden-property-name');
+
+var _hiddenPropertyName2 = _interopRequireDefault(_hiddenPropertyName);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -18,7 +22,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // BasicPlayer
+
 
 var BasicPlayer = function (_AbstractPlayer) {
 	_inherits(BasicPlayer, _AbstractPlayer);
@@ -129,8 +134,8 @@ var BasicPlayer = function (_AbstractPlayer) {
 		var remove = arguments.length <= 0 || arguments[0] === undefined ? false : arguments[0];
 
 		if (!document) return;
-		this._hidden = _hiddenPropertyName.HIDDEN_PROPERTY_NAME;
-		var _pageVisibility = _visibilityChangeEvent.VISIBILITY_CHANGE_EVENT_NAME;
+		this._hidden = _hiddenPropertyName2.default;
+		var _pageVisibility = _visibilityChangeEvent2.default;
 		if (this._hidden === undefined && _pageVisibility === undefined) return;
 
 		if (remove) {
