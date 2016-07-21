@@ -1,6 +1,7 @@
+// BasicPlayer
 import AbstractPlayer from './AbstractPlayer';
-import { VISIBILITY_CHANGE_EVENT_NAME } from '../utils/visibility-change-event';
-import { HIDDEN_PROPERTY_NAME } from '../utils/hidden-property-name';
+import VISIBILITY_CHANGE_EVENT_NAME from '../utils/visibility-change-event';
+import HIDDEN_PROPERTY_NAME from '../utils/hidden-property-name';
 
 export default class BasicPlayer extends AbstractPlayer {
 
