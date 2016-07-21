@@ -6,9 +6,10 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+// BasicPlayer
 import AbstractPlayer from './AbstractPlayer';
-import { VISIBILITY_CHANGE_EVENT_NAME } from '../utils/visibility-change-event';
-import { HIDDEN_PROPERTY_NAME } from '../utils/hidden-property-name';
+import VISIBILITY_CHANGE_EVENT_NAME from '../utils/visibility-change-event';
+import HIDDEN_PROPERTY_NAME from '../utils/hidden-property-name';
 
 var BasicPlayer = function (_AbstractPlayer) {
 	_inherits(BasicPlayer, _AbstractPlayer);

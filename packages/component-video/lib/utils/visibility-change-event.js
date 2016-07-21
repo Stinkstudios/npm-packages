@@ -1,7 +1,7 @@
 'use strict';
 
 exports.__esModule = true;
-var VISIBILITY_CHANGE_EVENT_NAME = exports.VISIBILITY_CHANGE_EVENT_NAME = function () {
+var VISIBILITY_CHANGE_EVENT_NAME = function () {
 	var props = {
 		hidden: 'visibilitychange',
 		mozHidden: 'mozvisibilitychange',
@@ -19,3 +19,6 @@ var VISIBILITY_CHANGE_EVENT_NAME = exports.VISIBILITY_CHANGE_EVENT_NAME = functi
 	}
 	return value;
 }();
+
+exports.default = VISIBILITY_CHANGE_EVENT_NAME;
+module.exports = exports['default'];

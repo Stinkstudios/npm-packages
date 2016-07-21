@@ -1,7 +1,7 @@
 'use strict';
 
 exports.__esModule = true;
-var HIDDEN_PROPERTY_NAME = exports.HIDDEN_PROPERTY_NAME = function () {
+var HIDDEN_PROPERTY_NAME = function () {
 	var props = {
 		hidden: 'hidden',
 		mozHidden: 'mozHidden',
@@ -19,3 +19,6 @@ var HIDDEN_PROPERTY_NAME = exports.HIDDEN_PROPERTY_NAME = function () {
 	}
 	return value;
 }();
+
+exports.default = HIDDEN_PROPERTY_NAME;
+module.exports = exports['default'];

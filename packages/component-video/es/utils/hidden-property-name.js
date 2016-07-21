@@ -1,4 +1,4 @@
-export var HIDDEN_PROPERTY_NAME = function () {
+var HIDDEN_PROPERTY_NAME = function () {
 	var props = {
 		hidden: 'hidden',
 		mozHidden: 'mozHidden',
@@ -16,3 +16,5 @@ export var HIDDEN_PROPERTY_NAME = function () {
 	}
 	return value;
 }();
+
+export default HIDDEN_PROPERTY_NAME;
