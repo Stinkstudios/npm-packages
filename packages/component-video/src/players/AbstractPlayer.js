@@ -194,7 +194,7 @@ export default class AbstractPlayer {
 		const areaWidth = this._options.el ? this._options.el.offsetWidth : window.innerWidth;
 		const areaHeight = this._options.el ? this._options.el.offsetHeight : window.innerHeight;
 		const scale = Math.max(areaWidth / width, areaHeight / height);
-		el.style.cssText = `width:${Math.ceil(width * scale)}px; height:${Math.ceil(height * scale)}px; position:absolute; top:${Math.ceil((areaHeight - height * scale) / 2)}px; left:${Math.ceil((areaWidth - width * scale) / 2)}px;`; // eslint-disable-line max-len
+		el.style.cssText = `width:${Math.ceil(width * scale)}px; height:${Math.ceil(height * scale)}px; position:absolute; top:${Math.ceil((areaHeight - (height * scale)) / 2)}px; left:${Math.ceil((areaWidth - (width * scale)) / 2)}px;`; // eslint-disable-line max-len
 	}
 
 	_onTimeUpdate = (e) => {

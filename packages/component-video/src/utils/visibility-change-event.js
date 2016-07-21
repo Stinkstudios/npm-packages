@@ -1,4 +1,4 @@
-export const VISIBILITY_CHANGE_EVENT_NAME = (() => {
+const VISIBILITY_CHANGE_EVENT_NAME = (() => {
 	const props = {
 		hidden: 'visibilitychange',
 		mozHidden: 'mozvisibilitychange',
@@ -15,3 +15,5 @@ export const VISIBILITY_CHANGE_EVENT_NAME = (() => {
 	}
 	return value;
 })();
+
+export default VISIBILITY_CHANGE_EVENT_NAME;
