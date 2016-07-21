@@ -153,11 +153,24 @@ var BasicPlayer = function (_AbstractPlayer) {
 		this._player.pause();
 		this._player.src = '';
 		try {
-			this._player.parentNode.removeChild(this._player);
+			if (this._player.parentNode && this.isDescendant(this._player.parentNode, this._player)) {
+				this._player.parentNode.removeChild(this._player);
+			}
 		} catch (e) {
 			if (this.error) throw new Error('Error remove player element : ', e);
 		}
 		this._player = null;
+	};
+
+	BasicPlayer.prototype.isDescendant = function isDescendant(parent, child) {
+		var node = child.parentNode;
+		while (node !== null) {
+			if (node === parent) {
+				return true;
+			}
+			node = node.parentNode;
+		}
+		return false;
 	};
 
 	_createClass(BasicPlayer, [{
