@@ -82,8 +82,7 @@ var AbstractPlayer = function () {
 
 	AbstractPlayer.prototype._addToDom = function _addToDom() {
 		if (!this._options.el) document.body.appendChild(this.el);else this._options.el.appendChild(this.el);
-	}; // eslint-disable-line max-len
-
+	};
 
 	_createClass(AbstractPlayer, [{
 		key: 'autoplay',
@@ -231,7 +230,7 @@ var _initialiseProps = function _initialiseProps() {
 		var areaWidth = _this._options.el ? _this._options.el.offsetWidth : window.innerWidth;
 		var areaHeight = _this._options.el ? _this._options.el.offsetHeight : window.innerHeight;
 		var scale = Math.max(areaWidth / width, areaHeight / height);
-		el.style.cssText = 'width:' + Math.ceil(width * scale) + 'px; height:' + Math.ceil(height * scale) + 'px; position:absolute; top:' + Math.ceil((areaHeight - height * scale) / 2) + 'px; left:' + Math.ceil((areaWidth - width * scale) / 2) + 'px;';
+		el.style.cssText = 'width:' + Math.ceil(width * scale) + 'px; height:' + Math.ceil(height * scale) + 'px; position:absolute; top:' + Math.ceil((areaHeight - height * scale) / 2) + 'px; left:' + Math.ceil((areaWidth - width * scale) / 2) + 'px;'; // eslint-disable-line max-len
 	};
 
 	this._onTimeUpdate = function (e) {
