@@ -31,6 +31,7 @@ export default class BasicPlayer extends AbstractPlayer {
 	set src(value) {
 		this._replace(value);
 		this._player.src = value;
+		if (!value) return;
 		this._addListeners();
 	}
 
@@ -165,6 +166,7 @@ export default class BasicPlayer extends AbstractPlayer {
 		this._removeListeners();
 
 		this._player.pause();
+		this._player.src = '';
 		try {
 			this._player.parentNode.removeChild(this._player);
 		} catch (e) {
