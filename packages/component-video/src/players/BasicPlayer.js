@@ -1,5 +1,6 @@
 import AbstractPlayer from './AbstractPlayer';
-const Detector = process.browser ? require('@stinkdigital/detector') : null;
+import { VISIBILITY_CHANGE_EVENT_NAME } from '../utils/visibility-change-event';
+import { HIDDEN_PROPERTY_NAME } from '../utils/hidden-property-name';
 
 export default class BasicPlayer extends AbstractPlayer {
 
@@ -136,9 +137,9 @@ export default class BasicPlayer extends AbstractPlayer {
 	}
 
 	_handlePageVisibility(remove = false) {
-		if (!Detector) return;
-		this._hidden = Detector.HIDDEN_PROPERTY_NAME;
-		const _pageVisibility = Detector.VISIBILITY_CHANGE_EVENT_NAME;
+		if (!document) return;
+		this._hidden = HIDDEN_PROPERTY_NAME;
+		const _pageVisibility = VISIBILITY_CHANGE_EVENT_NAME;
 		if (this._hidden === undefined && _pageVisibility === undefined) return;
 
 		if (remove) {
