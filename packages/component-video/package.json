@@ -132,7 +132,6 @@
     }
   },
   "dependencies": {
-    "@stinkdigital/detector": "git+ssh://git@github.com/stinkdigital/detector.git#0.0.6",
     "load-script": "^1.0.0"
   },
   "devDependencies": {
