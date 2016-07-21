@@ -7,7 +7,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 import AbstractPlayer from './AbstractPlayer';
-var Detector = process.browser ? require('@stinkdigital/detector') : null;
+import { VISIBILITY_CHANGE_EVENT_NAME } from '../utils/visibility-change-event';
+import { HIDDEN_PROPERTY_NAME } from '../utils/hidden-property-name';
 
 var BasicPlayer = function (_AbstractPlayer) {
 	_inherits(BasicPlayer, _AbstractPlayer);
@@ -117,9 +118,9 @@ var BasicPlayer = function (_AbstractPlayer) {
 	BasicPlayer.prototype._handlePageVisibility = function _handlePageVisibility() {
 		var remove = arguments.length <= 0 || arguments[0] === undefined ? false : arguments[0];
 
-		if (!Detector) return;
-		this._hidden = Detector.HIDDEN_PROPERTY_NAME;
-		var _pageVisibility = Detector.VISIBILITY_CHANGE_EVENT_NAME;
+		if (!document) return;
+		this._hidden = HIDDEN_PROPERTY_NAME;
+		var _pageVisibility = VISIBILITY_CHANGE_EVENT_NAME;
 		if (this._hidden === undefined && _pageVisibility === undefined) return;
 
 		if (remove) {
@@ -149,6 +150,7 @@ var BasicPlayer = function (_AbstractPlayer) {
 		this._removeListeners();
 
 		this._player.pause();
+		this._player.src = '';
 		try {
 			this._player.parentNode.removeChild(this._player);
 		} catch (e) {
@@ -162,6 +164,7 @@ var BasicPlayer = function (_AbstractPlayer) {
 		set: function set(value) {
 			this._replace(value);
 			this._player.src = value;
+			if (!value) return;
 			this._addListeners();
 		},
 		get: function get() {
