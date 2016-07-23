@@ -63,11 +63,13 @@ export default class YoutubePlayer extends AbstractPlayer {
 
 	play() {
 		super.play();
+		if (!this._player || !this._player.playVideo) return;
 		this._player.playVideo();
 	}
 
 	pause(autoPaused) {
 		super.pause(autoPaused);
+		if (!this._player || !this._player.pauseVideo) return;
 		this._player.pauseVideo();
 	}
 
