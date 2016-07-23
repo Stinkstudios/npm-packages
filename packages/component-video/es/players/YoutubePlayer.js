@@ -76,11 +76,13 @@ var YoutubePlayer = function (_AbstractPlayer) {
 
 	YoutubePlayer.prototype.play = function play() {
 		_AbstractPlayer.prototype.play.call(this);
+		if (!this._player || !this._player.playVideo) return;
 		this._player.playVideo();
 	};
 
 	YoutubePlayer.prototype.pause = function pause(autoPaused) {
 		_AbstractPlayer.prototype.pause.call(this, autoPaused);
+		if (!this._player || !this._player.pauseVideo) return;
 		this._player.pauseVideo();
 	};
 
