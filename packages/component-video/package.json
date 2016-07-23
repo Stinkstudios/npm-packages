@@ -1,6 +1,6 @@
 {
   "name": "@stinkdigital/component-video",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "A simple video component for videos and youtube videos.",
   "main": "lib/index.js",
   "jsnext:main": "es/index.js",
