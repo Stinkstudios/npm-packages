@@ -75,14 +75,14 @@ export default class InlinePlayer extends BasicPlayer {
 	}
 
 	play() {
-		if (!this._player) return;
-		if (this._player.playing) return;
+		if (!this._sound) return;
+		if (!this._sound.paused) return;
 		this._sound.play();
 	}
 
 	pause(autoPaused = false) {
-		if (!this._player) return;
-		if (this._player.paused) return;
+		if (!this._sound) return;
+		if (this._sound.paused) return;
 		this.autoPaused = autoPaused;
 		this._sound.pause();
 	}
@@ -132,8 +132,12 @@ export default class InlinePlayer extends BasicPlayer {
 		if (!this._sound) return;
 		this._removeAudioListeners();
 		this._sound.pause();
+		this._sound.src = '';
 		try {
-			this._sound.parentNode.removeChild(this._sound);
+			if (this._sound.parentNode &&
+			this.isDescendant(this._sound.parentNode, this._sound)) {
+				this._sound.parentNode.removeChild(this._sound);
+			}
 		} catch (e) {
 			if (this.error) throw new Error('Error remove inline player audio elment ', e);
 		}
