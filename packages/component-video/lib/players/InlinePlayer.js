@@ -83,16 +83,16 @@ var InlinePlayer = function (_BasicPlayer) {
 	};
 
 	InlinePlayer.prototype.play = function play() {
-		if (!this._player) return;
-		if (this._player.playing) return;
+		if (!this._sound) return;
+		if (!this._sound.paused) return;
 		this._sound.play();
 	};
 
 	InlinePlayer.prototype.pause = function pause() {
 		var autoPaused = arguments.length <= 0 || arguments[0] === undefined ? false : arguments[0];
 
-		if (!this._player) return;
-		if (this._player.paused) return;
+		if (!this._sound) return;
+		if (this._sound.paused) return;
 		this.autoPaused = autoPaused;
 		this._sound.pause();
 	};
@@ -133,8 +133,11 @@ var InlinePlayer = function (_BasicPlayer) {
 		if (!this._sound) return;
 		this._removeAudioListeners();
 		this._sound.pause();
+		this._sound.src = '';
 		try {
-			this._sound.parentNode.removeChild(this._sound);
+			if (this._sound.parentNode && this.isDescendant(this._sound.parentNode, this._sound)) {
+				this._sound.parentNode.removeChild(this._sound);
+			}
 		} catch (e) {
 			if (this.error) throw new Error('Error remove inline player audio elment ', e);
 		}
