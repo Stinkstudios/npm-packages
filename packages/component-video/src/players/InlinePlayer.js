@@ -53,6 +53,10 @@ export default class InlinePlayer extends BasicPlayer {
 		this._cancelAnimateFrame();
 	}
 
+	_onAudioError = (e) => {
+		this._onVideoError(e);
+	}
+
 	set audioReady(value) {
 		this._audioReady = value;
 	}
@@ -92,6 +96,7 @@ export default class InlinePlayer extends BasicPlayer {
 		this._sound.addEventListener('play', this._onAudioPlay);
 		this._sound.addEventListener('pause', this._onAudioPause);
 		this._sound.addEventListener('ended', this._onAudioEnded);
+		this._sound.addEventListener('error', this._onAudioError);
 	}
 
 	_removeAudioListeners() {
@@ -99,6 +104,7 @@ export default class InlinePlayer extends BasicPlayer {
 		this._sound.removeEventListener('play', this._onAudioPlay);
 		this._sound.removeEventListener('pause', this._onAudioPause);
 		this._sound.removeEventListener('ended', this._onAudioEnded);
+		this._sound.removeEventListener('error', this._onAudioError);
 	}
 
 	_replace(newsrc) {

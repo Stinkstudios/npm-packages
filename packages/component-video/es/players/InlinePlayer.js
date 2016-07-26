@@ -43,6 +43,10 @@ var InlinePlayer = function (_BasicPlayer) {
 			_this._cancelAnimateFrame();
 		};
 
+		_this._onAudioError = function (e) {
+			_this._onVideoError(e);
+		};
+
 		_this._render = function () {
 			var videoFrame = 0 | _this.framerate * _this._sound.currentTime;
 			if (videoFrame !== _this.currentFrame || videoFrame === 0) {
@@ -96,6 +100,7 @@ var InlinePlayer = function (_BasicPlayer) {
 		this._sound.addEventListener('play', this._onAudioPlay);
 		this._sound.addEventListener('pause', this._onAudioPause);
 		this._sound.addEventListener('ended', this._onAudioEnded);
+		this._sound.addEventListener('error', this._onAudioError);
 	};
 
 	InlinePlayer.prototype._removeAudioListeners = function _removeAudioListeners() {
@@ -103,6 +108,7 @@ var InlinePlayer = function (_BasicPlayer) {
 		this._sound.removeEventListener('play', this._onAudioPlay);
 		this._sound.removeEventListener('pause', this._onAudioPause);
 		this._sound.removeEventListener('ended', this._onAudioEnded);
+		this._sound.removeEventListener('error', this._onAudioError);
 	};
 
 	InlinePlayer.prototype._replace = function _replace(newsrc) {
