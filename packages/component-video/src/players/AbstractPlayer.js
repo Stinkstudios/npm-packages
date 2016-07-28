@@ -113,19 +113,19 @@ export default class AbstractPlayer {
 	}
 
 	set width(value) {
-		this.el.style.width = value;
+		if (this.el) this.el.style.width = value;
 	}
 
 	get width() {
-		return this.el.videoWidth;
+		return this.el ? this.el.videoWidth : null;
 	}
 
 	set height(value) {
-		this.el.style.height = value;
+		if (this.el) this.el.style.height = value;
 	}
 
 	get height() {
-		return this.el.videoHeight;
+		return this.el ? this.el.videoHeight : null;
 	}
 
 	setSize(width, height) {
@@ -134,8 +134,7 @@ export default class AbstractPlayer {
 	}
 
 	_addToDom() {
-		if (!this._options.el) document.body.appendChild(this.el);
-		else this._options.el.appendChild(this.el);
+		if (this._options.el) this._options.el.appendChild(this.el);
 	}
 
 	_onVideoMetadata = (e = {}) => {
