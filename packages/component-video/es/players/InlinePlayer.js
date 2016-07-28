@@ -25,16 +25,18 @@ var InlinePlayer = function (_BasicPlayer) {
 			if (_this.autoplay) _this.play();
 		};
 
-		_this._onAudioPlay = function () {
+		_this._onAudioPlay = function (e) {
 			_this.playing = true;
 			_this.paused = false;
 			_this.autoPaused = false;
+			_this._onVideoPlay(e);
 			if (!_this._animateFrame) _this._render();
 		};
 
-		_this._onAudioPause = function () {
+		_this._onAudioPause = function (e) {
 			_this.playing = false;
 			_this.paused = true;
+			_this._onVideoPause(e);
 			_this._cancelAnimateFrame();
 		};
 
