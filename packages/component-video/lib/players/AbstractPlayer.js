@@ -85,7 +85,7 @@ var AbstractPlayer = function () {
 	};
 
 	AbstractPlayer.prototype._addToDom = function _addToDom() {
-		if (!this._options.el) document.body.appendChild(this.el);else this._options.el.appendChild(this.el);
+		if (this._options.el) this._options.el.appendChild(this.el);
 	};
 
 	_createClass(AbstractPlayer, [{
@@ -155,18 +155,18 @@ var AbstractPlayer = function () {
 	}, {
 		key: 'width',
 		set: function set(value) {
-			this.el.style.width = value;
+			if (this.el) this.el.style.width = value;
 		},
 		get: function get() {
-			return this.el.videoWidth;
+			return this.el ? this.el.videoWidth : null;
 		}
 	}, {
 		key: 'height',
 		set: function set(value) {
-			this.el.style.height = value;
+			if (this.el) this.el.style.height = value;
 		},
 		get: function get() {
-			return this.el.videoHeight;
+			return this.el ? this.el.videoHeight : null;
 		}
 	}]);
 
