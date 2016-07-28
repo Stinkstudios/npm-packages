@@ -36,15 +36,17 @@ export default class InlinePlayer extends BasicPlayer {
 		this.audioReady = true;
 		if (this.autoplay) this.play();
 	}
-	_onAudioPlay = () => {
+	_onAudioPlay = (e) => {
 		this.playing = true;
 		this.paused = false;
 		this.autoPaused = false;
+		this._onVideoPlay(e);
 		if (!this._animateFrame) this._render();
 	}
-	_onAudioPause = () => {
+	_onAudioPause = (e) => {
 		this.playing = false;
 		this.paused = true;
+		this._onVideoPause(e);
 		this._cancelAnimateFrame();
 	}
 
