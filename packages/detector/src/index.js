@@ -12,6 +12,7 @@ var Detector = {
 	HAS_MOUSE_MOVE : require('./has-mouse-move'),
 	HAS_TOUCH : require('./has-touch'),
 	HAS_WEBGL : require('./has-webgl'),
+	HAS_OGG_VORBIS : require('./has-ogg-vorbis'),
 	HIDDEN_PROPERTY_NAME : require('./hidden-property-name'),
 	IE_VERSION : require('./ie-version'),
 	IOS_VERSION : require('./ios-version'),
