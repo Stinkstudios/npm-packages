@@ -1,6 +1,6 @@
 {
   "name": "@stinkdigital/detector",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Collection of JS constants containing device, OS, browser and capability detection.",
   "keywords": [
     "detector",
