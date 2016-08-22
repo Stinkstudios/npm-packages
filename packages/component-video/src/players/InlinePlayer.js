@@ -93,6 +93,11 @@ export default class InlinePlayer extends BasicPlayer {
 		this._sound.pause();
 	}
 
+	seek(time) {
+		if (!this.videoReady || !this._sound) return;
+		this._sound.currentTime = time;
+	}
+
 	_addAudioListeners() {
 		this._sound.addEventListener('canplaythrough', this._onAudioReady);
 		this._sound.addEventListener('play', this._onAudioPlay);
