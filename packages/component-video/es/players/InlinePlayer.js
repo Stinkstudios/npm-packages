@@ -97,6 +97,11 @@ var InlinePlayer = function (_BasicPlayer) {
 		this._sound.pause();
 	};
 
+	InlinePlayer.prototype.seek = function seek(time) {
+		if (!this.videoReady || !this._sound) return;
+		this._sound.currentTime = time;
+	};
+
 	InlinePlayer.prototype._addAudioListeners = function _addAudioListeners() {
 		this._sound.addEventListener('canplaythrough', this._onAudioReady);
 		this._sound.addEventListener('play', this._onAudioPlay);
