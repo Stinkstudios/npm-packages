@@ -1,6 +1,6 @@
 var HAS_TOUCH = !!(
 	'ontouchstart' in window ||
-	'onmsgesturechange' in window ||
+	navigator.msMaxTouchPoints ||
 	(window.DocumentTouch && document instanceof window.DocumentTouch)
 );
 
