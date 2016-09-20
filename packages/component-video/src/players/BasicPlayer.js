@@ -87,34 +87,34 @@ export default class BasicPlayer extends AbstractPlayer {
 		this.currentTime = time;
 	}
 
-  fade(volume, duration, fn) {
-    let t0 = 0;
-    const v0 = this.volume;
+	fade(volume, duration, fn) {
+		let t0 = 0;
+		const v0 = this.volume;
 
-    const ramp = (t) => {
-      // Duration is in seconds, t in milliseconds
-      const d = duration * 1000;
-      // Init time reference
-      if (t0 === 0) t0 = t;
-      // End of fading
-      if (t - t0 > d) {
-        // Make sure the correct volume is set
-        this.volume = clamp(volume, 0, 1);
-        cancelAnimationFrame(this.fadeAnimId);
-        if (fn) fn();
-        return;
-      }
-      // Fading param
-      const x = (t - t0) / d;
-      // Volume lerp
-      const v = (1 - x) * v0 + x * volume;
-      this.volume = clamp(v, 0, 1);
-      this.fadeAnimId = requestAnimationFrame(ramp);
-    };
+		const ramp = (t) => {
+			// Duration is in seconds, t in milliseconds
+			const d = duration * 1000;
+			// Init time reference
+			if (t0 === 0) t0 = t;
+			// End of fading
+			if (t - t0 > d) {
+				// Make sure the correct volume is set
+				this.volume = clamp(volume, 0, 1);
+				cancelAnimationFrame(this.fadeAnimId);
+				if (fn) fn();
+				return;
+			}
+			// Fading param
+			const x = (t - t0) / d;
+			// Volume lerp
+			const v = (1 - x) * v0 + x * volume;
+			this.volume = clamp(v, 0, 1);
+			this.fadeAnimId = requestAnimationFrame(ramp);
+		};
 
-    if (this.fadeAnimId) cancelAnimationFrame(this.fadeAnimId);
-    this.fadeAnimId = requestAnimationFrame(ramp);
-  }
+		if (this.fadeAnimId) cancelAnimationFrame(this.fadeAnimId);
+		this.fadeAnimId = requestAnimationFrame(ramp);
+	}
 
 	_addListeners() {
 		this._removeListeners();

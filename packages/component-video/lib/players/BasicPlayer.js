@@ -16,6 +16,8 @@ var _hiddenPropertyName = require('../utils/hidden-property-name');
 
 var _hiddenPropertyName2 = _interopRequireDefault(_hiddenPropertyName);
 
+var _math = require('../utils/math.js');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -93,6 +95,37 @@ var BasicPlayer = function (_AbstractPlayer) {
 	BasicPlayer.prototype.seek = function seek(time) {
 		if (!this.videoReady) return;
 		this.currentTime = time;
+	};
+
+	BasicPlayer.prototype.fade = function fade(volume, duration, fn) {
+		var _this2 = this;
+
+		var t0 = 0;
+		var v0 = this.volume;
+
+		var ramp = function ramp(t) {
+			// Duration is in seconds, t in milliseconds
+			var d = duration * 1000;
+			// Init time reference
+			if (t0 === 0) t0 = t;
+			// End of fading
+			if (t - t0 > d) {
+				// Make sure the correct volume is set
+				_this2.volume = (0, _math.clamp)(volume, 0, 1);
+				cancelAnimationFrame(_this2.fadeAnimId);
+				if (fn) fn();
+				return;
+			}
+			// Fading param
+			var x = (t - t0) / d;
+			// Volume lerp
+			var v = (1 - x) * v0 + x * volume;
+			_this2.volume = (0, _math.clamp)(v, 0, 1);
+			_this2.fadeAnimId = requestAnimationFrame(ramp);
+		};
+
+		if (this.fadeAnimId) cancelAnimationFrame(this.fadeAnimId);
+		this.fadeAnimId = requestAnimationFrame(ramp);
 	};
 
 	BasicPlayer.prototype._addListeners = function _addListeners() {
