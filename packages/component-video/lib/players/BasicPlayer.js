@@ -60,6 +60,7 @@ var BasicPlayer = function (_AbstractPlayer) {
 
 		var _this$_options = _this._options;
 		var src = _this$_options.src;
+		var poster = _this$_options.poster;
 		var _this$_options$loop = _this$_options.loop;
 		var loop = _this$_options$loop === undefined ? false : _this$_options$loop;
 		var _this$_options$contro = _this$_options.controls;
@@ -78,6 +79,7 @@ var BasicPlayer = function (_AbstractPlayer) {
 		_this.preload = preload;
 		if (crossOrigin) _this.crossOrigin = crossOrigin;
 		_this._player.autoplay = _this.autoplay;
+		_this.poster = poster;
 		_this.src = src;
 		return _this;
 	}
@@ -238,6 +240,11 @@ var BasicPlayer = function (_AbstractPlayer) {
 		},
 		get: function get() {
 			return this._player.volume;
+		}
+	}, {
+		key: 'poster',
+		set: function set(value) {
+			this._player.poster = value;
 		}
 	}, {
 		key: 'loop',
