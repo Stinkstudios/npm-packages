@@ -15,6 +15,7 @@ export default class BasicPlayer extends AbstractPlayer {
 
 		const {
 			src,
+			poster,
 			loop = false,
 			controls = true,
 			volume = 1,
@@ -28,6 +29,7 @@ export default class BasicPlayer extends AbstractPlayer {
 		this.preload = preload;
 		if (crossOrigin) this.crossOrigin = crossOrigin;
 		this._player.autoplay = this.autoplay;
+		this.poster = poster;
 		this.src = src;
 	}
 
@@ -40,6 +42,9 @@ export default class BasicPlayer extends AbstractPlayer {
 
 	set volume(value) {
 		this._player.volume = value;
+	}
+	set poster(value) {
+		this._player.poster = value;
 	}
 	set loop(value) {
 		this.looping = value;
