@@ -2,6 +2,7 @@ var Detector = {
 	ANDROID_VERSION : require('./android-version'),
 	DEVICE_TYPE : require('./device-type'),
 	FIREFOX_VERSION : require('./firefox-version'),
+	SAFARI_VERSION : require('./safari-version'),
 	HAS_CANVAS : require('./has-canvas'),
 	HAS_DEVICE_ORIENTATION_EVENT : require('./has-device-orientation-event'),
 	HAS_FULLSCREEN : require('./has-fullscreen'),
