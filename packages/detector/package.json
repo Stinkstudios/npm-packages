@@ -1,6 +1,6 @@
 {
   "name": "@stinkdigital/detector",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Collection of JS constants containing device, OS, browser and capability detection.",
   "keywords": [
     "detector",
@@ -22,7 +22,6 @@
   "author": "Stinkdigital",
   "readmeFilename": "README.md",
   "devDependencies": {
-    "webpack": "^1.12.13",
-    "string-replace-webpack-plugin": "0.0.4"
+    "webpack": "^1.12.13"
   }
 }
