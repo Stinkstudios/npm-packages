@@ -10,7 +10,7 @@
     "html5",
     "css3"
   ],
-  "main": "src/index.js",
+  "main": "dist/detector.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --progress --colors"
