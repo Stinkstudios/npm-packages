@@ -15,9 +15,9 @@ module.exports = {
         extensions: ['', '.js']
     },
     plugins: [
-        new webpack.DefinePlugin({
-            __VERSION__: JSON.stringify(pkg.version),
-        }),
+        // new webpack.DefinePlugin({
+        //     __VERSION__: JSON.stringify(pkg.version),
+        // }),
         new webpack.optimize.UglifyJsPlugin({minimize: true})
     ]
 };

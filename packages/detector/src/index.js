@@ -1,5 +1,6 @@
 var Detector = {
-	version : __VERSION__,
+    // should be manually updated
+	version : '0.1.6',
 	ANDROID_VERSION : require('./android-version'),
 	DEVICE_TYPE : require('./device-type'),
 	FIREFOX_VERSION : require('./firefox-version'),
