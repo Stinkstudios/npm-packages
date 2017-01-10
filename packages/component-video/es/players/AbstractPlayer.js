@@ -6,7 +6,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 var AbstractPlayer = function () {
 	function AbstractPlayer() {
-		var mOptions = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+		var mOptions = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
 		_classCallCheck(this, AbstractPlayer);
 
@@ -14,21 +14,21 @@ var AbstractPlayer = function () {
 
 		this._options = mOptions;
 
-		var _options = this._options;
-		var _options$autoplay = _options.autoplay;
-		var autoplay = _options$autoplay === undefined ? false : _options$autoplay;
-		var _options$loop = _options.loop;
-		var loop = _options$loop === undefined ? false : _options$loop;
-		var _options$resize = _options.resize;
-		var resize = _options$resize === undefined ? false : _options$resize;
-		var _options$width = _options.width;
-		var width = _options$width === undefined ? '100%' : _options$width;
-		var _options$height = _options.height;
-		var height = _options$height === undefined ? '100%' : _options$height;
-		var _options$pageVisibili = _options.pageVisibility;
-		var pageVisibility = _options$pageVisibili === undefined ? false : _options$pageVisibili;
-		var _options$error = _options.error;
-		var error = _options$error === undefined ? true : _options$error;
+		var _options = this._options,
+		    _options$autoplay = _options.autoplay,
+		    autoplay = _options$autoplay === undefined ? false : _options$autoplay,
+		    _options$loop = _options.loop,
+		    loop = _options$loop === undefined ? false : _options$loop,
+		    _options$resize = _options.resize,
+		    resize = _options$resize === undefined ? false : _options$resize,
+		    _options$width = _options.width,
+		    width = _options$width === undefined ? '100%' : _options$width,
+		    _options$height = _options.height,
+		    height = _options$height === undefined ? '100%' : _options$height,
+		    _options$pageVisibili = _options.pageVisibility,
+		    pageVisibility = _options$pageVisibili === undefined ? false : _options$pageVisibili,
+		    _options$error = _options.error,
+		    error = _options$error === undefined ? true : _options$error;
 
 
 		this._options.resize = this._options.youtubeId ? false : resize;
@@ -60,15 +60,15 @@ var AbstractPlayer = function () {
 
 	AbstractPlayer.prototype.play = function play() {
 		if (!this._player) return;
-		if (this._player.playing) return;
+		if (this._player.playing) return; // eslint-disable-line no-useless-return
 	};
 
 	AbstractPlayer.prototype.pause = function pause() {
-		var autoPaused = arguments.length <= 0 || arguments[0] === undefined ? false : arguments[0];
+		var autoPaused = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
 
 		if (!this._player) return;
 		this.autoPaused = autoPaused;
-		if (this._player.paused) return;
+		if (this._player.paused) return; // eslint-disable-line no-useless-return
 	};
 
 	AbstractPlayer.prototype.seek = function seek(time) {
@@ -173,7 +173,7 @@ var _initialiseProps = function _initialiseProps() {
 	var _this = this;
 
 	this._onVideoMetadata = function () {
-		var e = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+		var e = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
 		if (!_this._options.resize) {
 			_this.setSize(_this._options.width, _this._options.height);

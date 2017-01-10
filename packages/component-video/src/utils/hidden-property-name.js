@@ -6,7 +6,7 @@ const HIDDEN_PROPERTY_NAME = (() => {
 		webkitHidden: 'webkitHidden',
 	};
 	let value;
-	if (!document) return value;
+	if (typeof document === 'undefined') return value;
 	for (const p in props) { // eslint-disable-line
 		if (typeof document[p] !== 'undefined') {
 			value = props[p];

@@ -92,13 +92,13 @@ export default class AbstractPlayer {
 
 	play() {
 		if (!this._player) return;
-		if (this._player.playing) return;
+		if (this._player.playing) return; // eslint-disable-line no-useless-return
 	}
 
 	pause(autoPaused = false) {
 		if (!this._player) return;
 		this.autoPaused = autoPaused;
-		if (this._player.paused) return;
+		if (this._player.paused) return; // eslint-disable-line no-useless-return
 	}
 
 	seek(time) {

@@ -1,7 +1,7 @@
 import VideoPlayer from './VideoPlayer';
 
-export default VideoPlayer;
-
-if (window !== undefined) {
+if (typeof window !== 'undefined') {
 	window.VideoPlayer = VideoPlayer;
 }
+
+export default VideoPlayer;

@@ -79,7 +79,7 @@ export default class YoutubePlayer extends AbstractPlayer {
 	}
 
 
-	_getSDK() {
+	_getSDK() { // eslint-disable-line class-methods-use-this
 		if (window[SDK_GLOBAL]) {
 			return Promise.resolve(window[SDK_GLOBAL]);
 		}
