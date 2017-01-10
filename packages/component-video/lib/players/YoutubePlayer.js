@@ -38,7 +38,7 @@ var YoutubePlayer = function (_AbstractPlayer) {
 	_inherits(YoutubePlayer, _AbstractPlayer);
 
 	function YoutubePlayer() {
-		var mOptions = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+		var mOptions = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
 		_classCallCheck(this, YoutubePlayer);
 
@@ -101,6 +101,7 @@ var YoutubePlayer = function (_AbstractPlayer) {
 	};
 
 	YoutubePlayer.prototype._getSDK = function _getSDK() {
+		// eslint-disable-line class-methods-use-this
 		if (window[SDK_GLOBAL]) {
 			return Promise.resolve(window[SDK_GLOBAL]);
 		}
@@ -122,11 +123,11 @@ var YoutubePlayer = function (_AbstractPlayer) {
 	YoutubePlayer.prototype._loadPlayer = function _loadPlayer() {
 		var _this2 = this;
 
-		var _options = this._options;
-		var _options$controls = _options.controls;
-		var controls = _options$controls === undefined ? true : _options$controls;
-		var _options$volume = _options.volume;
-		var volume = _options$volume === undefined ? 1 : _options$volume;
+		var _options = this._options,
+		    _options$controls = _options.controls,
+		    controls = _options$controls === undefined ? true : _options$controls,
+		    _options$volume = _options.volume,
+		    volume = _options$volume === undefined ? 1 : _options$volume;
 
 		this._getSDK().then(function (YT) {
 			_this2._player = new YT.Player(_this2._el, {

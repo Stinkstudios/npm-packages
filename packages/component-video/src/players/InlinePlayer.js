@@ -124,7 +124,7 @@ export default class InlinePlayer extends BasicPlayer {
 	}
 
 	_render = () => {
-		const videoFrame = 0 | this.framerate * (this._sound.currentTime);
+		const videoFrame = 0 || this.framerate * (this._sound.currentTime);
 		if ((videoFrame !== this.currentFrame) || videoFrame === 0) {
 			this.currentFrame = videoFrame;
 			this.currentTime = (videoFrame / this.framerate).toFixed(6);

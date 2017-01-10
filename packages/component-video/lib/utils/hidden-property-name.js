@@ -9,7 +9,7 @@ var HIDDEN_PROPERTY_NAME = function () {
 		webkitHidden: 'webkitHidden'
 	};
 	var value = void 0;
-	if (!document) return value;
+	if (typeof document === 'undefined') return value;
 	for (var p in props) {
 		// eslint-disable-line
 		if (typeof document[p] !== 'undefined') {

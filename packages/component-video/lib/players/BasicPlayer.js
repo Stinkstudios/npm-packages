@@ -16,7 +16,7 @@ var _hiddenPropertyName = require('../utils/hidden-property-name');
 
 var _hiddenPropertyName2 = _interopRequireDefault(_hiddenPropertyName);
 
-var _math = require('../utils/math.js');
+var _math = require('../utils/math');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -31,25 +31,25 @@ var BasicPlayer = function (_AbstractPlayer) {
 	_inherits(BasicPlayer, _AbstractPlayer);
 
 	function BasicPlayer() {
-		var mOptions = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+		var mOptions = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
 		_classCallCheck(this, BasicPlayer);
 
 		var _this = _possibleConstructorReturn(this, _AbstractPlayer.call(this, mOptions));
 
 		_this._onPageVisibilityChange = function () {
-			if (!document) return;
+			if (typeof document === 'undefined') return;
 			if (document[_this._hidden]) {
 				/*
     	to catch if the user has already paused video via any controls
     	passing through the paused state to set autoPaused
      */
 				if (!_this.paused) _this.pause(!_this.paused);
-			} else {
+			} else if (_this.autoPaused) {
 				/*
     	if video auto paused by visibilitychange then auto play video
      */
-				if (_this.autoPaused) _this.play();
+				_this.play();
 			}
 		};
 
@@ -58,19 +58,19 @@ var BasicPlayer = function (_AbstractPlayer) {
 		}
 		_this._player = document.createElement('video');
 
-		var _this$_options = _this._options;
-		var src = _this$_options.src;
-		var poster = _this$_options.poster;
-		var _this$_options$loop = _this$_options.loop;
-		var loop = _this$_options$loop === undefined ? false : _this$_options$loop;
-		var _this$_options$contro = _this$_options.controls;
-		var controls = _this$_options$contro === undefined ? true : _this$_options$contro;
-		var _this$_options$volume = _this$_options.volume;
-		var volume = _this$_options$volume === undefined ? 1 : _this$_options$volume;
-		var _this$_options$preloa = _this$_options.preload;
-		var preload = _this$_options$preloa === undefined ? 'auto' : _this$_options$preloa;
-		var _this$_options$crossO = _this$_options.crossOrigin;
-		var crossOrigin = _this$_options$crossO === undefined ? null : _this$_options$crossO;
+		var _this$_options = _this._options,
+		    src = _this$_options.src,
+		    poster = _this$_options.poster,
+		    _this$_options$loop = _this$_options.loop,
+		    loop = _this$_options$loop === undefined ? false : _this$_options$loop,
+		    _this$_options$contro = _this$_options.controls,
+		    controls = _this$_options$contro === undefined ? true : _this$_options$contro,
+		    _this$_options$volume = _this$_options.volume,
+		    volume = _this$_options$volume === undefined ? 1 : _this$_options$volume,
+		    _this$_options$preloa = _this$_options.preload,
+		    preload = _this$_options$preloa === undefined ? 'auto' : _this$_options$preloa,
+		    _this$_options$crossO = _this$_options.crossOrigin,
+		    crossOrigin = _this$_options$crossO === undefined ? null : _this$_options$crossO;
 
 
 		_this.loop = loop;
@@ -166,9 +166,9 @@ var BasicPlayer = function (_AbstractPlayer) {
 	};
 
 	BasicPlayer.prototype._handlePageVisibility = function _handlePageVisibility() {
-		var remove = arguments.length <= 0 || arguments[0] === undefined ? false : arguments[0];
+		var remove = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
 
-		if (!document) return;
+		if (typeof document === 'undefined') return;
 		this._hidden = _hiddenPropertyName2.default;
 		var _pageVisibility = _visibilityChangeEvent2.default;
 		if (this._hidden === undefined && _pageVisibility === undefined) return;
@@ -181,9 +181,9 @@ var BasicPlayer = function (_AbstractPlayer) {
 	};
 
 	BasicPlayer.prototype._handlePageResize = function _handlePageResize() {
-		var remove = arguments.length <= 0 || arguments[0] === undefined ? false : arguments[0];
+		var remove = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
 
-		if (!window) return;
+		if (typeof window === 'undefined') return;
 		if (remove) {
 			window.removeEventListener('resize', this._onVideoResize);
 			return;
@@ -212,6 +212,7 @@ var BasicPlayer = function (_AbstractPlayer) {
 	};
 
 	BasicPlayer.prototype.isDescendant = function isDescendant(parent, child) {
+		// eslint-disable-line class-methods-use-this
 		var node = child.parentNode;
 		while (node !== null) {
 			if (node === parent) {

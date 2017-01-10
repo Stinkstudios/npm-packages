@@ -2,7 +2,7 @@
 import AbstractPlayer from './AbstractPlayer';
 import VISIBILITY_CHANGE_EVENT_NAME from '../utils/visibility-change-event';
 import HIDDEN_PROPERTY_NAME from '../utils/hidden-property-name';
-import { clamp } from '../utils/math.js';
+import { clamp } from '../utils/math';
 
 export default class BasicPlayer extends AbstractPlayer {
 
@@ -157,23 +157,23 @@ export default class BasicPlayer extends AbstractPlayer {
 	}
 
 	_onPageVisibilityChange = () => {
-		if (!document) return;
+		if (typeof document === 'undefined') return;
 		if (document[this._hidden]) {
 			/*
 				to catch if the user has already paused video via any controls
 				passing through the paused state to set autoPaused
 			 */
 			if (!this.paused) this.pause(!this.paused);
-		} else {
+		} else if (this.autoPaused) {
 			/*
 				if video auto paused by visibilitychange then auto play video
 			 */
-			if (this.autoPaused) this.play();
+			this.play();
 		}
 	}
 
 	_handlePageVisibility(remove = false) {
-		if (!document) return;
+		if (typeof document === 'undefined') return;
 		this._hidden = HIDDEN_PROPERTY_NAME;
 		const _pageVisibility = VISIBILITY_CHANGE_EVENT_NAME;
 		if (this._hidden === undefined && _pageVisibility === undefined) return;
@@ -186,7 +186,7 @@ export default class BasicPlayer extends AbstractPlayer {
 	}
 
 	_handlePageResize(remove = false) {
-		if (!window) return;
+		if (typeof window === 'undefined') return;
 		if (remove) {
 			window.removeEventListener('resize', this._onVideoResize);
 			return;
@@ -214,7 +214,7 @@ export default class BasicPlayer extends AbstractPlayer {
 		this._player = null;
 	}
 
-	isDescendant(parent, child) {
+	isDescendant(parent, child) { // eslint-disable-line class-methods-use-this
 		let node = child.parentNode;
 		while (node !== null) {
 			if (node === parent) {
