@@ -29,7 +29,7 @@ export default class BasicPlayer extends AbstractPlayer {
 		this.preload = preload;
 		if (crossOrigin) this.crossOrigin = crossOrigin;
 		this._player.autoplay = this.autoplay;
-		this.poster = poster;
+		if (poster !== 'undefined' && typeof poster === 'string' && poster.length > 0) this.poster = poster;
 		this.src = src;
 	}
 

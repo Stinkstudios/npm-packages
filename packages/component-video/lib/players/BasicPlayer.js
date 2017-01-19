@@ -79,7 +79,7 @@ var BasicPlayer = function (_AbstractPlayer) {
 		_this.preload = preload;
 		if (crossOrigin) _this.crossOrigin = crossOrigin;
 		_this._player.autoplay = _this.autoplay;
-		_this.poster = poster;
+		if (poster !== 'undefined' && typeof poster === 'string' && poster.length > 0) _this.poster = poster;
 		_this.src = src;
 		return _this;
 	}
