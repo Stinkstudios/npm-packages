@@ -1,6 +1,6 @@
 {
   "name": "@stinkdigital/component-video",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A simple video component for videos and youtube videos.",
   "main": "lib/index.js",
   "jsnext:main": "es/index.js",
@@ -143,6 +143,7 @@
     "load-script": "^1.0.0"
   },
   "devDependencies": {
+    "@stinkdigital/detector": "git+ssh://git@github.com/stinkdigital/detector.git#0.1.5",
     "babel-cli": "6.18.0",
     "babel-core": "6.21.0",
     "babel-eslint": "7.1.1",
