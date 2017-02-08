@@ -16,7 +16,7 @@ var BasicPlayer = function (_AbstractPlayer) {
 	_inherits(BasicPlayer, _AbstractPlayer);
 
 	function BasicPlayer() {
-		var mOptions = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+		var mOptions = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
 
 		_classCallCheck(this, BasicPlayer);
 
@@ -43,19 +43,22 @@ var BasicPlayer = function (_AbstractPlayer) {
 		}
 		_this._player = document.createElement('video');
 
-		var _this$_options = _this._options,
-		    src = _this$_options.src,
-		    poster = _this$_options.poster,
-		    _this$_options$loop = _this$_options.loop,
-		    loop = _this$_options$loop === undefined ? false : _this$_options$loop,
-		    _this$_options$contro = _this$_options.controls,
-		    controls = _this$_options$contro === undefined ? true : _this$_options$contro,
-		    _this$_options$volume = _this$_options.volume,
-		    volume = _this$_options$volume === undefined ? 1 : _this$_options$volume,
-		    _this$_options$preloa = _this$_options.preload,
-		    preload = _this$_options$preloa === undefined ? 'auto' : _this$_options$preloa,
-		    _this$_options$crossO = _this$_options.crossOrigin,
-		    crossOrigin = _this$_options$crossO === undefined ? null : _this$_options$crossO;
+		_this._player.setAttribute('playsinline', 'playsinline');
+		_this._player.setAttribute('webkitplaysinline', 'webkitplaysinline');
+
+		var _this$_options = _this._options;
+		var src = _this$_options.src;
+		var poster = _this$_options.poster;
+		var _this$_options$loop = _this$_options.loop;
+		var loop = _this$_options$loop === undefined ? false : _this$_options$loop;
+		var _this$_options$contro = _this$_options.controls;
+		var controls = _this$_options$contro === undefined ? true : _this$_options$contro;
+		var _this$_options$volume = _this$_options.volume;
+		var volume = _this$_options$volume === undefined ? 1 : _this$_options$volume;
+		var _this$_options$preloa = _this$_options.preload;
+		var preload = _this$_options$preloa === undefined ? 'auto' : _this$_options$preloa;
+		var _this$_options$crossO = _this$_options.crossOrigin;
+		var crossOrigin = _this$_options$crossO === undefined ? null : _this$_options$crossO;
 
 
 		_this.loop = loop;
@@ -151,7 +154,7 @@ var BasicPlayer = function (_AbstractPlayer) {
 	};
 
 	BasicPlayer.prototype._handlePageVisibility = function _handlePageVisibility() {
-		var remove = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+		var remove = arguments.length <= 0 || arguments[0] === undefined ? false : arguments[0];
 
 		if (typeof document === 'undefined') return;
 		this._hidden = HIDDEN_PROPERTY_NAME;
@@ -166,7 +169,7 @@ var BasicPlayer = function (_AbstractPlayer) {
 	};
 
 	BasicPlayer.prototype._handlePageResize = function _handlePageResize() {
-		var remove = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+		var remove = arguments.length <= 0 || arguments[0] === undefined ? false : arguments[0];
 
 		if (typeof window === 'undefined') return;
 		if (remove) {

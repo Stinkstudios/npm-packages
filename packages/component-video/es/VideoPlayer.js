@@ -5,12 +5,12 @@ import BasicPlayer from './players/BasicPlayer';
 import InlinePlayer from './players/InlinePlayer';
 
 var VideoPlayer = function VideoPlayer() {
-	var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+	var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
 
 	_classCallCheck(this, VideoPlayer);
 
-	var _options$forceInline = options.forceInline,
-	    forceInline = _options$forceInline === undefined ? false : _options$forceInline;
+	var _options$forceInline = options.forceInline;
+	var forceInline = _options$forceInline === undefined ? false : _options$forceInline;
 
 
 	if (options.youtubeId) {

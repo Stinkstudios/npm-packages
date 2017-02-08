@@ -14,7 +14,7 @@ var InlinePlayer = function (_BasicPlayer) {
 	_inherits(InlinePlayer, _BasicPlayer);
 
 	function InlinePlayer() {
-		var mOptions = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+		var mOptions = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
 
 		_classCallCheck(this, InlinePlayer);
 
@@ -58,12 +58,12 @@ var InlinePlayer = function (_BasicPlayer) {
 			_this._animateFrame = requestAnimationFrame(_this._render);
 		};
 
-		var _this$_options = _this._options,
-		    audioSrc = _this$_options.audioSrc,
-		    _this$_options$loop = _this$_options.loop,
-		    loop = _this$_options$loop === undefined ? false : _this$_options$loop,
-		    _this$_options$volume = _this$_options.volume,
-		    volume = _this$_options$volume === undefined ? 1 : _this$_options$volume;
+		var _this$_options = _this._options;
+		var audioSrc = _this$_options.audioSrc;
+		var _this$_options$loop = _this$_options.loop;
+		var loop = _this$_options$loop === undefined ? false : _this$_options$loop;
+		var _this$_options$volume = _this$_options.volume;
+		var volume = _this$_options$volume === undefined ? 1 : _this$_options$volume;
 
 
 		_this.framerate = 24;
@@ -89,7 +89,7 @@ var InlinePlayer = function (_BasicPlayer) {
 	};
 
 	InlinePlayer.prototype.pause = function pause() {
-		var autoPaused = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+		var autoPaused = arguments.length <= 0 || arguments[0] === undefined ? false : arguments[0];
 
 		if (!this._sound) return;
 		if (this._sound.paused) return;
