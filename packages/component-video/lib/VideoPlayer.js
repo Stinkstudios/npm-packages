@@ -19,12 +19,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var VideoPlayer = function VideoPlayer() {
-	var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+	var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
 
 	_classCallCheck(this, VideoPlayer);
 
-	var _options$forceInline = options.forceInline,
-	    forceInline = _options$forceInline === undefined ? false : _options$forceInline;
+	var _options$forceInline = options.forceInline;
+	var forceInline = _options$forceInline === undefined ? false : _options$forceInline;
 
 
 	if (options.youtubeId) {
