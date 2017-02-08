@@ -13,6 +13,9 @@ export default class BasicPlayer extends AbstractPlayer {
 		}
 		this._player = document.createElement('video');
 
+		this._player.setAttribute('playsinline', 'playsinline');
+		this._player.setAttribute('webkitplaysinline', 'webkitplaysinline');
+
 		const {
 			src,
 			poster,
