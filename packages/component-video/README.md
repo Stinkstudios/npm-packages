@@ -30,7 +30,9 @@ document.body.appendChild(videoPlayer.el);
  - `preload : string` ('auto')
  - `crossOrigin : null`
  - `volume : int` (1)
+ - `muted : boolean` (false)
  - `controls : boolean` (true)
+ - `playsinline : boolean` (true)
  - `forceInline : boolean` (false) ( Enables the iOS hack to play video inline )
  - `resize : boolean` (false) (disabled if youtubeId is present)
  - `pageVisibility : boolean` (false) ( Will pause and play the video on pageVisibility change )
@@ -71,6 +73,10 @@ Compiled into ES5 and ES6. See `package.json`
 
 	"main": "lib/index.js",
 	"jsnext:main": "es/index.js",
+	"module": "es/index.js",
+
+For autoplay on iOS 10 safari mobile you need to set `muted` to true.
+If you need audio you still have to use the hack of providing an audio file.
 
 ## Development
 ```

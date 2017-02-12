@@ -19,27 +19,25 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var VideoPlayer = function VideoPlayer() {
-	var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+	var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
 	_classCallCheck(this, VideoPlayer);
 
-	var _options$forceInline = options.forceInline;
-	var forceInline = _options$forceInline === undefined ? false : _options$forceInline;
+	var _options$forceInline = options.forceInline,
+	    forceInline = _options$forceInline === undefined ? false : _options$forceInline;
 
 
 	if (options.youtubeId) {
 		this._player = new _YoutubePlayer2.default(options);
 		this._player._addToDom();
+		return this._player;
 	} else if (forceInline) {
 		if (options.forceNativePlayer) {
-			this._player = new _BasicPlayer2.default(options);
-		} else {
-			this._player = new _InlinePlayer2.default(options);
+			return new _BasicPlayer2.default(options);
 		}
-	} else {
-		this._player = new _BasicPlayer2.default(options);
+		return new _InlinePlayer2.default(options);
 	}
-	return this._player;
+	return new _BasicPlayer2.default(options);
 };
 
 exports.default = VideoPlayer;

@@ -14,7 +14,6 @@ export default class BasicPlayer extends AbstractPlayer {
 		this._player = document.createElement('video');
 
 		this._player.setAttribute('playsinline', 'playsinline');
-		this._player.setAttribute('webkitplaysinline', 'webkitplaysinline');
 
 		const {
 			src,
@@ -24,8 +23,12 @@ export default class BasicPlayer extends AbstractPlayer {
 			volume = 1,
 			preload = 'auto',
 			crossOrigin = null,
+			muted = false,
+			playsinline = true,
 		} = this._options;
 
+		this.muted = muted;
+		this.playsinline = playsinline;
 		this.loop = loop;
 		this.controls = controls;
 		this.volume = volume;
@@ -42,6 +45,12 @@ export default class BasicPlayer extends AbstractPlayer {
 		this._player.src = value;
 		if (!value) return;
 		this._addListeners();
+	}
+
+	set playsinline(value) {
+		if (value) {
+			this._player.setAttribute('playsinline', '');
+		}
 	}
 
 	set volume(value) {
@@ -66,6 +75,13 @@ export default class BasicPlayer extends AbstractPlayer {
 	set currentTime(time) {
 		/* TODO add check for time format */
 		this._player.currentTime = time;
+	}
+	set muted(muted) {
+		if (muted) {
+			this._player.setAttribute('muted', '');
+		} else {
+			this._player.removeAttribute('muted', '');
+		}
 	}
 
 	get src() {

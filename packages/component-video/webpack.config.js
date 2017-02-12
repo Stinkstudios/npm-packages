@@ -15,7 +15,7 @@ module.exports = {
 	entry: {
 		app: getEntrySources()
 	},
-	devTools: !prod ? 'cheap-module-eval-source-map' : '',
+	devtool: !prod ? 'cheap-module-eval-source-map' : '',
 	stats: {
 		cached: false,
 		cachedAssets: false,
@@ -37,7 +37,7 @@ module.exports = {
 	module: {
 		loaders: [{
 			test: /\.js$/,
-			loader: 'babel',
+			loader: 'babel-loader',
 			exclude: /(node_modules|dist|lib|es)/,
 			query: {
 				cacheDirectory: true,
@@ -68,8 +68,7 @@ module.exports = {
 		}]
 	},
 	plugins: prod ? [
-		new webpack.optimize.DedupePlugin(),
-		new webpack.optimize.OccurenceOrderPlugin(),
+		new webpack.optimize.OccurrenceOrderPlugin(),
 		new webpack.optimize.UglifyJsPlugin({
 			compress: {
 				screw_ie8: true,
