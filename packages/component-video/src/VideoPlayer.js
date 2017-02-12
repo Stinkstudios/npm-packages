@@ -12,16 +12,13 @@ export default class VideoPlayer {
 		if (options.youtubeId) {
 			this._player = new YoutubePlayer(options);
 			this._player._addToDom();
+			return this._player;
 		} else if (forceInline) {
 			if (options.forceNativePlayer) {
-				this._player = new BasicPlayer(options);
-			} else {
-				this._player = new InlinePlayer(options);
+				return new BasicPlayer(options);
 			}
-		} else {
-			this._player = new BasicPlayer(options);
+			return new InlinePlayer(options);
 		}
-		return this._player;
+		return new BasicPlayer(options);
 	}
-
 }
