@@ -1,0 +1,26 @@
+{
+  "name": "boilerplate-react-components",
+  "version": "0.0.1",
+  "description": "A collection of React components to be used on Stink Studios' React Boilerplate",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Stinkstudios/boilerplate-react-components.git"
+  },
+  "keywords": [
+    "react",
+    "boilerplate",
+    "components",
+    "stink",
+    "studios"
+  ],
+  "author": "Matteo Belfiore",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Stinkstudios/boilerplate-react-components/issues"
+  },
+  "homepage": "https://github.com/Stinkstudios/boilerplate-react-components#readme"
+}
