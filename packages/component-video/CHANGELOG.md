@@ -1,4 +1,19 @@
-## 0.3.3 (January 19, 2017)
+## 0.3.5 (March 7, 2017)
+
+### Changed
+
+* yarn version to `"yarn": ">=0.18.1"` as circleci complains
+
+## 0.3.4 (March 2, 2017)
+
+### Changed
+
+* `package.json` engine versions to except newer versions of node, npm and yarn
+* `yarn.lock` file added to support yarn usage
+* `README.md` updated install guide to not use private npm anymore
+* any stinkdigital references to stinkstudios
+
+## 0.3.3 (February 12, 2017)
 
 ### Component Video
 
