@@ -1,0 +1,10 @@
+.o-btn {
+	/*
+		'o-btn' is meant to be used to style various
+		types of HTML elements which share the same design
+		(usually that of a 'button' as we know it) but that
+		are semantically different.
+		eg. an <a> and <button> which look the same but
+				mean and do two very different things.
+	*/
+}

@@ -1,0 +1,8 @@
+.o-icon {
+	display: inline-block;
+
+	svg {
+		display: block;
+		vertical-align: middle;
+	}
+}

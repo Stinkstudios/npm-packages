@@ -1,0 +1,10 @@
+.u-grab {
+	/* stylelint-disable declaration-block-no-duplicate-properties*/
+	cursor: move;
+	cursor: grab;
+	/* stylelint-enable */
+
+	&:active {
+		cursor: grabbing;
+	}
+}

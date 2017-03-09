@@ -1,0 +1,5 @@
+@for $i from 1 to 9 {
+	.u-zindex-$(i) {
+		z-index: resolve($i * 100);
+	}
+}

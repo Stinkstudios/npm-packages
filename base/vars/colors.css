@@ -1,0 +1,14 @@
+$c-white: rgb(255, 255, 255);
+$c-black: rgb(0, 0, 0);
+
+$c-transparent: transparent;
+$c-black-translucent: rgba(0, 0, 0, 0.5);
+$c-white-translucent: rgba(255, 255, 255, 0.5);
+
+$c-grey-lighter: rgb(250, 250, 250);
+$c-grey-light: rgb(240, 240, 240);
+$c-grey: rgb(200, 200, 200);
+$c-grey-dark: rgb(85, 85, 85);
+$c-grey-darker: rgb(34, 34, 34);
+
+$c-red: rgb(239, 47, 48);
