@@ -1,4 +1,4 @@
-import Fullbleed from './fullbleed/fullbleed';
+import Fullbleed from './components/fullbleed/fullbleed';
 
 class Components {}
 
