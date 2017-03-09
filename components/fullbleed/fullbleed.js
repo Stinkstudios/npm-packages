@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { validateClassNames } from '../../utils/validate-class';
 
-import './fullbleed.scss';
+import './fullbleed.css';
 
 class Fullbleed extends Component {
 	componentWillMount() {
