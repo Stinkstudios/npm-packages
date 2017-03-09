@@ -8,7 +8,7 @@ const HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
 	output: `${__dirname}/dist/index.html`
 });
 
-module.exports = {
+module.exports = () => ({
 	entry: {
 		app: './example/index.js'
 	},
@@ -36,15 +36,32 @@ module.exports = {
 				loader: 'babel-loader',
 				exclude: /(node_modules|dist)/,
 				query: {
-					cacheDirectory: true,
+					cacheDirectory: true
 				}
 			}, {
-				test: /\.scss$/,
-				use: ['style-loader', 'css-loader', 'sass-loader']
+				test: /\.css$/,
+				exclude: /node_modules/,
+				loader: [
+					'style-loader',
+					{
+						loader: 'css-loader',
+						query: {
+							modules: false,
+							sourceMap: true,
+							importLoaders: 1,
+						},
+					},
+					{
+						loader: 'postcss-loader',
+						query: {
+							config: path.join(process.cwd(), './postcss.config.js')
+						},
+					},
+				],
 			}
 		]
 	},
 	plugins: [
 		HTMLWebpackPluginConfig
 	]
-};
+});
