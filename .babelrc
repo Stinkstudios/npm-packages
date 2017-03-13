@@ -2,5 +2,34 @@
   "presets": [
     "es2015",
     "react"
+  ],
+  "plugins": [
+    "transform-class-properties",
+    [
+      "transform-object-rest-spread",
+      {
+        "useBuiltIns": true
+      }
+    ],
+    [
+      "transform-react-jsx",
+      {
+        "useBuiltIns": true
+      }
+    ],
+    [
+      "transform-runtime",
+      {
+        "helpers": false,
+        "polyfill": false,
+        "regenerator": true
+      }
+    ],
+    [
+      "transform-regenerator",
+      {
+        "async": false
+      }
+    ]
   ]
 }
