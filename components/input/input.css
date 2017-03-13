@@ -1,3 +1,5 @@
+@import 'colors';
+
 input {
 	margin: 0 0 15px;
 	padding: 15px;
@@ -5,6 +7,20 @@ input {
 	box-sizing: border-box;
 	border: 0;
 	outline: 0;
-	font-size: 14px;
-	background: #f2f2f2;
+	background: $c-grey-lighter;
+}
+
+input[type='text'] {
+	font-size: 1rem;
+	background: $c-grey-lighter;
+	transition: all ease-in-out 0.3s;
+
+	&:hover {
+		background: $c-grey-light;
+	}
+
+	&:focus {
+		color: $c-white;
+		background: $c-grey-light;
+	}
 }
