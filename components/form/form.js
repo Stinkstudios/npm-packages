@@ -8,10 +8,15 @@ class Form extends Component {
 	}
 
 	render() {
-		const { fields } = this.props;
+		const { fields, onSubmit } = this.props;
 
 		return (
-			<div className="o-form">
+			<form
+				className="o-form"
+				role="form"
+				autoComplete
+			>
+				<div className="form__description">This is the descriptio for the form .... Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
 				{fields.map((field) => (
 					<Input
 						key={field.name}
@@ -23,13 +28,20 @@ class Form extends Component {
 						placeholder={field.placeholder}
 					/>
 				))}
-			</div>
+				<button
+					className="form__submit"
+					onClick={() => onSubmit()}
+				>
+					Submit
+				</button>
+			</form>
 		);
 	}
 }
 
 Form.propTypes = {
 	fields: React.PropTypes.array.isRequired,
+	onSubmit: React.PropTypes.func.isRequired,
 };
 
 export default Form;
