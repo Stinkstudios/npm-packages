@@ -7,25 +7,26 @@ const Input = (props) => (
 		name={props.name}
 		type={props.inputType}
 		placeholder={props.placeholder}
-		autoComplete={props.inputType}
-		inputMode={props.inputMode}
+		autoComplete={props.inputAutoComplete}
+		aria-required={props.ariaRequired}
 	/>
 );
 
 Input.propTypes = {
 	inputType: React.PropTypes.oneOf(['text', 'number', 'email', 'search', 'tel', 'url']).isRequired,
-	inputMode: React.PropTypes.oneOf(['latin', 'verbatim', 'numeric', 'tel', 'email', 'url']),
-	// title: React.PropTypes.string.isRequired,
+	inputAutoComplete: React.PropTypes.oneOf(['', 'honorific-prefix', 'name', 'given-name', 'family-name', 'email', 'username', 'street-address', 'address-line1', 'address-line2', 'country', 'postal-code', 'bday', 'sex', 'tel', 'url']),
 	name: React.PropTypes.string.isRequired,
 	placeholder: React.PropTypes.string,
 	halfSize: React.PropTypes.bool,
+	ariaRequired: React.PropTypes.string,
 };
 
 
 Input.defaultProps = {
-	inputMode: '',
 	placeholder: 'text',
 	halfSize: false,
+	inputAutoComplete: '',
+	ariaRequired: 'true',
 };
 
 
