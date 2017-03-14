@@ -6,7 +6,7 @@ class Input extends Component {
 		this.props.updateValue(e.target.value, e.target.name);
 	}
 
-	render() {
+	renderTextFields() {
 		const {
 			halfSize,
 			name,
@@ -15,6 +15,7 @@ class Input extends Component {
 			inputAutoComplete,
 			ariaRequired,
 		} = this.props;
+
 		return (
 			<input
 				className={`form__input ${halfSize ? 'form__input--half' : ''}`}
@@ -27,6 +28,38 @@ class Input extends Component {
 			/>
 		);
 	}
+
+	renderCheckbox() {
+		const {
+			name,
+			label,
+			value,
+			inputType,
+			ariaRequired,
+			halfSize,
+		} = this.props;
+
+		return (
+			<div className="checkbox__wrapper">
+				<input
+					className={`form__input ${halfSize ? 'form__input--half' : ''}`}
+					name={name}
+					type={inputType}
+					aria-required={ariaRequired}
+					onChange={this.updateInput}
+					value={value}
+				/>
+				<label htmlFor={name}>{label}</label>
+			</div>
+		);
+	}
+
+	render() {
+		const { inputType } = this.props;
+
+		if (inputType === 'checkbox') return this.renderCheckbox();
+		return this.renderTextFields();
+	}
 }
 
 Input.propTypes = {
@@ -37,6 +70,12 @@ Input.propTypes = {
 	halfSize: React.PropTypes.bool,
 	ariaRequired: React.PropTypes.string,
 	updateValue: React.PropTypes.func.isRequired,
+	label: React.PropTypes.string,
+	value: React.PropTypes.oneOfType([
+		React.PropTypes.string,
+		React.PropTypes.number,
+		React.PropTypes.bool,
+	]),
 };
 
 
@@ -45,6 +84,8 @@ Input.defaultProps = {
 	halfSize: false,
 	inputAutoComplete: '',
 	ariaRequired: 'true',
+	value: 'default',
+	label: 'default',
 };
 
 
