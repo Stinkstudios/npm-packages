@@ -20,6 +20,9 @@
     "url": "https://github.com/Stinkstudios/boilerplate-react-components/issues"
   },
   "homepage": "https://github.com/Stinkstudios/boilerplate-react-components#readme",
+	"scripts": {
+		"test": "jest"
+	},
   "jest": {
     "moduleNameMapper": {
       ".*\\.css$": "<rootDir>__mocks__/styleMock.js"
