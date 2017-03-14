@@ -20,6 +20,14 @@
     "url": "https://github.com/Stinkstudios/boilerplate-react-components/issues"
   },
   "homepage": "https://github.com/Stinkstudios/boilerplate-react-components#readme",
+  "jest": {
+    "moduleNameMapper": {
+      ".*\\.css$": "<rootDir>__mocks__/styleMock.js"
+    },
+    "testPathIgnorePatterns": [
+      "<rootDir>/(assets|build|docs|node_modules|internals|server|coverage)/"
+    ]
+  },
   "devDependencies": {
     "babel-cli": "6.23.0",
     "babel-jest": "19.0.0",
