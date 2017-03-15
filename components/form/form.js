@@ -58,6 +58,7 @@ class Form extends Component {
 						content={field.content}
 						placeholder={field.placeholder}
 						updateValue={(value, name) => { this.handleFieldChange(value, name); }}
+						text={field.text}
 					/>
 				))}
 				<input type="submit" value="Submit" />

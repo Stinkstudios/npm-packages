@@ -1,0 +1,35 @@
+@import 'colors';
+
+.container label {
+	position: relative;
+}
+
+.container span::before,
+.container span::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+
+.container span.radio:hover {
+	cursor: pointer;
+}
+
+input[type='radio'] {
+	opacity: 0;
+}
+
+.container span.radio::after {
+	left: -49px;
+	width: 17px;
+	height: 17px;
+	border-radius: 10px;
+	background-color: $c-grey;
+	transition: background-color 0.25s;
+}
+
+input[type='radio']:checked + label span.radio::after {
+	background-color: $c-red;
+}

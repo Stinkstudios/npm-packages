@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import './input.css';
 
+import RadioButton from '../radio-button/radio-button';
+
 class Input extends Component {
 	updateInput = (e) => {
 		this.props.updateValue(e.target.value, e.target.name);
 	}
 
-	render() {
+	renderTextField() {
 		const {
 			halfSize,
 			name,
@@ -15,6 +17,7 @@ class Input extends Component {
 			inputAutoComplete,
 			ariaRequired,
 		} = this.props;
+
 		return (
 			<input
 				className={`form__input ${halfSize ? 'form__input--half' : ''}`}
@@ -27,6 +30,70 @@ class Input extends Component {
 			/>
 		);
 	}
+
+	renderRadioField() {
+		const {
+			name,
+			inputType,
+			ariaRequired,
+			text,
+			updateValue,
+		} = this.props;
+
+		return (
+			<div>
+				<RadioButton
+					key={name}
+					inputType={inputType}
+					name={name}
+					text={text}
+					ariaRequired={ariaRequired}
+					updateValue={updateValue}
+				/>
+				<RadioButton
+					key={text}
+					inputType={inputType}
+					name={name}
+					text={text}
+					ariaRequired={ariaRequired}
+					updateValue={updateValue}
+				/>
+			</div>
+		);
+	}
+
+	renderCheckboxField() {
+		const {
+			halfSize,
+			name,
+			inputType,
+			inputAutoComplete,
+			ariaRequired,
+			text,
+		} = this.props;
+
+		return (
+			<label htmlFor={name}>
+				<input
+					className={`form__input ${halfSize ? 'form__input--half' : ''}`}
+					name={name}
+					type={inputType}
+					autoComplete={inputAutoComplete}
+					aria-required={ariaRequired}
+					onChange={this.updateInput}
+				/>
+				<span>{text}</span>
+			</label>
+		);
+	}
+
+	render() {
+		const { inputType } = this.props;
+		if (inputType === 'radio') return this.renderRadioField();
+		if (inputType === 'checkbox') return this.renderRadioField();
+
+		return this.renderTextField();
+	}
 }
 
 Input.propTypes = {
@@ -37,6 +104,7 @@ Input.propTypes = {
 	halfSize: React.PropTypes.bool,
 	ariaRequired: React.PropTypes.string,
 	updateValue: React.PropTypes.func.isRequired,
+	text: React.PropTypes.string,
 };
 
 
@@ -45,6 +113,7 @@ Input.defaultProps = {
 	halfSize: false,
 	inputAutoComplete: '',
 	ariaRequired: 'true',
+	text: '',
 };
 
 
