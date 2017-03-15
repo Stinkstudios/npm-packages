@@ -64,33 +64,33 @@ class Input extends Component {
 
 	renderCheckboxField() {
 		const {
-			halfSize,
 			name,
+			label,
+			value,
 			inputType,
-			inputAutoComplete,
 			ariaRequired,
-			text,
+			halfSize,
 		} = this.props;
 
 		return (
-			<label htmlFor={name}>
+			<div className="checkbox__wrapper">
 				<input
 					className={`form__input ${halfSize ? 'form__input--half' : ''}`}
 					name={name}
 					type={inputType}
-					autoComplete={inputAutoComplete}
 					aria-required={ariaRequired}
 					onChange={this.updateInput}
+					value={value}
 				/>
-				<span>{text}</span>
-			</label>
+				<label htmlFor={name}>{label}</label>
+			</div>
 		);
 	}
 
 	render() {
 		const { inputType } = this.props;
 		if (inputType === 'radio') return this.renderRadioField();
-		if (inputType === 'checkbox') return this.renderRadioField();
+		if (inputType === 'checkbox') return this.renderCheckbox();
 
 		return this.renderTextField();
 	}
@@ -105,6 +105,12 @@ Input.propTypes = {
 	ariaRequired: React.PropTypes.string,
 	updateValue: React.PropTypes.func.isRequired,
 	text: React.PropTypes.string,
+	label: React.PropTypes.string,
+	value: React.PropTypes.oneOfType([
+		React.PropTypes.string,
+		React.PropTypes.number,
+		React.PropTypes.bool,
+	]),
 };
 
 
@@ -114,6 +120,8 @@ Input.defaultProps = {
 	inputAutoComplete: '',
 	ariaRequired: 'true',
 	text: '',
+	value: 'default',
+	label: 'default',
 };
 
 

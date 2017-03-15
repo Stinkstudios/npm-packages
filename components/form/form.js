@@ -23,8 +23,6 @@ class Form extends Component {
 	}
 
 	handleFieldChange = (value, name) => {
-		// const newState = {};
-		// newState[fieldId] = value;
 		const newData = (JSON.parse(JSON.stringify(this.state.formData)));
 		newData[name] = value;
 		this.setState({ formData: newData });
@@ -33,7 +31,7 @@ class Form extends Component {
 	handleSubmit(e) {
 		const { onSubmit } = this.props;
 		e.preventDefault();
-		onSubmit();
+		onSubmit(this.state.formData);
 	}
 
 	render() {
@@ -48,6 +46,8 @@ class Form extends Component {
 			>
 				<p className="form__description">This is the description for the form .... Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 				{fields.map((field) => (
+
+          // TODO: refactor this to pass the whole field onject through.
 					<Input
 						key={field.name}
 						id={field.uid}
@@ -57,6 +57,7 @@ class Form extends Component {
 						name={field.name}
 						content={field.content}
 						placeholder={field.placeholder}
+						label={field.label}
 						updateValue={(value, name) => { this.handleFieldChange(value, name); }}
 						text={field.text}
 					/>
