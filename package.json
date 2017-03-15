@@ -21,7 +21,9 @@
   },
   "homepage": "https://github.com/Stinkstudios/boilerplate-react-components#readme",
   "scripts": {
-    "test": "jest"
+    "test": "echo \"Running snapshot tests...\n \" && jest && echo \"\nIf you've modified a component, regenerate the snapshots with 'npm run update-snapshots'\"",
+    "update-snapshots": "jest -u",
+    "prepush": "npm run test"
   },
   "jest": {
     "moduleNameMapper": {
@@ -36,6 +38,7 @@
     "babel-jest": "19.0.0",
     "babel-preset-es2015": "6.22.0",
     "babel-preset-react": "6.23.0",
+    "husky": "0.13.2",
     "jest": "19.0.2",
     "react": "15.4.2",
     "react-test-renderer": "^15.4.2"
