@@ -8,7 +8,7 @@ export function validateClassNames(props, propName, componentName = 'ANONYMOUS')
 		if (typeof names === 'object') {
 			for (const name of names) { // eslint-disable-line no-restricted-syntax
 				// console.debug('>>>>>>', name, re.test(name));
-				if (!re.test(name)) return new Error(error);
+				if (!re.test(name)) throw new Error(error);
 			}
 		}
 	}
