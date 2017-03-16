@@ -1,6 +1,9 @@
 export function validateClassNames(props, propName, componentName = 'ANONYMOUS') {
 	if (props[propName]) {
-		const names = props[propName].split(' ');
+		const classname = props[propName];
+		if (typeof classname !== 'string') throw new Error(`Classnames must be a string, got ${typeof classname}`);
+
+		const names = classname.split(' ');
 		const re = new RegExp(/[A-Za-z]-|__/);
 		const error = `\`${propName}\` on ${componentName}. Values must be either` +
 		' namespaced Block names (https://github.com/stinkstudios/guidelines/tree/master/css#namespaces)' +
@@ -8,7 +11,7 @@ export function validateClassNames(props, propName, componentName = 'ANONYMOUS')
 		if (typeof names === 'object') {
 			for (const name of names) { // eslint-disable-line no-restricted-syntax
 				// console.debug('>>>>>>', name, re.test(name));
-				if (!re.test(name)) return new Error(error);
+				if (!re.test(name)) throw new Error(error);
 			}
 		}
 	}
