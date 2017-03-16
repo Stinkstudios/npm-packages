@@ -11,7 +11,6 @@ test('validation of valid classnames', () => {
 });
 
 test('validation of invalid classnames', () => {
-	expect(() => validateClassNames({'addClass': 4}, 'addClass').toThrow())
 	expect(() => validateClassNames({'addClass': '4'}, 'addClass').toThrow(error))
 	expect(() => validateClassNames({'addClass': 4}, 'addClass').toThrow(typeError(typeof 4)))
 });
