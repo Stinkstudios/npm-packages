@@ -28,7 +28,7 @@
   "scripts": {
     "test": "echo \"Running snapshot tests...\n \" && jest && echo \"\nIf you've modified a component, regenerate the snapshots with 'npm run update-snapshots'\"",
     "update-snapshots": "jest -u",
-    "prepush": "npm run test"
+    "prepush": "if [[ $(git symbolic-ref HEAD 2>/dev/null) =~ \"feature\" ]]; then echo \"skipping tests\"; else yarn run test; fi"
   },
   "jest": {
     "moduleNameMapper": {
