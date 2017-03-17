@@ -1,12 +1,10 @@
-/* eslint-disable react/no-array-index-key */
 import React from 'react';
+// import './preloader.css';
 
-import './preloader.css';
-
-const Preloader = () => (
+const Spinner = () => (
   <div className="spinner">
     {[...Array(4)].map((line, i) => (
-      <div key={i} className={`spinner__line spinner__line--${i + 1}`}>
+      <div key={line} className={`spinner__line spinner__line--${i + 1}`}>
         <div className="spinner__line-cog">
           <div
             className="spinner__line-cog-inner spinner__line-cog-inner--left"
@@ -27,4 +25,4 @@ const Preloader = () => (
   </div>
 );
 
-export default Preloader;
+export default Spinner;

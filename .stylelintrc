@@ -1,12 +1,7 @@
 {
   "ignoreFiles": [
     "./node_modules/**",
-    "./assets/**",
-    "./build/**",
-    "./backend/**",
-    "./docs/**",
-    "./internals/**",
-    "./labs/**"
+    "./dist/**"
   ],
   "plugins": [
     "stylelint-order",
