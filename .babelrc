@@ -1,6 +1,21 @@
 {
   "presets": [
-    "es2015",
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": [
+            "last 2 versions",
+            "ios_saf >= 8",
+            "not IE <= 10"
+          ]
+        },
+        "debug": false,
+        "loose": true,
+        "modules": false,
+        "useBuiltIns": true
+      }
+    ],
     "react"
   ],
   "plugins": [
@@ -30,6 +45,38 @@
       {
         "async": false
       }
+    ],
+    "syntax-dynamic-import",
+    [
+      "module-resolver",
+      {
+        "root": [
+          "./src"
+        ],
+        "alias": {
+          "base": "./base",
+          "components": "./components",
+          "constants": "./constants",
+          "containers": "./containers",
+          "middleware": "./middleware",
+          "utils": "./utils"
+        }
+      }
     ]
-  ]
-}
+  ],
+  "env": {
+    "development": {
+      "plugins": [
+        "transform-react-jsx-source",
+        "transform-react-jsx-self"
+      ]
+    },
+    "production": {
+      "plugins": [
+        "transform-react-remove-prop-types",
+        "transform-react-constant-elements",
+        "transform-react-inline-elements"
+      ]
+    }
+  }
+},
