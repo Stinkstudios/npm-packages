@@ -18,8 +18,19 @@
     "build:webpack": "NODE_ENV=production webpack --progress --color -p "
   },
   "lint-staged": {
-    "*(*.js|*.jsx)": "eslint",
-    "*(*.css|*.scss)": "stylelint"
+    "gitDir": "../",
+    "linters": {
+      "*(*.js|*.jsx)": [
+        "prettier \"!assets/**/*.js\"",
+        "eslint --ignore-pattern *.min.js",
+        "git add"
+      ],
+      "*(*.css|*.scss)": [
+        "stylefmt",
+        "stylelint",
+        "git add"
+      ]
+    }
   },
   "pre-commit": [
     "lint-staged"
