@@ -7,6 +7,11 @@
     "type": "git",
     "url": "git+https://github.com/Stinkstudios/boilerplate-react-components.git"
   },
+  "engines": {
+    "node": "^6.9.1",
+    "npm": "^3.10.8",
+    "yarn": "^0.18.1"
+  },
   "keywords": [
     "react",
     "boilerplate",
