@@ -14,257 +14,257 @@ $spinner-left-spin: resolve($spinner-fill-unfill-rotate-timing / $spinner-line-c
 $spinner-right-spin: resolve($spinner-fill-unfill-rotate-timing / $spinner-line-count);
 
 @define-mixin spinner-line $index, $color {
-	border-color: $color;
-	animation: fill-unfill-rotate $spinner-fill-unfill-rotate-timing cubic-bezier(0.4, 0, 0.2, 1) infinite both, line-$(index)-fade-in-out $spinner-fill-unfill-rotate-timing cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+  border-color: $color;
+  animation: fill-unfill-rotate $spinner-fill-unfill-rotate-timing cubic-bezier(0.4, 0, 0.2, 1) infinite both, line-$(index)-fade-in-out $spinner-fill-unfill-rotate-timing cubic-bezier(0.4, 0, 0.2, 1) infinite both;
 }
 
 .spinner {
-	position: absolute;
-	top: calc(50% - resolve($spinner-size / 2));
-	left: calc(50% - resolve($spinner-size / 2));
-	width: $spinner-size;
-	height: $spinner-size;
-	/* Spins external container */
-	animation: container-rotate $container-rotate-timing linear infinite;
+  position: absolute;
+  top: calc(50% - resolve($spinner-size / 2));
+  left: calc(50% - resolve($spinner-size / 2));
+  width: $spinner-size;
+  height: $spinner-size;
+  /* Spins external container */
+  animation: container-rotate $container-rotate-timing linear infinite;
 }
 
 .spinner__line {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
 }
 
 .spinner__line--1 {
-	@mixin spinner-line 1, $c-red;
+  @mixin spinner-line 1, $c-red ;
 }
 
 .spinner__line--2 {
-	@mixin spinner-line 4, $c-black;
+  @mixin spinner-line 4, $c-black ;
 }
 
 .spinner__line--3 {
-	@mixin spinner-line 3, $c-red;
+  @mixin spinner-line 3, $c-red ;
 }
 
 .spinner__line--4 {
-	@mixin spinner-line 2, $c-black;
+  @mixin spinner-line 2, $c-black ;
 }
 
 .spinner__line-cog {
-	position: relative;
-	display: inline-block;
-	width: 50%;
-	height: 100%;
-	overflow: hidden;
-	border-color: inherit;
+  position: relative;
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  border-color: inherit;
 }
 
 .spinner__line-cog-inner {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	width: 200%;
-	height: 100%;
-	box-sizing: border-box;
-	border-width: $spinner-border-size;
-	border-bottom-color: transparent;
-	border-color: inherit;
-	border-style: solid;
-	border-radius: 50%;
-	animation: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  box-sizing: border-box;
+  border-bottom-color: transparent;
+  border-width: $spinner-border-size;
+  border-color: inherit;
+  border-style: solid;
+  border-radius: 50%;
+  animation: none;
 }
 
 .spinner__line-cog-inner--left {
-	border-right-color: transparent;
-	transform: rotate(129deg);
-	animation: left-spin $spinner-left-spin cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+  border-right-color: transparent;
+  transform: rotate(129deg);
+  animation: left-spin $spinner-left-spin cubic-bezier(0.4, 0, 0.2, 1) infinite both;
 }
 
 .spinner__line-cog-inner--right {
-	left: -100%;
-	border-left-color: transparent;
-	transform: rotate(-129deg);
-	animation: right-spin $spinner-right-spin cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+  left: -100%;
+  border-left-color: transparent;
+  transform: rotate(-129deg);
+  animation: right-spin $spinner-right-spin cubic-bezier(0.4, 0, 0.2, 1) infinite both;
 }
 
 .spinner__line-cog-inner--center {
-	left: -450%;
-	width: 1000%;
+  left: -450%;
+  width: 1000%;
 }
 
 .spinner__line-ticker {
-	position: absolute;
-	top: 0;
-	left: 45%;
-	width: 10%;
-	height: 100%;
-	overflow: hidden;
-	box-sizing: border-box;
-	border-color: inherit;
+  position: absolute;
+  top: 0;
+  left: 45%;
+  width: 10%;
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  border-color: inherit;
 }
 
 /* Animations */
 
 @keyframes container-rotate {
-	to {
-		transform: rotate(360deg);
-	}
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes fill-unfill-rotate {
-	12.5% {
-		transform: rotate(135deg);
-	}
+  12.5% {
+    transform: rotate(135deg);
+  }
 
-	25% {
-		transform: rotate(270deg);
-	}
+  25% {
+    transform: rotate(270deg);
+  }
 
-	37.5% {
-		transform: rotate(405deg);
-	}
+  37.5% {
+    transform: rotate(405deg);
+  }
 
-	50% {
-		transform: rotate(540deg);
-	}
+  50% {
+    transform: rotate(540deg);
+  }
 
-	62.5% {
-		transform: rotate(675deg);
-	}
+  62.5% {
+    transform: rotate(675deg);
+  }
 
-	75% {
-		transform: rotate(810deg);
-	}
+  75% {
+    transform: rotate(810deg);
+  }
 
-	87.5% {
-		transform: rotate(945deg);
-	}
+  87.5% {
+    transform: rotate(945deg);
+  }
 
-	to {
-		transform: rotate(1080deg);
-	}
+  to {
+    transform: rotate(1080deg);
+  }
 }
 
 @keyframes left-spin {
-	0% {
-		transform: rotate(130deg);
-	}
+  0% {
+    transform: rotate(130deg);
+  }
 
-	50% {
-		transform: rotate(-5deg);
-	}
+  50% {
+    transform: rotate(-5deg);
+  }
 
-	to {
-		transform: rotate(130deg);
-	}
+  to {
+    transform: rotate(130deg);
+  }
 }
 
 @keyframes right-spin {
-	0% {
-		transform: rotate(-130deg);
-	}
+  0% {
+    transform: rotate(-130deg);
+  }
 
-	50% {
-		transform: rotate(5deg);
-	}
+  50% {
+    transform: rotate(5deg);
+  }
 
-	to {
-		transform: rotate(-130deg);
-	}
+  to {
+    transform: rotate(-130deg);
+  }
 }
 
 /* TODO: This could be automated */
 @keyframes line-1-fade-in-out {
-	0% {
-		opacity: 1;
-	}
+  0% {
+    opacity: 1;
+  }
 
-	25% {
-		opacity: 1;
-	}
+  25% {
+    opacity: 1;
+  }
 
-	26% {
-		opacity: 0;
-	}
+  26% {
+    opacity: 0;
+  }
 
-	89% {
-		opacity: 0;
-	}
+  89% {
+    opacity: 0;
+  }
 
-	90% {
-		opacity: 1;
-	}
+  90% {
+    opacity: 1;
+  }
 
-	to {
-		opacity: 1;
-	}
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes line-2-fade-in-out {
-	0% {
-		opacity: 0;
-	}
+  0% {
+    opacity: 0;
+  }
 
-	15% {
-		opacity: 0;
-	}
+  15% {
+    opacity: 0;
+  }
 
-	25% {
-		opacity: 1;
-	}
+  25% {
+    opacity: 1;
+  }
 
-	50% {
-		opacity: 1;
-	}
+  50% {
+    opacity: 1;
+  }
 
-	51% {
-		opacity: 0;
-	}
+  51% {
+    opacity: 0;
+  }
 }
 
 @keyframes line-3-fade-in-out {
-	0% {
-		opacity: 0;
-	}
+  0% {
+    opacity: 0;
+  }
 
-	40% {
-		opacity: 0;
-	}
+  40% {
+    opacity: 0;
+  }
 
-	50% {
-		opacity: 1;
-	}
+  50% {
+    opacity: 1;
+  }
 
-	75% {
-		opacity: 1;
-	}
+  75% {
+    opacity: 1;
+  }
 
-	76% {
-		opacity: 0;
-	}
+  76% {
+    opacity: 0;
+  }
 }
 
 @keyframes line-4-fade-in-out {
-	0% {
-		opacity: 0;
-	}
+  0% {
+    opacity: 0;
+  }
 
-	65% {
-		opacity: 0;
-	}
+  65% {
+    opacity: 0;
+  }
 
-	75% {
-		opacity: 1;
-	}
+  75% {
+    opacity: 1;
+  }
 
-	90% {
-		opacity: 1;
-	}
+  90% {
+    opacity: 1;
+  }
 
-	to {
-		opacity: 0;
-	}
+  to {
+    opacity: 0;
+  }
 }
