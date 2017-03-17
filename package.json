@@ -7,6 +7,11 @@
     "type": "git",
     "url": "git+https://github.com/Stinkstudios/boilerplate-react-components.git"
   },
+  "engines": {
+    "node": "^6.9.1",
+    "npm": "^3.10.8",
+    "yarn": "^0.18.1"
+  },
   "keywords": [
     "react",
     "boilerplate",
@@ -43,6 +48,7 @@
     "jest": "19.0.2",
     "react": "15.4.2",
     "react-addons-test-utils": "15.4.2",
+    "react-dom": "^15.4.2",
     "react-test-renderer": "15.4.2"
   },
   "peerDependencies": {
