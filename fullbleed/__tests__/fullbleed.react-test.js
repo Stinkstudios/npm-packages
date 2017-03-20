@@ -49,6 +49,7 @@ it("renders <video> tags correctly", () => {
 });
 
 it("renders (does not) <h1> tags correctly", () => {
-  const tree = mount(component(h1Tag));
-  expect(tree.find("h1").length).toBe(0);
+  expect(() => mount(component(h1Tag))).toThrow(
+    "Children must be of type img or of type video"
+  );
 });
