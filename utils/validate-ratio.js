@@ -6,8 +6,6 @@ const validateRatio = (props, propName, componentName = "ANONYMOUS") => {
 
     const rs = ratio.split(":");
 
-    console.log(rs);
-
     if (rs.length < 2)
       throw new Error(
         'Ratio prop must be supplied in the format "W:H", where W and H are a number'
