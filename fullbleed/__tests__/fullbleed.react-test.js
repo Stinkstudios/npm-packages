@@ -53,3 +53,29 @@ it("renders (does not) <h1> tags correctly", () => {
     "Children must be of type img or of type video"
   );
 });
+
+it("adds 'is-below-ratio when ratio is less than childs'", () => {
+  const tree = mount(
+    <Fullbleed width={10} height={10000} ratio="1:1" addClass="home-page__bg">
+      <img />
+    </Fullbleed>
+  );
+
+  const topLevel = tree.first();
+
+  expect(topLevel.hasClass("home-page__bg")).toBe(true);
+  expect(topLevel.hasClass("is-below-ratio")).toBe(true);
+});
+
+it("doesn't add 'is-below-ratio when ratio is greater than childs'", () => {
+  const tree = mount(
+    <Fullbleed width={10} height={1} ratio="1:1" addClass="home-page__bg">
+      <img />
+    </Fullbleed>
+  );
+
+  const topLevel = tree.first();
+
+  expect(topLevel.hasClass("home-page__bg")).toBe(true);
+  expect(topLevel.hasClass("is-below-ratio")).toBe(false);
+});
