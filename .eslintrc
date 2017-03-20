@@ -4,17 +4,20 @@
   "extends": [
     "airbnb",
     "prettier",
-    "prettier/react"
+    "prettier/react",
+    "plugin:jest/recommended"
   ],
   "env": {
     "browser": true,
-    "es6": true
+    "es6": true,
+    "jest": true
   },
   "plugins": [
     "react",
     "jsx-a11y",
     "compat",
-    "prettier"
+    "prettier",
+    "jest"
   ],
   "parserOptions": {
     "ecmaVersion": 6,
