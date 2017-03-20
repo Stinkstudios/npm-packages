@@ -4,18 +4,22 @@
   "description": "A collection of React components to be used on Stink Studios' React Boilerplate",
   "main": "index.js",
   "scripts": {
+    "build:webpack": "NODE_ENV=production webpack --progress --color -p ",
+    "dev": "webpack-dev-server --hot --inline --color --content-base ./ ",
     "formatting": "npm run prettier && npm run stylefmt",
-    "lint": "npm run lint:js && npm run lint:css",
-    "lint:js": "npm run lint:eslint",
+    "lint-staged": "echo 'Running lint-staged for staged files...' && lint-staged",
     "lint:css": "stylelint ./components/**/*.css",
     "lint:eslint": "eslint --ext .js ./components --cache",
-    "lint-staged": "echo 'Running lint-staged for staged files...' && lint-staged",
     "lint:fix": "eslint --ext .js ./src --cache --fix",
+    "lint:js": "npm run lint:eslint",
+    "lint": "npm run lint:js && npm run lint:css",
+    "prepush": "if [[ $(git symbolic-ref HEAD 2>/dev/null) =~ \"feature\" ]]; then echo \"skipping tests\"; else yarn run test; fi",
     "prettier": "prettier --write --single-quote --print-width 80 \"components/**/*.js\"",
     "start": "webpack-dev-server",
     "stylefmt": "stylefmt --c .stylelintrc -r \"components/**/*.css\"",
-    "dev": "webpack-dev-server --hot --inline --color --content-base ./ ",
-    "build:webpack": "NODE_ENV=production webpack --progress --color -p "
+    "test:watch": "jest --watchAll --coverage",
+    "test": "echo \"Running snapshot tests...\n \" && jest --coverage && echo \"\nIf you've modified a component, regenerate the snapshots with 'yarn run update-snapshots'\"",
+    "update-snapshots": "jest -u"
   },
   "lint-staged": {
     "linters": {
@@ -38,6 +42,11 @@
     "type": "git",
     "url": "git+https://github.com/Stinkstudios/boilerplate-react-components.git"
   },
+  "engines": {
+    "node": "^6.9.1",
+    "npm": "^3.10.8",
+    "yarn": "^0.18.1"
+  },
   "keywords": [
     "react",
     "boilerplate",
@@ -51,33 +60,36 @@
     "url": "https://github.com/Stinkstudios/boilerplate-react-components/issues"
   },
   "homepage": "https://github.com/Stinkstudios/boilerplate-react-components#readme",
-  "dependencies": {
-    "react": "15.4.2",
-    "react-addons-css-transition-group": "15.4.2",
-    "react-dom": "15.4.2",
-    "svg-inline-react": "^2.0.0"
+  "jest": {
+    "moduleNameMapper": {
+      ".*\\.css$": "<rootDir>__mocks__/styleMock.js"
+    },
+    "testPathIgnorePatterns": [
+      "<rootDir>/(assets|build|docs|node_modules|internals|server|coverage|.git)/"
+    ]
   },
   "devDependencies": {
     "babel-cli": "6.23.0",
-    "babel-loader": "^6.2.5",
     "babel-eslint": "7.1.1",
+    "babel-jest": "19.0.0",
+    "babel-loader": "^6.2.5",
     "babel-plugin-module-resolver": "2.5.0",
     "babel-plugin-syntax-dynamic-import": "6.18.0",
     "babel-plugin-transform-class-properties": "6.23.0",
     "babel-plugin-transform-object-rest-spread": "6.23.0",
     "babel-plugin-transform-react-constant-elements": "6.23.0",
     "babel-plugin-transform-react-inline-elements": "6.22.0",
-    "babel-plugin-transform-react-jsx": "6.23.0",
     "babel-plugin-transform-react-jsx-self": "6.22.0",
     "babel-plugin-transform-react-jsx-source": "6.22.0",
+    "babel-plugin-transform-react-jsx": "6.23.0",
     "babel-plugin-transform-react-remove-prop-types": "0.3.2",
     "babel-plugin-transform-regenerator": "6.22.0",
     "babel-plugin-transform-runtime": "6.23.0",
     "babel-preset-env": "^1.2.2",
-    "babel-preset-react": "6.23.0",
     "babel-preset-react-hmre": "1.1.1",
+    "babel-preset-react": "6.23.0",
     "css-loader": "^0.25.0",
-    "eslint": "^3.17.1",
+    "enzyme": "2.7.1",
     "eslint-config-airbnb": "14.1.0",
     "eslint-config-prettier": "^1.5.0",
     "eslint-import-resolver-babel-module": "3.0.0",
@@ -86,7 +98,10 @@
     "eslint-plugin-jsx-a11y": "4.0.0",
     "eslint-plugin-prettier": "^2.0.1",
     "eslint-plugin-react": "6.10.0",
+    "eslint": "^3.17.1",
     "html-webpack-plugin": "^2.22.0",
+    "husky": "0.13.2",
+    "jest": "19.0.2",
     "lint-staged": "3.3.1",
     "postcss-conditionals": "2.1.0",
     "postcss-cssnext": "2.9.0",
@@ -103,17 +118,23 @@
     "postcss-simple-vars": "3.0.0",
     "prettier": "^0.22.0",
     "progress-bar-webpack-plugin": "1.9.3",
-    "pre-commit": "1.2.2",
+    "react-addons-test-utils": "15.4.2",
+    "react-dom": "^15.4.2",
+    "react-test-renderer": "15.4.2",
+    "react": "15.4.2",
+    "svg-inline-react": "^2.0.0",
     "style-loader": "^0.14.1",
     "stylefmt": "^5.3.0",
-    "stylelint": "7.9.0",
     "stylelint-order": "^0.4.1",
     "stylelint-scss": "1.4.3",
-    "webpack": "2.2.1",
-    "webpack-dev-server": "2.3.0"
+    "stylelint": "7.9.0",
+    "webpack-dev-server": "2.3.0",
+    "webpack": "2.2.1"
   },
   "peerDependencies": {
     "react": "15.4.2",
-    "react-dom": "15.4.2"
+    "react-addons-css-transition-group": "15.4.2",
+    "react-dom": "15.4.2",
+    "svg-inline-react": "^2.0.0"
   }
 }
