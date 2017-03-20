@@ -1,9 +1,9 @@
 import Fullbleed from './components/fullbleed/fullbleed';
-// import Preloader from './components/preloader/preloader';
+import Spinner from './components/spinner/spinner';
 
 class Components {}
 
 Components.Fullbleed = Fullbleed;
-// Components.Preloader = Preloader;
+Components.Spinner = Spinner;
 
 export default Components;
