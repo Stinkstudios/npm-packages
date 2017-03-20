@@ -62,11 +62,14 @@
   },
   "homepage": "https://github.com/Stinkstudios/boilerplate-react-components#readme",
   "jest": {
+    "collectCoverageFrom": [
+      "components/**/*.{js,jsx}"
+    ],
     "moduleNameMapper": {
       ".*\\.css$": "<rootDir>__mocks__/styleMock.js"
     },
     "testPathIgnorePatterns": [
-      "<rootDir>/(assets|build|docs|node_modules|internals|server|coverage|.git)/"
+      "<rootDir>/(assets|build|docs|node_modules|internals|server|coverage|example|utils|.git)/"
     ]
   },
   "devDependencies": {
