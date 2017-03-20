@@ -30,6 +30,8 @@ const videoTag = (
   />
 );
 
+const h1Tag = <h1>invalid</h1>;
+
 it("renders DOM output correctly", () => {
   const tree = renderer.create(component(imgTag)).toJSON();
 
@@ -44,4 +46,9 @@ it("renders <img> tags correctly", () => {
 it("renders <video> tags correctly", () => {
   const tree = mount(component(videoTag));
   expect(tree.find("video").length).toBe(1);
+});
+
+it("renders (does not) <h1> tags correctly", () => {
+  const tree = mount(component(h1Tag));
+  expect(tree.find("h1").length).toBe(0);
 });
