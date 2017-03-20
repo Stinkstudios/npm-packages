@@ -12,7 +12,9 @@ test("validation of prop type", () => {
 
 test("validity of string format", () => {
   expect(validateRatio({ ratio: "1:1" }, "ratio")).toBe(null);
-  expect(() => validateRatio({ ratio: "ratio" }, "ratio").toThrow(error));
-  expect(() =>
-    validateRatio({ ratio: 12121 }, "ratio").toThrow(typeError(typeof 12121)));
+  expect(() => validateRatio({ ratio: "ratio" }, "ratio")).toThrow(error);
+  expect(() => validateRatio({ ratio: "bob:mike" }, "ratio")).toThrow(error);
+  expect(() => validateRatio({ ratio: 12121 }, "ratio")).toThrow(
+    typeError(typeof 12121)
+  );
 });
