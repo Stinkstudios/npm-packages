@@ -15,9 +15,9 @@ test("validation of valid classnames", () => {
 
 test("validation of invalid classnames", () => {
   expect(() =>
-    validateClassNames({ addClass: "4" }, "addClass").toThrow(error));
+    validateClassNames({ addClass: "4" }, "addClass")).toThrow(error);
   expect(() =>
-    validateClassNames({ addClass: 4 }, "addClass").toThrow(
+    validateClassNames({ addClass: 4 }, "addClass")).toThrow(
       typeError(typeof 4)
-    ));
+    );
 });
