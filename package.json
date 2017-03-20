@@ -13,6 +13,7 @@
     "lint:fix": "eslint --ext .js ./src --cache --fix",
     "lint:js": "npm run lint:eslint",
     "lint": "npm run lint:js && npm run lint:css",
+    "precommit": "lint-staged",
     "prepush": "if [[ $(git symbolic-ref HEAD 2>/dev/null) =~ \"feature\" ]]; then echo \"skipping tests\"; else yarn run test; fi",
     "prettier": "prettier --write --single-quote --print-width 80 \"components/**/*.js\"",
     "start": "webpack-dev-server",
