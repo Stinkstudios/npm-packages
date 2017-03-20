@@ -1,1 +1,15 @@
 .babelrc
+.editorconfig
+.eslintrc
+.gitignore
+.nvmrc
+.stylelintrc
+circle.yml
+postcss.config.js
+webpack.config.js
+__mocks__
+coverage
+dist
+example
+node_modules
+
