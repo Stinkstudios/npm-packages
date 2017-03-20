@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
+exports[`renders DOM output correctly 1`] = `
 <div
   className="fullbleed home-page__bg o-media"
 >
