@@ -5,7 +5,7 @@ import renderer from "react-test-renderer";
 import { mount } from "enzyme";
 
 const component = children => (
-  <Fullbleed width={100} height={100} ratio="1:1" addClass="home-page__bg">
+  <Fullbleed width={50} height={100} ratio="1:1" addClass="home-page__bg">
     {children}
   </Fullbleed>
 );

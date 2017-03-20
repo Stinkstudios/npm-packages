@@ -2,7 +2,7 @@
 
 exports[`renders DOM output correctly 1`] = `
 <div
-  className="fullbleed home-page__bg o-media"
+  className="fullbleed home-page__bg is-below-ratio o-media"
 >
   <img
     alt="black square"
