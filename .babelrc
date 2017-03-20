@@ -19,8 +19,7 @@
     "react"
   ],
   "plugins": [
-    "transform-class-properties",
-    [
+    "transform-class-properties", [
       "transform-object-rest-spread",
       {
         "useBuiltIns": true
@@ -46,25 +45,14 @@
         "async": false
       }
     ],
-    "syntax-dynamic-import",
-    [
-      "module-resolver",
-      {
-        "root": [
-          "./src"
-        ],
-        "alias": {
-          "base": "./base",
-          "components": "./components",
-          "constants": "./constants",
-          "containers": "./containers",
-          "middleware": "./middleware",
-          "utils": "./utils"
-        }
-      }
-    ]
+    "syntax-dynamic-import"
   ],
   "env": {
+    "test": {
+      "plugins": [
+        "transform-es2015-modules-commonjs"
+      ]
+    },
     "development": {
       "plugins": [
         "transform-react-jsx-source",
