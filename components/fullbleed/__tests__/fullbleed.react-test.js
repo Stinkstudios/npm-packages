@@ -1,8 +1,8 @@
 import React from 'react';
-import Fullbleed from '../fullbleed';
 import renderer from 'react-test-renderer';
-
 import { mount } from 'enzyme';
+
+import Fullbleed from '../fullbleed';
 
 const component = children => (
   <Fullbleed width={50} height={100} ratio="1:1" addClass="home-page__bg">
@@ -57,7 +57,7 @@ it('renders (does not) <h1> tags correctly', () => {
 it("adds 'is-below-ratio when ratio is less than childs'", () => {
   const tree = mount(
     <Fullbleed width={10} height={10000} ratio="1:1" addClass="home-page__bg">
-      <img />
+      <img alt="mock" />
     </Fullbleed>
   );
 
@@ -70,7 +70,7 @@ it("adds 'is-below-ratio when ratio is less than childs'", () => {
 it("doesn't add 'is-below-ratio when ratio is greater than childs'", () => {
   const tree = mount(
     <Fullbleed width={10} height={1} ratio="1:1" addClass="home-page__bg">
-      <img />
+      <img alt="mock" />
     </Fullbleed>
   );
 
