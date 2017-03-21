@@ -12,10 +12,15 @@ class Fullbleed extends Component {
 
   renderChildren(blockName) {
     const { children } = this.props;
-    return React.Children.map(children, child =>
-      React.cloneElement(child, {
+    return React.Children.map(children, child => {
+      if (child.type !== 'img' && child.type !== 'video') {
+        throw new Error('Children must be of type img or of type video');
+      }
+
+      return React.cloneElement(child, {
         className: `${blockName}__item o-media__${child.type}`
-      }));
+      });
+    });
   }
 
   render() {
