@@ -1,4 +1,4 @@
-const validateRatio = (props, propName, componentName = "ANONYMOUS") => {
+const validateRatio = (props, propName, componentName = 'ANONYMOUS') => {
   if (props[propName]) {
     const ratio = props[propName];
     if (typeof ratio !== "string")
