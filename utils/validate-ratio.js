@@ -1,20 +1,25 @@
 const validateRatio = (props, propName, componentName = 'ANONYMOUS') => {
   if (props[propName]) {
     const ratio = props[propName];
-    if (typeof ratio !== "string")
-      throw new Error(`Ratio must be a string, got ${typeof ratio}`);
+    if (typeof ratio !== 'string') {
+      throw new Error(
+        `Ratio must be a string, got ${typeof ratio} on ${componentName}`
+      );
+    }
 
-    const rs = ratio.split(":");
+    const rs = ratio.split(':');
 
-    if (rs.length < 2)
+    if (rs.length < 2) {
       throw new Error(
         'Ratio prop must be supplied in the format "W:H", where W and H are a number'
       );
+    }
 
-    if (isNaN(parseInt(rs[0], 10)) || isNaN(parseInt(rs[1], 10)))
+    if (isNaN(parseInt(rs[0], 10)) || isNaN(parseInt(rs[1], 10))) {
       throw new Error(
         'Ratio prop must be supplied in the format "W:H", where W and H are a number'
       );
+    }
   }
 
   return null;
