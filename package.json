@@ -10,7 +10,7 @@
     "lint-staged": "echo 'Running lint-staged for staged files...' && lint-staged",
     "lint:css": "stylelint ./components/**/*.css",
     "lint:eslint": "eslint --ext .js ./components --cache",
-    "lint:fix": "eslint --ext .js ./src --cache --fix",
+    "lint:fix": "eslint --ext .js ./components --cache --fix",
     "lint:js": "npm run lint:eslint",
     "lint": "npm run lint:js && npm run lint:css",
     "precommit": "lint-staged",
