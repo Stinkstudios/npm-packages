@@ -3,8 +3,7 @@
  *
  * Matteo's CSS spinner
  **/
-
-@import 'colors';
+$c-red: rgb(239, 47, 48);
 
 .spinner {
   position: absolute;
