@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from "react";
-import { validateClassNames } from "../utils/validate-class";
+import { validateClassNames } from "../../utils/validate-class";
 
 import "./fullbleed.css";
 
