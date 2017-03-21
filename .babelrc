@@ -1,6 +1,70 @@
 {
   "presets": [
-    "es2015",
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": [
+            "last 2 versions",
+            "ios_saf >= 8",
+            "not IE <= 10"
+          ]
+        },
+        "debug": false,
+        "loose": true,
+        "modules": false,
+        "useBuiltIns": true
+      }
+    ],
     "react"
-  ]
+  ],
+  "plugins": [
+    "transform-class-properties", [
+      "transform-object-rest-spread",
+      {
+        "useBuiltIns": true
+      }
+    ],
+    [
+      "transform-react-jsx",
+      {
+        "useBuiltIns": true
+      }
+    ],
+    [
+      "transform-runtime",
+      {
+        "helpers": false,
+        "polyfill": false,
+        "regenerator": true
+      }
+    ],
+    [
+      "transform-regenerator",
+      {
+        "async": false
+      }
+    ],
+    "syntax-dynamic-import"
+  ],
+  "env": {
+    "test": {
+      "plugins": [
+        "transform-es2015-modules-commonjs"
+      ]
+    },
+    "development": {
+      "plugins": [
+        "transform-react-jsx-source",
+        "transform-react-jsx-self"
+      ]
+    },
+    "production": {
+      "plugins": [
+        "transform-react-remove-prop-types",
+        "transform-react-constant-elements",
+        "transform-react-inline-elements"
+      ]
+    }
+  }
 }
