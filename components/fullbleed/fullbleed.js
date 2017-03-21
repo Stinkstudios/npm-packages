@@ -1,20 +1,20 @@
-import React, { Component, PropTypes } from "react";
-import { validateClassNames } from "../../utils/validate-class";
+import React, { Component, PropTypes } from 'react';
+import { validateClassNames } from '../../utils/validate-class';
 
-import "./fullbleed.css";
+import './fullbleed.css';
 
 class Fullbleed extends Component {
   componentWillMount() {
     const { ratio } = this.props;
-    const ratioValues = ratio.split(":");
+    const ratioValues = ratio.split(':');
     this.childRatio = ratioValues[0] / ratioValues[1];
   }
 
   renderChildren(blockName) {
     const { children } = this.props;
     return React.Children.map(children, child => {
-      if (child.type !== "img" && child.type !== "video")
-        throw new Error("Children must be of type img or of type video");
+      if (child.type !== 'img' && child.type !== 'video')
+        throw new Error('Children must be of type img or of type video');
 
       return React.cloneElement(child, {
         className: `${blockName}__item o-media__${child.type}`
@@ -25,15 +25,15 @@ class Fullbleed extends Component {
   render() {
     const { addClass, width, height } = this.props;
 
-    const blockName = "fullbleed";
+    const blockName = 'fullbleed';
     const classes = [blockName];
     if (addClass) classes.push(addClass);
     const browserRatio = width / height;
-    if (browserRatio < this.childRatio) classes.push("is-below-ratio");
-    classes.push("o-media");
+    if (browserRatio < this.childRatio) classes.push('is-below-ratio');
+    classes.push('o-media');
 
     return (
-      <div className={classes.join(" ")}>
+      <div className={classes.join(' ')}>
         {this.renderChildren(blockName)}
       </div>
     );

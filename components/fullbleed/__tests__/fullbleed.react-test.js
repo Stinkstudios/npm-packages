@@ -1,8 +1,8 @@
-import React from "react";
-import Fullbleed from "../fullbleed";
-import renderer from "react-test-renderer";
+import React from 'react';
+import Fullbleed from '../fullbleed';
+import renderer from 'react-test-renderer';
 
-import { mount } from "enzyme";
+import { mount } from 'enzyme';
 
 const component = children => (
   <Fullbleed width={50} height={100} ratio="1:1" addClass="home-page__bg">
@@ -32,25 +32,25 @@ const videoTag = (
 
 const h1Tag = <h1>invalid</h1>;
 
-it("renders DOM output correctly", () => {
+it('renders DOM output correctly', () => {
   const tree = renderer.create(component(imgTag)).toJSON();
 
   expect(tree).toMatchSnapshot();
 });
 
-it("renders <img> tags correctly", () => {
+it('renders <img> tags correctly', () => {
   const tree = mount(component(imgTag));
-  expect(tree.find("img").length).toBe(1);
+  expect(tree.find('img').length).toBe(1);
 });
 
-it("renders <video> tags correctly", () => {
+it('renders <video> tags correctly', () => {
   const tree = mount(component(videoTag));
-  expect(tree.find("video").length).toBe(1);
+  expect(tree.find('video').length).toBe(1);
 });
 
-it("renders (does not) <h1> tags correctly", () => {
+it('renders (does not) <h1> tags correctly', () => {
   expect(() => mount(component(h1Tag))).toThrow(
-    "Children must be of type img or of type video"
+    'Children must be of type img or of type video'
   );
 });
 
@@ -63,8 +63,8 @@ it("adds 'is-below-ratio when ratio is less than childs'", () => {
 
   const topLevel = tree.first();
 
-  expect(topLevel.hasClass("home-page__bg")).toBe(true);
-  expect(topLevel.hasClass("is-below-ratio")).toBe(true);
+  expect(topLevel.hasClass('home-page__bg')).toBe(true);
+  expect(topLevel.hasClass('is-below-ratio')).toBe(true);
 });
 
 it("doesn't add 'is-below-ratio when ratio is greater than childs'", () => {
@@ -76,6 +76,6 @@ it("doesn't add 'is-below-ratio when ratio is greater than childs'", () => {
 
   const topLevel = tree.first();
 
-  expect(topLevel.hasClass("home-page__bg")).toBe(true);
-  expect(topLevel.hasClass("is-below-ratio")).toBe(false);
+  expect(topLevel.hasClass('home-page__bg')).toBe(true);
+  expect(topLevel.hasClass('is-below-ratio')).toBe(false);
 });
