@@ -47,7 +47,6 @@ class Fullbleed extends Component {
   _onResize = () => {
     if (this._el) {
       const { clientWidth, clientHeight } = this._el;
-      console.log(clientWidth, clientHeight);
       const ratio = clientWidth && clientHeight
         ? clientWidth / clientHeight
         : 1;
