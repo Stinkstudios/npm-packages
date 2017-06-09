@@ -97,7 +97,7 @@ Fullbleed.propTypes = {
   /** The aspect ratio of the asset passed as a child */
   assetRatio: PropTypes.string.isRequired,
   /** The width and height of the parent component. If Fullbleed is used
-   * as a fullscreen component, these values need to be the browser widht and height.
+   * as a fullscreen component, these values need to be the browser width and height.
    */
   parentSize: PropTypes.shape({
     width: PropTypes.number.isRequired,
