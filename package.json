@@ -143,5 +143,8 @@
     "react-addons-css-transition-group": "15.4.2",
     "react-dom": "15.4.2",
     "svg-inline-react": "^2.0.0"
+  },
+  "dependencies": {
+    "prop-types": "^15.5.10"
   }
 }
