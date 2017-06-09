@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { validateClassNames } from '../../utils/validate-class';
 
 import './fullbleed.css';
 
@@ -89,8 +90,8 @@ class Fullbleed extends Component {
 }
 
 Fullbleed.propTypes = {
-  /** Add additional classe names to the component */
-  classNames: PropTypes.array,
+  /** An Array to add class names (either namespaced or Element names) to the component */
+  classNames: validateClassNames,
   /** HTMLElement, either an 'img' or a 'video' */
   children: PropTypes.node.isRequired,
   /** The aspect ratio of the asset passed as a child */
