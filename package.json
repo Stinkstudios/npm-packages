@@ -4,8 +4,8 @@
   "description": "A collection of React components to be used on Stink Studios' React Boilerplate",
   "main": "index.js",
   "scripts": {
-    "styleguide": "styleguidist server",
-    "styleguide:build": "styleguidist build",
+    "start": "styleguidist server",
+    "build": "styleguidist build",
     "formatting": "npm run prettier && npm run stylefmt",
     "lint-staged": "echo 'Running lint-staged for staged files...' && lint-staged",
     "lint:css": "stylelint ./components/**/*.css",
