@@ -6,8 +6,9 @@ import './fullbleed.css';
 class Fullbleed extends Component {
   constructor(props) {
     super(props);
+    const { parentSize } = props;
     this.state = {
-      ratio: 1
+      ratio: parentSize ? parentSize.width / parentSize.height : 1
     };
   }
 
@@ -18,20 +19,20 @@ class Fullbleed extends Component {
   }
 
   componentDidMount() {
-    const { width, height } = this.props;
-    this._onResize();
-    if (!width && !height) {
+    const { parentSize } = this.props;
+    if (!parentSize) {
+      this._onResize();
       window.addEventListener('resize', this._onResize, false);
     }
   }
 
-  componentWillReceiveProps({ width, height }) {
-    if (
-      width &&
-      height &&
-      (width !== this.props.width || height !== this.props.height)
-    ) {
-      this._onResize();
+  componentWillReceiveProps({ parentSize }) {
+    if (parentSize) {
+      const { width, height } = parentSize;
+      const _parentSize = this.props.parentSize;
+      if (width !== _parentSize.width || height !== _parentSize.height) {
+        this._onResize();
+      }
     }
   }
 
@@ -44,9 +45,14 @@ class Fullbleed extends Component {
   }
 
   _onResize = () => {
-    this.setState({
-      ratio: this._el.clientWidth / this._el.clientHeight
-    });
+    if (this._el) {
+      const { clientWidth, clientHeight } = this._el;
+      console.log(clientWidth, clientHeight);
+      const ratio = clientWidth && clientHeight
+        ? clientWidth / clientHeight
+        : 1;
+      this.setState({ ratio });
+    }
   };
 
   renderChildren(blockName) {
@@ -56,7 +62,7 @@ class Fullbleed extends Component {
         throw new Error('Children must be of type img or of type video');
       }
       return React.cloneElement(child, {
-        className: `${blockName}__item o-media__${child.type}`
+        className: `${blockName}__item`
       });
     });
   }
@@ -90,22 +96,18 @@ Fullbleed.propTypes = {
   children: PropTypes.node.isRequired,
   /** The aspect ratio of the asset passed as a child */
   assetRatio: PropTypes.string.isRequired,
-  /** When used, it must be passed in pair with the `height` prop.
-   * It represents width of the parent element containing `Fullbleed`.
-   * It could be the viewport width, if `Fullbleed` is used on fullscreen
+  /** The width and height of the parent component. If Fullbleed is used
+   * as a fullscreen component, these values need to be the browser widht and height.
    */
-  width: PropTypes.number,
-  /** When used, it must be passed in pair with the `width` prop.
-   * It represents height of the parent element containing `Fullbleed`.
-   * It could be the viewport height, if `Fullbleed` is used on fullscreen
-   */
-  height: PropTypes.number
+  parentSize: PropTypes.shape({
+    width: PropTypes.number.isRequired,
+    height: PropTypes.number.isRequired
+  })
 };
 
 Fullbleed.defaultProps = {
   classNames: null,
-  width: null,
-  height: null
+  parentSize: null
 };
 
 export default Fullbleed;

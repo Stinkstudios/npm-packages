@@ -6,7 +6,7 @@ By default, the component binds a `resize` event listener to itself (the main el
 Example:
 
 ```
-<div style={{ height: 500 }}>
+<div style={{ width: '100%', height: 500 }}>
 	<Fullbleed assetRatio={'1:1'}>
 		<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Piet_Mondriaan%2C_1930_-_Mondrian_Composition_II_in_Red%2C_Blue%2C_and_Yellow.jpg/1010px-Piet_Mondriaan%2C_1930_-_Mondrian_Composition_II_in_Red%2C_Blue%2C_and_Yellow.jpg" alt="A photograph of the painting titled 'Composition II in Red, Blue, and Yellow' by the Dutch 'De Stijl' painter Piet Mondriaan" title="Piet Mondriaan, 1930 - Mondrian Composition II in Red, Blue, and Yellow" />
 	</Fullbleed>
