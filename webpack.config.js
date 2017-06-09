@@ -1,17 +1,11 @@
 /* eslint comma-dangle: 0 */
-const HTMLWebpackPlugin = require('html-webpack-plugin');
+// const HTMLWebpackPlugin = require('html-webpack-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const path = require('path');
 
-const HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
-  inject: 'body',
-  template: `${__dirname}/example/index.html`,
-  output: `${__dirname}/dist/index.html`
-});
-
 module.exports = () => ({
   entry: {
-    app: './example/index.js'
+    app: './index.js'
   },
   stats: {
     cached: false,
@@ -25,10 +19,6 @@ module.exports = () => ({
     reasons: false,
     timings: true,
     version: false
-  },
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
   },
   module: {
     rules: [
@@ -61,5 +51,5 @@ module.exports = () => ({
       }
     ]
   },
-  plugins: [new ProgressBarPlugin(), HTMLWebpackPluginConfig]
+  plugins: [new ProgressBarPlugin()]
 });
