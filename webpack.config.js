@@ -20,12 +20,16 @@ module.exports = () => ({
     timings: true,
     version: false
   },
+  output: {
+    path: path.resolve(__dirname),
+    filename: 'bundle.js'
+  },
   module: {
     rules: [
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: /(node_modules|dist)/,
+        exclude: /(node_modules|styleguide)/,
         query: {
           cacheDirectory: true
         }
