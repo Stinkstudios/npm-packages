@@ -1,3 +1,5 @@
 module.exports = {
-  components: 'components/**/*.js'
+  components: 'components/**/*.js',
+  serverPort: 8080,
+  showCode: true
 };

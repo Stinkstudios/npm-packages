@@ -8,8 +8,8 @@ A collection of React components to be used on Stink Studios' [React Boilerplate
 - [Babel](https://babeljs.io/)
 - [React](https://facebook.github.io/react/)
 - [style-loader](https://github.com/webpack/style-loader)
-- [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware)
 - [Webpack](https://webpack.github.io/)
+- [Ract Styleguidist](https://react-styleguidist.js.org/)
 
 ## Requirements
 - Node `6.10.0`
@@ -19,9 +19,14 @@ A collection of React components to be used on Stink Studios' [React Boilerplate
 	> Default version of NPM for Node `6.10.0`. So there shouldn't be a need to install.
 
 ### Start Development
-0. run `npm install`
-0. run `npm run start`
-0. point your browser to [localhost:8080](http://localhost:8080)
+1. run `npm install`
+2. run `npm run start`
+3. point your browser to `[localhost:8080](http://localhost:8080)`
+4. to work on a single component, go to `localhost:8080/#!/[component-name]`, and open it in an isolated page.
+
+### Build Styleguide
+1. run `npm run build`
+2. find the built styleguide at `/styleguide`
 
 ### Git
 >[`pre-commit`](https://github.com/observing/pre-commit) is being used. Every time you push to the repo `npm run lint-staged`. On failing of this you will be unable to commit to the repo until you fix the lint errors.
@@ -29,8 +34,11 @@ A collection of React components to be used on Stink Studios' [React Boilerplate
 ### NPM Tasks
 
 - `npm run start`
-
-- `npm run lint` Lints both JS & SCSS files.
+- `npm run lint` — lint both JS & SCSS files;
+- `npm run lint-staged` — lint staged files;
+- `npm run prettier` — run prettier on components and utilities
+- `npm run test` — run tests on components
+- `nom run update-snapshots` — update Jest snapshots
 
 ## Linters
 
