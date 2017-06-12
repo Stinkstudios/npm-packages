@@ -58,7 +58,11 @@ class Fullbleed extends Component {
   renderChildren(blockName) {
     const { children } = this.props;
     return React.Children.map(children, child => {
-      if (child.type !== 'img' && child.type !== 'video') {
+      if (
+        child.type !== 'img' &&
+        child.type !== 'video' &&
+        child.type.displayName !== 'Video'
+      ) {
         throw new Error('Children must be of type img or of type video');
       }
       return React.cloneElement(child, {
@@ -72,8 +76,7 @@ class Fullbleed extends Component {
     const { ratio } = this.state;
 
     const blockName = 'fullbleed';
-    const blockNames = [blockName];
-    if (classNames) blockNames.concat(classNames);
+    const blockNames = [blockName, ...classNames];
     if (ratio < this._assetRatio) blockNames.push('is-below-ratio');
 
     return (
