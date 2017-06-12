@@ -109,6 +109,7 @@
     "husky": "0.13.4",
     "jest": "20.0.4",
     "lint-staged": "3.6.0",
+    "postcss": "6.0.1",
     "postcss-conditionals": "2.1.0",
     "postcss-cssnext": "2.11.0",
     "postcss-each": "0.10.0",
@@ -136,17 +137,17 @@
     "webpack-dev-server": "2.4.5"
   },
   "dependencies": {
-    "react": "15.5.4",
-    "react-dom": "15.4.2",
-    "react-addons-css-transition-group": "15.4.2",
     "prop-types": "15.5.10",
+    "react": "15.5.4",
+    "react-addons-css-transition-group": "15.4.2",
+    "react-dom": "15.5.4",
     "svg-inline-react": "2.0.0"
   },
   "peerDependencies": {
-    "react": "15.5.4",
-    "react-dom": "15.4.2",
-    "react-addons-css-transition-group": "15.4.2",
     "prop-types": "15.5.10",
+    "react": "15.5.4",
+    "react-addons-css-transition-group": "15.4.2",
+    "react-dom": "15.5.4",
     "svg-inline-react": "2.0.0"
   }
 }
