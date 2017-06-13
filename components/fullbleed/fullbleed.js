@@ -76,7 +76,9 @@ class Fullbleed extends Component {
     const { ratio } = this.state;
 
     const blockName = 'fullbleed';
-    const blockNames = [blockName, ...classNames];
+    const blockNames = classNames && classNames.length
+      ? [blockName, ...classNames]
+      : [blockName];
     if (ratio < this._assetRatio) blockNames.push('is-below-ratio');
 
     return (
