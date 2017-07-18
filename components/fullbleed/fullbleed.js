@@ -61,9 +61,11 @@ class Fullbleed extends Component {
       if (
         child.type !== 'img' &&
         child.type !== 'video' &&
-        child.type.displayName !== 'Video'
+        child.type.name !== 'Video'
       ) {
-        throw new Error('Children must be of type img or of type video');
+        throw new Error(
+          `Children must be either an 'img' or 'video' HTML Element, or a 'Video' component.`
+        );
       }
       return React.cloneElement(child, {
         className: `${blockName}__item`
