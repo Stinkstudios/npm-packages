@@ -1,5 +1,3 @@
-/* eslint comma-dangle: 0 */
-// const HTMLWebpackPlugin = require('html-webpack-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const path = require('path');
 
