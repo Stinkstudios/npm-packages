@@ -24,14 +24,10 @@
   "lint-staged": {
     "linters": {
       "*(*.js|*.jsx)": [
-        "prettier \"!assets/**/*.js\"",
-        "eslint --ignore-pattern *.min.js",
-        "git add"
+        "eslint --ignore-pattern *.min.js"
       ],
       "*(*.css|*.scss)": [
-        "stylefmt",
-        "stylelint",
-        "git add"
+        "stylelint"
       ]
     }
   },
