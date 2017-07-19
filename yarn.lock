@@ -6810,10 +6810,6 @@ supports-color@^3.1.0, supports-color@^3.1.1, supports-color@^3.1.2, supports-co
   dependencies:
     has-flag "^1.0.0"
 
-svg-inline-react@2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/svg-inline-react/-/svg-inline-react-2.0.0.tgz#401a44af3579b2d779465b9cdabbffb59c17b9f2"
-
 svg-tags@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/svg-tags/-/svg-tags-1.0.0.tgz#58f71cee3bd519b59d4b2a843b6c7de64ac04764"
