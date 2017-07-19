@@ -46,7 +46,7 @@ it('renders <video> tags correctly', () => {
 
 it('renders (does not) <h1> tags correctly', () => {
   expect(() => mount(component(h1Tag))).toThrow(
-    'Children must be of type img or of type video'
+    `Children must be either an 'img' or 'video' HTML Element, or a 'Video' component.`
   );
 });
 
