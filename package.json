@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "A collection of React components to be used on Stink Studios' React Boilerplate",
   "main": "index.js",
+  "module": "index.js",
   "scripts": {
     "start": "styleguidist server",
     "build": "styleguidist build",
