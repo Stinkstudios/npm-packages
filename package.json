@@ -106,6 +106,8 @@
     "postcss-simple-vars": "4.0.0",
     "prettier": "1.4.4",
     "progress-bar-webpack-plugin": "1.9.3",
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
     "react-addons-test-utils": "15.5.1",
     "react-dom": "^15.6.1",
     "react-styleguidist": "^5.5.7",
