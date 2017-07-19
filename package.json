@@ -119,13 +119,11 @@
   "dependencies": {
     "prop-types": "15.5.10",
     "react": "15.5.4",
-    "react-addons-css-transition-group": "15.4.2",
     "react-dom": "15.5.4"
   },
   "peerDependencies": {
     "prop-types": "15.5.10",
     "react": "15.5.4",
-    "react-addons-css-transition-group": "15.4.2",
     "react-dom": "15.5.4"
   }
 }
