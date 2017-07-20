@@ -15,7 +15,7 @@ test:
   override:
     - yarn run build
 deployment:
-  develop:
-    branch: feature/styleguidist
+  master:
+    branch: master
     commands:
       - aws s3 sync --acl public-read styleguide s3://$AWS_S3_BUCKET_DEV --cache-control 'public, max-age=600' --delete
