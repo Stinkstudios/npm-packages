@@ -6,7 +6,7 @@
   "module": "index.js",
   "scripts": {
     "start": "styleguidist server",
-    "prebuild": "yarn run lint",
+    "prebuild": "yarn run lint && yarn run test",
     "build": "styleguidist build",
     "formatting": "yarn run prettier && yarn run stylefmt",
     "lint-staged": "echo 'Running lint-staged for staged files...' && lint-staged",
