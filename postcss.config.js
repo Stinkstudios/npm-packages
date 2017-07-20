@@ -13,7 +13,6 @@ module.exports = {
       ]
     },
     'postcss-for': {},
-    'postcss-each': {},
     'postcss-mixins': {},
     'postcss-simple-vars': {},
     'postcss-nested': {},

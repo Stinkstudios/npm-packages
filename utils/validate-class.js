@@ -4,21 +4,22 @@ export function validateClassNames(
   componentName = 'ANONYMOUS'
 ) {
   if (props[propName]) {
-    const classname = props[propName];
-    if (typeof classname !== 'string') {
-      throw new Error(`Classnames must be a string, got ${typeof classname}`);
+    const classNames = props[propName];
+    if (Object.prototype.toString.call(classNames) !== '[object Array]') {
+      throw new Error(
+        `\`classNames\` must be an array (of strings); current type: ${typeof classNames}`
+      );
     }
 
-    const names = classname.split(' ');
     const re = new RegExp(/[A-Za-z]-|__/);
-    const error = `\`${propName}\` on ${componentName}. Values must be either` +
+    const error =
+      `\`${propName}\` on ${componentName}. Values must be either` +
       ' namespaced Block names (https://github.com/stinkstudios/guidelines/tree/master/css#namespaces)' +
-      ' or Element names (http://getbem.com/naming/). Other Component names NOT allowed.';
-    if (typeof names === 'object') {
-      names.forEach(name => {
-        if (!re.test(name)) throw new Error(error);
-      });
-    }
+      ' or Element names (http://getbem.com/naming/). Other Component names are NOT allowed.';
+    classNames.map(name => {
+      if (!re.test(name)) throw new Error(error);
+      return null;
+    });
   }
   return null;
 }

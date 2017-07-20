@@ -1,13 +1,21 @@
 machine:
   node:
-    version: 6
+    version: 6.10.0
   environment:
     PATH: "${PATH}:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
+  environment:
+    AWS_DEFAULT_REGION: eu-west-2
 dependencies:
   override:
     - yarn
   cache_directories:
+    - "./node_modules"
     - "~/.cache/yarn"
 test:
   override:
-    - yarn test
+    - yarn run build
+deployment:
+  master:
+    branch: master
+    commands:
+      - aws s3 sync --acl public-read styleguide s3://$AWS_S3_BUCKET_DEV --cache-control 'public, max-age=600' --delete

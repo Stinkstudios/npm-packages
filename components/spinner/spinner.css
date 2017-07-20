@@ -6,7 +6,7 @@
 $c-red: rgb(239, 47, 48);
 
 .spinner {
-  position: absolute;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;

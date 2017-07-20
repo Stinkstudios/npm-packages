@@ -58,7 +58,7 @@
     ],
     "no-param-reassign": 0,
     "no-shadow": 0,
-    "no-tabs": 0,
+    "no-tabs": 1,
     "no-underscore-dangle": 0,
     "prettier/prettier": [
       "error",
@@ -75,12 +75,14 @@
         ]
       }
     ],
-    "react/jsx-filename-extension": 0
+    "react/jsx-filename-extension": 0,
+    "react/jsx-no-bind": ["error", {
+      "ignoreRefs": true,
+      "allowArrowFunctions": false,
+      "allowBind": false
+    }]
   },
   "settings": {
-    "import/resolver": {
-      "babel-module": {}
-    },
     "polyfills": [
       "fetch"
     ]

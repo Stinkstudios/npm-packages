@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders DOM output correctly 1`] = `
+<div
+  className="spinner"
+>
+  <div
+    className="spinner__inner"
+    style={
+      Object {
+        "height": 50,
+        "width": 50,
+      }
+    }
+  >
+    <div
+      className="spinner__half spinner__half--left"
+    />
+    <div
+      className="spinner__half spinner__half--right"
+    />
+  </div>
+</div>
+`;
