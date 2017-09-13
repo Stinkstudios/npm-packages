@@ -52,6 +52,7 @@ var AbstractPlayer = function () {
 		this._callbackPause = this._options.onPause;
 		this._callbackProgress = this._options.onProgress;
 		this._callbackTimeUpdate = this._options.onTimeUpdate;
+		this._callbackVolumeChange = this._options.onVolumeChange;
 	}
 
 	AbstractPlayer.prototype.getPlayer = function getPlayer() {
@@ -235,6 +236,10 @@ var _initialiseProps = function _initialiseProps() {
 
 	this._onTimeUpdate = function (e) {
 		if (_this._callbackTimeUpdate) _this._callbackTimeUpdate(e);
+	};
+
+	this._onVolumeChange = function (e) {
+		if (_this._callbackVolumeChange) _this._callbackVolumeChange(e);
 	};
 };
 
