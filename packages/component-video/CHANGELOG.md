@@ -1,3 +1,9 @@
+## 0.3.6 (Oct 13, 2017)
+
+### Added
+
+* volumechange event
+
 ## 0.3.5 (March 7, 2017)
 
 ### Changed

@@ -50,6 +50,7 @@ document.body.appendChild(videoPlayer.el);
  - `onPlay`
  - `onProgress`
  - `onTimeUpdate`
+ - `onVolumeChange`
  - `forceNativePlayer` ( Force the mobile device to use native player instead of Inline player)
 
 
@@ -76,7 +77,9 @@ Compiled into ES5 and ES6. See `package.json`
 	"module": "es/index.js",
 
 For autoplay on iOS 10 safari mobile you need to set `muted` to true.
-If you need audio you still have to use the hack of providing an audio file.
+If you need audio you still have to use the hack of providing an audio file
+
+The Youtube player requires a Promise polyfill for older browsers such as IE11. Make sure you include one in your project before importing VideoPlayer.
 
 ## Development
 ```

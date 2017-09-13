@@ -153,6 +153,7 @@ export default class BasicPlayer extends AbstractPlayer {
 		this._player.addEventListener('pause', this._onVideoPause);
 		this._player.addEventListener('progress', this._onVideoProgress);
 		this._player.addEventListener('timeupdate', this._onTimeUpdate);
+		this._player.addEventListener('volumechange', this._onVolumeChange);
 	}
 
 	_removeListeners() {
@@ -166,6 +167,7 @@ export default class BasicPlayer extends AbstractPlayer {
 		this._player.removeEventListener('pause', this._onVideoPause);
 		this._player.removeEventListener('progress', this._onVideoProgress);
 		this._player.removeEventListener('timeupdate', this._onTimeUpdate);
+		this._player.removeEventListener('volumechange', this._onVolumeChange);
 	}
 
 	_replace(newsrc) {

@@ -36,6 +36,7 @@ export default class AbstractPlayer {
 		this._callbackPause = this._options.onPause;
 		this._callbackProgress = this._options.onProgress;
 		this._callbackTimeUpdate = this._options.onTimeUpdate;
+		this._callbackVolumeChange = this._options.onVolumeChange;
 	}
 
 	set autoplay(value) {
@@ -198,6 +199,10 @@ export default class AbstractPlayer {
 
 	_onTimeUpdate = (e) => {
 		if (this._callbackTimeUpdate) this._callbackTimeUpdate(e);
+	}
+
+	_onVolumeChange = (e) => {
+		if (this._callbackVolumeChange) this._callbackVolumeChange(e);
 	}
 
 }
