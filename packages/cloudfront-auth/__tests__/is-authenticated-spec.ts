@@ -19,3 +19,15 @@ test("returns true when distribution id is not enabled", () => {
     })
   ).toBe(true);
 });
+
+test("returns true when the IP is whitelisted", () => {
+  const request = generateRequest({
+    clientIp: "127.0.0.1"
+  });
+
+  expect(
+    isAuthenticated(request, {
+      whitelistedIPs: ["127.0.0.1"]
+    })
+  ).toBe(true);
+});
