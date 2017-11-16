@@ -9,7 +9,13 @@ test("returns false by default", () => {
 });
 
 test("returns true when distribution id is not enabled", () => {
-  const request = generateRequest();
+  const request = generateRequest({
+    distributionId: "NOT_ENABLED_ID"
+  });
 
-  expect(isAuthenticated(request)).toBe(false);
+  expect(
+    isAuthenticated(request, {
+      enabledDistributions: ["ENABLED_ID"]
+    })
+  ).toBe(true);
 });
