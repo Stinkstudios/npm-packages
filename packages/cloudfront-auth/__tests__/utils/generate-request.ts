@@ -1,4 +1,6 @@
-const template = {
+import { ICloudFrontRequest, IHeaders } from "../../src/cloudfront-request";
+
+const template: ICloudFrontRequest = {
   Records: [
     {
       cf: {
@@ -35,10 +37,11 @@ interface IGenerateRequestParams {
   distributionId?: string;
   clientIp?: string;
   uri?: string;
+  headers?: IHeaders;
 }
 
 const generateRequest = (
-  { distributionId, clientIp, uri }: IGenerateRequestParams = {}
+  { distributionId, clientIp, uri, headers }: IGenerateRequestParams = {}
 ) => {
   const request = {
     ...template
@@ -47,11 +50,20 @@ const generateRequest = (
   if (distributionId) {
     request.Records[0].cf.config.distributionId = distributionId;
   }
+
   if (clientIp) {
     request.Records[0].cf.request.clientIp = clientIp;
   }
+
   if (uri) {
     request.Records[0].cf.request.uri = uri;
+  }
+
+  if (headers) {
+    request.Records[0].cf.request.headers = {
+      ...request.Records[0].cf.request.headers,
+      ...headers
+    };
   }
 
   return request;
