@@ -1,5 +1,4 @@
-[![Build Status](https://travis-ci.org/{{github-user-name}}/{{github-app-name}}.svg?branch=master)](https://travis-ci.org/{{github-user-name}}/{{github-app-name}}.svg?branch=master)
-[![Coverage Status](https://coveralls.io/repos/github/{{github-user-name}}/{{github-app-name}}/badge.svg?branch=master)](https://coveralls.io/github/{{github-user-name}}/{{github-app-name}}?branch=master)
+[![CircleCI](https://circleci.com/gh/Stinkstudios/cloudfront-auth.svg?style=svg&circle-token=4586e5d9e5395a5670a57d17b97850a0e6d916b1)](https://circleci.com/gh/Stinkstudios/cloudfront-auth)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 
 # Using this module in other modules
@@ -27,8 +26,3 @@ const Greeter = require('my-amazing-lib').Greeter;
 const greeter = new Greeter('World!');
 greeter.greet();
 ```
-
-## Setting travis and coveralls badges
-1. Sign in to [travis](https://travis-ci.org/) and activate the build for your project.
-2. Sign in to [coveralls](https://coveralls.io/) and activate the build for your project.
-3. Replace {{github-user-name}}/{{github-app-name}} with your repo details like: "ospatil/generator-node-typescript".
