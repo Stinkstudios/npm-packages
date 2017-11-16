@@ -2,6 +2,7 @@ import { ICloudFrontRequest } from "./cloudfront-request";
 
 export interface IIsAuthenticatedConfig {
   enabledDistributions?: string[];
+  whitelistedIPs?: string[];
 }
 
 const isAuthenticated = (
@@ -16,6 +17,17 @@ const isAuthenticated = (
     // distribution (eg. dev, staging and production)
 
     if (!config.enabledDistributions.includes(currentDistribution)) {
+      return true;
+    }
+  }
+
+  if (config && config.whitelistedIPs) {
+    const { clientIp } = request.Records[0].cf.request;
+
+    // return true if the current clientIp is in the
+    // whitelist
+
+    if (config.whitelistedIPs.includes(clientIp)) {
       return true;
     }
   }
