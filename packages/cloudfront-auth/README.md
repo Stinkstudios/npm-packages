@@ -8,20 +8,66 @@ be used to password protect CloudFront distributions.
 
 ## Installation
 
-  ```bash
-  yarn add cloudfront-auth # TODO: name might change
-  ```
+```bash
+yarn add @stinktudios/cf-auth # TODO: name might change
+```
 
 ## Usage
 
 ```js
-const cfAuth = require('cloudfront-auth');
+const cfAuth = require("@stinkstudios/cf-auth").default;
 
-const config = {};
-
-exports.handler = (event, context, callback) => cfAuth(config, event, callback);
+exports.handler = (event, context, callback) =>
+  cfAuth(
+    {
+      validCredentails: [
+        {
+          username: "my-name",
+          password: "good password"
+        }
+      ],
+      whitelistedIPs: ["127.0.0.1"]
+    },
+    event,
+    callback
+  );
 ```
 
 ## Configuration
 
-TODO: will explain how to configure this when the API will be final and stable.
+### Credentials
+
+You can pass a list of allowed credentials in the configuration:
+
+```json
+{
+  "validCredentails": [
+    {
+      "username": "my-name",
+      "password": "good password"
+    }
+  ]
+}
+```
+
+### Distributions
+
+You can pass a list of distributions where the authentication is required,
+by default the list is undefined, so the authentication is added to all the
+distributions.
+
+```json
+{
+  "enabledDistributions": ["EDFDVBD6EXAMPLE"]
+}
+```
+
+### Whitelisted IPS
+
+You can pass a list of IPs that won't be asked for the authentication.
+
+```json
+{
+  "whitelistedIPs": ["127.0.0.1"]
+}
+```
