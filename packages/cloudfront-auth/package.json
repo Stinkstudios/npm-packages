@@ -10,8 +10,15 @@
   },
   "license": "MIT",
   "repository": "",
-  "keywords": ["cloudfront", "authentication", "aws", "lambda"],
-  "files": ["lib"],
+  "keywords": [
+    "cloudfront",
+    "authentication",
+    "aws",
+    "lambda"
+  ],
+  "files": [
+    "lib"
+  ],
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "scripts": {
@@ -19,8 +26,7 @@
     "format": "prettier --write \"{src,__tests__}/**/*.ts\"",
     "lint": "tslint --force --format verbose \"src/**/*.ts\"",
     "prepublish": "npm run build",
-    "prebuild":
-      "npm run clean && npm run format && npm run lint && echo Using TypeScript && tsc --version",
+    "prebuild": "npm run clean && npm run format && npm run lint && echo Using TypeScript && tsc --version",
     "build": "tsc --pretty",
     "test": "jest",
     "coverage": "jest --coverage",
@@ -29,18 +35,18 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@types/jest": "^20.0.5",
+    "@types/jest": "^21.1.6",
     "@types/node": "^8.0.0",
-    "coveralls": "^2.0.0",
-    "jest": "^20.0.4",
+    "coveralls": "^3.0.0",
+    "jest": "^21.2.1",
     "jest-environment-node-debug": "^2.0.0",
-    "prettier": "^1.5.2",
-    "rimraf": "^2.0.0",
-    "ts-jest": "^20.0.7",
-    "ts-node": "^3.2.0",
-    "tslint": "^5.0.0",
-    "tslint-config-prettier": "^1.1.0",
-    "typescript": "^2.3.0"
+    "prettier": "^1.8.2",
+    "rimraf": "^2.6.2",
+    "ts-jest": "^21.2.3",
+    "ts-node": "^3.3.0",
+    "tslint": "^5.8.0",
+    "tslint-config-prettier": "^1.6.0",
+    "typescript": "^2.6.1"
   },
   "engines": {
     "node": ">=6.0.0"
@@ -50,7 +56,10 @@
       ".(ts)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
     "testRegex": "__tests__/.*(test|spec)\\.(ts|js)$",
-    "moduleFileExtensions": ["ts", "js"],
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
     "testEnvironment": "node"
   }
 }
