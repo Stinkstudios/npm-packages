@@ -3,23 +3,23 @@ export interface IGenerate401ResponseParams {
 }
 
 const generate401Response = ({ realm }: IGenerate401ResponseParams) => ({
-  body: "401 Authorization Required",
+  body: '401 Authorization Required',
   headers: {
-    "content-type": [
+    'content-type': [
       {
-        key: "Content-Type",
-        value: "text/plain; charset=utf-8"
-      }
+        key: 'Content-Type',
+        value: 'text/plain; charset=utf-8',
+      },
     ],
-    "www-authenticate": [
+    'www-authenticate': [
       {
-        key: "WWW-Authenticate",
-        value: `Basic realm="${realm}"`
-      }
-    ]
+        key: 'WWW-Authenticate',
+        value: `Basic realm="${realm}"`,
+      },
+    ],
   },
-  status: "401",
-  statusDescription: "Authorization Required"
+  status: '401',
+  statusDescription: 'Authorization Required',
 });
 
 export default generate401Response;

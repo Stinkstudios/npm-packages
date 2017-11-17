@@ -1,7 +1,7 @@
-import generate401 from "./generate-401-response";
-import isAuthenticated, { IIsAuthenticatedConfig } from "./is-authenticated";
+import generate401 from './generate-401-response';
+import isAuthenticated, { IIsAuthenticatedConfig } from './is-authenticated';
 
-import { ICloudFrontRequest, IRequest } from "./cloudfront-request";
+import { ICloudFrontRequest, IRequest } from './cloudfront-request';
 
 const processRequest = (
   configuration: IIsAuthenticatedConfig,
@@ -17,7 +17,7 @@ const processRequest = (
   return callback(
     null,
     generate401({
-      realm: "Authentication required"
+      realm: 'Authentication required',
     })
   );
 };

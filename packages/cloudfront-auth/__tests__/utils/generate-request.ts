@@ -1,36 +1,36 @@
-import { ICloudFrontRequest, IHeaders } from "../../src/cloudfront-request";
+import { ICloudFrontRequest, IHeaders } from '../../src/cloudfront-request';
 
 const template: ICloudFrontRequest = {
   Records: [
     {
       cf: {
         config: {
-          distributionId: "EDFDVBD6EXAMPLE",
-          requestId: "MRVMF7KydIvxMWfJIglgwHQwZsbG2IhRJ07sn9AkKUFSHS9EXAMPLE=="
+          distributionId: 'EDFDVBD6EXAMPLE',
+          requestId: 'MRVMF7KydIvxMWfJIglgwHQwZsbG2IhRJ07sn9AkKUFSHS9EXAMPLE==',
         },
         request: {
-          clientIp: "2001:0db8:85a3:0:0:8a2e:0370:7334",
+          clientIp: '2001:0db8:85a3:0:0:8a2e:0370:7334',
           headers: {
             host: [
               {
-                key: "Host",
-                value: "d111111abcdef8.cloudfront.net"
-              }
+                key: 'Host',
+                value: 'd111111abcdef8.cloudfront.net',
+              },
             ],
-            "user-agent": [
+            'user-agent': [
               {
-                key: "User-Agent",
-                value: "curl/7.51.0"
-              }
-            ]
+                key: 'User-Agent',
+                value: 'curl/7.51.0',
+              },
+            ],
           },
-          method: "GET",
-          querystring: "size=large",
-          uri: "/picture.jpg"
-        }
-      }
-    }
-  ]
+          method: 'GET',
+          querystring: 'size=large',
+          uri: '/picture.jpg',
+        },
+      },
+    },
+  ],
 };
 
 interface IGenerateRequestParams {
@@ -44,7 +44,7 @@ const generateRequest = (
   { distributionId, clientIp, uri, headers }: IGenerateRequestParams = {}
 ) => {
   const request = {
-    ...template
+    ...template,
   };
 
   if (distributionId) {
@@ -62,7 +62,7 @@ const generateRequest = (
   if (headers) {
     request.Records[0].cf.request.headers = {
       ...request.Records[0].cf.request.headers,
-      ...headers
+      ...headers,
     };
   }
 

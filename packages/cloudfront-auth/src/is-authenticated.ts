@@ -1,4 +1,4 @@
-import { ICloudFrontRequest } from "./cloudfront-request";
+import { ICloudFrontRequest } from './cloudfront-request';
 
 export interface ICredential {
   username: string;
@@ -18,12 +18,12 @@ const hasValidAuthorization = (
   const header = request.Records[0].cf.request.headers.authorization;
 
   if (header) {
-    const base64 = header[0].value.split(" ");
+    const base64 = header[0].value.split(' ');
 
-    const buf = new Buffer(base64[1], "base64");
+    const buf = new Buffer(base64[1], 'base64');
     const plainAuth = buf.toString();
 
-    const [username, password] = plainAuth.split(":");
+    const [username, password] = plainAuth.split(':');
 
     return (
       validCredentails.filter(
