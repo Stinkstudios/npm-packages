@@ -9,7 +9,7 @@ be used to password protect CloudFront distributions.
 ## Installation
 
 ```bash
-yarn add @stinktudios/cf-auth # TODO: name might change
+yarn add @stinkstudios/cf-auth # TODO: name might change
 ```
 
 ## Usage
