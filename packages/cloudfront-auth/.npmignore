@@ -1,0 +1,8 @@
+__tests__
+.vscode
+src
+.editorconfig
+.prettierrc
+tsconfig.json
+tslint.json
+*.log
