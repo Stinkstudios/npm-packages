@@ -1,26 +1,34 @@
 {
   "compilerOptions": {
     "declaration": true,
+    "forceConsistentCasingInFileNames": true,
+    "inlineSourceMap": true,
+    "lib": ["esnext"],
     "module": "commonjs",
     "moduleResolution": "node",
-    "lib": [
-      "esnext"
-    ],
-    "target": "es2015",
-    "strict": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "outDir": "./lib",
-    "preserveConstEnums": true,
     "removeComments": true,
-    "inlineSourceMap": true,
-    "typeRoots": [
-      "./node_modules/@types"
-    ]
+    // "rootDir": "src",
+    // "sourceMap": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "target": "es2015"
   },
-  "include": [
-    "src/**/*"
-  ],
   "exclude": [
-    "node_modules",
-    "**/*-spec.ts"
+    "*.test.tsx.snap",
+    "lib",
+
+    "coverage",
+    "jest.config.js",
+    "jest",
+    "node_modules"
+
+
   ]
 }
