@@ -40,9 +40,12 @@ interface IGenerateRequestParams {
   headers?: IHeaders;
 }
 
-const generateRequest = (
-  { distributionId, clientIp, uri, headers }: IGenerateRequestParams = {}
-) => {
+const generateRequest = ({
+  distributionId,
+  clientIp,
+  uri,
+  headers,
+}: IGenerateRequestParams = {}) => {
   const request = {
     ...template,
   };
