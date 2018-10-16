@@ -56,16 +56,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "jest": {
-    "preset": "ts-jest",
-    "transform": {
-      "^.+\\.(ts)$": "ts-jest"
-    },
-    "testMatch": [
-      "**/__tests__/?(*.)(spec|test).{ts,tsx,js,jsx,mjs}"
-    ],
-    "testEnvironment": "node",
-    "verbose": true
   }
 }
