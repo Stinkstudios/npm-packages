@@ -9,7 +9,10 @@
     "url": "https://patrick.wtf"
   },
   "license": "MIT",
-  "repository": "",
+  "repository": "Stinkstudios/npm-packages",
+  "bugs": {
+    "url": "https://github.com/Stinkstudios/npm-packages/issues"
+  },
   "keywords": [
     "cloudfront",
     "authentication",
