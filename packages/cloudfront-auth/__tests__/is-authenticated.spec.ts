@@ -3,7 +3,7 @@ import generateRequest from './utils/generate-request';
 
 import isAuthenticated from '../src/is-authenticated';
 
-test('returns false by default', () => {
+it('returns false by default', () => {
   const request = generateRequest();
 
   expect(isAuthenticated(request)).toBe(false);
