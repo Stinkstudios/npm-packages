@@ -12,5 +12,5 @@
   "npmClientArgs": [
     "--no-lockfile"
   ],
-  "useWorkspaces": true
+  "useWorkspaces": false
 }
