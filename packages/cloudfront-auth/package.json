@@ -58,14 +58,14 @@
     "access": "public"
   },
   "jest": {
+    "preset": "ts-jest",
     "transform": {
-      ".(ts)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+      "^.+\\.(ts)$": "ts-jest"
     },
-    "testRegex": "__tests__/.*(test|spec)\\.(ts|js)$",
-    "moduleFileExtensions": [
-      "ts",
-      "js"
+    "testMatch": [
+      "**/__tests__/?(*.)(spec|test).{ts,tsx,js,jsx,mjs}"
     ],
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "verbose": true
   }
 }
