@@ -4,13 +4,9 @@
       "exact": true
     }
   },
-  "packages": [
-    "packages/*"
-  ],
+  "packages": ["packages/*"],
   "version": "independent",
   "npmClient": "yarn",
-  "npmClientArgs": [
-    "--no-lockfile"
-  ],
-  "useWorkspaces": false
+  "npmClientArgs": ["--no-lockfile"],
+  "useWorkspaces": true
 }
