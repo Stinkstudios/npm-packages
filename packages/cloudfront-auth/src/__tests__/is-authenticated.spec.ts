@@ -1,7 +1,7 @@
 import generateAuthHeader from './utils/generate-auth-header';
 import generateRequest from './utils/generate-request';
 
-import isAuthenticated from '../src/is-authenticated';
+import isAuthenticated from '../is-authenticated';
 
 it('returns false by default', () => {
   const request = generateRequest();
