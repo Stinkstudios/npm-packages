@@ -1,4 +1,4 @@
-import { ICloudFrontRequest, IHeaders } from '../../src/cloudfront-request';
+import { ICloudFrontRequest, IHeaders } from '../../cloudfront-request';
 
 const template: ICloudFrontRequest = {
   Records: [
