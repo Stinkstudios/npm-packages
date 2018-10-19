@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/Stinkstudios/cloudfront-auth.svg?style=svg&circle-token=4586e5d9e5395a5670a57d17b97850a0e6d916b1)](https://circleci.com/gh/Stinkstudios/cloudfront-auth)
+[![Build Status](https://travis-ci.com/Stinkstudios/npm-packages.svg?branch=master)](https://travis-ci.com/Stinkstudios/npm-packages)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 
 # CloudFront Authentication Library
