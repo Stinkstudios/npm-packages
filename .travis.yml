@@ -17,6 +17,10 @@ cache:
 
 install: yarn bootstrap
 
+branches:
+  only:
+    - master
+
 script:
   - yarn lint
   - yarn test
