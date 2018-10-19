@@ -13,6 +13,8 @@ before_install:
 
 cache:
   yarn: true
+  directories:
+    - .npm
 
 install: yarn bootstrap
 
