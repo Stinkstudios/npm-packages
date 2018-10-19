@@ -4,7 +4,6 @@ node_js:
   - "6"
   - "8"
   - "10"
-  - "lts/*"
 
 before_install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.10.1
@@ -19,9 +18,15 @@ cache:
 install: yarn bootstrap
 
 script:
+  - yarn lint
+  - yarn test
   - yarn build
+
+# stages:
+#   - lint
+#   - test
+#   - build
 
 # jobs:
 #   include:
-#     - script: yarn lint
-#     - script: yarn test
+#     - stage: lint
