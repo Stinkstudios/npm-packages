@@ -1,3 +1,4 @@
 a {
-  top: .2em;
+  top: 0.2em;
+  display: grid;
 }

@@ -26,7 +26,7 @@ describe('flags no warnings with valid css', () => {
   });
 
   it('flags no warnings', () => {
-    return result.then(data => expect(data.results[0].warnings.length).toBe(0));
+    return result.then(data => expect(data.results[0].warnings).toHaveLength(0));
   });
 });
 
@@ -41,24 +41,28 @@ describe('flags warnings with invalid css', () => {
   });
 
   it('did error', () => {
-    return result.then(data => expect(data.errored).toBeTruthy());
+    return result.then(data => {
+
+
+      return expect(data.errored).toBeTruthy()
+    });
   });
 
   it('flags one warning', () => {
-    return result.then(data => expect(data.results[0].warnings.length).toBe(1));
+    return result.then(data => expect(data.results[0].warnings).toHaveLength(1));
   });
 
   it('correct warning text', () => {
     return result.then(data =>
       expect(data.results[0].warnings[0].text).toBe(
-        'Expected a leading zero (number-leading-zero)'
+        'Expected "display" to come before "top" (order/properties-order)'
       )
     );
   });
 
   it('correct rule flagged', () => {
     return result.then(data =>
-      expect(data.results[0].warnings[0].rule).toBe('number-leading-zero')
+      expect(data.results[0].warnings[0].rule).toBe('order/properties-order')
     );
   });
 
@@ -70,13 +74,13 @@ describe('flags warnings with invalid css', () => {
 
   it('correct line number', () => {
     return result.then(data =>
-      expect(data.results[0].warnings[0].line).toBe(2)
+      expect(data.results[0].warnings[0].line).toEqual(3)
     );
   });
 
   it('correct column number', () => {
     return result.then(data =>
-      expect(data.results[0].warnings[0].column).toBe(8)
+      expect(data.results[0].warnings[0].column).toEqual(3)
     );
   });
 });
@@ -96,6 +100,6 @@ describe('flags no warnings with valid css modules', () => {
   });
 
   it('flags no warnings', () => {
-    return result.then(data => expect(data.results[0].warnings.length).toBe(0));
+    return result.then(data => expect(data.results[0].warnings).toHaveLength(0));
   });
 });
