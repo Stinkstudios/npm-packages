@@ -5,6 +5,8 @@
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build",
     "lint": "lerna run lint",
+    "prepublish": "yarn lint && yarn test && yarn build",
+    "publish": "lerna run publish",
     "test": "lerna run test"
   },
   "workspaces": [
