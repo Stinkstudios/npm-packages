@@ -28,14 +28,14 @@
   },
   "scripts": {
     "test": "jest",
+    "test:watch": "jest --watch",
     "stylelint-check": "stylelint-config-prettier-check"
   },
   "bugs": {
     "url": "https://github.com/Stinkstudios/npm-packages/issues"
   },
   "jest": {
-    "testEnvironment": "node",
-    "verbose": true
+    "testEnvironment": "node"
   },
   "eslintConfig": {
     "extends": [
