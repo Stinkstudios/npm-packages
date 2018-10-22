@@ -32,6 +32,5 @@ module.exports = {
     'order/order': order,
     'order/properties-order': propertiesOrder,
 
-    'number-leading-zero': 'never',
   },
 };
