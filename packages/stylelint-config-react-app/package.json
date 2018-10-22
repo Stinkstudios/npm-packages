@@ -27,17 +27,14 @@
     "url": "git+https://github.com/Stinkstudios/npm-packages.git"
   },
   "scripts": {
+    "lint:js": "eslint '**/*.js'",
+    "lint": "yarn lint:js && yarn stylelint-check",
+    "stylelint-check": "stylelint-config-prettier-check",
     "test": "jest --env=node",
-    "test:watch": "jest --env=node --watch",
-    "stylelint-check": "stylelint-config-prettier-check"
+    "test:watch": "jest --env=node --watch"
   },
   "bugs": {
     "url": "https://github.com/Stinkstudios/npm-packages/issues"
-  },
-  "eslintConfig": {
-    "extends": [
-      "stylelint"
-    ]
   },
   "devDependencies": {
     "eslint": "5.7.0",
