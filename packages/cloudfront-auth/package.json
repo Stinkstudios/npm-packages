@@ -1,6 +1,6 @@
 {
   "name": "@stinkstudios/cf-auth",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Module to password protect CloudFront distributions",
   "homepage": "https://stinkstudios.com",
   "author": {
@@ -35,7 +35,6 @@
     "watch": "npm run build -- --watch",
     "watch:test": "jest --watch"
   },
-  "dependencies": {},
   "devDependencies": {
     "@types/jest": "23.3.5",
     "@types/node": "10.12.0",
