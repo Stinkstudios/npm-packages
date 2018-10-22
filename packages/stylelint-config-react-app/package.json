@@ -27,15 +27,12 @@
     "url": "git+https://github.com/Stinkstudios/npm-packages.git"
   },
   "scripts": {
-    "test": "jest",
-    "test:watch": "jest --watch",
+    "test": "jest --env=node",
+    "test:watch": "jest --env=node --watch",
     "stylelint-check": "stylelint-config-prettier-check"
   },
   "bugs": {
     "url": "https://github.com/Stinkstudios/npm-packages/issues"
-  },
-  "jest": {
-    "testEnvironment": "node"
   },
   "eslintConfig": {
     "extends": [
