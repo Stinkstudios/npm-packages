@@ -1,0 +1,8 @@
+>1%
+last 2 versions
+Firefox ESR
+not ie < 11
+not OperaMobile > 0
+not BlackBerry > 0
+not OperaMini all
+Android > 4.4.4
