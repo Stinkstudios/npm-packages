@@ -1,0 +1,5 @@
+__tests__
+.browserslistrc
+.eslintrc
+.prettierignore
+stylelint.config.js
