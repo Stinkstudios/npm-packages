@@ -26,7 +26,9 @@ describe('flags no warnings with valid css', () => {
   });
 
   it('flags no warnings', () => {
-    return result.then(data => expect(data.results[0].warnings).toHaveLength(0));
+    return result.then(data =>
+      expect(data.results[0].warnings).toHaveLength(0)
+    );
   });
 });
 
@@ -42,14 +44,14 @@ describe('flags warnings with invalid css', () => {
 
   it('did error', () => {
     return result.then(data => {
-
-
-      return expect(data.errored).toBeTruthy()
+      return expect(data.errored).toBeTruthy();
     });
   });
 
   it('flags one warning', () => {
-    return result.then(data => expect(data.results[0].warnings).toHaveLength(1));
+    return result.then(data =>
+      expect(data.results[0].warnings).toHaveLength(1)
+    );
   });
 
   it('correct warning text', () => {
@@ -100,6 +102,8 @@ describe('flags no warnings with valid css modules', () => {
   });
 
   it('flags no warnings', () => {
-    return result.then(data => expect(data.results[0].warnings).toHaveLength(0));
+    return result.then(data =>
+      expect(data.results[0].warnings).toHaveLength(0)
+    );
   });
 });
