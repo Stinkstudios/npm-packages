@@ -32,7 +32,8 @@
     "test": "jest",
     "coverage": "jest --coverage",
     "watch": "npm run build -- --watch",
-    "watch:test": "jest --watch"
+    "watch:test": "jest --watch",
+    "prepare": "yarn lint && yarn test && yarn build"
   },
   "devDependencies": {
     "@types/jest": "23.3.5",
