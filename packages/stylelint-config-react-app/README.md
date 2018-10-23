@@ -1,4 +1,18 @@
-# @stinkstudios/stylelint-config-react-app [![NPM version](http://img.shields.io/npm/v/@stinkstudios/stylelint-config-react-app.svg)](https://www.npmjs.com/package/@stinkstudios/stylelint-config-react-app) [![Build Status](https://travis-ci.com/Stinkstudios/create-react-app.svg?branch=master)](https://travis-ci.com/Stinkstudios/create-react-app)
+# @stinkstudios/stylelint-config-react-app
+
+[![NPM version][npm-img]][npm-url] [![Downloads][downloads-img]][npm-url] [![Build Status][travis-img]][travis-url]
+
+## Extends
+
+- [`stylelint-config-css-modules`]
+- [`stylelint-config-prettier`]
+- [`stylelint-config-standard`]
+
+## Plugins
+
+- [`stylelint-declaration-block-no-ignored-properties`]
+- [`stylelint-no-unsupported-browser-features`]
+- [`stylelint-order`]
 
 ## Installation
 
@@ -6,10 +20,10 @@
 yarn add @stinkstudios/stylelint-config-react-app
 ```
 
-Has a peer dependency of `stylelint@^9.3.0`. If you haven't added stylelint to your project then
+Has a peer dependency of `stylelint@^9.6.0`. If you haven't added stylelint to your project then
 
 ```bash
-yarn add stylelint@^9.3.0
+yarn add stylelint@^9.6.0
 ```
 
 ## Usage
@@ -65,19 +79,44 @@ As this preset uses [`stylelint-no-unsupported-browser-features`](https://github
 ]
 ```
 
-## Stylelint extends
+## Visual Studio Code Setup
 
-- [`stylelint-config-standard`](https://github.com/stylelint/stylelint-config-standard)
-- [`stylelint-config-css-modules`](https://github.com/pascalduez/stylelint-config-css-modules)
-- [`stylelint-config-prettier`](https://github.com/prettier/stylelint-config-prettier)
+To have Visual Studio Code format your `.css` files use the below extensions and settings.
 
-## Stylelint Plugins
+It will also autofix [`order/properties-order`] errors
 
-- [`stylelint-declaration-block-no-ignored-properties`](https://github.com/kristerkari/stylelint-declaration-block-no-ignored-properties)
-- [`stylelint-no-unsupported-browser-features`](https://github.com/ismay/stylelint-no-unsupported-browser-features)
-- [`stylelint-order`](https://github.com/hudochenkov/stylelint-order)
+### Extensions
 
-## [Changelog](https://github.com/Stinkstudios/create-react-app/blob/master/CHANGELOG.md)
+- [stylelint](https://marketplace.visualstudio.com/items?itemName=shinnn.stylelint)
+- [prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+
+### Settings
+
+```json
+{
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false
+  "[css]": {
+    "editor.formatOnSave": true
+  },
+  "prettier.stylelintIntegration": true
+}
+```
+
+## [Changelog](https://github.com/Stinkstudios/npm-packages/blob/master/packages/stylelint-config-react-app/CHANGELOG.md)
 
 ## [License](LICENSE)
-````
+
+[downloads-img]: https://img.shields.io/npm/dm/@stinkstudios/stylelint-config-react-app.svg?style=flat-square
+[npm-img]: https://img.shields.io/npm/v/@stinkstudios/stylelint-config-react-app.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/@stinkstudios/stylelint-config-react-app
+[travis-img]: https://travis-ci.com/Stinkstudios/npm-packages.svg?style=flat-square
+[travis-url]: https://travis-ci.com/Stinkstudios/npm-packages
+[`order/properties-order`]: https://github.com/hudochenkov/stylelint-order/blob/master/rules/properties-order/README.md
+[`stylelint-config-css-modules`]: https://github.com/pascalduez/stylelint-config-css-modules
+[`stylelint-config-prettier`]: https://github.com/prettier/stylelint-config-prettier
+[`stylelint-config-standard`]: https://github.com/stylelint/stylelint-config-standard
+[`stylelint-declaration-block-no-ignored-properties`]: https://github.com/kristerkari/stylelint-declaration-block-no-ignored-properties
+[`stylelint-no-unsupported-browser-features`]: https://github.com/ismay/stylelint-no-unsupported-browser-features
+[`stylelint-order`]: https://github.com/hudochenkov/stylelint-order
