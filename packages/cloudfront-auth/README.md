@@ -15,18 +15,18 @@ yarn add @stinkstudios/cf-auth # TODO: name might change
 ## Usage
 
 ```js
-const cfAuth = require("@stinkstudios/cf-auth").default;
+const cfAuth = require('@stinkstudios/cf-auth').default;
 
 exports.handler = (event, context, callback) =>
   cfAuth(
     {
       validCredentails: [
         {
-          username: "my-name",
-          password: "good password"
-        }
+          username: 'my-name',
+          password: 'good password',
+        },
       ],
-      whitelistedIPs: ["127.0.0.1"]
+      whitelistedIPs: ['127.0.0.1'],
     },
     event,
     callback

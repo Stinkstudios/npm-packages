@@ -1,0 +1,2 @@
+packages/*/lib
+packages/stylelint-config-react-app/__tests__/css-invalid.css
