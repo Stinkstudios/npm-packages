@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.1](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/stylelint-config-react-app@1.1.0...@stinkstudios/stylelint-config-react-app@1.1.1) (2018-10-23)
+
+
+### Bug Fixes
+
+* run task before a publish ([32d20a8](https://github.com/Stinkstudios/npm-packages/commit/32d20a8))
+
+
+
+
+
 # 1.1.0 (2018-10-23)
 
 
