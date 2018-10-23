@@ -1,5 +1,5 @@
 'use strict';
 
-const index = require('./index.js');
+const index = require('./src/index.js');
 
 module.exports = index;
