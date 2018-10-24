@@ -2,7 +2,6 @@
   "name": "root",
   "private": true,
   "scripts": {
-    "bootstrap": "lerna bootstrap",
     "build": "lerna run build",
     "format": "prettier --trailing-comma es5 --single-quote --write 'packages/*/*.{js,css,md,ts}' 'packages/*/!(node_modules)/**/*.{js,css,md,ts}'",
     "lint": "lerna run lint",
