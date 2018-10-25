@@ -10,3 +10,5 @@ node_modules
 /.vscode
 
 build
+packages/react-scripts/*.tgz
+my-app*
