@@ -103,7 +103,7 @@ module.exports = function(
 
   // Setup the eslint config
   appPackage.eslintConfig = {
-    extends: 'react-app',
+    extends: '@stinkstudios/eslint-config-react-app',
   };
 
   // Setup the browsers list

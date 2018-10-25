@@ -214,7 +214,7 @@ inquirer
     // Add ESlint config
     console.log(`  Adding ${cyan('ESLint')} configuration`);
     appPackage.eslintConfig = {
-      extends: 'react-app',
+      extends: '@stinkstudios/eslint-config-react-app',
     };
 
     fs.writeFileSync(
