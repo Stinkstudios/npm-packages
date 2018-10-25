@@ -196,16 +196,6 @@ module.exports = {
             options: {
               formatter: require.resolve('react-dev-utils/eslintFormatter'),
               eslintPath: require.resolve('eslint'),
-              // @remove-on-eject-begin
-              baseConfig: {
-                extends: [
-                  require.resolve('@stinkstudios/eslint-config-react-app'),
-                ],
-                settings: { react: { version: '999.999.999' } },
-              },
-              ignore: false,
-              useEslintrc: false,
-              // @remove-on-eject-end
             },
             loader: require.resolve('eslint-loader'),
           },

@@ -101,11 +101,6 @@ module.exports = function(
     eject: 'react-scripts eject',
   };
 
-  // Setup the eslint config
-  appPackage.eslintConfig = {
-    extends: '@stinkstudios/eslint-config-react-app',
-  };
-
   // Setup the browsers list
   appPackage.browserslist = defaultBrowsers;
 
