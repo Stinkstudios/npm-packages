@@ -1,3 +1,8 @@
 {
-  "extends": "@stinkstudios/eslint-config-react-app"
+  "extends": "@stinkstudios/eslint-config-react-app",
+  "settings": {
+    "react": {
+      "version": "^16.3.2"
+    }
+  }
 }

@@ -97,6 +97,7 @@ module.exports = function(
   appPackage.scripts = {
     start: 'react-scripts start',
     build: 'react-scripts build',
+    lint: 'react-scripts lint',
     test: 'react-scripts test',
     eject: 'react-scripts eject',
   };

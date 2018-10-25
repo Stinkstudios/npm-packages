@@ -12,3 +12,7 @@ node_modules
 build
 packages/react-scripts/*.tgz
 my-app*
+
+# cache files
+.stylelintcache
+.eslintcache
