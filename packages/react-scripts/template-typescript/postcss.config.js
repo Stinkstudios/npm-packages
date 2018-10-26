@@ -5,6 +5,7 @@ module.exports = {
   // https://github.com/facebook/create-react-app/issues/2677
   ident: 'postcss',
   plugins: {
+    'postcss-import': {},
     'postcss-flexbugs-fixes': {},
     // Adds vendor prefixing based on your specified browser support in
     // package.json
