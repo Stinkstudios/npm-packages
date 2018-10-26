@@ -68,6 +68,12 @@ process.env.NODE_PATH = (process.env.NODE_PATH || '')
 // injected into the application via DefinePlugin in Webpack configuration.
 const REACT_APP = /^REACT_APP_/i;
 
+// Get CI build number
+const ciBuildNum = !process.env.CI
+  ? `${paths.appName}-${process.env.npm_package_version}`
+  : `${paths.appName}-${process.env.CIRCLE_BUILD_NUM}` ||
+    `${paths.appName}-${process.env.TRAVIS_BUILD_NUMBER}`;
+
 function getClientEnvironment(publicUrl) {
   const raw = Object.keys(process.env)
     .filter(key => REACT_APP.test(key))
@@ -85,6 +91,8 @@ function getClientEnvironment(publicUrl) {
         // This should only be used as an escape hatch. Normally you would put
         // images into the `src` and `import` them in code to get their paths.
         PUBLIC_URL: publicUrl,
+        // Build version
+        BUILD_NUM: ciBuildNum,
       }
     );
   // Stringify all values so we can feed into Webpack DefinePlugin
