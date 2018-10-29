@@ -17,6 +17,10 @@ You will also see any lint errors in the console.
 Lints the app `.js` files with [ESLint](https://eslint.org/) using the configuration in [`.eslintrc`](./.eslintrc)
 Lints the app `.css` files with [Stylelint](https://stylelint.io/) using the configuration in [`.stylelintrc`](./.stylelintrc)
 
+### `npm format`
+
+Formats files using prettier. Based on prettier config file [`.prettierrc`](./.prettierrc)
+
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.<br>

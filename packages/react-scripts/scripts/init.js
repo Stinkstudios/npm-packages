@@ -97,6 +97,8 @@ module.exports = function(
   appPackage.scripts = {
     start: 'react-scripts start',
     build: 'react-scripts build',
+    format:
+      'prettier --write "**/*.+(js|jsx|css|less|scss|sass|ts|tsx|md|mdx|graphql)"',
     lint: 'react-scripts lint',
     test: 'react-scripts test',
     eject: 'react-scripts eject',
