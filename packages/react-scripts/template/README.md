@@ -12,10 +12,14 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
 
-### `npm lint`
+### `npm run lint`
 
 Lints the app `.js` files with [ESLint](https://eslint.org/) using the configuration in [`.eslintrc`](./.eslintrc)
 Lints the app `.css` files with [Stylelint](https://stylelint.io/) using the configuration in [`.stylelintrc`](./.stylelintrc)
+
+### `npm run format`
+
+Formats files using prettier. Based on prettier config file [`.prettierrc`](./.prettierrc)
 
 ### `npm test`
 
