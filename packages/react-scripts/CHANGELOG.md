@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.2](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/react-scripts@2.2.1...@stinkstudios/react-scripts@2.2.2) (2018-10-29)
+
+
+### Bug Fixes
+
+* CHANGELOG to show deps updates ([d795e0b](https://github.com/Stinkstudios/npm-packages/commit/d795e0b))
+* missing dependency [@stinkstudios](https://github.com/stinkstudios)/stylelint-config-react-app ([b596079](https://github.com/Stinkstudios/npm-packages/commit/b596079))
+* README `.prettierrc` link ([42cc3af](https://github.com/Stinkstudios/npm-packages/commit/42cc3af))
+
+
+
+
+
 ## [2.2.1](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/react-scripts@2.2.0...@stinkstudios/react-scripts@2.2.1) (2018-10-29)
 
 **Note:** Version bump only for package @stinkstudios/react-scripts
