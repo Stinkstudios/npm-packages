@@ -1,9 +1,9 @@
 {
   "assignees": ["andykenward"],
   "baseBranch": ["master"],
-  "commitMessagePrefix": "chore:",
+  "commitMessagePrefix": "feat(deps):",
   "extends": ["config:base"],
-  "labels": ["chore: dependency update"],
+  "labels": ["feat(deps): dependency update"],
   "lockFileMaintenance": {
     "enabled": false
   },
