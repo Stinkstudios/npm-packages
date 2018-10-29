@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [@stinkstudios/react-scripts](https://github.com/Stinkstudios/npm-packages/blob/master/packages/react-scripts/).
 
 ## Available Scripts
 
