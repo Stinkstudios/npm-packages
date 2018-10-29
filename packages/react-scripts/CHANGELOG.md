@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/react-scripts@2.1.0...@stinkstudios/react-scripts@2.2.0) (2018-10-29)
+
+
+### Features
+
+* .graphql file support via webpack loader ([4b9ff5a](https://github.com/Stinkstudios/npm-packages/commit/4b9ff5a))
+* prettier cli tool ([172ae22](https://github.com/Stinkstudios/npm-packages/commit/172ae22))
+
+
+
+
+
 # 2.1.0 (2018-10-26)
 
 
