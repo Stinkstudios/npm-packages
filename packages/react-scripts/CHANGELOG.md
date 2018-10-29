@@ -18,10 +18,15 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 * .graphql file support via webpack loader ([4b9ff5a](https://github.com/Stinkstudios/npm-packages/commit/4b9ff5a))
 * prettier cli tool ([172ae22](https://github.com/Stinkstudios/npm-packages/commit/172ae22))
-
-
-
-
+* deps: Update react monorepo to ^16.6.0 ([8dc068c](https://github.com/Stinkstudios/npm-packages/commit/8dc068c8dcedeee40861b7aa79e78cda1f9d62dd))
+* deps: Update dependency webpack-dev-server to v3.1.10 ([ab48aab](https://github.com/Stinkstudios/npm-packages/commit/ab48aab8158975960374814b34a50564b35883c1))
+* deps: Update dependency fork-ts-checker-webpack-plugin-alt to v0.4.14 ([a9f97f2](https://github.com/Stinkstudios/npm-packages/commit/a9f97f23b1e73749756f1fed82a45cabf1164ee9))
+* deps: Update dependency url-loader to v1.1.2 ([93f0eb2](https://github.com/Stinkstudios/npm-packages/commit/93f0eb26b14a6baabfbc620ad558ef3da6f595db))
+* deps: Update dependency style-loader to v0.23.1 ([9da9b97](https://github.com/Stinkstudios/npm-packages/commit/9da9b979e836f6bbe11df6f729362051e3756c7a))
+* deps: Update dependency webpack to v4.23.1 ([623a8df](https://github.com/Stinkstudios/npm-packages/commit/623a8df0c47cc2c99800c44c86c7ab815ebbeb14))
+* deps: Update dependency mini-css-extract-plugin to v0.4.4 ([79abd6d](https://github.com/Stinkstudios/npm-packages/commit/79abd6d2222f3f70135defbe830dec8e1bf21d98))
+* deps: Update dependency @babel/core to v7.1.2 ([7dd09da](https://github.com/Stinkstudios/npm-packages/commit/7dd09da3b1d5bfd1681271a4b6320bcf872a2b70))
+* deps: Update dependency postcss-preset-env to v6.3.0 ([84fc43f](https://github.com/Stinkstudios/npm-packages/commit/84fc43f380445fa56f4f7527e19840f5176ac200))
 
 # 2.1.0 (2018-10-26)
 
