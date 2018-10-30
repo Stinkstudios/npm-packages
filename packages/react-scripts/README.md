@@ -11,6 +11,12 @@ To use `@stinkstudios/react-scripts` instead of the default [`react-scripts`]
 
 `npx create-react-app my-app --scripts-version @stinkstudios/react-scripts`
 
+### Typescript
+
+To use with Typescript
+
+`npx create-react-app my-app --typescript --scripts-version @stinkstudios/react-scripts`
+
 - [User Guide](https://github.com/Stinkstudios/npm-packages/blob/master/packages/react-scripts/template/README.md) – How to develop apps bootstrapped with Create React App.
 
 ## Differences to [`react-scripts`]

@@ -16,6 +16,7 @@
   "files": [
     "bin",
     "config",
+    "lib",
     "scripts",
     "template",
     "template-typescript",
@@ -33,6 +34,7 @@
   "bin": {
     "react-scripts": "./bin/react-scripts.js"
   },
+  "types": "./lib/react-app.d.ts",
   "dependencies": {
     "@babel/core": "7.1.2",
     "@stinkstudios/eslint-config-react-app": "^1.0.6",
