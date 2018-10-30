@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.3.0](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/react-scripts@2.2.2...@stinkstudios/react-scripts@2.3.0) (2018-10-30)
+
+
+### Bug Fixes
+
+* remove npmignore ([49439af](https://github.com/Stinkstudios/npm-packages/commit/49439af))
+
+
+### Features
+
+* **deps:** react-dev-utils stable supports missing in next ([bbace29](https://github.com/Stinkstudios/npm-packages/commit/bbace29))
+* Official typescript support release added ([5e063ba](https://github.com/Stinkstudios/npm-packages/commit/5e063ba))
+* **deps:** Update dependency css-loader to v1.0.1 ([adcfbfd](https://github.com/Stinkstudios/npm-packages/commit/adcfbfd))
+* **deps:** Update dependency eslint to v5.8.0 ([c60ab6f](https://github.com/Stinkstudios/npm-packages/commit/c60ab6f))
+* **deps:** Update dependency stylelint to v9.7.0 ([9099a54](https://github.com/Stinkstudios/npm-packages/commit/9099a54))
+
+
+
+
+
 ## [2.2.2](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/react-scripts@2.2.1...@stinkstudios/react-scripts@2.2.2) (2018-10-29)
 
 

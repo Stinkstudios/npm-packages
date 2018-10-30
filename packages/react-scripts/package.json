@@ -1,6 +1,6 @@
 {
   "name": "@stinkstudios/react-scripts",
-  "version": "2.2.2",
+  "version": "2.3.0",
   "description": "Configuration and scripts for Create React App.",
   "repository": {
     "type": "git",
@@ -37,8 +37,8 @@
   "types": "./lib/react-app.d.ts",
   "dependencies": {
     "@babel/core": "7.1.2",
-    "@stinkstudios/eslint-config-react-app": "^1.0.6",
-    "@stinkstudios/stylelint-config-react-app": "1.1.2",
+    "@stinkstudios/eslint-config-react-app": "^1.1.0",
+    "@stinkstudios/stylelint-config-react-app": "^1.2.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "10.0.1",
     "babel-jest": "23.6.0",
