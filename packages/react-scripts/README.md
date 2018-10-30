@@ -33,6 +33,7 @@ To use `@stinkstudios/react-scripts` instead of the default [`react-scripts`]
   - Configuration defined in [`.prettierrc`] & [`.prettierignore`]
   - Cli [`npm run format`]. ([172ae22](https://github.com/Stinkstudios/npm-packages/commit/172ae22))
 - Renamed `/src/App` to `/src/app` to conform to filename convention camelCase. For some reason `/src/App` is the only file that doesn't stick to this convention ([904a1ab](https://github.com/Stinkstudios/npm-packages/commit/904a1ab))
+- Removed service worker
 
 [`.prettierrc`]: https://github.com/facebook/create-react-app/tree/master/packages/react-scripts/template/.prettierrc
 [`.prettierignore`]: https://github.com/facebook/create-react-app/tree/master/packages/react-scripts/template/.prettierignore
