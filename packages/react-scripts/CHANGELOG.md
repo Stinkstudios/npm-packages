@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.4.0](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/react-scripts@2.3.0...@stinkstudios/react-scripts@2.4.0) (2018-10-31)
+
+
+### Features
+
+* **babel:** disable flow as it is on by default ([d255b0a](https://github.com/Stinkstudios/npm-packages/commit/d255b0a))
+* **babel:** enable typescript support ([4f1e5a2](https://github.com/Stinkstudios/npm-packages/commit/4f1e5a2))
+* **deps:** Update dependency babel-preset-react-app to v6 ([1b90fb4](https://github.com/Stinkstudios/npm-packages/commit/1b90fb4))
+
+
+
+
+
 # [2.3.0](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/react-scripts@2.2.2...@stinkstudios/react-scripts@2.3.0) (2018-10-30)
 
 
