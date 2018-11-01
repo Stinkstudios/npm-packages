@@ -14,7 +14,9 @@ cache:
     - .npm
     - node_modules
 
-install: yarn
+install:
+  - yarn global add codecov
+  - yarn
 
 branches:
   only:
@@ -22,7 +24,7 @@ branches:
 
 script:
   - yarn lint
-  - yarn test
+  - yarn test-ci
   - yarn build
 
 # stages:

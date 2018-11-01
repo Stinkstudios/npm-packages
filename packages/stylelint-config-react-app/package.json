@@ -28,6 +28,7 @@
     "lint": "yarn lint:js && yarn stylelint-check",
     "stylelint-check": "stylelint-config-prettier-check",
     "test": "jest --env=node",
+    "test-ci": "yarn test --coverage && codecov",
     "test:watch": "jest --env=node --watch",
     "preversion": "yarn lint && yarn test"
   },

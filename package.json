@@ -7,7 +7,8 @@
     "format": "prettier --trailing-comma es5 --single-quote --write 'packages/*/*.{js,css,md,ts}' 'packages/*/!(node_modules)/**/*.{js,css,md,ts}'",
     "lint": "lerna run lint",
     "publish": "lerna publish",
-    "test": "lerna run test"
+    "test": "lerna run test",
+    "test-ci": "lerna run test-ci"
   },
   "workspaces": [
     "packages/*"
