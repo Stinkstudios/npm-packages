@@ -32,7 +32,7 @@ To use with Typescript
   - Configuration defined in [`postcss.config.js`] file instead of webpack loader. No need to eject. ([c7dac54](https://github.com/Stinkstudios/npm-packages/commit/c7dac54))
   - Added [`postcss-import`]. ([e24759e](https://github.com/Stinkstudios/npm-packages/commit/e24759e))
 - [Stylelint]
-  - Configuration defined in [`stylelintrc`] that extends [`@stinkstudios/stylelint-config-react-app`]. ([93d1f49](https://github.com/Stinkstudios/npm-packages/commit/93d1f49))
+  - Configuration defined in [`.stylelintrc`] that extends [`@stinkstudios/stylelint-config-react-app`]. ([93d1f49](https://github.com/Stinkstudios/npm-packages/commit/93d1f49))
   - Cli [`npm run lint`]. ([4153084](https://github.com/Stinkstudios/npm-packages/commit/4153084))
 - `.graphql` file support via webpack loader ([4b9ff5a](https://github.com/Stinkstudios/npm-packages/commit/4b9ff5a))
 - [Prettier]
