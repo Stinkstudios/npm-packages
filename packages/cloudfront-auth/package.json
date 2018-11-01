@@ -27,7 +27,7 @@
   "scripts": {
     "clean": "rimraf lib && rimraf coverage",
     "lint": "tslint --force --format verbose \"src/**/*.ts\"",
-    "prebuild": "npm run clean",
+    "prebuild": "rimraf lib",
     "build": "tsc --pretty",
     "test": "jest",
     "test:coverage": "jest --coverage",
