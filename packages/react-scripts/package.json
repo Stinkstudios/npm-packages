@@ -30,7 +30,7 @@
     "lint": "node bin/react-scripts.js lint",
     "start": "node bin/react-scripts.js start",
     "test": "node bin/react-scripts.js test",
-    "test-ci": "yarn test"
+    "test:ci": "yarn test"
   },
   "bin": {
     "react-scripts": "./bin/react-scripts.js"
