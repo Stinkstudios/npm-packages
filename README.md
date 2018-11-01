@@ -8,9 +8,18 @@
 </h2>
 
 <p align="center">
-  <a href="https://travis-ci.com/Stinkstudios/npm-packages"><img alt="Travis Status" src="https://travis-ci.com/Stinkstudios/npm-packages.svg?branch=master" /></a>
-  <a href="https://lernajs.io/"><img alt="Lerna" src="https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg" /></a>
-  <a href="https://snyk.io/test/github/Stinkstudios/npm-packages"><img alt="Known Vulnerabilities" src="https://snyk.io/test/github/Stinkstudios/npm-packages/badge.svg" /></a>
+  <a href="https://travis-ci.com/Stinkstudios/npm-packages">
+    <img alt="Travis Status" src="https://travis-ci.com/Stinkstudios/npm-packages.svg?branch=master" />
+  </a>
+  <a href="https://lernajs.io/">
+    <img alt="Lerna" src="https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg" />
+  </a>
+  <a href="https://snyk.io/test/github/Stinkstudios/npm-packages">
+    <img alt="Known Vulnerabilities" src="https://snyk.io/test/github/Stinkstudios/npm-packages/badge.svg" />
+  </a>
+  <a href="https://codecov.io/gh/Stinkstudios/npm-packages">
+    <img alt="Code Coverage" src="https://codecov.io/gh/Stinkstudios/npm-packages/branch/master/graph/badge.svg" />
+  </a>
 </p>
 
 This repository is a [monorepo] managed using [Lerna]. This means there are [multiple packages](/packages) managed in this codebase, even though we publish them to NPM as separate packages.
