@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.1](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/react-scripts@2.4.0...@stinkstudios/react-scripts@2.4.1) (2018-11-01)
+
+
+### Bug Fixes
+
+* Duplicate string index signature in ProcessEnv ([#5621](https://github.com/Stinkstudios/npm-packages/issues/5621)) ([8307e81](https://github.com/Stinkstudios/npm-packages/commit/8307e81))
+* **docs:** README link to .stylelintrc file ([10be2e2](https://github.com/Stinkstudios/npm-packages/commit/10be2e2))
+
+
+### Features
+
+* **deps:** Update dependency babel-preset-react-app to v6.1.0 ([29a3fe5](https://github.com/Stinkstudios/npm-packages/commit/29a3fe5))
+* **deps:** Update dependency react-dev-utils to v6.1.1 ([f2fa52c](https://github.com/Stinkstudios/npm-packages/commit/f2fa52c))
+* **deps:** Update dependency stylelint to v9.7.1 ([3e65c76](https://github.com/Stinkstudios/npm-packages/commit/3e65c76))
+
+
+
+
+
 # [2.4.0](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/react-scripts@2.3.0...@stinkstudios/react-scripts@2.4.0) (2018-10-31)
 
 
