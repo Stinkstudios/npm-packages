@@ -1,5 +1,6 @@
-[![Build Status](https://travis-ci.com/Stinkstudios/npm-packages.svg?branch=master)](https://travis-ci.com/Stinkstudios/npm-packages)
-[![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
+# @stinkstudios/cf-auth
+
+[![NPM version][npm-img]][npm-url] [![Downloads][downloads-img]][npm-url] [![Build Status][travis-img]][travis-url] [![Known Vulnerabilities][snyk-img]][snyk-url] [![MIT license][mit-img]][mit-url]
 
 # CloudFront Authentication Library
 
@@ -71,3 +72,13 @@ You can pass a list of IPs that won't be asked for the authentication.
   "whitelistedIPs": ["127.0.0.1"]
 }
 ```
+
+[downloads-img]: https://img.shields.io/npm/dm/@stinkstudios/cf-auth.svg?style=flat-square
+[npm-img]: https://img.shields.io/npm/v/@stinkstudios/cf-auth.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/@stinkstudios/cf-auth
+[travis-img]: https://travis-ci.com/Stinkstudios/npm-packages.svg?style=flat-square
+[travis-url]: https://travis-ci.com/Stinkstudios/npm-packages
+[snyk-img]: https://snyk.io/test/github/Stinkstudios/npm-packages/badge.svg?targetFile=packages%2Fcloudfront-auth%2Fpackage.json
+[snyk-url]: https://snyk.io/test/github/Stinkstudios/npm-packages?targetFile=packages%2Fcloudfront-auth%2Fpackage.json
+[mit-img]: http://img.shields.io/badge/license-MIT-brightgreen.svg
+[mit-url]: http://opensource.org/licenses/MIT
