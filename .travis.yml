@@ -22,8 +22,10 @@ branches:
 
 script:
   - yarn lint
-  - yarn test:ci && yarn coverage:upload
+  - yarn test:ci
   - yarn build
+
+after_script: yarn coverage:upload
 
 # stages:
 #   - lint
