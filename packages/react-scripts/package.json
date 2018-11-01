@@ -29,7 +29,8 @@
     "build": "node bin/react-scripts.js build",
     "lint": "node bin/react-scripts.js lint",
     "start": "node bin/react-scripts.js start",
-    "test": "node bin/react-scripts.js test"
+    "test": "node bin/react-scripts.js test",
+    "test-ci": "yarn test"
   },
   "bin": {
     "react-scripts": "./bin/react-scripts.js"

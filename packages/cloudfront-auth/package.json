@@ -30,6 +30,7 @@
     "prebuild": "npm run clean",
     "build": "tsc --pretty",
     "test": "jest",
+    "test-ci": "yarn test --coverage && codecov",
     "coverage": "jest --coverage",
     "watch": "npm run build -- --watch",
     "watch:test": "jest --watch",
