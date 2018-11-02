@@ -13,7 +13,10 @@
   "travis":{
       "enabled" : true
   },
-  "ignorePaths": [
-    "packages/detector"
+  "packageRules": [
+    {
+      "paths": ["packages/detector"],
+      "excludePackageNames": ["webpack"]
+    }
   ]
 }
