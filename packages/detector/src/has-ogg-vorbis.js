@@ -8,7 +8,7 @@ var HAS_OGG_VORBIS = (function () {
       bool = new Boolean(bool);
       bool = elem.canPlayType('audio/ogg; codec="vorbis"').replace(/^no$/, '');
     }
-  } catch (e) { }
+  } catch (e) { } // eslint-disable-line no-empty
   return bool;
 })();
 
