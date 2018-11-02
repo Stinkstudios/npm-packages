@@ -1,0 +1,12 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 5
+  },
+  "rules": {
+    "strict": 0
+  }
+}
