@@ -106,7 +106,7 @@ It will also autofix [`order/properties-order`] errors
 
 ## [Changelog](https://github.com/Stinkstudios/npm-packages/blob/master/packages/stylelint-config-react-app/CHANGELOG.md)
 
-## [License](LICENSE)
+## [License](https://github.com/Stinkstudios/npm-packages/blob/master/packages/stylelint-config-react-app/LICENSE)
 
 [downloads-img]: https://img.shields.io/npm/dm/@stinkstudios/stylelint-config-react-app.svg?style=flat-square
 [npm-img]: https://img.shields.io/npm/v/@stinkstudios/stylelint-config-react-app.svg?style=flat-square

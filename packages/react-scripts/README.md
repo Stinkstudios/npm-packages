@@ -43,6 +43,10 @@ To use with Typescript
 - Renamed `/src/App` to `/src/app` to conform to filename convention camelCase. For some reason `/src/App` is the only file that doesn't stick to this convention ([904a1ab](https://github.com/Stinkstudios/npm-packages/commit/904a1ab))
 - Removed service worker
 
+## [Changelog](https://github.com/Stinkstudios/npm-packages/blob/master/packages/react-scripts/CHANGELOG.md)
+
+## [License](https://github.com/Stinkstudios/npm-packages/blob/master/packages/react-scripts/LICENSE)
+
 [downloads-img]: https://img.shields.io/npm/dm/@stinkstudios/react-scripts.svg?style=flat-square
 [npm-img]: https://img.shields.io/npm/v/@stinkstudios/react-scripts.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/@stinkstudios/react-scripts
