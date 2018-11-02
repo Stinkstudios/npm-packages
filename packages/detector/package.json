@@ -21,7 +21,8 @@
     "access": "public"
   },
   "scripts": {
-    "build": "webpack --progress --colors"
+    "build": "webpack --progress --colors",
+    "preversion": "yarn build"
   },
   "repository": {
     "type": "git",
