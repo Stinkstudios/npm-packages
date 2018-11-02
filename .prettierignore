@@ -2,3 +2,4 @@ packages/*/lib
 packages/stylelint-config-react-app/__tests__/css-invalid.css
 CHANGELOG.md
 coverage
+packages/detector/src
