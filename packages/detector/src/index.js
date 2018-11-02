@@ -1,5 +1,4 @@
 var Detector = {
-	version : __VERSION__, // eslint-disable-line no-undef
 	ANDROID_VERSION : require('./android-version'),
 	DEVICE_TYPE : require('./device-type'),
 	FIREFOX_VERSION : require('./firefox-version'),

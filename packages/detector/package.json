@@ -6,6 +6,7 @@
   "homepage": "https://github.com/Stinkstudios/npm-packages/tree/master/packages/detector#readme",
   "license": "MIT",
   "main": "lib/detector.min.js",
+  "module": "src/index.js",
   "keywords": [
     "detector",
     "javascript",
@@ -15,7 +16,8 @@
     "css3"
   ],
   "files": [
-    "lib"
+    "lib",
+    "src"
   ],
   "publishConfig": {
     "access": "public"
@@ -34,6 +36,7 @@
   },
   "devDependencies": {
     "eslint": "5.8.0",
-    "webpack": "^1.12.13"
+    "webpack": "4.24.0",
+    "webpack-cli": "3.1.2"
   }
 }

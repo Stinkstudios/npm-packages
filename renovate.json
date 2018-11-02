@@ -12,11 +12,5 @@
   "timezone": "Europe/London",
   "travis":{
       "enabled" : true
-  },
-  "packageRules": [
-    {
-      "paths": ["packages/detector"],
-      "excludePackageNames": ["webpack"]
-    }
-  ]
+  }
 }
