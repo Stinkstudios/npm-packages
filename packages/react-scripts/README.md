@@ -43,7 +43,6 @@ To use with Typescript
 - Renamed `/src/App` to `/src/app` to conform to filename convention camelCase. For some reason `/src/App` is the only file that doesn't stick to this convention ([904a1ab](https://github.com/Stinkstudios/npm-packages/commit/904a1ab))
 - Removed service worker
 
-
 [downloads-img]: https://img.shields.io/npm/dm/@stinkstudios/react-scripts.svg?style=flat-square
 [npm-img]: https://img.shields.io/npm/v/@stinkstudios/react-scripts.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/@stinkstudios/react-scripts
@@ -53,8 +52,6 @@ To use with Typescript
 [snyk-url]: https://snyk.io/test/github/Stinkstudios/npm-packages?targetFile=packages%2Freact-scripts%2Fpackage.json
 [mit-img]: http://img.shields.io/badge/license-MIT-brightgreen.svg
 [mit-url]: http://opensource.org/licenses/MIT
-
-
 [`.prettierrc`]: https://github.com/facebook/create-react-app/tree/master/packages/react-scripts/template/.prettierrc
 [`.prettierignore`]: https://github.com/facebook/create-react-app/tree/master/packages/react-scripts/template/.prettierignore
 [`react-scripts`]: https://github.com/facebook/create-react-app/tree/master/packages/react-scripts
@@ -73,4 +70,3 @@ To use with Typescript
 [stylelint]: https://stylelint.io/
 [`npm run format`]: https://github.com/Stinkstudios/npm-packages/blob/master/packages/react-scripts/template/README.md#npm-run-format
 [prettier]: https://prettier.io/
-
