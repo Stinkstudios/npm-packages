@@ -12,5 +12,8 @@
   "timezone": "Europe/London",
   "travis":{
       "enabled" : true
-  }
+  },
+  "ignorePaths": [
+    "packages/detector"
+  ]
 }
