@@ -49,7 +49,4 @@ var Detector = {
 	VISIBILITY_CHANGE_EVENT_NAME : require('./visibility-change-event-name')
 };
 
-// TODO: Figure out better way to expose it to window
-window.Detector = Detector;
-
 module.exports = Detector;
