@@ -73,7 +73,6 @@ To have Visual Studio Code format and autofix your `.js` files use the below ext
 [snyk-url]: https://snyk.io/test/github/Stinkstudios/npm-packages?targetFile=packages%2Feslint-config-react-app%2Fpackage.json
 [mit-img]: http://img.shields.io/badge/license-MIT-brightgreen.svg
 [mit-url]: http://opensource.org/licenses/MIT
-
 [`eslint:recommended`]: https://github.com/eslint/eslint/blob/master/conf/eslint-recommended.js
 [`plugin:import/errors`]: https://github.com/benmosher/eslint-plugin-import/blob/master/config/errors.js
 [`plugin:import/warnings`]: https://github.com/benmosher/eslint-plugin-import/blob/master/config/warnings.js
