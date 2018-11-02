@@ -55,14 +55,14 @@ To have Visual Studio Code format and autofix your `.js` files use the below ext
   "[javascript]": {
     "editor.formatOnSave": true
   },
-  "eslint.autoFixOnSave": true
+  "eslint.autoFixOnSave": true,
   "prettier.eslintIntegration": true
 }
 ```
 
 ## [Changelog](https://github.com/Stinkstudios/npm-packages/blob/master/packages/eslint-config-react-app/CHANGELOG.md)
 
-## [License](LICENSE)
+## [License](https://github.com/Stinkstudios/npm-packages/blob/master/packages/eslint-config-react-app/LICENSE)
 
 [downloads-img]: https://img.shields.io/npm/dm/@stinkstudios/eslint-config-react-app.svg?style=flat-square
 [npm-img]: https://img.shields.io/npm/v/@stinkstudios/eslint-config-react-app.svg?style=flat-square
