@@ -13,6 +13,7 @@
     "coverage:upload": "codecov"
   },
   "workspaces": [
+    "legacy/*",
     "packages/*"
   ],
   "devDependencies": {

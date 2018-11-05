@@ -14,7 +14,7 @@
       "message": "chore(release): publish"
     }
   },
-  "packages": ["packages/*"],
+  "packages": ["packages/*", "deprecated/*"],
   "version": "independent",
   "npmClient": "yarn",
   "npmClientArgs": ["--no-lockfile"],
