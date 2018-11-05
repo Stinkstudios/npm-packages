@@ -29,6 +29,12 @@ This repository is a [monorepo] managed using [Lerna]. This means there are [mul
 - [@stinkstudios/react-scripts]
 - [@stinkstudios/stylelint-config-react-app]
 
+## Legacy
+
+Legacy npm packages used internally by Stink Studios and no longer maintained but still need to exist.
+
+- [@stinkstudios/detector]
+
 ## Contributing
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md)
@@ -37,5 +43,6 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md)
 [@stinkstudios/eslint-config-react-app]: https://www.npmjs.com/package/@stinkstudios/eslint-config-react-app
 [@stinkstudios/react-scripts]: https://www.npmjs.com/package/@stinkstudios/react-scripts
 [@stinkstudios/stylelint-config-react-app]: https://www.npmjs.com/package/@stinkstudios/stylelint-config-react-app
+[@stinkstudios/detector]: https://www.npmjs.com/package/@stinkstudios/detector
 [monorepo]: https://trunkbaseddevelopment.com/monorepos/
 [lerna]: https://github.com/lerna/lerna
