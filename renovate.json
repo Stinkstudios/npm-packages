@@ -10,7 +10,8 @@
   "rangeStrategy": "bump",
   "schedule": ["after 10pm and before 5am on every weekday", "every weekend"],
   "timezone": "Europe/London",
-  "travis":{
-      "enabled" : true
-  }
+  "travis": {
+    "enabled": true
+  },
+  "ignorePaths": ["packages/detector"]
 }
