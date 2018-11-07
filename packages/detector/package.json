@@ -23,7 +23,8 @@
     "access": "public"
   },
   "scripts": {
-    "prebuild": "rm -rf lib",
+    "clean": "rm -rf lib",
+    "prebuild": "yarn clean",
     "build": "webpack --progress --colors",
     "lint": "eslint src/**/*.js",
     "preversion": "yarn build"
