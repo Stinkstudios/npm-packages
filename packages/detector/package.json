@@ -23,6 +23,7 @@
     "access": "public"
   },
   "scripts": {
+    "prebuild": "rm -rf lib",
     "build": "webpack --progress --colors",
     "lint": "eslint src/**/*.js",
     "preversion": "yarn build"
