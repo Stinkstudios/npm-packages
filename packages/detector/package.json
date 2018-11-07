@@ -3,7 +3,7 @@
   "version": "0.1.6",
   "description": "Collection of JS constants containing device, OS, browser and capability detection.",
   "author": "StinkStudios",
-  "homepage": "https://github.com/Stinkstudios/npm-packages/tree/master/deprecated/detector#readme",
+  "homepage": "https://github.com/Stinkstudios/npm-packages/tree/master/packages/detector#readme",
   "license": "MIT",
   "main": "lib/detector.min.js",
   "module": "src/index.js",
