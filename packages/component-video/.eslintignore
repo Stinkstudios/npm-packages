@@ -1,7 +1,5 @@
-dist/**
-example/index.html
-example/assets/**
-lib/**
-node_modules/**
-test/**
-es/**
+dist
+es
+example
+lib
+node_modules
