@@ -1,4 +1,4 @@
-export function clamp(t, a, b) { // eslint-disable-line import/prefer-default-export
+/* eslint-disable import/prefer-default-export */
+export function clamp(t, a, b) {
 	return Math.max(Math.min(t, b), a);
 }
-

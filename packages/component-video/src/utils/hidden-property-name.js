@@ -7,7 +7,8 @@ const HIDDEN_PROPERTY_NAME = (() => {
 	};
 	let value;
 	if (typeof document === 'undefined') return value;
-	for (const p in props) { // eslint-disable-line
+	// eslint-disable-next-line no-restricted-syntax
+	for (const p in props) {
 		if (typeof document[p] !== 'undefined') {
 			value = props[p];
 			break;

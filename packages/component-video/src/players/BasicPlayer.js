@@ -5,11 +5,12 @@ import HIDDEN_PROPERTY_NAME from '../utils/hidden-property-name';
 import { clamp } from '../utils/math';
 
 export default class BasicPlayer extends AbstractPlayer {
-
 	constructor(mOptions = {}) {
 		super(mOptions);
 		if (!document || !window) {
-			throw new Error('BasicPlayer no document or window to createElement video');
+			throw new Error(
+				'BasicPlayer no document or window to createElement video'
+			);
 		}
 		this._player = document.createElement('video');
 
@@ -35,8 +36,12 @@ export default class BasicPlayer extends AbstractPlayer {
 		this.preload = preload;
 		if (crossOrigin) this.crossOrigin = crossOrigin;
 		this._player.autoplay = this.autoplay;
-		if (poster !== 'undefined' && typeof poster === 'string' &&
-			poster.length > 0) this.poster = poster;
+		if (
+			poster !== 'undefined' &&
+			typeof poster === 'string' &&
+			poster.length > 0
+		)
+			this.poster = poster;
 		this.src = src;
 	}
 
@@ -56,26 +61,33 @@ export default class BasicPlayer extends AbstractPlayer {
 	set volume(value) {
 		this._player.volume = value;
 	}
+
 	set poster(value) {
 		this._player.poster = value;
 	}
+
 	set loop(value) {
 		this.looping = value;
 		this._player.loop = value;
 	}
+
 	set controls(value) {
 		this._player.controls = value;
 	}
+
 	set preload(value) {
 		this._player.preload = value;
 	}
+
 	set crossOrigin(value) {
 		this._player.crossOrigin = value;
 	}
+
 	set currentTime(time) {
 		/* TODO add check for time format */
 		this._player.currentTime = time;
 	}
+
 	set muted(muted) {
 		if (muted) {
 			this._player.setAttribute('muted', '');
@@ -87,12 +99,15 @@ export default class BasicPlayer extends AbstractPlayer {
 	get src() {
 		return this._player.src;
 	}
+
 	get currentTime() {
 		return this._player.currentTime;
 	}
+
 	get duration() {
 		return this._player.duration;
 	}
+
 	get volume() {
 		return this._player.volume;
 	}
@@ -116,7 +131,7 @@ export default class BasicPlayer extends AbstractPlayer {
 		let t0 = 0;
 		const v0 = this.volume;
 
-		const ramp = (t) => {
+		const ramp = t => {
 			// Duration is in seconds, t in milliseconds
 			const d = duration * 1000;
 			// Init time reference
@@ -146,7 +161,10 @@ export default class BasicPlayer extends AbstractPlayer {
 		if (this._options.pageVisibility) this._handlePageVisibility();
 		if (this._options.resize) this._handlePageResize();
 		this._player.addEventListener('loadedmetadata', this._onVideoMetadata);
-		this._player.addEventListener('canplaythrough', this._onVideoCanPlayThrough);
+		this._player.addEventListener(
+			'canplaythrough',
+			this._onVideoCanPlayThrough
+		);
 		this._player.addEventListener('ended', this._onVideoEnd);
 		this._player.addEventListener('error', this._onVideoError);
 		this._player.addEventListener('play', this._onVideoPlay);
@@ -160,7 +178,10 @@ export default class BasicPlayer extends AbstractPlayer {
 		if (this._options.pageVisibility) this._handlePageVisibility(true);
 		if (this._options.resize) this._handlePageResize(true);
 		this._player.removeEventListener('loadedmetadata', this._onVideoMetadata);
-		this._player.removeEventListener('canplaythrough', this._onVideoCanPlayThrough);
+		this._player.removeEventListener(
+			'canplaythrough',
+			this._onVideoCanPlayThrough
+		);
 		this._player.removeEventListener('ended', this._onVideoEnd);
 		this._player.removeEventListener('error', this._onVideoError);
 		this._player.removeEventListener('play', this._onVideoPlay);
@@ -192,7 +213,7 @@ export default class BasicPlayer extends AbstractPlayer {
 			 */
 			this.play();
 		}
-	}
+	};
 
 	_handlePageVisibility(remove = false) {
 		if (typeof document === 'undefined') return;
@@ -201,10 +222,18 @@ export default class BasicPlayer extends AbstractPlayer {
 		if (this._hidden === undefined && _pageVisibility === undefined) return;
 
 		if (remove) {
-			document.removeEventListener(_pageVisibility, this._onPageVisibilityChange, false);
+			document.removeEventListener(
+				_pageVisibility,
+				this._onPageVisibilityChange,
+				false
+			);
 			return;
 		}
-		document.addEventListener(_pageVisibility, this._onPageVisibilityChange, false);
+		document.addEventListener(
+			_pageVisibility,
+			this._onPageVisibilityChange,
+			false
+		);
 	}
 
 	_handlePageResize(remove = false) {
@@ -227,7 +256,10 @@ export default class BasicPlayer extends AbstractPlayer {
 		this._player.pause();
 		this._player.src = '';
 		try {
-			if (this._player.parentNode && this.isDescendant(this._player.parentNode, this._player)) {
+			if (
+				this._player.parentNode &&
+				this.isDescendant(this._player.parentNode, this._player)
+			) {
 				this._player.parentNode.removeChild(this._player);
 			}
 		} catch (e) {
@@ -236,7 +268,8 @@ export default class BasicPlayer extends AbstractPlayer {
 		this._player = null;
 	}
 
-	isDescendant(parent, child) { // eslint-disable-line class-methods-use-this
+	// eslint-disable-next-line class-methods-use-this
+	isDescendant(parent, child) {
 		let node = child.parentNode;
 		while (node !== null) {
 			if (node === parent) {
