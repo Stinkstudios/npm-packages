@@ -3,15 +3,10 @@
 import BasicPlayer from './BasicPlayer';
 
 export default class InlinePlayer extends BasicPlayer {
-
 	constructor(mOptions = {}) {
 		super(mOptions);
 
-		const {
-			audioSrc,
-			loop = false,
-			volume = 1,
-		} = this._options;
+		const { audioSrc, loop = false, volume = 1 } = this._options;
 
 		this.framerate = 24;
 		this.loadHAudio(audioSrc, loop, volume);
@@ -35,33 +30,36 @@ export default class InlinePlayer extends BasicPlayer {
 	_onAudioReady = () => {
 		this.audioReady = true;
 		if (this.autoplay) this.play();
-	}
-	_onAudioPlay = (e) => {
+	};
+
+	_onAudioPlay = e => {
 		this.playing = true;
 		this.paused = false;
 		this.autoPaused = false;
 		this._onVideoPlay(e);
 		if (!this._animateFrame) this._render();
-	}
-	_onAudioPause = (e) => {
+	};
+
+	_onAudioPause = e => {
 		this.playing = false;
 		this.paused = true;
 		this._onVideoPause(e);
 		this._cancelAnimateFrame();
-	}
+	};
 
 	_onAudioEnded = () => {
 		this._onVideoEnd(null);
 		this._cancelAnimateFrame();
-	}
+	};
 
-	_onAudioError = (e) => {
+	_onAudioError = e => {
 		this._onVideoError(e);
-	}
+	};
 
 	set audioReady(value) {
 		this._audioReady = value;
 	}
+
 	get audioReady() {
 		return this._audioReady;
 	}
@@ -69,6 +67,7 @@ export default class InlinePlayer extends BasicPlayer {
 	set framerate(value) {
 		this._framerate = value;
 	}
+
 	get framerate() {
 		return this._framerate;
 	}
@@ -76,6 +75,7 @@ export default class InlinePlayer extends BasicPlayer {
 	set currentFrame(value) {
 		this._currentFrame = value;
 	}
+
 	get currentFrame() {
 		return this._currentFrame;
 	}
@@ -124,13 +124,13 @@ export default class InlinePlayer extends BasicPlayer {
 	}
 
 	_render = () => {
-		const videoFrame = 0 || this.framerate * (this._sound.currentTime);
-		if ((videoFrame !== this.currentFrame) || videoFrame === 0) {
+		const videoFrame = 0 || this.framerate * this._sound.currentTime;
+		if (videoFrame !== this.currentFrame || videoFrame === 0) {
 			this.currentFrame = videoFrame;
 			this.currentTime = (videoFrame / this.framerate).toFixed(6);
 		}
 		this._animateFrame = requestAnimationFrame(this._render);
-	}
+	};
 
 	_cancelAnimateFrame() {
 		if (this._animateFrame) {
@@ -147,14 +147,16 @@ export default class InlinePlayer extends BasicPlayer {
 		this._sound.pause();
 		this._sound.src = '';
 		try {
-			if (this._sound.parentNode &&
-			this.isDescendant(this._sound.parentNode, this._sound)) {
+			if (
+				this._sound.parentNode &&
+				this.isDescendant(this._sound.parentNode, this._sound)
+			) {
 				this._sound.parentNode.removeChild(this._sound);
 			}
 		} catch (e) {
-			if (this.error) throw new Error('Error remove inline player audio elment ', e);
+			if (this.error)
+				throw new Error('Error remove inline player audio elment ', e);
 		}
 		this._sound = null;
 	}
-
 }

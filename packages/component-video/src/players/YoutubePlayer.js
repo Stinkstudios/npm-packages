@@ -19,7 +19,9 @@ export default class YoutubePlayer extends AbstractPlayer {
 	constructor(mOptions = {}) {
 		super(mOptions);
 		if (!document || !window) {
-			throw new Error('YoutubePlayer no document or window to createElement video');
+			throw new Error(
+				'YoutubePlayer no document or window to createElement video'
+			);
 		}
 		this._el = document.createElement('div');
 		this._el.setAttribute('id', 'youtube-player');
@@ -42,6 +44,7 @@ export default class YoutubePlayer extends AbstractPlayer {
 	set volume(value) {
 		this._player.setVolume(value * 100);
 	}
+
 	get volume() {
 		return this._player.getVolume() / 100;
 	}
@@ -49,6 +52,7 @@ export default class YoutubePlayer extends AbstractPlayer {
 	set currentTime(time) {
 		this.seek(time);
 	}
+
 	get currentTime() {
 		return this._player.getCurrentTime();
 	}
@@ -78,8 +82,8 @@ export default class YoutubePlayer extends AbstractPlayer {
 		this._player.seekTo(time);
 	}
 
-
-	_getSDK() { // eslint-disable-line class-methods-use-this
+	// eslint-disable-next-line class-methods-use-this
+	_getSDK() {
 		if (window[SDK_GLOBAL]) {
 			return Promise.resolve(window[SDK_GLOBAL]);
 		}
@@ -90,19 +94,18 @@ export default class YoutubePlayer extends AbstractPlayer {
 				if (previous) previous();
 				resolve(window[SDK_GLOBAL]);
 			};
-			loadScript(SDK_URL, (err) => {
-				if (err) { reject(err); }
+			loadScript(SDK_URL, err => {
+				if (err) {
+					reject(err);
+				}
 			});
 		});
 	}
 
 	_loadPlayer() {
-		const {
-			controls = true,
-			volume = 1,
-		} = this._options;
+		const { controls = true, volume = 1 } = this._options;
 		this._getSDK()
-			.then((YT) => {
+			.then(YT => {
 				this._player = new YT.Player(this._el, {
 					width: this._options.width,
 					height: this._options.height,
@@ -114,7 +117,7 @@ export default class YoutubePlayer extends AbstractPlayer {
 						autoplay: this.autoplay,
 					},
 					events: {
-						onReady: (e) => {
+						onReady: e => {
 							this.videoReady = true;
 							this.volume = volume;
 							if (this._callbackCanPlay) this._callbackCanPlay(e);
@@ -124,12 +127,13 @@ export default class YoutubePlayer extends AbstractPlayer {
 					},
 				});
 			})
-			.catch((e) => {
-				if (this.error) throw new Error('Error - YouTubePlayer - loadPlayer ', e);
+			.catch(e => {
+				if (this.error)
+					throw new Error('Error - YouTubePlayer - loadPlayer ', e);
 			});
 	}
 
-	_onStateChange = (e) => {
+	_onStateChange = e => {
 		switch (e.data) {
 			case -1:
 				/* unstarted */
@@ -153,7 +157,7 @@ export default class YoutubePlayer extends AbstractPlayer {
 			default:
 				break;
 		}
-	}
+	};
 
 	destroy() {
 		if (!this._player) {

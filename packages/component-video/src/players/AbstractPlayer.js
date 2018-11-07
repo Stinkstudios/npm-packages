@@ -1,7 +1,6 @@
 // AbstractPlayer.js
 
 export default class AbstractPlayer {
-
 	constructor(mOptions = {}) {
 		this._options = mOptions;
 
@@ -42,12 +41,15 @@ export default class AbstractPlayer {
 	set autoplay(value) {
 		this._autoplay = value;
 	}
+
 	get autoplay() {
 		return this._autoplay;
 	}
+
 	set videoReady(value) {
 		this._videoReady = value;
 	}
+
 	get videoReady() {
 		return this._videoReady;
 	}
@@ -55,6 +57,7 @@ export default class AbstractPlayer {
 	set resize(value) {
 		this._resize = value;
 	}
+
 	get resize() {
 		return this._resize;
 	}
@@ -62,6 +65,7 @@ export default class AbstractPlayer {
 	set looping(value) {
 		this._looping = value;
 	}
+
 	get looping() {
 		return this._looping;
 	}
@@ -69,6 +73,7 @@ export default class AbstractPlayer {
 	set playing(value) {
 		this._playing = value;
 	}
+
 	get playing() {
 		return this._playing;
 	}
@@ -76,6 +81,7 @@ export default class AbstractPlayer {
 	set paused(value) {
 		this._paused = value;
 	}
+
 	get paused() {
 		return this._paused;
 	}
@@ -83,6 +89,7 @@ export default class AbstractPlayer {
 	set autoPaused(value) {
 		this._autoPaused = value;
 	}
+
 	get autoPaused() {
 		return this._autoPaused;
 	}
@@ -145,44 +152,47 @@ export default class AbstractPlayer {
 		this._addToDom();
 		if (this._options.resize) this._onVideoResize();
 		if (this._callbackMetadata) this._callbackMetadata(e);
-	}
+	};
 
-	_onVideoCanPlayThrough = (e) => {
-		this._player.removeEventListener('canplaythrough', this._onVideoCanPlayThrough);
+	_onVideoCanPlayThrough = e => {
+		this._player.removeEventListener(
+			'canplaythrough',
+			this._onVideoCanPlayThrough
+		);
 		this.videoReady = true;
 		if (this.autoplay) this.play();
 		if (this._callbackCanPlay) this._callbackCanPlay(e);
-	}
+	};
 
-	_onVideoEnd = (e) => {
+	_onVideoEnd = e => {
 		this.playing = false;
 		this.paused = true;
 		/* to loop a youtube video check if loop exist */
 		if (!this._player.loop && this.looping) this.play();
 		if (this._callbackEnd) this._callbackEnd(e);
-	}
+	};
 
-	_onVideoError = (e) => {
+	_onVideoError = e => {
 		if (this._callbackError) this._callbackError(e);
 		if (this.error) throw new Error('Error - component-video - ', e);
-	}
+	};
 
-	_onVideoPlay = (e) => {
+	_onVideoPlay = e => {
 		this.playing = true;
 		this.paused = false;
 		this.autoPaused = false;
 		if (this._callbackPlay) this._callbackPlay(e);
-	}
+	};
 
-	_onVideoPause = (e) => {
+	_onVideoPause = e => {
 		this.playing = false;
 		this.paused = true;
 		if (this._callbackPause) this._callbackPause(e);
-	}
+	};
 
-	_onVideoProgress = (e) => {
+	_onVideoProgress = e => {
 		if (this._callbackProgress) this._callbackProgress(e);
-	}
+	};
 
 	_onVideoResize = () => {
 		const el = this.el;
@@ -191,18 +201,25 @@ export default class AbstractPlayer {
 		}
 		const width = this.width;
 		const height = this.height;
-		const areaWidth = this._options.el ? this._options.el.offsetWidth : window.innerWidth;
-		const areaHeight = this._options.el ? this._options.el.offsetHeight : window.innerHeight;
+		const areaWidth = this._options.el
+			? this._options.el.offsetWidth
+			: window.innerWidth;
+		const areaHeight = this._options.el
+			? this._options.el.offsetHeight
+			: window.innerHeight;
 		const scale = Math.max(areaWidth / width, areaHeight / height);
-		el.style.cssText = `width:${Math.ceil(width * scale)}px; height:${Math.ceil(height * scale)}px; position:absolute; top:${Math.ceil((areaHeight - (height * scale)) / 2)}px; left:${Math.ceil((areaWidth - (width * scale)) / 2)}px;`; // eslint-disable-line max-len
-	}
+		el.style.cssText = `width:${Math.ceil(width * scale)}px; height:${Math.ceil(
+			height * scale
+		)}px; position:absolute; top:${Math.ceil(
+			(areaHeight - height * scale) / 2
+		)}px; left:${Math.ceil((areaWidth - width * scale) / 2)}px;`; // eslint-disable-line max-len
+	};
 
-	_onTimeUpdate = (e) => {
+	_onTimeUpdate = e => {
 		if (this._callbackTimeUpdate) this._callbackTimeUpdate(e);
-	}
+	};
 
-	_onVolumeChange = (e) => {
+	_onVolumeChange = e => {
 		if (this._callbackVolumeChange) this._callbackVolumeChange(e);
-	}
-
+	};
 }
