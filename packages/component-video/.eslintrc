@@ -1,0 +1,26 @@
+{
+	"extends": ["airbnb-base", "prettier", "prettier/standard"],
+	"env": {
+		"browser": true,
+		"es6": true,
+		"commonjs": true
+	},
+	"parser": "babel-eslint",
+	"parserOptions": {
+		"ecmaVersion": 6,
+		"sourceType": "module"
+	},
+	"rules": {
+		"indent": [
+			1,
+			"tab",
+			{
+				"SwitchCase": 1
+			}
+		],
+		"no-underscore-dangle": 0,
+		"no-mixed-operators": 0,
+		"no-tabs": 0,
+		"prefer-destructuring": 0
+	}
+}
