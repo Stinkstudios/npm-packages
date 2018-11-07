@@ -2,7 +2,7 @@
 
 [![NPM version][npm-img]][npm-url] [![Downloads][downloads-img]][npm-url] [![Build Status][travis-img]][travis-url] [![Known Vulnerabilities][snyk-img]][snyk-url] [![MIT license][mit-img]][mit-url]
 
-**LEGACY PACKAGE - FOR OLDER PROJECTS AT [STINK STUDIOS]**
+**DEPRECATED PACKAGE - FOR OLDER PROJECTS AT [STINK STUDIOS]**
 
 Collection of JS constants containing device, OS, browser and capability detection.
 
