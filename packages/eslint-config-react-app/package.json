@@ -1,6 +1,6 @@
 {
   "name": "@stinkstudios/eslint-config-react-app",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "ESLint configuration used by Stink Studios fork of Create React App",
   "keywords": [
     "stinkstudios",

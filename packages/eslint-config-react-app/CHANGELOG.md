@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.1](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/eslint-config-react-app@1.1.0...@stinkstudios/eslint-config-react-app@1.1.1) (2018-11-07)
+
+
+### Features
+
+* **deps:** Update dependency eslint-plugin-compat to v2.6.3 ([1effbaa](https://github.com/Stinkstudios/npm-packages/commit/1effbaa))
+* **docs:**  README license link ([dbee6c1](https://github.com/Stinkstudios/npm-packages/commit/dbee6c1))
+* **docs:** snyk & mit badges ([941de85](https://github.com/Stinkstudios/npm-packages/commit/941de85))
+
+
+
+
+
 # [1.1.0](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/eslint-config-react-app@1.0.6...@stinkstudios/eslint-config-react-app@1.1.0) (2018-10-30)
 
 

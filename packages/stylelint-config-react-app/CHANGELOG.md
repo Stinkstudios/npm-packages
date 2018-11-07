@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.2](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/stylelint-config-react-app@1.2.1...@stinkstudios/stylelint-config-react-app@1.2.2) (2018-11-07)
+
+
+### Features
+
+* coverage to codecov.io ([04f6ceb](https://github.com/Stinkstudios/npm-packages/commit/04f6ceb))
+* **docs:**  README license link ([dbee6c1](https://github.com/Stinkstudios/npm-packages/commit/dbee6c1))
+* **docs:** snyk & mit badges ([941de85](https://github.com/Stinkstudios/npm-packages/commit/941de85))
+* **refactor:** code coverage cli ([6616323](https://github.com/Stinkstudios/npm-packages/commit/6616323))
+
+
+
+
+
 ## [1.2.1](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/stylelint-config-react-app@1.2.0...@stinkstudios/stylelint-config-react-app@1.2.1) (2018-11-01)
 
 

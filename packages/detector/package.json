@@ -1,6 +1,6 @@
 {
   "name": "@stinkstudios/detector",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Collection of JS constants containing device, OS, browser and capability detection.",
   "author": "StinkStudios",
   "homepage": "https://github.com/Stinkstudios/npm-packages/tree/master/packages/detector#readme",

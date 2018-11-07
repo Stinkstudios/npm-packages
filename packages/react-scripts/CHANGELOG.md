@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.2](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/react-scripts@2.4.1...@stinkstudios/react-scripts@2.4.2) (2018-11-07)
+
+
+### Features
+
+* **docs:**  README license link ([dbee6c1](https://github.com/Stinkstudios/npm-packages/commit/dbee6c1))
+* coverage to codecov.io ([04f6ceb](https://github.com/Stinkstudios/npm-packages/commit/04f6ceb))
+* **deps:** Update dependency [@babel](https://github.com/babel)/core to v7.1.5 ([fd0fc59](https://github.com/Stinkstudios/npm-packages/commit/fd0fc59))
+* **deps:** Update dependency dotenv to v6.1.0 ([5a5360b](https://github.com/Stinkstudios/npm-packages/commit/5a5360b))
+* **deps:** Update dependency eslint-plugin-compat to v2.6.3 ([1effbaa](https://github.com/Stinkstudios/npm-packages/commit/1effbaa))
+* **deps:** Update dependency fs-extra to v7.0.1 ([a795d5c](https://github.com/Stinkstudios/npm-packages/commit/a795d5c))
+* **deps:** Update dependency postcss-preset-env to v6.4.0 ([f5011ec](https://github.com/Stinkstudios/npm-packages/commit/f5011ec))
+* **deps:** Update dependency prettier to v1.15.1 ([414df4c](https://github.com/Stinkstudios/npm-packages/commit/414df4c))
+* **deps:** Update dependency webpack to v4.25.1 ([953d934](https://github.com/Stinkstudios/npm-packages/commit/953d934))
+* **deps:** Update react monorepo to ^16.6.1 ([1dfa408](https://github.com/Stinkstudios/npm-packages/commit/1dfa408))
+* **docs:** snyk & mit badges ([941de85](https://github.com/Stinkstudios/npm-packages/commit/941de85))
+* **refactor:** code coverage cli ([6616323](https://github.com/Stinkstudios/npm-packages/commit/6616323))
+
+
+
+
+
 ## [2.4.1](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/react-scripts@2.4.0...@stinkstudios/react-scripts@2.4.1) (2018-11-01)
 
 
