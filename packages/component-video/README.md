@@ -1,5 +1,6 @@
 # @stinkstudios/component-video
 
+[![NPM version][npm-img]][npm-url] [![Downloads][downloads-img]][npm-url] [![Build Status][travis-img]][travis-url] [![Known Vulnerabilities][snyk-img]][snyk-url] [![MIT license][mit-img]][mit-url]
 **DEPRECATED PACKAGE - FOR OLDER PROJECTS AT [STINK STUDIOS]**
 
 A simple video component for videos and youtube videos.
