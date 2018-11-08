@@ -1,3 +1,23 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## 0.3.7 (2018-11-08)
+
+
+### Features
+
+* code formatting & lint errors ([1ddacc2](https://github.com/Stinkstudios/npm-packages/commit/1ddacc2))
+* git ignore build output folders ([7b24e1d](https://github.com/Stinkstudios/npm-packages/commit/7b24e1d))
+* LICENSE ([217c681](https://github.com/Stinkstudios/npm-packages/commit/217c681))
+* **docs:** README update ([a6cdf32](https://github.com/Stinkstudios/npm-packages/commit/a6cdf32))
+* **refactor:** package.json ([5842464](https://github.com/Stinkstudios/npm-packages/commit/5842464))
+
+
+
+
+
 ## 0.3.6 (Oct 13, 2017)
 
 ### Added
