@@ -13,6 +13,7 @@
       "gitRemote": "origin",
       "message": "chore(release): publish",
       "ignoreChanges": [
+        "packages/component-video/*",
         "packages/detector/*",
         "*.md"
       ]
