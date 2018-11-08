@@ -33,6 +33,7 @@ This repository is a [monorepo] managed using [Lerna]. This means there are [mul
 
 Deprecated npm packages used internally by Stink Studios and no longer maintained but still need to exist.
 
+- [@stinkstudios/component-video]
 - [@stinkstudios/detector]
 
 ## Contributing
@@ -44,5 +45,6 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md)
 [@stinkstudios/react-scripts]: https://www.npmjs.com/package/@stinkstudios/react-scripts
 [@stinkstudios/stylelint-config-react-app]: https://www.npmjs.com/package/@stinkstudios/stylelint-config-react-app
 [@stinkstudios/detector]: https://www.npmjs.com/package/@stinkstudios/detector
+[@stinkstudios/component-video]: https://www.npmjs.com/package/@stinkstudios/component-video
 [monorepo]: https://trunkbaseddevelopment.com/monorepos/
 [lerna]: https://github.com/lerna/lerna
