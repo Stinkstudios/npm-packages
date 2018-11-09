@@ -12,6 +12,8 @@ module.exports = {
     'plugin:import/errors',
     'plugin:import/warnings',
     'plugin:react/recommended',
+    'plugin:jest/recommended',
+    'plugin:jest/style',
     'plugin:jsx-a11y/recommended',
     'plugin:unicorn/recommended',
     'plugin:compat/recommended',
@@ -19,7 +21,7 @@ module.exports = {
     'prettier/react',
   ],
 
-  plugins: ['compat', 'import', 'jsx-a11y', 'unicorn', 'react'],
+  plugins: ['compat', 'import', 'jsx-a11y', 'unicorn', 'react', 'jest'],
 
   env: {
     browser: true,

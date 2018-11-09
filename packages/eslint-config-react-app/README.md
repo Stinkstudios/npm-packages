@@ -8,6 +8,8 @@
 - [`plugin:import/errors`]
 - [`plugin:import/warnings`]
 - [`plugin:react/recommended`]
+- [`plugin:jest/recommended`]
+- [`plugin:jest/style`]
 - [`plugin:jsx-a11y/recommended`]
 - [`plugin:unicorn/recommended`]
 - [`plugin:compat/recommended`]
@@ -20,12 +22,13 @@
 - [`eslint-plugin-import`]
 - [`eslint-plugin-jsx-a11y`]
 - [`eslint-plugin-react`]
+- [`eslint-plugin-jest`]
 - [`eslint-plugin-unicorn`]
 
 ## Installation
 
 ```bash
-yarn add @stinkstudios/eslint-config-react-app babel-eslint@^10.0.1 eslint@^5.7.0 eslint-config-prettier@^3.1.0 eslint-plugin-compat@^2.6.2 eslint-plugin-import@^2.14.0 eslint-plugin-jsx-a11y@^6.1.2 eslint-plugin-react@^7.11.1 eslint-plugin-unicorn@^6.0.1
+$ yarn add @stinkstudios/eslint-config-react-app babel-eslint@^10.0.1 eslint@^5.7.0 eslint-config-prettier@^3.1.0 eslint-plugin-compat@^2.6.2 eslint-plugin-import@^2.14.0 eslint-plugin-jsx-a11y@^6.1.2 eslint-plugin-react@^7.11.1 eslint-plugin-unicorn@^6.0.1 eslint-plugin-jest@^22.0.0
 ```
 
 ## Usage
@@ -88,3 +91,6 @@ To have Visual Studio Code format and autofix your `.js` files use the below ext
 [`eslint-plugin-react`]: https://github.com/yannickcr/eslint-plugin-react/
 [`eslint-plugin-unicorn`]: https://github.com/sindresorhus/eslint-plugin-unicorn
 [`eslint`]: https://eslint.org/
+[`eslint-plugin-jest`]: https://github.com/jest-community/eslint-plugin-jest/tree/v22.0.0#readme
+[`plugin:jest/recommended`]: https://github.com/jest-community/eslint-plugin-jest/blob/v22.0.0/index.js#L34
+[`plugin:jest/style`]: https://github.com/jest-community/eslint-plugin-jest/blob/v22.0.0/index.js#L52
