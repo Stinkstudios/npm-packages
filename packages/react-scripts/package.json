@@ -29,7 +29,7 @@
     "build": "node bin/react-scripts.js build",
     "lint": "node bin/react-scripts.js lint",
     "start": "node bin/react-scripts.js start",
-    "test": "node bin/react-scripts.js test",
+    "test": "node bin/react-scripts.js test  --config=template/jest.config.js",
     "test:ci": "yarn test"
   },
   "bin": {
@@ -66,8 +66,9 @@
     "graphql": "^14.0.2",
     "graphql-tag": "2.10.0",
     "html-webpack-plugin": "4.0.0-alpha.2",
-    "identity-obj-proxy": "3.0.0",
     "jest": "23.6.0",
+    "jest-css-modules": "1.1.0",
+    "jest-file": "1.0.0",
     "jest-pnp-resolver": "1.0.1",
     "jest-resolve": "23.6.0",
     "mini-css-extract-plugin": "0.4.4",
