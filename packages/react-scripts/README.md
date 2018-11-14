@@ -27,6 +27,7 @@ To use with Typescript
   - Configuration defined in [`.eslintrc`] file instead of webpack loader. No need to eject ([99229e9](https://github.com/Stinkstudios/npm-packages/commit/99229e9))
   - Switched from extending [`eslint-config-react-app`] to [`@stinkstudios/eslint-config-react-app`]
   - Added cli [`npm run lint`]. ([4153084](https://github.com/Stinkstudios/npm-packages/commit/4153084))
+  - Made use of ESLint optional in development, do this by setting the USE_ESLINT in env config.
 - [Babel]
   - Configuration defined in [`.babelrc`] file instead of webpack loader. No need to eject. ([de90c89](https://github.com/Stinkstudios/npm-packages/commit/de90c89))
   - Removed `babel-plugin-named-asset-import` that was used to import svg as React Components. Yarn can't find babel plugins installed via a `@stinkstudios/react-scripts` at the moment. You can add any Babel Plugins yourself. ([de90c89](https://github.com/Stinkstudios/npm-packages/commit/de90c89#diff-a7f98c18479be87c9f33e7604dbd1a09L247))
