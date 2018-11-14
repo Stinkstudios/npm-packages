@@ -43,6 +43,9 @@ const shouldInlineRuntimeChunk = process.env.INLINE_RUNTIME_CHUNK !== 'false';
 // Check if TypeScript is setup
 const useTypeScript = fs.existsSync(paths.appTsConfig);
 
+// Check if eslint is disabled in .env config.
+const useEslint = process.env.USE_ESLINT !== 'false';
+
 // style files regexes
 const cssRegex = /\.css$/;
 const cssModuleRegex = /\.module\.css$/;
@@ -290,20 +293,25 @@ module.exports = function(webpackEnv) {
 
         // First, run the linter.
         // It's important to do this before Babel processes the JS.
-        {
-          test: /\.(js|mjs|jsx)$/,
-          enforce: 'pre',
-          use: [
-            {
-              options: {
-                formatter: require.resolve('react-dev-utils/eslintFormatter'),
-                eslintPath: require.resolve('eslint'),
-              },
-              loader: require.resolve('eslint-loader'),
-            },
-          ],
-          include: paths.appSrc,
-        },
+        // If USE_ESLINT is not disabled in .env config.
+        useEslint
+          ? {
+              test: /\.(js|mjs|jsx)$/,
+              enforce: 'pre',
+              use: [
+                {
+                  options: {
+                    formatter: require.resolve(
+                      'react-dev-utils/eslintFormatter'
+                    ),
+                    eslintPath: require.resolve('eslint'),
+                  },
+                  loader: require.resolve('eslint-loader'),
+                },
+              ],
+              include: paths.appSrc,
+            }
+          : {},
         {
           // "oneOf" will traverse all following loaders until one will
           // match the requirements. When no loader matches it will fall
