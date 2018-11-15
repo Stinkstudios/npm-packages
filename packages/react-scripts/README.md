@@ -78,4 +78,4 @@ To use with Typescript
 [`npm run format`]: https://github.com/Stinkstudios/npm-packages/blob/master/packages/react-scripts/template/README.md#npm-run-format
 [prettier]: https://prettier.io/
 [Jest]: https://jestjs.io/
-[jest.config.js]: https://github.com/facebook/create-react-app/tree/master/packages/react-scripts/template/jest.config.js
+[`jest.config.js`]: https://github.com/facebook/create-react-app/tree/master/packages/react-scripts/template/jest.config.js
