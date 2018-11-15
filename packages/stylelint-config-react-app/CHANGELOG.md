@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/stylelint-config-react-app@1.2.2...@stinkstudios/stylelint-config-react-app@1.3.0) (2018-11-15)
+
+
+### Features
+
+* **deps:** Update dependency eslint-config-stylelint to v10 ([aed225f](https://github.com/Stinkstudios/npm-packages/commit/aed225f))
+
+
+
+
+
 ## [1.2.2](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/stylelint-config-react-app@1.2.1...@stinkstudios/stylelint-config-react-app@1.2.2) (2018-11-07)
 
 

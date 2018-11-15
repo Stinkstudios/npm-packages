@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.5.0](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/react-scripts@2.4.2...@stinkstudios/react-scripts@2.5.0) (2018-11-15)
+
+
+### Bug Fixes
+
+* [@stinkstudios](https://github.com/stinkstudios)/eslint-config-react-app dependency use caret range ([ebaa28f](https://github.com/Stinkstudios/npm-packages/commit/ebaa28f))
+
+
+### Features
+
+* **➕:** eslint-plugin-jest ([559b7d6](https://github.com/Stinkstudios/npm-packages/commit/559b7d6))
+* added ESLint changes to readme ([8cb2862](https://github.com/Stinkstudios/npm-packages/commit/8cb2862))
+* make use of eslint optional in .env config ([b2e78cd](https://github.com/Stinkstudios/npm-packages/commit/b2e78cd))
+* **config:** add and use jest.config.js file for test script ([#100](https://github.com/Stinkstudios/npm-packages/issues/100)) ([92dd7e0](https://github.com/Stinkstudios/npm-packages/commit/92dd7e0))
+* **refactor:** merge webpack configuration ([be523ce](https://github.com/Stinkstudios/npm-packages/commit/be523ce))
+
+
+
+
+
 ## [2.4.2](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/react-scripts@2.4.1...@stinkstudios/react-scripts@2.4.2) (2018-11-07)
 
 
