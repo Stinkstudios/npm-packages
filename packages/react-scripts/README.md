@@ -41,6 +41,8 @@ To use with Typescript
 - [Prettier]
   - Configuration defined in [`.prettierrc`] & [`.prettierignore`]
   - Cli [`npm run format`]. ([172ae22](https://github.com/Stinkstudios/npm-packages/commit/172ae22))
+- [Jest]
+  - Configuration defined in [`jest.config.js`] ([92dd7e0](https://github.com/Stinkstudios/npm-packages/commit/92dd7e03ead92ebabf3f7cda1e1a3bc71227238a))
 - Renamed `/src/App` to `/src/app` to conform to filename convention camelCase. For some reason `/src/App` is the only file that doesn't stick to this convention ([904a1ab](https://github.com/Stinkstudios/npm-packages/commit/904a1ab))
 - Removed service worker
 
@@ -75,3 +77,5 @@ To use with Typescript
 [stylelint]: https://stylelint.io/
 [`npm run format`]: https://github.com/Stinkstudios/npm-packages/blob/master/packages/react-scripts/template/README.md#npm-run-format
 [prettier]: https://prettier.io/
+[Jest]: https://jestjs.io/
+[jest.config.js]: https://github.com/facebook/create-react-app/tree/master/packages/react-scripts/template/jest.config.js
