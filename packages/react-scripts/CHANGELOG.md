@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.5.1](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/react-scripts@2.5.0...@stinkstudios/react-scripts@2.5.1) (2018-11-23)
+
+
+### Features
+
+* css module support for camelCase ([5cb48bc](https://github.com/Stinkstudios/npm-packages/commit/5cb48bc))
+* **deps:** Update dependency [@babel](https://github.com/babel)/core to v7.1.6 ([#96](https://github.com/Stinkstudios/npm-packages/issues/96)) ([fbe7e67](https://github.com/Stinkstudios/npm-packages/commit/fbe7e67))
+* **deps:** Update dependency mini-css-extract-plugin to v0.4.5 ([#104](https://github.com/Stinkstudios/npm-packages/issues/104)) ([afa1472](https://github.com/Stinkstudios/npm-packages/commit/afa1472))
+
+
+
+
+
 # [2.5.0](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/react-scripts@2.4.2...@stinkstudios/react-scripts@2.5.0) (2018-11-15)
 
 
