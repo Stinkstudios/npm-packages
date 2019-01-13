@@ -54,13 +54,12 @@ describe('flags warnings with invalid css', () => {
     );
   });
 
-  it('correct warning text', () => {
-    return result.then(data =>
+  it('correct warning text', () =>
+    result.then(data =>
       expect(data.results[0].warnings[0].text).toBe(
-        'Expected "display" to come before "top" (order/properties-order)'
+        '\n\t  Expected "display" to come before "top" (order/properties-order)'
       )
-    );
-  });
+    ));
 
   it('correct rule flagged', () => {
     return result.then(data =>
