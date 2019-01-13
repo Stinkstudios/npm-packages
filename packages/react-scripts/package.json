@@ -37,7 +37,7 @@
   },
   "types": "./lib/react-app.d.ts",
   "dependencies": {
-    "@babel/core": "7.1.5",
+    "@babel/core": "7.2.2",
     "@stinkstudios/eslint-config-react-app": "^1.2.0",
     "@stinkstudios/stylelint-config-react-app": "^1.3.0",
     "babel-core": "7.0.0-bridge.0",
