@@ -18,7 +18,7 @@
     "packages/*"
   ],
   "devDependencies": {
-    "@commitlint/cli": "7.3.1",
+    "@commitlint/cli": "7.3.2",
     "@commitlint/config-conventional": "7.3.1",
     "codecov": "3.1.0",
     "create-react-app": "2.1.3",
