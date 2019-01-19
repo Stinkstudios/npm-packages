@@ -65,7 +65,7 @@
     "fs-extra": "7.0.1",
     "graphql": "^14.1.1",
     "graphql-tag": "2.10.0",
-    "html-webpack-plugin": "4.0.0-alpha.2",
+    "html-webpack-plugin": "4.0.0-beta.5",
     "jest": "23.6.0",
     "jest-css-modules": "1.1.0",
     "jest-file": "1.0.0",
