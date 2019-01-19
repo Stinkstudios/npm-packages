@@ -13,5 +13,9 @@
   "travis": {
     "enabled": true
   },
-  "ignorePaths": ["packages/component-video", "packages/detector"]
+  "ignorePaths": ["packages/component-video", "packages/detector"],
+  "automerge": true,
+  "major": {
+    "automerge": false
+  }
 }
