@@ -20,10 +20,10 @@
 yarn add @stinkstudios/stylelint-config-react-app
 ```
 
-Has a peer dependency of `stylelint@^9.6.0`. If you haven't added stylelint to your project then
+Has a peer dependency of `stylelint@^9.10.1`. If you haven't added stylelint to your project then
 
 ```bash
-yarn add stylelint@^9.6.0
+yarn add stylelint@^9.10.1
 ```
 
 ## Usage
