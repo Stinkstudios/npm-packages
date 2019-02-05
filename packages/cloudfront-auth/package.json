@@ -37,7 +37,7 @@
     "preversion": "yarn lint && yarn test && yarn build"
   },
   "devDependencies": {
-    "@types/jest": "23.3.13",
+    "@types/jest": "23.3.14",
     "@types/node": "10.12.21",
     "jest": "23.6.0",
     "jest-environment-node-debug": "2.0.0",
