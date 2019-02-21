@@ -28,7 +28,7 @@ const getCSSModuleLocalIdent = require('react-dev-utils/getCSSModuleLocalIdent')
 const paths = require('./paths');
 const getClientEnvironment = require('./env');
 const ModuleNotFoundPlugin = require('react-dev-utils/ModuleNotFoundPlugin');
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin-alt');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const typescriptFormatter = require('react-dev-utils/typescriptFormatter');
 // @remove-on-eject-begin
 const getCacheIdentifier = require('react-dev-utils/getCacheIdentifier');
@@ -570,24 +570,17 @@ module.exports = function(webpackEnv) {
           typescript: resolve.sync('typescript', {
             basedir: paths.appNodeModules,
           }),
-          async: false,
+          async: isEnvDevelopment,
+          useTypescriptIncrementalApi: true,
           checkSyntacticErrors: true,
           tsconfig: paths.appTsConfig,
-          compilerOptions: {
-            module: 'esnext',
-            moduleResolution: 'node',
-            resolveJsonModule: true,
-            isolatedModules: true,
-            noEmit: true,
-            jsx: 'preserve',
-          },
           reportFiles: [
             '**',
             '!**/*.json',
             '!**/__tests__/**',
             '!**/?(*.)(spec|test).*',
-            '!src/setupProxy.js',
-            '!src/setupTests.*',
+            '!**/src/setupProxy.*',
+            '!**/src/setupTests.*',
           ],
           watch: paths.appSrc,
           silent: true,
