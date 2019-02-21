@@ -7,6 +7,9 @@
       "homepage": "https://github.com/Stinkstudios/npm-packages",
       "license": "MIT"
     },
+    "run": {
+      "ignore": ["@stinkstudios/detector", "@stinkstudios/component-video"]
+    },
     "publish": {
       "allowBranch": "master",
       "conventionalCommits": true,
