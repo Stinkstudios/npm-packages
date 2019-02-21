@@ -1,13 +1,13 @@
-.App {
+.root {
   text-align: center;
 }
 
-.App-logo {
+.logo {
   height: 40vmin;
-  animation: App-logo-spin infinite 20s linear;
+  animation: logo-spin infinite 20s linear;
 }
 
-.App-header {
+.header {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -18,11 +18,11 @@
   font-size: calc(10px + 2vmin);
 }
 
-.App-link {
+.link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
+@keyframes logo-spin {
   from {
     transform: rotate(0deg);
   }
