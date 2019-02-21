@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.1](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/stylelint-config-react-app@1.3.0...@stinkstudios/stylelint-config-react-app@1.3.1) (2019-02-21)
+
+
+### Bug Fixes
+
+* test output changed because of styleint update ([7c0ed9b](https://github.com/Stinkstudios/npm-packages/commit/7c0ed9b))
+
+
+### Features
+
+* **deps:** Update dependency eslint to v5.12.0 ([7166bdd](https://github.com/Stinkstudios/npm-packages/commit/7166bdd))
+* **deps:** Update dependency eslint to v5.12.1 ([33ec061](https://github.com/Stinkstudios/npm-packages/commit/33ec061))
+* **deps:** Update dependency eslint to v5.13.0 ([7fb1c70](https://github.com/Stinkstudios/npm-packages/commit/7fb1c70))
+* **deps:** Update dependency eslint to v5.14.0 ([67cf9f8](https://github.com/Stinkstudios/npm-packages/commit/67cf9f8))
+* **deps:** Update dependency eslint to v5.14.1 ([30f1ad9](https://github.com/Stinkstudios/npm-packages/commit/30f1ad9))
+* **deps:** Update dependency eslint-config-stylelint to v11 ([71df511](https://github.com/Stinkstudios/npm-packages/commit/71df511))
+* **deps:** Update dependency stylelint to v9.10.1 ([02ec59c](https://github.com/Stinkstudios/npm-packages/commit/02ec59c))
+* **deps:** Update dependency stylelint to v9.9.0 ([81075ab](https://github.com/Stinkstudios/npm-packages/commit/81075ab))
+* **deps:** Update dependency stylelint-order to v2 ([c935feb](https://github.com/Stinkstudios/npm-packages/commit/c935feb))
+* jest v24 support ([48bb997](https://github.com/Stinkstudios/npm-packages/commit/48bb997))
+
+
+
+
+
 # [1.3.0](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/stylelint-config-react-app@1.2.2...@stinkstudios/stylelint-config-react-app@1.3.0) (2018-11-15)
 
 
