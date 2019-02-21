@@ -48,7 +48,7 @@ module.exports = {
     ],
 
     // https://github.com/benmosher/eslint-plugin-import/tree/master/docs/rules
-    'import/prefer-default-export': 0,
+    'import/prefer-default-export': 'off',
 
     // suggest using of const declaration for variables that are never modified after declared
     'prefer-const': [
@@ -61,7 +61,8 @@ module.exports = {
 
     // https://github.com/sindresorhus/eslint-plugin-unicorn
     'unicorn/filename-case': ['error', { case: 'camelCase' }],
-    'unicorn/no-abusive-eslint-disable': 0,
+    'unicorn/no-abusive-eslint-disable': 'off',
+    'unicorn/prefer-query-selector': 'off',
 
     'react/no-unused-prop-types': [
       'error',
