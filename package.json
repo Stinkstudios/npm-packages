@@ -5,6 +5,8 @@
     "build": "lerna run build",
     "precreate-react-app": "rm -rf my-app",
     "create-react-app": "node tasks/cra.js -- my-app",
+    "precreate-react-app-ts": "rm -rf my-app-ts",
+    "create-react-app-ts": "node tasks/cra.js -- my-app-ts --typescript",
     "clean": "lerna run clean",
     "format": "prettier --write 'packages/*/*.{js,css,md,ts,html}' 'packages/*/!(node_modules)/**/*.{js,css,md,ts,html}'",
     "lint": "lerna run lint",
