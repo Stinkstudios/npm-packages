@@ -93,8 +93,8 @@
     "webpack-manifest-plugin": "2.0.4"
   },
   "devDependencies": {
-    "react": "^16.8.3",
-    "react-dom": "^16.8.3"
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
   },
   "optionalDependencies": {
     "fsevents": "2.0.1"
