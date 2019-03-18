@@ -37,7 +37,7 @@
     "url": "https://github.com/Stinkstudios/npm-packages/issues"
   },
   "devDependencies": {
-    "eslint": "5.15.2",
+    "eslint": "5.15.3",
     "eslint-config-stylelint": "11.0.0",
     "jest": "24.5.0",
     "stylelint": "9.10.1"
