@@ -28,7 +28,7 @@
 ## Installation
 
 ```bash
-$ yarn add @stinkstudios/eslint-config-react-app babel-eslint@^10.0.1 eslint@^5.13.0 eslint-config-prettier@^4.0.0 eslint-plugin-compat@^2.6.3 eslint-plugin-import@^2.16.0  eslint-plugin-jest@^22.2.2 eslint-plugin-jsx-a11y@^6.2.0 eslint-plugin-react@^7.12.4 eslint-plugin-unicorn@^6.0.1 
+$ yarn add @stinkstudios/eslint-config-react-app babel-eslint@10.x eslint@5.x eslint-config-prettier@4.x eslint-plugin-compat@3.x eslint-plugin-import@2.x  eslint-plugin-jest@22.x eslint-plugin-jsx-a11y@6.x eslint-plugin-react@7.x eslint-plugin-unicorn@7.x
 ```
 
 ## Usage
