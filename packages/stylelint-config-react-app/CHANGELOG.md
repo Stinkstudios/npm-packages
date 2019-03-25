@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.2](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/stylelint-config-react-app@1.3.1...@stinkstudios/stylelint-config-react-app@1.3.2) (2019-03-25)
+
+
+### Features
+
+* **deps:** Update dependency eslint to v5.15.0 ([825efb5](https://github.com/Stinkstudios/npm-packages/commit/825efb5))
+* **deps:** Update dependency eslint to v5.15.1 ([62dc1f1](https://github.com/Stinkstudios/npm-packages/commit/62dc1f1))
+* **deps:** Update dependency eslint to v5.15.2 ([b0404b5](https://github.com/Stinkstudios/npm-packages/commit/b0404b5))
+* **deps:** Update dependency eslint to v5.15.3 ([15c2898](https://github.com/Stinkstudios/npm-packages/commit/15c2898))
+* **deps:** Update dependency stylelint-config-prettier to v5 ([081bc8f](https://github.com/Stinkstudios/npm-packages/commit/081bc8f))
+* **deps:** Update dependency stylelint-order to ^2.1.0 ([72236c2](https://github.com/Stinkstudios/npm-packages/commit/72236c2))
+* **deps:** Update jest monorepo to v24.3.1 ([0598dae](https://github.com/Stinkstudios/npm-packages/commit/0598dae))
+* **deps:** Update jest monorepo to v24.4.0 ([f6e8be1](https://github.com/Stinkstudios/npm-packages/commit/f6e8be1))
+* **deps:** Update jest monorepo to v24.5.0 ([1ea2f70](https://github.com/Stinkstudios/npm-packages/commit/1ea2f70))
+
+
+
+
+
 ## [1.3.1](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/stylelint-config-react-app@1.3.0...@stinkstudios/stylelint-config-react-app@1.3.1) (2019-02-21)
 
 

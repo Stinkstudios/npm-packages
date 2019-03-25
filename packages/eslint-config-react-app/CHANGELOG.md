@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.2](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/eslint-config-react-app@1.2.1...@stinkstudios/eslint-config-react-app@1.2.2) (2019-03-25)
+
+
+### Features
+
+* **deps:** Update dependency confusing-browser-globals to v1.0.6 ([c5dadf6](https://github.com/Stinkstudios/npm-packages/commit/c5dadf6))
+* **deps:** Update dependency eslint to v5.15.0 ([825efb5](https://github.com/Stinkstudios/npm-packages/commit/825efb5))
+* **deps:** Update dependency eslint to v5.15.1 ([62dc1f1](https://github.com/Stinkstudios/npm-packages/commit/62dc1f1))
+* **deps:** Update dependency eslint to v5.15.2 ([b0404b5](https://github.com/Stinkstudios/npm-packages/commit/b0404b5))
+* **deps:** Update dependency eslint to v5.15.3 ([15c2898](https://github.com/Stinkstudios/npm-packages/commit/15c2898))
+* **deps:** Update dependency eslint-config-prettier to ^4.1.0 ([e969336](https://github.com/Stinkstudios/npm-packages/commit/e969336))
+* **deps:** Update dependency eslint-plugin-compat to v3 ([4e93a4d](https://github.com/Stinkstudios/npm-packages/commit/4e93a4d))
+* **deps:** Update dependency eslint-plugin-jest to ^22.3.2 ([d05b836](https://github.com/Stinkstudios/npm-packages/commit/d05b836))
+* **deps:** Update dependency eslint-plugin-jest to ^22.4.1 ([f8bc55a](https://github.com/Stinkstudios/npm-packages/commit/f8bc55a))
+
+
+
+
+
 ## [1.2.1](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/eslint-config-react-app@1.2.0...@stinkstudios/eslint-config-react-app@1.2.1) (2019-02-21)
 
 
