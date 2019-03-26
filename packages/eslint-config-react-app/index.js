@@ -45,7 +45,7 @@ module.exports = {
     },
   },
 
-  overrides: {
+  overrides: [{
     files: ['**/*.ts', '**/*.tsx'],
     parser: '@typescript-eslint/parser',
     parserOptions: {
@@ -70,7 +70,7 @@ module.exports = {
         },
       },
     },
-  },
+  }],
 
   rules: {
     'no-console': 'warn',
