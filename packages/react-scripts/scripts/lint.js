@@ -10,8 +10,12 @@ const paths = require('../config/paths');
 
 let lintErrors;
 
-const useCache = process.env.NODE_ENV !== 'production' && !process.env.CI;
-const useFix = process.env.NODE_ENV !== 'production' && !process.env.CI;
+const useCache = Boolean(
+  process.env.NODE_ENV !== 'production' && !process.env.CI
+);
+const useFix = Boolean(
+  process.env.NODE_ENV !== 'production' && !process.env.CI
+);
 
 async function lintCss() {
   try {
@@ -32,7 +36,7 @@ async function lintCss() {
         lintErrors = true;
       });
   } catch (error) {
-    throw new Error(error);
+    throw error;
   }
 }
 
@@ -55,7 +59,7 @@ async function lintJs() {
       console.error(formatter(report.results));
     }
   } catch (error) {
-    throw new Error(error);
+    throw error;
   }
 }
 
