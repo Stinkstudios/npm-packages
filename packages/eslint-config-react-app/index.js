@@ -1,6 +1,6 @@
 'use strict';
 
-var restrictedGlobals = require('confusing-browser-globals');
+const restrictedGlobals = require('confusing-browser-globals');
 
 module.exports = {
   root: true,
@@ -36,6 +36,39 @@ module.exports = {
     sourceType: 'module',
     ecmaFeatures: {
       jsx: true,
+    },
+  },
+
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
+
+  overrides: {
+    files: ['**/*.ts', '**/*.tsx'],
+    parser: '@typescript-eslint/parser',
+    parserOptions: {
+      ecmaVersion: 2018,
+      sourceType: 'module',
+      ecmaFeatures: {
+        jsx: true,
+      },
+
+      warnOnUnsupportedTypeScriptVersion: true,
+    },
+    plugins: ['@typescript-eslint'],
+    extends: [
+      'plugin:@typescript-eslint/recommended',
+      'prettier',
+      'prettier/@typescript-eslint',
+    ],
+    settings: {
+      'import/resolver': {
+        node: {
+          extensions: ['.ts', '.tsx'],
+        },
+      },
     },
   },
 

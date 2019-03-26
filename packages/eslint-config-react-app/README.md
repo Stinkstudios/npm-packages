@@ -2,6 +2,8 @@
 
 [![NPM version][npm-img]][npm-url] [![Downloads][downloads-img]][npm-url] [![Build Status][travis-img]][travis-url] [![Known Vulnerabilities][snyk-img]][snyk-url] [![MIT license][mit-img]][mit-url]
 
+Supports linting of Javascript `.js` / React JavaScript `.jsx` / TypeScript `.ts` / TypeScript React `.tsx`
+
 ## Extends
 
 - [`eslint:recommended`]
@@ -15,6 +17,8 @@
 - [`plugin:compat/recommended`]
 - [`prettier`]
 - [`prettier/react`]
+- [`plugin:@typescript-eslint/recommended`]
+- [`prettier/@typescript-eslint`]
 
 ## Plugins
 
@@ -24,11 +28,12 @@
 - [`eslint-plugin-react`]
 - [`eslint-plugin-jest`]
 - [`eslint-plugin-unicorn`]
+- [`@typescript-eslint/eslint-plugin`]
 
 ## Installation
 
 ```bash
-$ yarn add @stinkstudios/eslint-config-react-app babel-eslint@^10.0.1 eslint@^5.15.3 eslint-config-prettier@^4.1.0 eslint-plugin-compat@^3.0.1 eslint-plugin-import@^2.16.0  eslint-plugin-jest@^22.4.1 eslint-plugin-jsx-a11y@^6.2.1 eslint-plugin-react@^7.12.4 eslint-plugin-unicorn@^6.0.1
+$ yarn add @stinkstudios/eslint-config-react-app babel-eslint@10.x eslint@5.x eslint-config-prettier@4.x eslint-plugin-compat@3.x eslint-plugin-import@2.x eslint-plugin-jest@22.x eslint-plugin-jsx-a11y@6.x eslint-plugin-react@7.x eslint-plugin-unicorn@6.x @typescript-eslint/eslint-plugin@1.x @typescript-eslint/parser@1.x -E -D
 ```
 
 ## Usage
@@ -50,15 +55,36 @@ To have Visual Studio Code format and autofix your `.js` files use the below ext
 - [eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 - [prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 
+```
+ext install esbenp.prettier-vscode dbaeumer.vscode-eslint
+```
+
 ### Settings
 
 ```json
 {
+  "eslint.enable": true,
+  "eslint.autoFixOnSave": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    { "language": "typescript", "autoFix": true },
+    { "language": "typescriptreact", "autoFix": true }
+  ],
+
   "editor.formatOnSave": false,
   "[javascript]": {
     "editor.formatOnSave": true
   },
-  "eslint.autoFixOnSave": true,
+  "[javascriptreact]": {
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.formatOnSave": true
+  },
+  "[typescriptreact]": {
+    "editor.formatOnSave": true
+  },
   "prettier.eslintIntegration": true
 }
 ```
@@ -94,3 +120,6 @@ To have Visual Studio Code format and autofix your `.js` files use the below ext
 [`eslint-plugin-jest`]: https://github.com/jest-community/eslint-plugin-jest/tree/v22.2.2#readme
 [`plugin:jest/recommended`]: https://github.com/jest-community/eslint-plugin-jest/blob/v22.2.2/index.js#L36
 [`plugin:jest/style`]: https://github.com/jest-community/eslint-plugin-jest/blob/v22.2.2/index.js#L54
+[`plugin:@typescript-eslint/recommended`]: https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/src/configs/recommended.json
+[`prettier/@typescript-eslint`]: https://github.com/prettier/eslint-config-prettier/blob/master/%40typescript-eslint.js
+[`@typescript-eslint/eslint-plugin`]: https://github.com/typescript-eslint/typescript-eslint

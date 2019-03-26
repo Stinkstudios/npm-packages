@@ -41,7 +41,7 @@ async function lintJs() {
     const cli = new CLIEngine({
       cache: useCache,
       fix: useFix,
-      extensions: ['.js', '.jsx'],
+      extensions: ['.js', '.jsx', '.ts', '.tsx'],
     });
     const report = await cli.executeOnFiles([`${paths.appSrc}/`]);
     console.log('errorCount ', report.errorCount);
