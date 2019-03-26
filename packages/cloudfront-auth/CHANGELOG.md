@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/cf-auth@1.0.7...@stinkstudios/cf-auth@1.1.0) (2019-03-26)
+
+
+### Features
+
+* **deps:** Update dependency @types/node to v10.14.4 ([d23abf5](https://github.com/Stinkstudios/npm-packages/commit/d23abf5))
+
+
+
+
+
 ## [1.0.7](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/cf-auth@1.0.6...@stinkstudios/cf-auth@1.0.7) (2019-03-25)
 
 

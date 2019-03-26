@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/eslint-config-react-app@1.2.2...@stinkstudios/eslint-config-react-app@1.3.0) (2019-03-26)
+
+
+### Features
+
+* **deps:** Update dependency eslint-plugin-compat to ^3.1.0 ([e6e9126](https://github.com/Stinkstudios/npm-packages/commit/e6e9126))
+* ESLint TypeScript support ([#273](https://github.com/Stinkstudios/npm-packages/issues/273)) ([aecb5fe](https://github.com/Stinkstudios/npm-packages/commit/aecb5fe))
+
+
+
+
+
 ## [1.2.2](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/eslint-config-react-app@1.2.1...@stinkstudios/eslint-config-react-app@1.2.2) (2019-03-25)
 
 

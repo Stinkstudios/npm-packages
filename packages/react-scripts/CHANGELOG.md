@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.6.0](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/react-scripts@2.5.3...@stinkstudios/react-scripts@2.6.0) (2019-03-26)
+
+
+### Features
+
+* **deps:** Update dependency eslint-plugin-compat to ^3.1.0 ([e6e9126](https://github.com/Stinkstudios/npm-packages/commit/e6e9126))
+* ESLint TypeScript support ([#273](https://github.com/Stinkstudios/npm-packages/issues/273)) ([aecb5fe](https://github.com/Stinkstudios/npm-packages/commit/aecb5fe))
+* typescript vscode config ([8283061](https://github.com/Stinkstudios/npm-packages/commit/8283061))
+* vscode settings ([e513770](https://github.com/Stinkstudios/npm-packages/commit/e513770))
+
+
+
+
+
 ## [2.5.3](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/react-scripts@2.5.2...@stinkstudios/react-scripts@2.5.3) (2019-03-25)
 
 
