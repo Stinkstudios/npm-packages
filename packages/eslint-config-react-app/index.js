@@ -74,7 +74,7 @@ module.exports = {
         camelcase: 'off',
         '@typescript-eslint/camelcase': 'error',
         '@typescript-eslint/class-name-casing': 'error',
-        '@typescript-eslint/explicit-function-return-type': 'warn',
+        '@typescript-eslint/explicit-function-return-type': 'off',
         '@typescript-eslint/explicit-member-accessibility': 'off',
         indent: 'off',
         // '@typescript-eslint/indent': 'error',
