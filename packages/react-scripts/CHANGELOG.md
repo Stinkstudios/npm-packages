@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.6.1](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/react-scripts@2.6.0...@stinkstudios/react-scripts@2.6.1) (2019-03-27)
+
+
+### Bug Fixes
+
+* use kebabCase and change rule in files ([bd85a1d](https://github.com/Stinkstudios/npm-packages/commit/bd85a1d))
+
+
+### Features
+
+* **deps:** Update dependency graphql to ^14.2.0 ([ed5422e](https://github.com/Stinkstudios/npm-packages/commit/ed5422e))
+
+
+
+
+
 # [2.6.0](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/react-scripts@2.5.3...@stinkstudios/react-scripts@2.6.0) (2019-03-26)
 
 

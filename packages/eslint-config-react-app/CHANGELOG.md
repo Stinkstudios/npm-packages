@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.1](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/eslint-config-react-app@1.3.0...@stinkstudios/eslint-config-react-app@1.3.1) (2019-03-27)
+
+
+### Bug Fixes
+
+* disable rule @typescript-eslint/explicit-member-accessibility ([fe2ba06](https://github.com/Stinkstudios/npm-packages/commit/fe2ba06))
+* use kebabCase and change rule in files ([bd85a1d](https://github.com/Stinkstudios/npm-packages/commit/bd85a1d))
+
+
+
+
+
 # [1.3.0](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/eslint-config-react-app@1.2.2...@stinkstudios/eslint-config-react-app@1.3.0) (2019-03-26)
 
 
