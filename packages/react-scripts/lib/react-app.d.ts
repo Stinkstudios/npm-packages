@@ -1,7 +1,7 @@
 /// <reference types="node" />
 /// <reference types="react" />
 /// <reference types="react-dom" />
-
+/* eslint-disable  */
 declare namespace NodeJS {
   interface ProcessEnv {
     NODE_ENV: 'development' | 'production' | 'test';
