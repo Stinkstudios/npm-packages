@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.6.2](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/react-scripts@2.6.1...@stinkstudios/react-scripts@2.6.2) (2019-03-27)
+
+**Note:** Version bump only for package @stinkstudios/react-scripts
+
+
+
+
+
 ## [2.6.1](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/react-scripts@2.6.0...@stinkstudios/react-scripts@2.6.1) (2019-03-27)
 
 

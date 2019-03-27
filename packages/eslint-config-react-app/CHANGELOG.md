@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.2](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/eslint-config-react-app@1.3.1...@stinkstudios/eslint-config-react-app@1.3.2) (2019-03-27)
+
+
+### Bug Fixes
+
+* turn off @typescript-eslint/explicit-function-return-type ([0512baf](https://github.com/Stinkstudios/npm-packages/commit/0512baf))
+
+
+### Features
+
+* @typescript-eslint/parser reference tsconfig ([06d9700](https://github.com/Stinkstudios/npm-packages/commit/06d9700))
+
+
+
+
+
 ## [1.3.1](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/eslint-config-react-app@1.3.0...@stinkstudios/eslint-config-react-app@1.3.1) (2019-03-27)
 
 
