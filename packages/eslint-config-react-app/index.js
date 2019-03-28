@@ -131,6 +131,8 @@ module.exports = {
     // https://github.com/sindresorhus/eslint-plugin-unicorn
     'unicorn/filename-case': ['error', { case: 'kebabCase' }],
     'unicorn/no-abusive-eslint-disable': 0,
+    'unicorn/prefer-query-selector': 0,
+    'unicorn/no-console-spaces': 0,
 
     'react/no-unused-prop-types': [
       'error',
