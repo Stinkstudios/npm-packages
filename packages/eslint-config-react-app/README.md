@@ -33,7 +33,7 @@ Supports linting of Javascript `.js` / React JavaScript `.jsx` / TypeScript `.ts
 ## Installation
 
 ```bash
-$ yarn add @stinkstudios/eslint-config-react-app babel-eslint@10.x eslint@5.x eslint-config-prettier@4.x eslint-plugin-compat@3.x eslint-plugin-import@2.x eslint-plugin-jest@22.x eslint-plugin-jsx-a11y@6.x eslint-plugin-react@7.x eslint-plugin-unicorn@6.x @typescript-eslint/eslint-plugin@1.x @typescript-eslint/parser@1.x -E -D
+$ yarn add @stinkstudios/eslint-config-react-app babel-eslint@10.x eslint@5.x eslint-config-prettier@4.x eslint-plugin-compat@3.x eslint-plugin-import@2.x eslint-plugin-jest@22.x eslint-plugin-jsx-a11y@6.x eslint-plugin-react@7.x eslint-plugin-unicorn@8.x @typescript-eslint/eslint-plugin@1.x @typescript-eslint/parser@1.x -E -D
 ```
 
 ## Usage
