@@ -1,5 +1,4 @@
 {
-  "assignees": ["andykenward"],
   "baseBranch": ["master"],
   "commitMessagePrefix": "feat(deps):",
   "extends": ["config:base"],
