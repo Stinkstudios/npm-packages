@@ -44,7 +44,7 @@
     "@typescript-eslint/parser": "1.x",
     "babel-eslint": "10.0.1",
     "babel-jest": "24.8.0",
-    "babel-loader": "8.0.5",
+    "babel-loader": "8.0.6",
     "babel-preset-react-app": "^7.0.2",
     "case-sensitive-paths-webpack-plugin": "2.2.0",
     "css-loader": "2.1.1",
