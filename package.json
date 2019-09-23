@@ -20,8 +20,8 @@
     "packages/*"
   ],
   "devDependencies": {
-    "@commitlint/cli": "7.6.1",
-    "@commitlint/config-conventional": "7.6.0",
+    "@commitlint/cli": "8.2.0",
+    "@commitlint/config-conventional": "8.2.0",
     "codecov": "3.5.0",
     "create-react-app": "3.1.2",
     "eslint": "5.16.0",
