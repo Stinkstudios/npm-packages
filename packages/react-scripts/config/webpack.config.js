@@ -419,8 +419,9 @@ module.exports = function(webpackEnv) {
               use: getStyleLoaders({
                 importLoaders: 1,
                 sourceMap: isEnvProduction && shouldUseSourceMap,
-                modules: true,
-                getLocalIdent: getCSSModuleLocalIdent,
+                modules: {
+                  getLocalIdent: getCSSModuleLocalIdent,
+                },
                 camelCase: true,
               }),
             },
@@ -451,8 +452,9 @@ module.exports = function(webpackEnv) {
                 {
                   importLoaders: 2,
                   sourceMap: isEnvProduction && shouldUseSourceMap,
-                  modules: true,
-                  getLocalIdent: getCSSModuleLocalIdent,
+                  modules: {
+                    getLocalIdent: getCSSModuleLocalIdent,
+                  },
                 },
                 'sass-loader'
               ),
