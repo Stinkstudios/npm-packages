@@ -57,7 +57,7 @@ describe('flags warnings with invalid css', () => {
   it('correct warning text', () =>
     result.then(data =>
       expect(data.results[0].warnings[0].text).toBe(
-        '\n\t  Expected "display" to come before "top" (order/properties-order)'
+        'Expected "display" to come before "top" (order/properties-order)'
       )
     ));
 
