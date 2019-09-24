@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/eslint-config-react-app@1.3.2...@stinkstudios/eslint-config-react-app@1.4.0) (2019-09-24)
+
+
+### Bug Fixes
+
+* disable some new eslint unicorn rules ([540ef1b](https://github.com/Stinkstudios/npm-packages/commit/540ef1b))
+
+
+### Features
+
+* **deps:** Update dependency confusing-browser-globals to v1.0.7 ([97db1b2](https://github.com/Stinkstudios/npm-packages/commit/97db1b2))
+* **deps:** Update dependency confusing-browser-globals to v1.0.8 ([263250e](https://github.com/Stinkstudios/npm-packages/commit/263250e))
+* **deps:** Update dependency confusing-browser-globals to v1.0.9 ([d706568](https://github.com/Stinkstudios/npm-packages/commit/d706568))
+* **deps:** Update dependency eslint to v6 ([#378](https://github.com/Stinkstudios/npm-packages/issues/378)) ([2f37b99](https://github.com/Stinkstudios/npm-packages/commit/2f37b99))
+* **deps:** Update dependency eslint-config-prettier to v6 ([#379](https://github.com/Stinkstudios/npm-packages/issues/379)) ([d154a3f](https://github.com/Stinkstudios/npm-packages/commit/d154a3f))
+* **deps:** Update dependency eslint-plugin-unicorn to v11 ([#414](https://github.com/Stinkstudios/npm-packages/issues/414)) ([5bcf96b](https://github.com/Stinkstudios/npm-packages/commit/5bcf96b))
+* **deps:** Update dependency eslint-plugin-unicorn to v8 ([6164df2](https://github.com/Stinkstudios/npm-packages/commit/6164df2))
+
+
+
+
+
 ## [1.3.2](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/eslint-config-react-app@1.3.1...@stinkstudios/eslint-config-react-app@1.3.2) (2019-03-27)
 
 

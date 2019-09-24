@@ -3,6 +3,55 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/cf-auth@1.1.0...@stinkstudios/cf-auth@1.2.0) (2019-09-24)
+
+
+### Features
+
+* **deps:** Update dependency @types/jest to v24.0.12 ([869c87a](https://github.com/Stinkstudios/npm-packages/commit/869c87a))
+* **deps:** Update dependency @types/jest to v24.0.13 ([e200894](https://github.com/Stinkstudios/npm-packages/commit/e200894))
+* **deps:** Update dependency @types/jest to v24.0.14 ([065b8f0](https://github.com/Stinkstudios/npm-packages/commit/065b8f0))
+* **deps:** Update dependency @types/jest to v24.0.15 ([c2ee741](https://github.com/Stinkstudios/npm-packages/commit/c2ee741))
+* **deps:** Update dependency @types/jest to v24.0.18 ([4270857](https://github.com/Stinkstudios/npm-packages/commit/4270857))
+* **deps:** Update dependency @types/node to v10.14.10 ([53de537](https://github.com/Stinkstudios/npm-packages/commit/53de537))
+* **deps:** Update dependency @types/node to v10.14.13 ([ce4946d](https://github.com/Stinkstudios/npm-packages/commit/ce4946d))
+* **deps:** Update dependency @types/node to v10.14.18 ([f4e6b33](https://github.com/Stinkstudios/npm-packages/commit/f4e6b33))
+* **deps:** Update dependency @types/node to v10.14.5 ([2e8b57f](https://github.com/Stinkstudios/npm-packages/commit/2e8b57f))
+* **deps:** Update dependency @types/node to v10.14.6 ([1e5a263](https://github.com/Stinkstudios/npm-packages/commit/1e5a263))
+* **deps:** Update dependency @types/node to v10.14.7 ([917ec8e](https://github.com/Stinkstudios/npm-packages/commit/917ec8e))
+* **deps:** Update dependency @types/node to v10.14.8 ([073f19e](https://github.com/Stinkstudios/npm-packages/commit/073f19e))
+* **deps:** Update dependency @types/node to v10.14.9 ([41b7d9c](https://github.com/Stinkstudios/npm-packages/commit/41b7d9c))
+* **deps:** Update dependency prettier to v1.17.0 ([0a6ed13](https://github.com/Stinkstudios/npm-packages/commit/0a6ed13))
+* **deps:** Update dependency prettier to v1.17.1 ([57de07f](https://github.com/Stinkstudios/npm-packages/commit/57de07f))
+* **deps:** Update dependency prettier to v1.18.0 ([9657aa5](https://github.com/Stinkstudios/npm-packages/commit/9657aa5))
+* **deps:** Update dependency prettier to v1.18.2 ([6703fbf](https://github.com/Stinkstudios/npm-packages/commit/6703fbf))
+* **deps:** Update dependency ts-jest to v24.0.1 ([20119db](https://github.com/Stinkstudios/npm-packages/commit/20119db))
+* **deps:** Update dependency ts-jest to v24.0.2 ([a2fc4bb](https://github.com/Stinkstudios/npm-packages/commit/a2fc4bb))
+* **deps:** Update dependency ts-jest to v24.1.0 ([47bc19a](https://github.com/Stinkstudios/npm-packages/commit/47bc19a))
+* **deps:** Update dependency ts-node to v8 ([#149](https://github.com/Stinkstudios/npm-packages/issues/149)) ([9a360c9](https://github.com/Stinkstudios/npm-packages/commit/9a360c9))
+* **deps:** Update dependency tslint to v5.15.0 ([df0dd60](https://github.com/Stinkstudios/npm-packages/commit/df0dd60))
+* **deps:** Update dependency tslint to v5.16.0 ([c2d8074](https://github.com/Stinkstudios/npm-packages/commit/c2d8074))
+* **deps:** Update dependency tslint to v5.17.0 ([fb378dc](https://github.com/Stinkstudios/npm-packages/commit/fb378dc))
+* **deps:** Update dependency tslint to v5.18.0 ([e3ac4db](https://github.com/Stinkstudios/npm-packages/commit/e3ac4db))
+* **deps:** Update dependency tslint to v5.20.0 ([29e8773](https://github.com/Stinkstudios/npm-packages/commit/29e8773))
+* **deps:** Update dependency typescript to v3.4.1 ([67d4495](https://github.com/Stinkstudios/npm-packages/commit/67d4495))
+* **deps:** Update dependency typescript to v3.4.2 ([95c8910](https://github.com/Stinkstudios/npm-packages/commit/95c8910))
+* **deps:** Update dependency typescript to v3.4.3 ([b5e5a5c](https://github.com/Stinkstudios/npm-packages/commit/b5e5a5c))
+* **deps:** Update dependency typescript to v3.4.4 ([0c6fd78](https://github.com/Stinkstudios/npm-packages/commit/0c6fd78))
+* **deps:** Update dependency typescript to v3.4.5 ([52bdc6b](https://github.com/Stinkstudios/npm-packages/commit/52bdc6b))
+* **deps:** Update dependency typescript to v3.5.1 ([9d7e8c4](https://github.com/Stinkstudios/npm-packages/commit/9d7e8c4))
+* **deps:** Update dependency typescript to v3.5.2 ([c7a142d](https://github.com/Stinkstudios/npm-packages/commit/c7a142d))
+* **deps:** Update dependency typescript to v3.5.3 ([ab35936](https://github.com/Stinkstudios/npm-packages/commit/ab35936))
+* **deps:** Update dependency typescript to v3.6.3 ([66c82c2](https://github.com/Stinkstudios/npm-packages/commit/66c82c2))
+* **deps:** Update jest monorepo to v24.6.0 ([aab1718](https://github.com/Stinkstudios/npm-packages/commit/aab1718))
+* **deps:** Update jest monorepo to v24.7.1 ([ddafe03](https://github.com/Stinkstudios/npm-packages/commit/ddafe03))
+* **deps:** Update jest monorepo to v24.8.0 ([0e25117](https://github.com/Stinkstudios/npm-packages/commit/0e25117))
+* **deps:** Update jest monorepo to v24.9.0 ([7115499](https://github.com/Stinkstudios/npm-packages/commit/7115499))
+
+
+
+
+
 # [1.1.0](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/cf-auth@1.0.7...@stinkstudios/cf-auth@1.1.0) (2019-03-26)
 
 
