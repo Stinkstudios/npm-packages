@@ -31,7 +31,7 @@
     "eslint-config-prettier": "6.x",
     "eslint-plugin-compat": "3.x",
     "eslint-plugin-import": "2.x",
-    "eslint-plugin-jest": "22.x",
+    "eslint-plugin-jest": "23.x",
     "eslint-plugin-jsx-a11y": "6.x",
     "eslint-plugin-react": "7.x",
     "eslint-plugin-unicorn": "11.x"
