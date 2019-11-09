@@ -95,7 +95,7 @@
     "react-dom": "^16.11.0"
   },
   "optionalDependencies": {
-    "fsevents": "2.1.1"
+    "fsevents": "2.1.2"
   },
   "browserslist": [
     ">0.2%",
