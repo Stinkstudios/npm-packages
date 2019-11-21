@@ -59,7 +59,7 @@
     "eslint-plugin-jsx-a11y": "6.x",
     "eslint-plugin-react": "7.x",
     "eslint-plugin-unicorn": "11.x",
-    "file-loader": "4.2.0",
+    "file-loader": "4.3.0",
     "fs-extra": "8.1.0",
     "graphql": "^14.5.8",
     "graphql-tag": "2.10.1",
