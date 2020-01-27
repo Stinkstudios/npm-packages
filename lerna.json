@@ -8,7 +8,11 @@
       "license": "MIT"
     },
     "run": {
-      "ignore": ["@stinkstudios/detector", "@stinkstudios/component-video"]
+      "ignore": [
+        "@stinkstudios/detector",
+        "@stinkstudios/component-video",
+        "@stinkstudios/react-scripts"
+      ]
     },
     "publish": {
       "allowBranch": "master",
@@ -18,6 +22,7 @@
       "ignoreChanges": [
         "packages/component-video/*",
         "packages/detector/*",
+        "packages/react-scripts/*",
         "*.md"
       ]
     }

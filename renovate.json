@@ -12,7 +12,11 @@
   "travis": {
     "enabled": true
   },
-  "ignorePaths": ["packages/component-video", "packages/detector"],
+  "ignorePaths": [
+    "packages/component-video",
+    "packages/detector",
+    "packages/react-scripts"
+  ],
   "automerge": true,
   "major": {
     "automerge": false
