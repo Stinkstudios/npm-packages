@@ -1,7 +1,8 @@
-dist: trusty
+dist: xenial
 language: node_js
 node_js:
-  - '8'
+  - node # current stable
+  - lts/* # most recent LTS version
   - '10'
 
 before_install:
@@ -26,7 +27,6 @@ script:
   - yarn build
 
 after_script: yarn coverage:upload
-
 # stages:
 #   - lint
 #   - test
