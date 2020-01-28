@@ -26,7 +26,6 @@ This repository is a [monorepo] managed using [Lerna]. This means there are [mul
 
 - [@stinkstudios/cf-auth]
 - [@stinkstudios/eslint-config-react-app]
-- [@stinkstudios/react-scripts]
 - [@stinkstudios/stylelint-config-react-app]
 
 ## Deprecated
@@ -35,6 +34,7 @@ Deprecated npm packages used internally by Stink Studios and no longer maintaine
 
 - [@stinkstudios/component-video]
 - [@stinkstudios/detector]
+- [@stinkstudios/react-scripts]
 
 ## Contributing
 
