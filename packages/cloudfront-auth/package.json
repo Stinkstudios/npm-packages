@@ -39,6 +39,7 @@
   "devDependencies": {
     "@types/jest": "24.0.22",
     "@types/node": "10.17.4",
+    "@types/vfile-message": "2.0.0",
     "jest": "24.9.0",
     "jest-environment-node-debug": "2.0.0",
     "prettier": "1.18.2",
@@ -49,7 +50,7 @@
     "typescript": "3.7.2"
   },
   "engines": {
-    "node": ">=8.0.0"
+    "node": ">=10.13.0"
   },
   "publishConfig": {
     "access": "public"
