@@ -3,6 +3,46 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.8.0](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/react-scripts@2.7.0...@stinkstudios/react-scripts@2.8.0) (2020-01-28)
+
+
+### Features
+
+* **deps:** Update dependency @babel/core to v7.6.3 ([9ab1baa](https://github.com/Stinkstudios/npm-packages/commit/9ab1baa2ce9c4b8076e8e75621847d4d14df9ba2))
+* **deps:** Update dependency @babel/core to v7.6.4 ([5b63f4d](https://github.com/Stinkstudios/npm-packages/commit/5b63f4dde6c0b592820ac37b56ea5de2ee0cb1f5))
+* **deps:** Update dependency @babel/core to v7.7.0 ([8395c46](https://github.com/Stinkstudios/npm-packages/commit/8395c468810ace8b624712b9efae1c0d8e42aa1d))
+* **deps:** Update dependency @babel/core to v7.7.2 ([7719cf1](https://github.com/Stinkstudios/npm-packages/commit/7719cf16f4e999d5e26f3291a8708830aa507fe2))
+* **deps:** Update dependency dotenv to v8.2.0 ([ae9fb02](https://github.com/Stinkstudios/npm-packages/commit/ae9fb023c0794571a0431e364e74bc37ed98ab15))
+* **deps:** Update dependency eslint to v6.5.0 ([a6b7755](https://github.com/Stinkstudios/npm-packages/commit/a6b7755d26cf217ecbb70d76b9aab5b8744b4f75))
+* **deps:** Update dependency eslint to v6.5.1 ([2a8aebc](https://github.com/Stinkstudios/npm-packages/commit/2a8aebc65d7c529165e42ecc46d40af589bc7eda))
+* **deps:** Update dependency eslint to v6.6.0 ([b15400e](https://github.com/Stinkstudios/npm-packages/commit/b15400ec68cca1321a9269da02ef8619415b11a3))
+* **deps:** Update dependency eslint-loader to v3.0.1 ([58a390b](https://github.com/Stinkstudios/npm-packages/commit/58a390b82030a3831fc3a8af1ebfb87891ec3cd9))
+* **deps:** Update dependency eslint-loader to v3.0.2 ([fce3f6f](https://github.com/Stinkstudios/npm-packages/commit/fce3f6f8bf4df017b47cd53c5025599159f364d5))
+* **deps:** Update dependency fsevents to v2.1.0 ([6dbca01](https://github.com/Stinkstudios/npm-packages/commit/6dbca01d9c3e19ca0dd359083c4ba2e9a5c59866))
+* **deps:** Update dependency fsevents to v2.1.1 ([0e1a99c](https://github.com/Stinkstudios/npm-packages/commit/0e1a99c610abd400feff8aaf7b991b057e0a49e5))
+* **deps:** Update dependency graphql to ^14.5.8 ([40e79b2](https://github.com/Stinkstudios/npm-packages/commit/40e79b22a0d22717a88fef5d06fff3f4bdcb292b))
+* **deps:** Update dependency react-app-polyfill to ^1.0.4 ([5660681](https://github.com/Stinkstudios/npm-packages/commit/5660681d60aae68e54cc488207ee583b82c3500a))
+* **deps:** Update dependency react-dev-utils to ^9.1.0 ([c897aa2](https://github.com/Stinkstudios/npm-packages/commit/c897aa2ab032590bb34d41884e943d7724096eda))
+* **deps:** Update dependency stylelint-formatter-pretty to v1.1.3 ([bf38c81](https://github.com/Stinkstudios/npm-packages/commit/bf38c818136415fc8b16a1339b04eafc353d30d3))
+* **deps:** Update dependency url-loader to v2.2.0 ([8b27095](https://github.com/Stinkstudios/npm-packages/commit/8b27095edf18a6bfa71725657ced3b42fe566caa))
+* **deps:** Update dependency webpack to v4.41.0 ([7b14310](https://github.com/Stinkstudios/npm-packages/commit/7b14310fe8594b51147c1cf90c6b14d7f39dca15))
+* **deps:** Update dependency webpack to v4.41.2 ([dd481a4](https://github.com/Stinkstudios/npm-packages/commit/dd481a4f6fecda7e3546c3ec5f472a2443de5ad5))
+* retire react-scripts package ([#502](https://github.com/Stinkstudios/npm-packages/issues/502)) ([e16dde8](https://github.com/Stinkstudios/npm-packages/commit/e16dde8b806eee7602bfa83f3498c8b4573e23ff))
+* **deps:** Update dependency webpack to v4.41.1 ([24d7847](https://github.com/Stinkstudios/npm-packages/commit/24d784786ba056e2e7168adaa7c1d47e28526df6))
+* **deps:** Update dependency webpack-dev-server to v3.8.2 ([e4aeec3](https://github.com/Stinkstudios/npm-packages/commit/e4aeec3338f5638951b97ee991c1ab99ee2084ce))
+* **deps:** Update dependency webpack-dev-server to v3.9.0 ([1d4c85e](https://github.com/Stinkstudios/npm-packages/commit/1d4c85e03c51bcc0317823d84cad212b5e133e7a))
+* **deps:** Update dependency webpack-manifest-plugin to v2.1.1 ([c4f3628](https://github.com/Stinkstudios/npm-packages/commit/c4f36286d96e22561b08414403ab547987751f85))
+* **deps:** Update dependency webpack-manifest-plugin to v2.1.2 ([913b546](https://github.com/Stinkstudios/npm-packages/commit/913b5466cb65233854f18c021e3e795e943cfbc6))
+* **deps:** Update dependency webpack-manifest-plugin to v2.2.0 ([dccf8d7](https://github.com/Stinkstudios/npm-packages/commit/dccf8d73f278517100577957da7bbae8d38f9fc8))
+* **deps:** Update react monorepo to ^16.10.0 ([2711ae9](https://github.com/Stinkstudios/npm-packages/commit/2711ae92f1da0a409b97b05e9609e36276d8bade))
+* **deps:** Update react monorepo to ^16.10.1 ([eb0c2d3](https://github.com/Stinkstudios/npm-packages/commit/eb0c2d3c09171d3a7a74ef3e2eacd1f1e09d0a36))
+* **deps:** Update react monorepo to ^16.10.2 ([39a0227](https://github.com/Stinkstudios/npm-packages/commit/39a02272a12c456cc97ad148b38d9d1c38822769))
+* **deps:** Update react monorepo to ^16.11.0 ([5284a65](https://github.com/Stinkstudios/npm-packages/commit/5284a657dd19408f72cea345a2f08275294bc01c))
+
+
+
+
+
 # [2.7.0](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/react-scripts@2.6.2...@stinkstudios/react-scripts@2.7.0) (2019-09-24)
 
 
