@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/eslint-config-react-app@1.4.0...@stinkstudios/eslint-config-react-app@1.5.0) (2020-01-29)
+
+
+### Features
+
+* **deps:** Update dependency eslint-plugin-jest to v23 ([#474](https://github.com/Stinkstudios/npm-packages/issues/474)) ([64c1cba](https://github.com/Stinkstudios/npm-packages/commit/64c1cba9f33cb2ee4b54a2839e8167afc1714ba2))
+* **deps:** Update dependency eslint-plugin-unicorn to v15 ([#509](https://github.com/Stinkstudios/npm-packages/issues/509)) ([a972c4f](https://github.com/Stinkstudios/npm-packages/commit/a972c4f4e17fea4b9e387d3f278cdb164e44cdcf))
+* **deps:** Update typescript-eslint monorepo to v2 ([#430](https://github.com/Stinkstudios/npm-packages/issues/430)) ([ef2c71a](https://github.com/Stinkstudios/npm-packages/commit/ef2c71aa13a296e40cbb63d896d00572605d1ade))
+
+
+
+
+
 # [1.4.0](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/eslint-config-react-app@1.3.2...@stinkstudios/eslint-config-react-app@1.4.0) (2019-09-24)
 
 

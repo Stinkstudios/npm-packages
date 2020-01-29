@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/cf-auth@1.3.0...@stinkstudios/cf-auth@1.4.0) (2020-01-29)
+
+
+### Features
+
+* **deps:** Update dependency @types/jest to v24.9.1 ([ab10cfc](https://github.com/Stinkstudios/npm-packages/commit/ab10cfc4280e324c28174cbef60e11c13828b191))
+* **deps:** Update dependency @types/jest to v25 ([#508](https://github.com/Stinkstudios/npm-packages/issues/508)) ([4acd07e](https://github.com/Stinkstudios/npm-packages/commit/4acd07ecd9193700704dd9be1948c2f5ea30e023))
+* **deps:** Update dependency @types/node to v10.17.14 ([4eec012](https://github.com/Stinkstudios/npm-packages/commit/4eec0122fc1cc400ea7ac0bacc4a5c53f5eb298d))
+* **deps:** Update dependency jest to v25 ([#511](https://github.com/Stinkstudios/npm-packages/issues/511)) ([ba45bd5](https://github.com/Stinkstudios/npm-packages/commit/ba45bd5b4019f31942aaffcc8a8e2b0c05f3da96))
+* **deps:** Update dependency prettier to v1.19.1 ([83a8301](https://github.com/Stinkstudios/npm-packages/commit/83a83013467e1aace74c522eb59584543560a5ae))
+* **deps:** Update dependency ts-jest to v24.3.0 ([a686d82](https://github.com/Stinkstudios/npm-packages/commit/a686d82d094687761334c72bfe7cb799032451a4))
+* **deps:** Update dependency ts-jest to v25 ([#515](https://github.com/Stinkstudios/npm-packages/issues/515)) ([1e51acf](https://github.com/Stinkstudios/npm-packages/commit/1e51acfa5653b0eefcf1ffbb91b5076a1c10b251))
+* **deps:** Update dependency ts-node to v8.6.2 ([583305b](https://github.com/Stinkstudios/npm-packages/commit/583305b1af92c78243d564ed01d32dbe7bce3337))
+* **deps:** Update dependency typescript to v3.7.5 ([84a1c5c](https://github.com/Stinkstudios/npm-packages/commit/84a1c5c2488770c495342bf58fcdcabd127a130d))
+
+
+
+
+
 # [1.3.0](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/cf-auth@1.2.0...@stinkstudios/cf-auth@1.3.0) (2020-01-28)
 
 

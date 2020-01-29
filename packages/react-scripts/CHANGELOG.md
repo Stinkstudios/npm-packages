@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.9.0](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/react-scripts@2.8.0...@stinkstudios/react-scripts@2.9.0) (2020-01-29)
+
+
+### Features
+
+* **deps:** Update dependency eslint-plugin-jest to v23 ([#474](https://github.com/Stinkstudios/npm-packages/issues/474)) ([64c1cba](https://github.com/Stinkstudios/npm-packages/commit/64c1cba9f33cb2ee4b54a2839e8167afc1714ba2))
+
+
+
+
+
 # [2.8.0](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/react-scripts@2.7.0...@stinkstudios/react-scripts@2.8.0) (2020-01-28)
 
 

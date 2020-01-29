@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/stylelint-config-react-app@1.5.0...@stinkstudios/stylelint-config-react-app@1.6.0) (2020-01-29)
+
+
+### Features
+
+* **deps:** Update dependency eslint to v6.8.0 ([b0ffeb1](https://github.com/Stinkstudios/npm-packages/commit/b0ffeb15f9d763576d14ab408cdcd1e0f050d54a))
+* **deps:** Update dependency jest to v25 ([#511](https://github.com/Stinkstudios/npm-packages/issues/511)) ([ba45bd5](https://github.com/Stinkstudios/npm-packages/commit/ba45bd5b4019f31942aaffcc8a8e2b0c05f3da96))
+* **deps:** Update dependency stylelint to v13 ([#512](https://github.com/Stinkstudios/npm-packages/issues/512)) ([87d94b5](https://github.com/Stinkstudios/npm-packages/commit/87d94b549360065378efce795a18817e425509d8))
+* **deps:** Update dependency stylelint-config-css-modules to v2 ([#479](https://github.com/Stinkstudios/npm-packages/issues/479)) ([8dd29c2](https://github.com/Stinkstudios/npm-packages/commit/8dd29c2e3460b49f0b994cdfa97e75c0a1167777))
+* **deps:** Update dependency stylelint-config-prettier to v8 ([#513](https://github.com/Stinkstudios/npm-packages/issues/513)) ([d003aa0](https://github.com/Stinkstudios/npm-packages/commit/d003aa0120b3ea1a558bcf44b042fd0345fe002e))
+* **deps:** Update dependency stylelint-config-standard to v19 ([#425](https://github.com/Stinkstudios/npm-packages/issues/425)) ([0259ecc](https://github.com/Stinkstudios/npm-packages/commit/0259ecc2c35d855e9b2ba44e9f6cada8dbe14d57))
+* **deps:** Update dependency stylelint-declaration-block-no-ignored-properties to ^2.2.0 ([#498](https://github.com/Stinkstudios/npm-packages/issues/498)) ([e87f8fa](https://github.com/Stinkstudios/npm-packages/commit/e87f8faffab10fa1ebcbc4ce12c98b46dedd9f88))
+* **deps:** Update dependency stylelint-no-unsupported-browser-features to v4 ([#478](https://github.com/Stinkstudios/npm-packages/issues/478)) ([d3efd24](https://github.com/Stinkstudios/npm-packages/commit/d3efd246af951d72111ebd68a8d0437a35c080a7))
+* **deps:** Update dependency stylelint-order to v4 ([#514](https://github.com/Stinkstudios/npm-packages/issues/514)) ([edb1439](https://github.com/Stinkstudios/npm-packages/commit/edb1439e9849dd16075c03c32c47f5302c0b48e3))
+
+
+
+
+
 # [1.5.0](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/stylelint-config-react-app@1.4.0...@stinkstudios/stylelint-config-react-app@1.5.0) (2020-01-28)
 
 
