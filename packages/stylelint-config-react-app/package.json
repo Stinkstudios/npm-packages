@@ -39,7 +39,7 @@
   "devDependencies": {
     "eslint": "6.6.0",
     "eslint-config-stylelint": "11.1.0",
-    "jest": "24.9.0",
+    "jest": "25.1.0",
     "stylelint": "9.10.1"
   },
   "peerDependencies": {
