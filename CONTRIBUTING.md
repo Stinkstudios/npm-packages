@@ -2,7 +2,7 @@
 
 First, ensure you have
 
-- [Yarn] `^1.13.0`
+- [Yarn] `^1.21.1`
 - `node ^10.13.0`
 - `npm ^6.4.1`
 - [`npx`]
