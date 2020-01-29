@@ -4,7 +4,7 @@ First, ensure you have
 
 - [Yarn] `^1.13.0`
 - `node ^10.13.0`
-- `npm ^5.2.0`
+- `npm ^6.4.1`
 - [`npx`]
 
 To get started with the repo:
