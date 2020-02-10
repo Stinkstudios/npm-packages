@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/eslint-config-react-app@1.5.0...@stinkstudios/eslint-config-react-app@1.6.0) (2020-02-10)
+
+
+### Features
+
+* **deps:** Update dependency eslint-plugin-unicorn to v16 ([#523](https://github.com/Stinkstudios/npm-packages/issues/523)) ([63fe013](https://github.com/Stinkstudios/npm-packages/commit/63fe013e6f7b7d653414459857b475f11bb3cbd0))
+
+
+
+
+
 # [1.5.0](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/eslint-config-react-app@1.4.0...@stinkstudios/eslint-config-react-app@1.5.0) (2020-01-29)
 
 

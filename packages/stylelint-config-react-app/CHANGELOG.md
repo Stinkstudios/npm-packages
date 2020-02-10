@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.7.0](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/stylelint-config-react-app@1.6.0...@stinkstudios/stylelint-config-react-app@1.7.0) (2020-02-10)
+
+
+### Features
+
+* **deps:** Update dependency stylelint to v13.1.0 ([05424ef](https://github.com/Stinkstudios/npm-packages/commit/05424ef4b73299862d2c9f151f21cc86de0b6710))
+* **deps:** Update dependency stylelint-config-standard to v20 ([#528](https://github.com/Stinkstudios/npm-packages/issues/528)) ([0ca6731](https://github.com/Stinkstudios/npm-packages/commit/0ca6731d0d18a02409eeba77b6243f9d78c5ec35))
+
+
+
+
+
 # [1.6.0](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/stylelint-config-react-app@1.5.0...@stinkstudios/stylelint-config-react-app@1.6.0) (2020-01-29)
 
 

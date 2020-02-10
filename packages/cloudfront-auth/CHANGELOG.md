@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/cf-auth@1.4.0...@stinkstudios/cf-auth@1.5.0) (2020-02-10)
+
+
+### Features
+
+* **deps:** Update dependency @types/jest to v25.1.1 ([d9fd9de](https://github.com/Stinkstudios/npm-packages/commit/d9fd9deaff407beef70bc38fb99cadcf89b339eb))
+* **deps:** Update dependency @types/jest to v25.1.2 ([eb1529c](https://github.com/Stinkstudios/npm-packages/commit/eb1529c6dd1c4bbf47938b0b1834b22518f89b21))
+* **deps:** Update dependency ts-jest to v25.1.0 ([22fb1df](https://github.com/Stinkstudios/npm-packages/commit/22fb1df0df15f19d66095520289dff6e3b8e5559))
+* **deps:** Update dependency ts-jest to v25.2.0 ([d6eec4d](https://github.com/Stinkstudios/npm-packages/commit/d6eec4de67446932bde7325091d8dc3e12b74c01))
+
+
+
+
+
 # [1.4.0](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/cf-auth@1.3.0...@stinkstudios/cf-auth@1.4.0) (2020-01-29)
 
 
