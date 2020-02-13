@@ -10,6 +10,8 @@ on:
 
 jobs:
   build:
+    name: Lint, Test & Build
+
     runs-on: ubuntu-latest
 
     strategy:
@@ -22,9 +24,10 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: yarn install
-      - run: yarn lint
-      - run: yarn test:ci
-      - run: yarn build
-    env:
-      CI: true
+      - run: |
+          yarn install
+          yarn lint
+          yarn test:ci
+          yarn build
+        env:
+          CI: true
