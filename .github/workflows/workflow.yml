@@ -31,10 +31,10 @@ jobs:
 
       - uses: actions/cache@v1
         with:
-          path: node_modules
-          key: nodeModules-${{ hashFiles('**/yarn.lock') }}
+          path: ${{ steps.yarn-cache.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            nodeModules-
+            ${{ runner.os }}-yarn
 
       - run: yarn install
       - run: yarn lint
