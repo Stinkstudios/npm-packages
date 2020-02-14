@@ -8,9 +8,6 @@
 </h2>
 
 <p align="center">
-  <a href="https://travis-ci.com/Stinkstudios/npm-packages">
-    <img alt="Travis Status" src="https://travis-ci.com/Stinkstudios/npm-packages.svg?branch=master" />
-  </a>
   <a href="https://lernajs.io/">
     <img alt="Lerna" src="https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg" />
   </a>
