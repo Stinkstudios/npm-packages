@@ -6,7 +6,6 @@
 
 # Dependency directories
 node_modules
-*.lock
 package-lock.json
 /.vscode
 

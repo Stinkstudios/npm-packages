@@ -11,7 +11,7 @@ To get started with the repo:
 
 ```
 $ git clone git@github.com:Stinkstudios/npm-packages.git && cd npm-packages
-$ yarn install --no-lockfile
+$ yarn install
 ```
 
 This is a [monorepo] utilising [Lerna] and [Yarn Workspaces]

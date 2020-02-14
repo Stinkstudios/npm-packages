@@ -58,3 +58,22 @@ test('returns true when has valid username and password', () => {
     })
   ).toBe(true);
 });
+
+it('returns false when no authorization header object is provided', () => {
+  const request = generateRequest({
+    headers: {
+      authorization: [],
+    },
+  });
+
+  expect(
+    isAuthenticated(request, {
+      validCredentails: [
+        {
+          password: 'password',
+          username: 'username',
+        },
+      ],
+    })
+  ).toBe(false);
+});

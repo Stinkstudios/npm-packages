@@ -17,7 +17,7 @@ const hasValidAuthorization = (
 ) => {
   const header = request.Records[0].cf.request.headers.authorization;
 
-  if (header) {
+  if (header.length > 0) {
     const base64 = header[0].value.split(' ');
 
     const buf = new Buffer(base64[1], 'base64');
