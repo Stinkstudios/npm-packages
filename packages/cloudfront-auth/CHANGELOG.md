@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.6.0](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/cf-auth@1.5.0...@stinkstudios/cf-auth@1.6.0) (2020-02-14)
+
+
+### Features
+
+* replace travis with GitHub actions and added additional unit test for cf-auth ([#533](https://github.com/Stinkstudios/npm-packages/issues/533)) ([784a820](https://github.com/Stinkstudios/npm-packages/commit/784a820cf110cb2888eaa3569557174e146cd018))
+* **deps:** Update dependency @types/node to v10.17.15 ([0430824](https://github.com/Stinkstudios/npm-packages/commit/043082445abe632b419f2d95cb46f8664e756ccb))
+
+
+
+
+
 # [1.5.0](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/cf-auth@1.4.0...@stinkstudios/cf-auth@1.5.0) (2020-02-10)
 
 

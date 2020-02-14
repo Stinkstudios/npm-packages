@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.8.0](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/stylelint-config-react-app@1.7.0...@stinkstudios/stylelint-config-react-app@1.8.0) (2020-02-14)
+
+
+### Features
+
+* replace travis with GitHub actions and added additional unit test for cf-auth ([#533](https://github.com/Stinkstudios/npm-packages/issues/533)) ([784a820](https://github.com/Stinkstudios/npm-packages/commit/784a820cf110cb2888eaa3569557174e146cd018))
+* **deps:** Update dependency stylelint to v13.2.0 ([7efb209](https://github.com/Stinkstudios/npm-packages/commit/7efb2097ae0030714aa3fab78ef7d60cca636397))
+
+
+
+
+
 # [1.7.0](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/stylelint-config-react-app@1.6.0...@stinkstudios/stylelint-config-react-app@1.7.0) (2020-02-10)
 
 
