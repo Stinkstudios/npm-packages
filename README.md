@@ -3,7 +3,7 @@
     <img alt="stink-studios" src="https://raw.githubusercontent.com/stinkstudios/logo/master/stink-studios-black.png" width="546">
   </a>
 </p>
-<h2 align="center">
+<h2>
   <a href="https://www.npmjs.com/org/stinkstudios" target="_blank" >NPM Packages</a>
 </h2>
 
