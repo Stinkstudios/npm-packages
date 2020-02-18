@@ -1,6 +1,6 @@
 # @stinkstudios/stylelint-config-react-app
 
-[![Main Workflow][workflow-img]][workflow-url] [![NPM version][npm-img]][npm-url] [![Downloads][downloads-img]][npm-url] [![Build Status]![Known Vulnerabilities][snyk-img]][snyk-url]![MIT license][mit-img]][mit-url]
+[![Main Workflow][workflow-img]][workflow-url] [![NPM version][npm-img]][npm-url] [![Downloads][downloads-img]][npm-url] [![Known Vulnerabilities][snyk-img]][snyk-url] [![MIT license][mit-img]][mit-url]
 
 ## Extends
 
