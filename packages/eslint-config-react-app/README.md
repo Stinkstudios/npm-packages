@@ -1,6 +1,6 @@
 # @stinkstudios/eslint-config-react-app
 
-[![NPM version][npm-img]][npm-url] [![Downloads][downloads-img]][npm-url] [![Known Vulnerabilities][snyk-img]][snyk-url] [![MIT license][mit-img]][mit-url]
+[![Main Workflow][workflow-img]][workflow-url] [![NPM version][npm-img]][npm-url] [![Downloads][downloads-img]][npm-url] [![Known Vulnerabilities][snyk-img]][snyk-url] [![MIT license][mit-img]][mit-url]
 
 Supports linting of Javascript `.js` / React JavaScript `.jsx` / TypeScript `.ts` / TypeScript React `.tsx`
 
@@ -100,6 +100,8 @@ ext install esbenp.prettier-vscode dbaeumer.vscode-eslint
 [snyk-url]: https://snyk.io/test/github/Stinkstudios/npm-packages?targetFile=packages%2Feslint-config-react-app%2Fpackage.json
 [mit-img]: http://img.shields.io/badge/license-MIT-brightgreen.svg
 [mit-url]: http://opensource.org/licenses/MIT
+[workflow-img]: https://github.com/stinkstudios/npm-packages/workflows/Main/badge.svg?branch=master
+[workflow-url]: https://github.com/Stinkstudios/npm-packages/actions?query=workflow%3AMain
 [`eslint:recommended`]: https://github.com/eslint/eslint/blob/master/conf/eslint-recommended.js
 [`plugin:import/errors`]: https://github.com/benmosher/eslint-plugin-import/blob/master/config/errors.js
 [`plugin:import/warnings`]: https://github.com/benmosher/eslint-plugin-import/blob/master/config/warnings.js

@@ -1,6 +1,6 @@
 # @stinkstudios/cf-auth
 
-[![NPM version][npm-img]][npm-url] [![Downloads][downloads-img]][npm-url] [![Known Vulnerabilities][snyk-img]][snyk-url] [![MIT license][mit-img]][mit-url]
+[![Main Workflow][workflow-img]][workflow-url] [![NPM version][npm-img]][npm-url] [![Downloads][downloads-img]][npm-url] [![Known Vulnerabilities][snyk-img]][snyk-url] [![MIT license][mit-img]][mit-url]
 
 # CloudFront Authentication Library
 
@@ -80,3 +80,5 @@ You can pass a list of IPs that won't be asked for the authentication.
 [snyk-url]: https://snyk.io/test/github/Stinkstudios/npm-packages?targetFile=packages%2Fcloudfront-auth%2Fpackage.json
 [mit-img]: http://img.shields.io/badge/license-MIT-brightgreen.svg
 [mit-url]: http://opensource.org/licenses/MIT
+[workflow-img]: https://github.com/stinkstudios/npm-packages/workflows/Main/badge.svg?branch=master
+[workflow-url]: https://github.com/Stinkstudios/npm-packages/actions?query=workflow%3AMain
