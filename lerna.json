@@ -15,7 +15,7 @@
       "conventionalCommits": true,
       "gitRemote": "origin",
       "message": "chore(release): publish",
-      "ignoreChanges": ["*.md"]
+      "ignoreChanges": ["depreciated/*", "*.md"]
     }
   },
   "packages": ["packages/*"],
