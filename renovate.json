@@ -10,9 +10,9 @@
   "schedule": ["after 10pm and before 5am on every weekday", "every weekend"],
   "timezone": "Europe/London",
   "ignorePaths": [
-    "packages/component-video",
-    "packages/detector",
-    "packages/react-scripts"
+    "depreciated/component-video",
+    "depreciated/detector",
+    "depreciated/react-scripts"
   ],
   "automerge": true,
   "major": {
