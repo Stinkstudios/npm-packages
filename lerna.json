@@ -8,23 +8,14 @@
       "license": "MIT"
     },
     "run": {
-      "ignore": [
-        "@stinkstudios/detector",
-        "@stinkstudios/component-video",
-        "@stinkstudios/react-scripts"
-      ]
+      "ignore": []
     },
     "publish": {
       "allowBranch": "master",
       "conventionalCommits": true,
       "gitRemote": "origin",
       "message": "chore(release): publish",
-      "ignoreChanges": [
-        "packages/component-video/*",
-        "packages/detector/*",
-        "packages/react-scripts/*",
-        "*.md"
-      ]
+      "ignoreChanges": ["depreciated/*", "*.md"]
     }
   },
   "packages": ["packages/*"],
