@@ -40,10 +40,10 @@
     "eslint": "6.8.0",
     "eslint-config-stylelint": "11.1.0",
     "jest": "25.1.0",
-    "stylelint": "13.2.0"
+    "stylelint": "13.2.1"
   },
   "peerDependencies": {
-    "stylelint": "^13.2.0"
+    "stylelint": "^13.2.1"
   },
   "dependencies": {
     "stylelint-config-css-modules": "^2.2.0",
