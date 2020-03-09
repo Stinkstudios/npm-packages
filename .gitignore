@@ -10,7 +10,7 @@ package-lock.json
 /.vscode
 
 build
-packages/react-scripts/*.tgz
+deprecated/react-scripts/*.tgz
 my-app*
 
 # cache files
