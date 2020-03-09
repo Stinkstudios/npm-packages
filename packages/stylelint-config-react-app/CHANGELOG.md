@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.9.0](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/stylelint-config-react-app@1.8.0...@stinkstudios/stylelint-config-react-app@1.9.0) (2020-03-09)
+
+
+### Features
+
+* **deps:** Update dependency stylelint-declaration-block-no-ignored-properties to ^2.3.0 ([3013234](https://github.com/Stinkstudios/npm-packages/commit/30132349add71c79b7a6e0aa3f7951e03a4be713))
+
+
+
+
+
 # [1.8.0](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/stylelint-config-react-app@1.7.0...@stinkstudios/stylelint-config-react-app@1.8.0) (2020-02-14)
 
 

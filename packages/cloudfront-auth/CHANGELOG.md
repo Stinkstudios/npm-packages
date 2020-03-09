@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.7.0](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/cf-auth@1.6.0...@stinkstudios/cf-auth@1.7.0) (2020-03-09)
+
+
+### Features
+
+* **deps:** Update dependency @types/jest to v25.1.3 ([6165405](https://github.com/Stinkstudios/npm-packages/commit/61654059398949f6374ab12488f103d6e84a4eda))
+* **deps:** Update dependency @types/jest to v25.1.4 ([b5b7c7a](https://github.com/Stinkstudios/npm-packages/commit/b5b7c7a46a13aaf1f33a50d066b244291cfc2cad))
+* **deps:** Update dependency @types/node to v10.17.16 ([d7af7c3](https://github.com/Stinkstudios/npm-packages/commit/d7af7c380f78d9e997add18e5f80a47f3844aedd))
+* **deps:** Update dependency @types/node to v10.17.17 ([17199fd](https://github.com/Stinkstudios/npm-packages/commit/17199fd06f42f47fe10e73c51cf1a07e9a1ebca4))
+* **deps:** Update dependency ts-jest to v25.2.1 ([5a881e8](https://github.com/Stinkstudios/npm-packages/commit/5a881e898241414edb8b6ec40395966e8d904416))
+* **deps:** Update dependency typescript to v3.8.2 ([f903c1e](https://github.com/Stinkstudios/npm-packages/commit/f903c1e8f921cb2a764a2fa615bdea23e767ec40))
+* **deps:** Update dependency typescript to v3.8.3 ([d341150](https://github.com/Stinkstudios/npm-packages/commit/d341150e92f7aae76068640eed3884552e82817a))
+
+
+
+
+
 # [1.6.0](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/cf-auth@1.5.0...@stinkstudios/cf-auth@1.6.0) (2020-02-14)
 
 

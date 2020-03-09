@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.7.0](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/eslint-config-react-app@1.6.0...@stinkstudios/eslint-config-react-app@1.7.0) (2020-03-09)
+
+
+### Features
+
+* **deps:** Update dependency eslint-plugin-unicorn to v17 ([#553](https://github.com/Stinkstudios/npm-packages/issues/553)) ([be1d95b](https://github.com/Stinkstudios/npm-packages/commit/be1d95bf4ca1ae6dee12bf410a26c1b9684fdc14))
+* replace travis with GitHub actions and added additional unit test for cf-auth ([#533](https://github.com/Stinkstudios/npm-packages/issues/533)) ([784a820](https://github.com/Stinkstudios/npm-packages/commit/784a820cf110cb2888eaa3569557174e146cd018))
+
+
+
+
+
 # [1.6.0](https://github.com/Stinkstudios/npm-packages/compare/@stinkstudios/eslint-config-react-app@1.5.0...@stinkstudios/eslint-config-react-app@1.6.0) (2020-02-10)
 
 
