@@ -38,7 +38,7 @@
   },
   "devDependencies": {
     "@types/jest": "25.2.3",
-    "@types/node": "10.17.40",
+    "@types/node": "10.17.42",
     "@types/vfile-message": "2.0.0",
     "jest": "25.5.4",
     "jest-environment-node-debug": "2.0.0",
