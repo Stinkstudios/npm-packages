@@ -50,7 +50,7 @@
     "typescript": "3.9.9"
   },
   "engines": {
-    "node": ">=v10.23.3"
+    "node": ">=v10.24.0"
   },
   "publishConfig": {
     "access": "public"
