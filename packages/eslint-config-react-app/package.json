@@ -28,7 +28,7 @@
     "@typescript-eslint/parser": "2.x",
     "babel-eslint": "10.x",
     "eslint": "6.x",
-    "eslint-config-prettier": "6.x",
+    "eslint-config-prettier": "8.x",
     "eslint-plugin-compat": "3.x",
     "eslint-plugin-import": "2.x",
     "eslint-plugin-jest": "23.x",
