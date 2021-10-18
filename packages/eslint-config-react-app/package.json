@@ -24,8 +24,8 @@
     "url": "https://github.com/Stinkstudios/npm-packages/issues"
   },
   "peerDependencies": {
-    "@typescript-eslint/eslint-plugin": "2.x",
-    "@typescript-eslint/parser": "2.x",
+    "@typescript-eslint/eslint-plugin": "5.x",
+    "@typescript-eslint/parser": "5.x",
     "babel-eslint": "10.x",
     "eslint": "6.x",
     "eslint-config-prettier": "6.x",
