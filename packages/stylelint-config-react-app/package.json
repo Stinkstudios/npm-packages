@@ -46,7 +46,7 @@
     "stylelint": "^13.13.1"
   },
   "dependencies": {
-    "stylelint-config-css-modules": "^2.2.0",
+    "stylelint-config-css-modules": "^2.3.0",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-declaration-block-no-ignored-properties": "^2.4.0",
