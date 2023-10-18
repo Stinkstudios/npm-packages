@@ -38,7 +38,7 @@
   },
   "devDependencies": {
     "@types/jest": "25.2.3",
-    "@types/node": "10.17.60",
+    "@types/node": "18.18.6",
     "@types/vfile-message": "2.0.0",
     "jest": "25.5.4",
     "jest-environment-node-debug": "2.0.0",
@@ -50,7 +50,7 @@
     "typescript": "3.9.10"
   },
   "engines": {
-    "node": ">=v10.24.1"
+    "node": ">=18.18.2"
   },
   "publishConfig": {
     "access": "public"
