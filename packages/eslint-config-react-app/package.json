@@ -27,7 +27,7 @@
     "@typescript-eslint/eslint-plugin": "2.x",
     "@typescript-eslint/parser": "2.x",
     "@babel/eslint-parser": "7.x",
-    "eslint": "6.x",
+    "eslint": "8.x",
     "eslint-config-prettier": "6.x",
     "eslint-plugin-compat": "3.x",
     "eslint-plugin-import": "2.x",
