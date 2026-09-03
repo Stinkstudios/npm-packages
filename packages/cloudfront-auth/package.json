@@ -37,13 +37,13 @@
     "preversion": "yarn lint && yarn test && yarn build"
   },
   "devDependencies": {
-    "@types/jest": "25.2.3",
+    "@types/jest": "30.0.0",
     "@types/node": "10.17.60",
     "@types/vfile-message": "2.0.0",
-    "jest": "25.5.4",
+    "jest": "30.5.1",
     "jest-environment-node-debug": "2.0.0",
     "prettier": "1.19.1",
-    "ts-jest": "25.5.1",
+    "ts-jest": "29.4.12",
     "ts-node": "8.10.2",
     "tslint": "5.20.1",
     "tslint-config-prettier": "1.18.0",
